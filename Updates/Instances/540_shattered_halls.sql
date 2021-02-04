@@ -570,11 +570,11 @@ INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 (@CGUID+133, @CGUID+76, 1155), -- Shattered Hand Reaver -> Shattered Hand Legionnaire
 (@CGUID+76, @CGUID+82, 1024), -- Shattered Hand Legionnaire -> Grand Warlock Nethekurse
 -- Hall of the Fathers - Shattered Hand Legionnaire #5
-(@CGUID+275, @CGUID+282, 1155), -- Shattered Hand Sharpshooter -> Shattered Hand Legionnaire
-(@CGUID+279, @CGUID+282, 1155), -- Shattered Hand Reaver -> Shattered Hand Legionnaire
-(@CGUID+277, @CGUID+282, 1155), -- Shattered Hand Sharpshooter -> Shattered Hand Legionnaire
-(@CGUID+278, @CGUID+282, 1155), -- Shattered Hand Reaver -> Shattered Hand Legionnaire
-(@CGUID+276, @CGUID+282, 1155), -- Shattered Hand Sharpshooter -> Shattered Hand Legionnaire
+(@CGUID+275, @CGUID+282, 1159), -- Shattered Hand Sharpshooter -> Shattered Hand Legionnaire
+(@CGUID+279, @CGUID+282, 1159), -- Shattered Hand Reaver -> Shattered Hand Legionnaire
+(@CGUID+277, @CGUID+282, 1159), -- Shattered Hand Sharpshooter -> Shattered Hand Legionnaire
+(@CGUID+278, @CGUID+282, 1159), -- Shattered Hand Reaver -> Shattered Hand Legionnaire
+(@CGUID+276, @CGUID+282, 1159), -- Shattered Hand Sharpshooter -> Shattered Hand Legionnaire
 (@CGUID+282, @CGUID+82, 1024), -- Shattered Hand Legionnaire -> Grand Warlock Nethekurse
 (@CGUID+69, @CGUID+78, 1155), -- Shadowmoon Acolyte -> Shattered Hand Legionnaire
 (@CGUID+73, @CGUID+78, 1155), -- creature_spawn_entry -> Shattered Hand Legionnaire
