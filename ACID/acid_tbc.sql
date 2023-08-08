@@ -24294,6 +24294,9 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- Shattered Hand Legionnaire 16700 
 ('1670001','16700','4','0','15','0','0','0','0','0','0','0','54','0','0','1670003','0','0','0','0','0','0','0','0','Shattered Hand Legionnaire - Random Say on Aggro'),
 ('1670002','16700','27','0','100','1','29406','1','0','10000','1','0','11','30472','0','0','0','0','0','0','0','0','0','0','Shattered Hand Legionnaire - Aura of Discipline - on Aura Missing'),
+-- guid based
+('1670003','-5400120','11','0','100','0','0','0','0','0','0','0','53','1670001','0','0','0','0','0','0','0','0','0','0','Shattered Hand Legionnaire - Start RelayScript - on Spawn'),
+('1670004','-5400120','6','0','100','0','0','0','0','0','0','0','53','1670002','0','0','0','0','0','0','0','0','0','0','Shattered Hand Legionnaire - Start RelayScript - on Death'),
 -- Shattered Hand Sharpshooter 16704
 ('1670401','16704','4','0','100','0','0','0','0','0','0','0','57','2','25','0','0','0','0','0','0','0','0','0','Shattered Hand Sharpshooter - Enable Range Mode on Aggro'),
 ('1670402','16704','9','0','100','1025','5','30','10000','14000','0','0','11','37551','16','544','0','0','0','0','0','0','0','0','Shattered Hand Sharpshooter - Cast Viper Sting'),
