@@ -374,7 +374,7 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RElAYID+3,11000,0,36,1,0,0,16523,5,0,0,0,0,0,0,0,0,0,'Shattered Hand Savage - reset orientation'),
 (@RElAYID+3,13000,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Shattered Hand Legionnaire - unpause waypoints');
 
-DELETE FROM dbscript_random_templates WHERE id IN (1670001, 1670002);
+DELETE FROM dbscript_random_templates WHERE id IN (1670001, 1670002, 1670003);
 INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VALUES
 (1670001, 1, @RElAYID+1, 10, 'Shattered Hand Legionnaire - yell'),
 (1670001, 1, @RElAYID+2, 10, 'Shattered Hand Legionnaire - approach ally Heathen'),
@@ -385,7 +385,15 @@ INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VA
 (1670002, 0, 17461, 0, 'Shattered Hand Legionnaire - random yell 2'),
 (1670002, 0, 16349, 0, 'Shattered Hand Legionnaire - random yell 3'),
 (1670002, 0, 16347, 0, 'Shattered Hand Legionnaire - random yell 4'),
-(1670002, 0, 16346, 0, 'Shattered Hand Legionnaire - random yell 5');
+(1670002, 0, 16346, 0, 'Shattered Hand Legionnaire - random yell 5'),
+
+(1670003, 0, 16697, 0, 'Shattered Hand Legionnaire - random yell 1 - on Aggro'),
+(1670003, 0, 16698, 0, 'Shattered Hand Legionnaire - random yell 2 - on Aggro'),
+(1670003, 0, 16699, 0, 'Shattered Hand Legionnaire - random yell 3 - on Aggro'),
+(1670003, 0, 16700, 0, 'Shattered Hand Legionnaire - random yell 4 - on Aggro'),
+(1670002, 0, 16701, 0, 'Shattered Hand Legionnaire - random yell 5 - on Aggro'),
+(1670002, 0, 16702, 0, 'Shattered Hand Legionnaire - random yell 6 - on Aggro'),
+(1670002, 0, 16703, 0, 'Shattered Hand Legionnaire - random yell 7 - on Aggro');
 
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (1670001,1670002, 1742001);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
