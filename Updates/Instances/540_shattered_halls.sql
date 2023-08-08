@@ -258,7 +258,10 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+127, 17420, 540, 2, 83.755, 57.2887, -13.114, 3.15, 5, 5, 0, 2), -- Shattered Hand Heathen
 (@CGUID+128, 17420, 540, 2, 53.5243, 60.0879, -13.0071, 0, 5, 5, 0, 2), -- Shattered Hand Heathen
 (@CGUID+129, 17420, 540, 2,  90.0297, 57.4987, -13.1003, 3.261756, 5, 5, 0, 2), -- Shattered Hand Heathen
-(@CGUID+130, 17420, 540, 2, 87.9912, 57.5445, -13.1049, 3.2617, 5, 5, 0, 2); -- Shattered Hand Heathen
+(@CGUID+130, 17420, 540, 2, 87.9912, 57.5445, -13.1049, 3.2617, 5, 5, 0, 2), -- Shattered Hand Heathen
+-- Group of 2 sentrys
+(@CGUID+131, 16507, 540, 3, 66.47607, 41.36766, -13.13848, 4.694936, 7200, 7200, 0, 0), -- Shattered Hand Sentry
+(@CGUID+132, 16507, 540, 3, 73.12358, 41.20788, -13.13848, 4.625123, 7200, 7200, 0, 0); -- Shattered Hand Sentry
 
 -- ===========
 -- GAMEOBJECTS
@@ -299,7 +302,8 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 -- Entrance
 (@SGGUID+2, 'Shattered Halls - Shattered Hand Heathen | Shattered Hand Savage | Group 001 (Normal)', 0, 5, @CONDITIONID+1, 0),
 (@SGGUID+3, 'Shattered Halls - Shattered Hand Heathen (5) | Group 001 (Heroic)', 0, 5, @CONDITIONID+1, 0),
-(@SGGUID+4, 'Shattered Halls - Shattered Hand Legionnaire (1) | Group 001 (Heroic)', 0, 5, 0, 0);
+(@SGGUID+4, 'Shattered Halls - Shattered Hand Legionnaire (1) | Group 001 (Heroic)', 0, 5, 0, 0),
+(@SGGUID+5, 'Shattered Halls - Shattered Hand Sentry(2) | Group 002', 0, 2, 0, 1);
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
 (@SGGUID+2,16523, 0, 0, 0), -- Shattered Hand Savage
@@ -319,7 +323,9 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+3, @OGUID+128, -1), -- Shattered Hand Heathen 
 (@SGGUID+3, @OGUID+129, -1), -- Shattered Hand Heathen 
 (@SGGUID+3, @OGUID+130, -1), -- Shattered Hand Heathen 
-(@SGGUID+4, @OGUID+120, -1); -- Shattered Hand Heathen 
+(@SGGUID+4, @OGUID+120, -1), -- Shattered Hand Heathen 
+(@SGGUID+5, @OGUID+131, -1), -- Shattered Hand Sentry
+(@SGGUID+5, @OGUID+132, -1); -- Shattered Hand Sentry
 
 -- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 
