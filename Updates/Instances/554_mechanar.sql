@@ -8,6 +8,7 @@ EndDBScriptData */
 SET @CGUID := 5540000; -- creatures
 SET @OGUID := 5540000; -- gameobjects
 SET @PGUID := 49100; -- pools
+SET @SGGUID := 5540000; -- spawn_groups
 
 -- =========
 -- CREATURES
@@ -156,10 +157,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `e
 -- REPLACE INTO `creature_template_addon` (`entry`, `mount`, `stand_state`, `sheath_state`, `emote`, `moveflags`, `auras`) VALUES
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
-(@CGUID+25, @CGUID+63, 1155), -- Bloodwarder Centurion -> Sunseeker Netherbinder
-(@CGUID+76, @CGUID+63, 1155), -- Bloodwarder Physician -> Sunseeker Netherbinder
-(@CGUID+10, @CGUID+64, 1155), -- Bloodwarder Slayer -> Sunseeker Netherbinder
-(@CGUID+77, @CGUID+64, 1155), -- Bloodwarder Physician -> Sunseeker Netherbinder
 (@CGUID+75, @CGUID+9, 1155), -- Bloodwarder Physician -> Bloodwarder Slayer
 (@CGUID+81, @CGUID+13, 1155), -- Bloodwarder Physician -> Bloodwarder Slayer
 (@CGUID+74, @CGUID+8, 1155), -- Bloodwarder Physician -> Bloodwarder Slayer
@@ -216,7 +213,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+7, 19167, 554, 3, 119.302, 86.1098, 14.9333, 3.23967, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+8, 19167, 554, 3, 74.4081, 65.8713, 14.9247, 3.12422, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+9, 19167, 554, 3, 37.0378, 64.3177, 0.162094, 3.83588, 7200, 7200, 0, 0), -- Bloodwarder Slayer
-(@CGUID+10, 19167, 554, 3, 23.3317, -23.394, 0.00000567781, 3.05991, 7200, 7200, 0, 0), -- Bloodwarder Slayer
+(@CGUID+10, 19167, 554, 3, 30.724, -48.3542, 0.24584, 1.4311, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+11, 19167, 554, 3, 119.726, -66.1184, 14.9247, 2.96427, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+12, 19167, 554, 3, 76.8159, -51.7629, 14.9247, 3.01657, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+13, 19167, 554, 3, 36.3608, -51.3871, 0.162347, 3.06699, 7200, 7200, 0, 0), -- Bloodwarder Slayer
@@ -231,7 +228,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+22, 19221, 554, 3, 325.558, 12.5866, 27.8366, 3.05075, 86400, 86400, 0, 0), -- Nethermancer Sepethrea
 (@CGUID+23, 19231, 554, 3, 100.64, -72.6406, 14.9259, 6.20403, 7200, 7200, 0, 2), -- Mechanar Crusher
 (@CGUID+24, 19510, 554, 3, 167.576, 88.3262, 1.13275, 3.13612, 7200, 7200, 0, 0), -- Bloodwarder Centurion
-(@CGUID+25, 19510, 554, 3, 23.228, 18.9781, 0.00000711717, 3.11017, 7200, 7200, 0, 0), -- Bloodwarder Centurion
+(@CGUID+25, 19510, 554, 3, 30.6968, 49.5820, 0.2443, 3.70009, 7200, 7200, 0, 0), -- Bloodwarder Centurion
 (@CGUID+26, 19510, 554, 3, 166.135, -73.2655, 1.55645, 3.15276, 7200, 7200, 0, 0), -- Bloodwarder Centurion
 (@CGUID+27, 19510, 554, 3, 274.023, -17.8571, 26.3284, 6.26825, 10800, 10800, 0, 0), -- Bloodwarder Centurion
 (@CGUID+28, 19510, 554, 3, 273.889, -26.8161, 26.3284, 6.25254, 10800, 10800, 0, 0), -- Bloodwarder Centurion
@@ -269,8 +266,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+60, 19735, 554, 3, 290.6187, 29.12057, 25.4695, 1.692969, 7200, 7200, 0, 0), -- Tempest-Forge Destroyer
 (@CGUID+61, 19735, 554, 3, 297.3579, -14.26091, 25.38358, 1.81211, 7200, 7200, 4, 1), -- Tempest-Forge Destroyer
 (@CGUID+62, 20059, 554, 3, 169.156, 92.0407, 0.642169, 3.19502, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
-(@CGUID+63, 20059, 554, 3, 23.3113, 21.6298, 0.00000711717, 3.11017, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
-(@CGUID+64, 20059, 554, 3, 23.1913, -20.9207, 0.00000567781, 3.04813, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
+(@CGUID+63, 20059, 554, 3, 31.831068, 47.368565, 0.17648034, 1.053, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
+(@CGUID+64, 20059, 554, 3, 31.82565, -48.63669, 0.24551535, 3.51334, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
 (@CGUID+65, 20059, 554, 3, 169.469, -66.9563, 0.512734, 3.15276, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
 (@CGUID+66, 20988, 554, 3, 133.053, -39.9267, -0.00164767, 6.15486, 7200, 7200, 3, 1), -- Sunseeker Engineer
 (@CGUID+67, 20988, 554, 3, 131.178, 40.8598, 0.007842, 1.00548, 7200, 7200, 3, 1), -- Sunseeker Engineer
@@ -282,8 +279,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+73, 20990, 554, 3, 119.65, 67.89, 14.9258, 2.96792, 7200, 7200, 0, 0), -- Bloodwarder Physician
 (@CGUID+74, 20990, 554, 3, 74.1962, 53.6792, 14.9247, 3.12422, 7200, 7200, 0, 0), -- Bloodwarder Physician
 (@CGUID+75, 20990, 554, 3, 37.3334, 55.4128, 0.162094, 1.91239, 7200, 7200, 0, 0), -- Bloodwarder Physician
-(@CGUID+76, 20990, 554, 3, 23.3909, 24.1625, 0.00000711717, 3.1141, 7200, 7200, 0, 0), -- Bloodwarder Physician
-(@CGUID+77, 20990, 554, 3, 23.4324, -18.349, 0.00000567781, 3.04813, 7200, 7200, 0, 0), -- Bloodwarder Physician
+(@CGUID+76, 20990, 554, 3, 33.7580, 49.8961, 0.24240, 5.72467, 7200, 7200, 0, 0), -- Bloodwarder Physician
+(@CGUID+77, 20990, 554, 3, 30.8605, -46.8066, 0.23633, 0.925, 7200, 7200, 0, 0), -- Bloodwarder Physician
 (@CGUID+78, 20990, 554, 3, 169.136, -88.8967, 0.652591, 3.08443, 7200, 7200, 0, 0), -- Bloodwarder Physician
 (@CGUID+79, 20990, 554, 3, 119.629, -82.6008, 14.9287, 3.13313, 7200, 7200, 0, 0), -- Bloodwarder Physician
 (@CGUID+80, 20990, 554, 3, 76.7499, -60.4829, 14.9247, 2.96898, 7200, 7200, 0, 0), -- Bloodwarder Physician
@@ -309,18 +306,12 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `posit
 (@OGUID+15, 185015, 554, 3, 146.76, -36.2917, 1.01041, 5.99065, 0, 0, 0, 0, 120, 120), -- Overcharged Manacell
 (@OGUID+16, 185015, 554, 3, 158.931, -26.9887, 1.00972, 4.98325, 0, 0, 0, 0, 120, 120), -- Overcharged Manacell
 (@OGUID+17, 185015, 554, 3, 151.858, -29.8824, 1.01041, 5.41365, 0, 0, 0, 0, 120, 120), -- Overcharged Manacell
-(@OGUID+18, 184936, 554, 3, 221.32, -90.15, 0.00, 3.73, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest
-(@OGUID+19, 184937, 554, 3, 221.32, -90.15, 0.00, 3.73, 0, 0, 0, 0, 86400, 86400), -- Solid Adamantite Chest
-(@OGUID+20, 184936, 554, 3, 131.80, -44.97, -0.00, 0.81, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest
-(@OGUID+21, 184937, 554, 3, 131.80, -44.97, -0.00, 0.81, 0, 0, 0, 0, 86400, 86400), -- Solid Adamantite Chest
-(@OGUID+22, 184936, 554, 3, 129.97, 45.00, 0.00, 5.51, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest
-(@OGUID+23, 184937, 554, 3, 129.97, 45.00, 0.00, 5.51, 0, 0, 0, 0, 86400, 86400), -- Solid Adamantite Chest
-(@OGUID+24, 184940, 554, 3, 243.344, 14.1168, -0.0019269, 0.50436, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest
-(@OGUID+25, 184941, 554, 3, 243.344, 14.1168, -0.0019269, 0.50436, 0, 0, 0, 0, 86400, 86400), -- Solid Adamantite Chest
-(@OGUID+26, 184936, 554, 3, 299.06, -46.0161, 25.3949, 6.1043, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest
-(@OGUID+27, 184937, 554, 3, 299.06, -46.0161, 25.3949, 6.1043, 0, 0, 0, 0, 86400, 86400), -- Solid Adamantite Chest
-(@OGUID+28, 184936, 554, 3, 143.472, 179.921, 25.5636, 1.36442, 0, 0, 0, 0, 86400, 86400), -- Solid Adamantite Chest
-(@OGUID+29, 184937, 554, 3, 143.472, 179.921, 25.5636, 1.36442, 0, 0, 0, 0, 86400, 86400); -- Solid Adamantite Chest
+(@OGUID+18, 0, 554, 3, 221.32, -90.15, 0.00, 3.73, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest - Solid Adamantite Chest - spawn_group_entry
+(@OGUID+19, 0, 554, 3, 131.80, -44.97, -0.00, 0.81, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest - Solid Adamantite Chest - spawn_group_entry
+(@OGUID+20, 0, 554, 3, 129.97, 45.00, 0.00, 5.51, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest - Solid Adamantite Chest - spawn_group_entry
+(@OGUID+21, 0, 554, 3, 243.344, 14.1168, -0.0019269, 0.50436, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest - Solid Adamantite Chest - spawn_group_entry
+(@OGUID+22, 0, 554, 3, 299.06, -46.0161, 25.3949, 6.1043, 0, 0, 0, 0, 86400, 86400), -- Bound Adamantite Chest - Solid Adamantite Chest - spawn_group_entry
+(@OGUID+23, 0, 554, 3, 143.472, 179.921, 25.5636, 1.36442, 0, 0, 0, 0, 86400, 86400); -- Bound Adamantite Chest - Solid Adamantite Chest - spawn_group_entry
 
 INSERT INTO `gameobject_addon` (`guid`, `animprogress`, `state`) VALUES
 (@OGUID+1, 0, -1), -- Doodad_FactoryElevator01
@@ -346,59 +337,55 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 -- SPAWN GROUPS
 -- ============
 
--- INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`) VALUES
--- INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
--- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
--- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
--- INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
--- INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`, `Comment`) VALUES
+-- ======
+-- SPAWN GROUPS
+-- ======
 
--- =======
--- POOLING
--- =======
+INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`, `StringId`) VALUES
+(@SGGUID+1, 'The Mechanar - Bound / Solid Adamantite Chest', 1, 1, 0, 0, 0),
+(@SGGUID+2, 'The Mechanar - Group 001', 0, 3, 0, 0, 0),
+(@SGGUID+3, 'The Mechanar - Group 002', 0, 3, 0, 0, 0);
 
-INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES
-(@PGUID+41, @PGUID+40, 0, 'The Mechanar - Bound / Solid Adamantite Chest #1'),
-(@PGUID+42, @PGUID+40, 0, 'The Mechanar - Bound / Solid Adamantite Chest #2'),
-(@PGUID+43, @PGUID+40, 0, 'The Mechanar - Bound / Solid Adamantite Chest #3'),
-(@PGUID+44, @PGUID+40, 0, 'The Mechanar - Bound / Solid Adamantite Chest #4'),
-(@PGUID+45, @PGUID+40, 0, 'The Mechanar - Bound / Solid Adamantite Chest #5'),
-(@PGUID+46, @PGUID+40, 0, 'The Mechanar - Bound / Solid Adamantite Chest #6');
+INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
+(@SGGUID+1, 184940, 0, 1, 0), -- Bound Adamantite Chest 
+(@SGGUID+1, 184937, 0, 1, 0); -- Solid Adamantite Chest
 
-INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
-(@PGUID+40, 1, 'The Mechanar - Master Chest Pool'), -- gameobject
-(@PGUID+41, 1, 'The Mechanar - Bound / Solid Adamantite Chest #1'),
-(@PGUID+42, 1, 'The Mechanar - Bound / Solid Adamantite Chest #2'),
-(@PGUID+43, 1, 'The Mechanar - Bound / Solid Adamantite Chest #3'),
-(@PGUID+44, 1, 'The Mechanar - Bound / Solid Adamantite Chest #4'),
-(@PGUID+45, 1, 'The Mechanar - Bound / Solid Adamantite Chest #5'),
-(@PGUID+46, 1, 'The Mechanar - Bound / Solid Adamantite Chest #6');
+ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+(@SGGUID+1, @OGUID+18, -1, 0),
+(@SGGUID+1, @OGUID+10, -1, 0),
+(@SGGUID+1, @OGUID+20, -1, 0),
+(@SGGUID+1, @OGUID+21, -1, 0),
+(@SGGUID+1, @OGUID+22, -1, 0),
+(@SGGUID+1, @OGUID+23, -1, 0), 
+(@SGGUID+2, @CGUID+63, 0, 0),
+(@SGGUID+2, @CGUID+25, 1, 0),
+(@SGGUID+2, @CGUID+76, 2, 0),
+(@SGGUID+3, @CGUID+64, 0, 0),
+(@SGGUID+3, @CGUID+10, 1, 0),
+(@SGGUID+3, @CGUID+77, 2, 0);
+   
+INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+(@SGGUID+2, 2, 2.5, 0, @SGGUID+2, 2, 'The Mechanar - Group 001'),
+(@SGGUID+3, 2, 2.5, 0, @SGGUID+3, 2, 'The Mechanar - Group 002');
 
--- INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
--- INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
+(@SGGUID+2, 'The Mechanar - Group 001'),
+(@SGGUID+3, 'The Mechanar - Group 002');
 
-INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
-(@OGUID+18, @PGUID+41, 0, 'The Mechanar - Bound Adamantite Chest (184936) - #1'),
-(@OGUID+19, @PGUID+41, 0, 'The Mechanar - Solid Adamantite Chest (184937) - #1'),
-(@OGUID+20, @PGUID+42, 0, 'The Mechanar - Bound Adamantite Chest (184936) - #2'),
-(@OGUID+21, @PGUID+42, 0, 'The Mechanar - Solid Adamantite Chest (184937) - #2'),
-(@OGUID+22, @PGUID+43, 0, 'The Mechanar - Bound Adamantite Chest (184936) - #3'),
-(@OGUID+23, @PGUID+43, 0, 'The Mechanar - Solid Adamantite Chest (184937) - #3'),
-(@OGUID+24, @PGUID+44, 0, 'The Mechanar - Solid Adamantite Chest (184940) - #4'),
-(@OGUID+25, @PGUID+44, 0, 'The Mechanar - Solid Adamantite Chest (184941) - #4'),
-(@OGUID+26, @PGUID+45, 0, 'The Mechanar - Bound Adamantite Chest (184936) - #5'),
-(@OGUID+27, @PGUID+45, 0, 'The Mechanar - Solid Adamantite Chest (184937) - #5'),
-(@OGUID+28, @PGUID+46, 0, 'The Mechanar - Bound Adamantite Chest (184936) - #6'),
-(@OGUID+29, @PGUID+46, 0, 'The Mechanar - Solid Adamantite Chest (184937) - #6');
-
--- INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
+(@SGGUID+2,0,31.831068, 47.368565, 0.17648034, 100,100,6),
+(@SGGUID+2,1,22.140232,20.44575,-0.00017946586,3.176499,100,2005901),
+(@SGGUID+3,0,31.82565, -48.63669, 0.24551535, 100,100,6),
+(@SGGUID+3,1,23.20878,-18.283443,-0.00011080224,3.08923,100,2005901);
 
 -- =========
 -- DBSCRIPTS
 -- =========
 
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (2005901);
+INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(2005901, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'spawn_group - change movement');
 
--- INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_creature_death` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
