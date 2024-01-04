@@ -15,16 +15,12 @@ SET @SGGUID := 5540000; -- spawn_groups
 -- =========
 
 INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `PositionZ`, `orientation`, `waittime`, `ScriptId`) VALUES
-(@CGUID+1, 1, 119.042, 78.4115, 14.9303, 3.08366, 0, 0),
-(@CGUID+1, 2, 173.877, 78.9112, 0.003358, 6.07053, 0, 0),
-(@CGUID+1, 3, 185.383, 69.3509, -0.00567, 5.58986, 0, 0),
-(@CGUID+1, 4, 186.105, 50.8595, -0.00567, 4.73142, 0, 0),
-(@CGUID+1, 5, 181.486, 47.4549, -0.00567, 3.72611, 0, 0),
-(@CGUID+1, 6, 162.612, 47.1484, -0.003422, 3.03732, 0, 0),
-(@CGUID+1, 7, 183.525, 47.4199, -0.006211, 6.18048, 0, 0),
-(@CGUID+1, 8, 188.253, 53.3264, -0.006211, 0.874332, 0, 0),
-(@CGUID+1, 9, 187.458, 68.5935, -0.006211, 1.63774, 0, 0),
-(@CGUID+1, 10, 168.657, 80.5673, 0.781544, 2.59593, 0, 0),
+(@CGUID+1, 1, 117.62223,78.36094,14.92448, 100,1000, 0),
+(@CGUID+1, 2, 149.63039,81.24523,6.4690247,100,0,0),
+(@CGUID+1, 3, 169.93733,81.2677,0.36944586,100,0,0),
+(@CGUID+1, 4, 188.18597,64.12248,-0.005838667,100,0,0),
+(@CGUID+1, 5, 186.61266,47.3467,-0.006220245,100,0,0),
+(@CGUID+1, 6, 164.64165,49.954487,-0.001837478,100,1000,0),
 (@CGUID+2, 1, 76.8514,59.621902,14.924665, 100, 1000, 0), -- waittime 1-2 
 (@CGUID+2, 2, 38.19203,59.687855,0.1630622, 100, 0, 0),
 (@CGUID+2, 3, 30.011766,55.230145,0.1630622, 100, 0, 0),
@@ -60,23 +56,16 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+31, 2, 167.854, -77.1117, 1.04226, 3.06872, 0, 0),
 (@CGUID+31, 3, 118.427, -73.8248, 14.9263, 3.11663, 0, 0),
 (@CGUID+31, 4, 171.948, -77.0885, 0.004957, 6.25587, 0, 0),
-(@CGUID+32, 1, 161.707, 53.2828, 0.00231, 0.546809, 0, 0),
-(@CGUID+32, 2, 161.061, 59.0765, 0.002684, 1.54112, 0, 0),
-(@CGUID+32, 3, 160.108, 51.9113, 0.002794, 4.53821, 0, 0),
-(@CGUID+32, 4, 150.199, 46.6914, 0.005608, 3.66877, 0, 0),
-(@CGUID+32, 5, 142.633, 46.3525, 0.007714, 3.14098, 0, 0),
-(@CGUID+32, 6, 137.855, 38.1671, 0.0063, 4.18399, 0, 0),
-(@CGUID+32, 7, 131.465, 37.7287, 0.004902, 3.2101, 0, 0),
-(@CGUID+32, 8, 139.445, 39.674, 0.005337, 0.255427, 0, 0),
-(@CGUID+32, 9, 143.096, 45.9515, 0.007527, 1.05575, 0, 0),
-(@CGUID+32, 10, 151.936, 47.028, 0.007527, 0.047296, 0, 0),
-(@CGUID+47, 1, 199.667, 41.5662, -0.006497, 0.084213, 0, 0),
-(@CGUID+47, 2, 201.486, 38.8112, -0.006497, 5.29533, 0, 0),
-(@CGUID+47, 3, 198.42, 41.301, -0.006497, 2.54486, 0, 0),
-(@CGUID+47, 4, 177.189, 38.7453, -0.006497, 3.27686, 0, 0),
-(@CGUID+47, 5, 175.857, 36.2103, 1.01048, 4.15964, 0, 0),
-(@CGUID+47, 6, 180.796, 39.2187, -0.006297, 0.397588, 0, 0),
-(@CGUID+47, 7, 191.442, 40.9485, -0.006297, 0.124269, 0, 0),
+(@CGUID+32,1,132.1031,37.008965,0.003121846,100,0,0),
+(@CGUID+32,2,142.23601,40.296707,0.005726555,100,0,0),
+(@CGUID+32,3,144.87463,45.93079,0.008017367,100,0,0),
+(@CGUID+32,4,158.54794,47.99082,0.0038790724,100,0,0),
+(@CGUID+32,5,161.00502,53.83562,0.003132181,100,0,0),
+(@CGUID+47, 1, 174.11919,37.801308,1.010456, 100, 1000, 0),
+(@CGUID+47, 2, 179.0216,40.52939,-0.006131659, 100, 0, 0),
+(@CGUID+47, 3, 185.691,41.82604,-0.006107603, 100, 0, 0),
+(@CGUID+47, 4, 193.55858,41.26056,-0.0060337405, 100, 0, 0),
+(@CGUID+47, 5, 197.70654,37.415173,-0.005917786, 100, 1000, 0),
 (@CGUID+55, 1, 226.707, -109.536, -0.00693, 5.82783, 1, 5),
 (@CGUID+55, 2, 207.09, -95.4179, -0.000968, 2.55508, 0, 0),
 (@CGUID+55, 3, 204.143, -88.2587, 0.000499, 1.96132, 0, 0),
@@ -87,16 +76,12 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+55, 8, 205.587, -76.0482, 0.001631, 3.90675, 0, 0),
 (@CGUID+55, 9, 202.412, -87.2174, 0.001631, 4.39605, 0, 0),
 (@CGUID+55, 10, 203.796, -92.6097, 0.001631, 4.9364, 0, 0),
-(@CGUID+59, 1, 203.6965, 53.04169, -0.004259702, 100, 0, 0),
-(@CGUID+59, 2, 233.3129, 52.31844, 0.02142454, 100, 0, 0),
-(@CGUID+68, 1, 98.722, 51.8395, 14.9258, 4.39527, 0, 0),
-(@CGUID+68, 2, 104.442, 42.0315, 14.9258, 5.24036, 0, 0),
-(@CGUID+68, 3, 114.306, 38.4851, 14.9258, 5.90323, 0, 0),
-(@CGUID+68, 4, 105.32, 41.7866, 14.9258, 2.81505, 0, 0),
-(@CGUID+68, 5, 100.334, 50.5233, 14.9258, 2.08934, 0, 0),
-(@CGUID+68, 6, 102.82, 64.9916, 14.922, 1.35813, 0, 0),
-(@CGUID+68, 7, 114.837, 73.2963, 14.9225, 0.60101, 0, 0),
-(@CGUID+68, 8, 103.303, 64.1023, 14.9206, 4.1086, 0, 0),
+(@CGUID+59, 1,203.69647,53.04169,-0.004259702, 100, 0, 0),
+(@CGUID+59, 2, 233.31285,52.318443,0.021424541, 100, 0, 0),
+(@CGUID+68, 1, 110.57969,69.03175,14.918284, 100, 1000, 0), -- waittime 0 - 2 seconds
+(@CGUID+68, 2, 102.23087,58.490253,14.934289, 100, 0, 0),
+(@CGUID+68, 3, 101.23074,46.33547,14.9244, 100, 0, 0),
+(@CGUID+68, 4, 112.06979,40.35622,14.924257, 100, 1000, 0), -- waittime 0 - 2 seconds
 (@CGUID+70, 1, 224.938, -55.7028, 0.000941, 6.27629, 0, 0),
 (@CGUID+70, 2, 229.92, -57.626, 0.006562, 5.95114, 0, 0),
 (@CGUID+70, 3, 224.518, -55.8315, 0.001421, 2.86452, 0, 0),
@@ -142,33 +127,19 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `e
 -- REPLACE INTO `creature_template_addon` (`entry`, `mount`, `stand_state`, `sheath_state`, `emote`, `moveflags`, `auras`) VALUES
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
-(@CGUID+75, @CGUID+9, 1155), -- Bloodwarder Physician -> Bloodwarder Slayer
 (@CGUID+81, @CGUID+13, 1155), -- Bloodwarder Physician -> Bloodwarder Slayer
-(@CGUID+74, @CGUID+8, 1155), -- Bloodwarder Physician -> Bloodwarder Slayer
 (@CGUID+80, @CGUID+12, 1155), -- Bloodwarder Physician -> Bloodwarder Slayer
-(@CGUID+39, @CGUID+68, 1155), -- Mechanar Wrecker -> Sunseeker Engineer
-(@CGUID+40, @CGUID+68, 1155), -- Mechanar Wrecker -> Sunseeker Engineer
-(@CGUID+58, @CGUID+68, 1155), -- Mechanar Tinkerer -> Sunseeker Engineer
 (@CGUID+56, @CGUID+23, 1155), -- Mechanar Tinkerer -> Mechanar Crusher
 (@CGUID+57, @CGUID+23, 1155), -- Mechanar Tinkerer -> Mechanar Crusher
 (@CGUID+37, @CGUID+71, 1155), -- Mechanar Driller -> Sunseeker Engineer
 (@CGUID+38, @CGUID+71, 1155), -- Mechanar Driller -> Sunseeker Engineer
-(@CGUID+7, @CGUID+73, 1155), -- Bloodwarder Slayer -> Bloodwarder Physician
 (@CGUID+79, @CGUID+11, 1155), -- Bloodwarder Physician -> Bloodwarder Slayer
-(@CGUID+62, @CGUID+24, 1155), -- Sunseeker Netherbinder -> Bloodwarder Centurion
-(@CGUID+72, @CGUID+24, 1155), -- Bloodwarder Physician -> Bloodwarder Centurion
 (@CGUID+65, @CGUID+26, 1155), -- Sunseeker Netherbinder -> Bloodwarder Centurion
 (@CGUID+78, @CGUID+26, 1155), -- Bloodwarder Physician -> Bloodwarder Centurion
-(@CGUID+48, @CGUID+47, 1155), -- Mechanar Tinkerer -> Mechanar Tinkerer
-(@CGUID+49, @CGUID+47, 1155), -- Mechanar Tinkerer -> Mechanar Tinkerer
-(@CGUID+51, @CGUID+47, 1155), -- Mechanar Tinkerer -> Mechanar Tinkerer
 (@CGUID+33, @CGUID+55, 1155), -- Mechanar Driller -> Mechanar Tinkerer
 (@CGUID+34, @CGUID+55, 1155), -- Mechanar Driller -> Mechanar Tinkerer
 (@CGUID+54, @CGUID+55, 1155), -- Mechanar Tinkerer -> Mechanar Tinkerer
 (@CGUID+45, @CGUID+32, 1155), -- Mechanar Tinkerer -> Mechanar Driller
-(@CGUID+46, @CGUID+32, 1155), -- Mechanar Tinkerer -> Mechanar Driller
-(@CGUID+50, @CGUID+32, 1155), -- Mechanar Tinkerer -> Mechanar Driller
-(@CGUID+67, @CGUID+32, 1155), -- Sunseeker Engineer -> Mechanar Driller
 (@CGUID+35, @CGUID+70, 1155), -- Mechanar Driller -> Sunseeker Engineer
 (@CGUID+36, @CGUID+70, 1155), -- Mechanar Driller -> Sunseeker Engineer
 (@CGUID+41, @CGUID+53, 1155), -- Mechanar Wrecker -> Mechanar Tinkerer
@@ -177,7 +148,6 @@ INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 (@CGUID+43, @CGUID+69, 1155), -- Mechanar Tinkerer -> Sunseeker Engineer
 (@CGUID+44, @CGUID+69, 1155), -- Mechanar Tinkerer -> Sunseeker Engineer
 (@CGUID+66, @CGUID+69, 1155), -- Sunseeker Engineer -> Sunseeker Engineer
-(@CGUID+15, @CGUID+14, 1155), -- Sunseeker Astromage -> Sunseeker Astromage
 (@CGUID+19, @CGUID+18, 1155), -- Sunseeker Astromage -> Sunseeker Astromage
 (@CGUID+29, @CGUID+18, 1155), -- Bloodwarder Centurion -> Sunseeker Astromage
 (@CGUID+30, @CGUID+18, 1155), -- Bloodwarder Centurion -> Sunseeker Astromage
@@ -189,30 +159,30 @@ REPLACE INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`
 (20481, 554, 19221, 4113, 0); -- Raging Flames -> Nethermancer Sepethrea
 
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
-(@CGUID+1, 19166, 554, 3, 139.302, 79.2735, 9.5361, 3.14005, 7200, 7200, 0, 2), -- Tempest-Forge Patroller
+(@CGUID+1, 19166, 554, 3, 117.62223, 78.36094, 14.92448, 3.23146, 7200, 7200, 0, 4), -- Tempest-Forge Patroller
 (@CGUID+2, 19166, 554, 3, 76.8514, 59.621902, 14.924665, 3.1380, 7200, 7200, 0, 4), -- Tempest-Forge Patroller
 (@CGUID+3, 19166, 554, 3, 44.49996, -25.5979, 0.090351336, 3.453181, 7200, 7200, 0, 2), -- Tempest-Forge Patroller
 (@CGUID+4, 19166, 554, 3, 40.954517, 28.962717, 0.08852234, 0.777655, 7200, 7200, 0, 2), -- Tempest-Forge Patroller
 (@CGUID+5, 19166, 554, 3, 30.7088, 3.51896, -0.000455872, 3.1141, 7200, 7200, 0, 0), -- Tempest-Forge Patroller
 (@CGUID+6, 19166, 554, 3, 73.91813, -56.71242, 14.924665, 3.18021, 7200, 7200, 0, 4), -- Tempest-Forge Patroller
-(@CGUID+7, 19167, 554, 3, 119.302, 86.1098, 14.9333, 3.23967, 7200, 7200, 0, 0), -- Bloodwarder Slayer
-(@CGUID+8, 19167, 554, 3, 74.4081, 65.8713, 14.9247, 3.12422, 7200, 7200, 0, 0), -- Bloodwarder Slayer
-(@CGUID+9, 19167, 554, 3, 37.0378, 64.3177, 0.162094, 3.83588, 7200, 7200, 0, 0), -- Bloodwarder Slayer
+(@CGUID+7, 19167, 554, 3, 119.3447, 85.911827, 15.016303, 3.4557, 7200, 7200, 0, 0), -- Bloodwarder Slayer
+(@CGUID+8, 19167, 554, 3, 77.8173, 64.1236, 15.0079, 3.26376, 7200, 7200, 0, 0), -- Bloodwarder Slayer
+(@CGUID+9, 19167, 554, 3, 37.3979, 64.6460, 0.24639, 4.13643, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+10, 19167, 554, 3, 30.724, -48.3542, 0.24584, 1.4311, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+11, 19167, 554, 3, 119.726, -66.1184, 14.9247, 2.96427, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+12, 19167, 554, 3, 76.8159, -51.7629, 14.9247, 3.01657, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+13, 19167, 554, 3, 36.3608, -51.3871, 0.162347, 3.06699, 7200, 7200, 0, 0), -- Bloodwarder Slayer
-(@CGUID+14, 19168, 554, 3, 225.822, 46.382, -0.00603536, 3.27292, 7200, 7200, 0, 0), -- Sunseeker Astromage
-(@CGUID+15, 19168, 554, 3, 225.811, 59.3986, -0.0020728, 2.99409, 7200, 7200, 0, 0), -- Sunseeker Astromage
+(@CGUID+14, 19168, 554, 3, 226.5947, 45.0895, 0.076829, 3.17649, 7200, 7200, 0, 0), -- Sunseeker Astromage
+(@CGUID+15, 19168, 554, 3, 226.5711, 60.279705, 0.0791843, 3.08923, 7200, 7200, 0, 0), -- Sunseeker Astromage
 (@CGUID+16, 19168, 554, 3, 272.683, -24.5176, 26.3284, 0.0714562, 10800, 10800, 0, 0), -- Sunseeker Astromage
 (@CGUID+17, 19168, 554, 3, 272.424, -20.9008, 26.3284, 0.0714562, 10800, 10800, 0, 0), -- Sunseeker Astromage
 (@CGUID+18, 19168, 554, 3, 308.545, 15.4713, 25.3862, 3.14629, 10800, 10800, 0, 0), -- Sunseeker Astromage
 (@CGUID+19, 19168, 554, 3, 308.593, 5.20942, 25.3862, 3.14629, 10800, 10800, 0, 0), -- Sunseeker Astromage
-(@CGUID+20, 19218, 554, 3, 89.4443, 24.2701, 14.9247, 0.79717, 7200, 7200, 0, 0), -- Gatewatcher Gyro-Kill
+(@CGUID+20, 19218, 554, 3, 85.5275, 20.2005, 15.0044, 0.66322, 7200, 7200, 0, 0), -- Gatewatcher Gyro-Kill
 (@CGUID+21, 19219, 554, 3, 210.416, 15.6408, -2.19211, 3.23112, 86400, 86400, 0, 2), -- Mechano-Lord Capacitus
 (@CGUID+22, 19221, 554, 3, 325.558, 12.5866, 27.8366, 3.05075, 86400, 86400, 0, 0), -- Nethermancer Sepethrea
 (@CGUID+23, 19231, 554, 3, 100.64, -72.6406, 14.9259, 6.20403, 7200, 7200, 0, 2), -- Mechanar Crusher
-(@CGUID+24, 19510, 554, 3, 167.576, 88.3262, 1.13275, 3.13612, 7200, 7200, 0, 0), -- Bloodwarder Centurion
+(@CGUID+24, 19510, 554, 3, 165.6997, 85.55811, 1.7688, 3.2114, 7200, 7200, 0, 0), -- Bloodwarder Centurion
 (@CGUID+25, 19510, 554, 3, 30.6968, 49.5820, 0.2443, 3.70009, 7200, 7200, 0, 0), -- Bloodwarder Centurion
 (@CGUID+26, 19510, 554, 3, 166.135, -73.2655, 1.55645, 3.15276, 7200, 7200, 0, 0), -- Bloodwarder Centurion
 (@CGUID+27, 19510, 554, 3, 274.023, -17.8571, 26.3284, 6.26825, 10800, 10800, 0, 0), -- Bloodwarder Centurion
@@ -220,26 +190,26 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+29, 19510, 554, 3, 308.485, 20.3946, 25.3862, 3.12981, 10800, 10800, 0, 0), -- Bloodwarder Centurion
 (@CGUID+30, 19510, 554, 3, 308.485, 11.1399, 25.3862, 3.11175, 10800, 10800, 0, 0), -- Bloodwarder Centurion
 (@CGUID+31, 19710, 554, 3, 176.955, -77.0281, 0.005777, 1.00923, 7200, 7200, 0, 2), -- Gatewatcher Iron-Hand
-(@CGUID+32, 19712, 554, 3, 147.889, 45.0173, -0.00156292, 0.426625, 7200, 7200, 0, 2), -- Mechanar Driller
+(@CGUID+32, 19712, 554, 3, 147.889, 45.0173, -0.00156292, 0.426625, 7200, 7200, 0, 4), -- Mechanar Driller
 (@CGUID+33, 19712, 554, 3, 220.283, -95.5726, 0.0000594996, 0.352802, 7200, 7200, 0, 0), -- Mechanar Driller
 (@CGUID+34, 19712, 554, 3, 216.394, -80.0561, 0.0000594996, 5.4736, 7200, 7200, 0, 0), -- Mechanar Driller
 (@CGUID+35, 19712, 554, 3, 228.547, -53.2302, 0.00192854, 0.154885, 7200, 7200, 0, 0), -- Mechanar Driller
 (@CGUID+36, 19712, 554, 3, 225.146, -61.0923, 0.0015216, 5.13588, 7200, 7200, 0, 0), -- Mechanar Driller
 (@CGUID+37, 19712, 554, 3, 109.813, -55.6875, 14.9233, 1.12643, 7200, 7200, 0, 0), -- Mechanar Driller
 (@CGUID+38, 19712, 554, 3, 108.077, -42.1086, 14.9233, 5.46576, 7200, 7200, 0, 0), -- Mechanar Driller
-(@CGUID+39, 19713, 554, 3, 110.535, 59.7892, 14.9232, 5.11599, 7200, 7200, 0, 0), -- Mechanar Wrecker
-(@CGUID+40, 19713, 554, 3, 110.807, 46.7967, 14.9232, 1.07904, 7200, 7200, 0, 0), -- Mechanar Wrecker
+(@CGUID+39, 19713, 554, 3, 109.459, 58.57525, 15.0079, 5.28834, 7200, 7200, 0, 0), -- Mechanar Wrecker
+(@CGUID+40, 19713, 554, 3, 112.692, 45.97577, 15.0079, 1.0122, 7200, 7200, 0, 0), -- Mechanar Wrecker
 (@CGUID+41, 19713, 554, 3, 166.968, -17.1549, -0.00102673, 5.45003, 7200, 7200, 0, 0), -- Mechanar Wrecker
 (@CGUID+42, 19713, 554, 3, 174.259, -18.3418, -0.00102673, 3.7575, 7200, 7200, 0, 0), -- Mechanar Wrecker
 (@CGUID+43, 19716, 554, 3, 141.167, -45.2077, -0.00164767, 4.43249, 7200, 7200, 0, 0), -- Mechanar Tinkerer
 (@CGUID+44, 19716, 554, 3, 135.119, -44.8897, -0.00164767, 4.44427, 7200, 7200, 0, 0), -- Mechanar Tinkerer
-(@CGUID+45, 19716, 554, 3, 139.378, 50.5137, -0.00137669, 1.23199, 7200, 7200, 0, 0), -- Mechanar Tinkerer
-(@CGUID+46, 19716, 554, 3, 152.785, 53.8737, -0.00282132, 3.05019, 7200, 7200, 0, 0), -- Mechanar Tinkerer
-(@CGUID+47, 19716, 554, 3, 186.807, 40.1627, -0.00623331, 0.127397, 7200, 7200, 0, 2), -- Mechanar Tinkerer
-(@CGUID+48, 19716, 554, 3, 196.496, 36.608, -0.00623331, 5.04792, 7200, 7200, 0, 0), -- Mechanar Tinkerer
-(@CGUID+49, 19716, 554, 3, 189.831, 35.4342, -0.00623331, 4.74946, 7200, 7200, 0, 0), -- Mechanar Tinkerer
-(@CGUID+50, 19716, 554, 3, 134.617, 44.1247, -0.00164767, 1.67967, 7200, 7200, 0, 0), -- Mechanar Tinkerer
-(@CGUID+51, 19716, 554, 3, 180.879, 35.1528, -0.00623331, 4.76203, 7200, 7200, 0, 0), -- Mechanar Tinkerer
+(@CGUID+45, 19716, 554, 3, 140.17654, 50.36528, 0.081192, 0.907571, 7200, 7200, 0, 0), -- Mechanar Tinkerer
+(@CGUID+46, 19716, 554, 3, 152.632965, 53.3561248, 0.079404, 2.687807, 7200, 7200, 0, 0), -- Mechanar Tinkerer
+(@CGUID+47, 19716, 554, 3, 174.11919, 37.801308, 1.010456,3.069, 7200, 7200, 0, 4), -- Mechanar Tinkerer
+(@CGUID+48, 19716, 554, 3, 192.83818, 35.6950187, 0.0776353, 4.85201, 7200, 7200, 0, 0), -- Mechanar Tinkerer
+(@CGUID+49, 19716, 554, 3, 185.8190, 35.82398, 0.0775393, 4.764749, 7200, 7200, 0, 0), -- Mechanar Tinkerer
+(@CGUID+50, 19716, 554, 3, 134.556167, 45.114238, 0.08333, 1.32645, 7200, 7200, 0, 0), -- Mechanar Tinkerer
+(@CGUID+51, 19716, 554, 3, 180.1647, 34.5334, 0.07693833, 4.45058, 7200, 7200, 0, 0), -- Mechanar Tinkerer
 (@CGUID+52, 19716, 554, 3, 169.242, -12.2941, -0.00102673, 4.806, 7200, 7200, 3, 1), -- Mechanar Tinkerer
 (@CGUID+53, 19716, 554, 3, 173.388, -13.5083, -0.00102673, 3.74572, 7200, 7200, 3, 1), -- Mechanar Tinkerer
 (@CGUID+54, 19716, 554, 3, 209.166, -90.5678, 0.0000594996, 1.5309, 7200, 7200, 3, 1), -- Mechanar Tinkerer
@@ -247,23 +217,23 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+56, 19716, 554, 3, 99.502, -78.7173, 14.9259, 3.83213, 7200, 7200, 0, 0), -- Mechanar Tinkerer
 (@CGUID+57, 19716, 554, 3, 92.8965, -79.4786, 14.9259, 5.52074, 7200, 7200, 0, 0), -- Mechanar Tinkerer
 (@CGUID+58, 19716, 554, 3, 106.545, 52.6026, 14.9234, 0.0881336, 7200, 7200, 3, 1), -- Mechanar Tinkerer
-(@CGUID+59, 19735, 554, 3, 205.481, 51.6294, -0.00493833, 3.11426, 7200, 7200, 0, 2), -- Tempest-Forge Destroyer
+(@CGUID+59, 19735, 554, 3,203.69647,53.04169,-0.004259702, 3.1171770, 7200, 7200, 0, 2), -- Tempest-Forge Destroyer
 (@CGUID+60, 19735, 554, 3, 290.6187, 29.12057, 25.4695, 1.692969, 7200, 7200, 0, 0), -- Tempest-Forge Destroyer
 (@CGUID+61, 19735, 554, 3, 297.3579, -14.26091, 25.38358, 1.81211, 7200, 7200, 4, 1), -- Tempest-Forge Destroyer
-(@CGUID+62, 20059, 554, 3, 169.156, 92.0407, 0.642169, 3.19502, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
+(@CGUID+62, 20059, 554, 3, 169.3725, 92.116249, 0.659512, 3.351, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
 (@CGUID+63, 20059, 554, 3, 31.831068, 47.368565, 0.17648034, 1.053, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
 (@CGUID+64, 20059, 554, 3, 31.82565, -48.63669, 0.24551535, 3.51334, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
 (@CGUID+65, 20059, 554, 3, 169.469, -66.9563, 0.512734, 3.15276, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
 (@CGUID+66, 20988, 554, 3, 133.053, -39.9267, -0.00164767, 6.15486, 7200, 7200, 3, 1), -- Sunseeker Engineer
 (@CGUID+67, 20988, 554, 3, 131.178, 40.8598, 0.007842, 1.00548, 7200, 7200, 3, 1), -- Sunseeker Engineer
-(@CGUID+68, 20988, 554, 3, 104.072, 66.8789, 14.924, 4.4052, 7200, 7200, 0, 2), -- Sunseeker Engineer
+(@CGUID+68, 20988, 554, 3, 110.57969, 69.03175, 14.918284, 2.63749, 7200, 7200, 0, 4), -- Sunseeker Engineer
 (@CGUID+69, 20988, 554, 3, 138.596, -40.4336, -0.00164767, 3.13108, 7200, 7200, 3, 1), -- Sunseeker Engineer
 (@CGUID+70, 20988, 554, 3, 221.847, -55.5895, 0.00192854, 6.04145, 7200, 7200, 0, 2), -- Sunseeker Engineer
 (@CGUID+71, 20988, 554, 3, 100.143, -43.7053, 14.9233, 4.90812, 7200, 7200, 0, 2), -- Sunseeker Engineer
-(@CGUID+72, 20990, 554, 3, 167.539, 81.4523, 1.13569, 3.13612, 7200, 7200, 0, 0), -- Bloodwarder Physician
-(@CGUID+73, 20990, 554, 3, 119.65, 67.89, 14.9258, 2.96792, 7200, 7200, 0, 0), -- Bloodwarder Physician
-(@CGUID+74, 20990, 554, 3, 74.1962, 53.6792, 14.9247, 3.12422, 7200, 7200, 0, 0), -- Bloodwarder Physician
-(@CGUID+75, 20990, 554, 3, 37.3334, 55.4128, 0.162094, 1.91239, 7200, 7200, 0, 0), -- Bloodwarder Physician
+(@CGUID+72, 20990, 554, 3, 165.422, 77.96908, 1.84253, 3.29867, 7200, 7200, 0, 0), -- Bloodwarder Physician
+(@CGUID+73, 20990, 554, 3, 119.439, 69.1739, 15.0079, 3.29867, 7200, 7200, 0, 0), -- Bloodwarder Physician
+(@CGUID+74, 20990, 554, 3, 77.582, 55.403, 15.0079, 3.19395, 7200, 7200, 0, 0), -- Bloodwarder Physician
+(@CGUID+75, 20990, 554, 3, 37.4106, 54.8214, 0.24639, 2.39110, 7200, 7200, 0, 0), -- Bloodwarder Physician
 (@CGUID+76, 20990, 554, 3, 33.7580, 49.8961, 0.24240, 5.72467, 7200, 7200, 0, 0), -- Bloodwarder Physician
 (@CGUID+77, 20990, 554, 3, 30.8605, -46.8066, 0.23633, 0.925, 7200, 7200, 0, 0), -- Bloodwarder Physician
 (@CGUID+78, 20990, 554, 3, 169.136, -88.8967, 0.652591, 3.08443, 7200, 7200, 0, 0), -- Bloodwarder Physician
@@ -329,7 +299,16 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`, `StringId`) VALUES
 (@SGGUID+1, 'The Mechanar - Bound / Solid Adamantite Chest', 1, 1, 0, 0, 0),
 (@SGGUID+2, 'The Mechanar - Group 001', 0, 3, 0, 0, 0),
-(@SGGUID+3, 'The Mechanar - Group 002', 0, 3, 0, 0, 0);
+(@SGGUID+3, 'The Mechanar - Group 002', 0, 3, 0, 1, 0),
+-- left side entrance to first boss
+(@SGGUID+4, 'The Mechanar - Group 003', 0, 2, 0, 1, 0),
+(@SGGUID+5, 'The Mechanar - Group 004', 0, 2, 0, 1, 0),
+(@SGGUID+6, 'The Mechanar - Group 005', 0, 4, 0, 1, 0),
+(@SGGUID+7, 'The Mechanar - Group 006', 0, 2, 0, 1, 0),
+(@SGGUID+8, 'The Mechanar - Group 007', 0, 3, 0, 1, 0),
+(@SGGUID+9, 'The Mechanar - Group 008 | Mechanar Trinkerer (4)', 0, 4, 0, 1, 0),
+(@SGGUID+10, 'The Mechanar - Group 009 | Mechanar Driller - Sunseeker Engineer - Mechanar Trinkerer (3)', 0, 5, 0, 1, 0),
+(@SGGUID+11, 'The Mechanar - Group 010 | Sunseeker Astromage (2)', 0, 2, 0, 1, 0);
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
 (@SGGUID+1, 184940, 0, 0, 0), -- Bound Adamantite Chest 
@@ -347,7 +326,32 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+2, @CGUID+76, 2, 0),
 (@SGGUID+3, @CGUID+64, 0, 0),
 (@SGGUID+3, @CGUID+10, 1, 0),
-(@SGGUID+3, @CGUID+77, 2, 0);
+(@SGGUID+3, @CGUID+77, 2, 0),
+-- left side entrance to first boss
+(@SGGUID+4, @CGUID+75, 0, 0),
+(@SGGUID+4, @CGUID+9, 1, 0),
+(@SGGUID+5, @CGUID+74, 0, 0),
+(@SGGUID+5, @CGUID+8, 1, 0),
+(@SGGUID+6, @CGUID+68, 0, 0),
+(@SGGUID+6, @CGUID+39, 1, 0),
+(@SGGUID+6, @CGUID+40, 2, 0),
+(@SGGUID+6, @CGUID+58, 3, 0),
+(@SGGUID+7, @CGUID+7, 0, 0),
+(@SGGUID+7, @CGUID+73, 1, 0),
+(@SGGUID+8, @CGUID+62, 0, 0),
+(@SGGUID+8, @CGUID+24, 1, 0),
+(@SGGUID+8, @CGUID+72, 2, 0),
+(@SGGUID+9, @CGUID+47, 0, 0),
+(@SGGUID+9, @CGUID+48, 1, 0),
+(@SGGUID+9, @CGUID+49, 2, 0),
+(@SGGUID+9, @CGUID+51, 3, 0),
+(@SGGUID+10, @CGUID+32, 0, 0),
+(@SGGUID+10, @CGUID+67, 1, 0),
+(@SGGUID+10, @CGUID+45, 2, 0),
+(@SGGUID+10, @CGUID+46, 3, 0),
+(@SGGUID+10, @CGUID+50, 4, 0),
+(@SGGUID+11, @CGUID+14, 0, 0),
+(@SGGUID+11, @CGUID+15, 1, 0);
 
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (@SGGUID+2, 2, 2.5, 0, @SGGUID+2, 2, 'The Mechanar - Group 001'),
