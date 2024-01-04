@@ -6,14 +6,14 @@
 -- [25] WalkSpeed: 2.5
 UPDATE creature_template SET SpeedWalk= '1' WHERE Entry IN (20059, 21541, 20990, 21523, 19510, 21522, 19166, 21543, 19167, 21524);
 
--- SpellList
+-- SpellLists
 -- Tempest-Forge Patroller 19166
 DELETE FROM `creature_template_spells` WHERE `entry` IN (19166, 21543);
 
 DELETE FROM `creature_spell_list_entry` WHERE `Id` IN (1916601, 2154301);
 INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `ChanceRangedAttack`) VALUES
-(1916601, 'The Mechanar - Tempest-Forge Patroller - Normal', 0, 90),
-(2154301, 'The Mechanar - Tempest-Forge Patroller - Heroic', 0, 90);
+(1916601, 'The Mechanar - Tempest-Forge Patroller - Normal', 0, 0),
+(2154301, 'The Mechanar - Tempest-Forge Patroller - Heroic', 0, 0);
 
 DELETE FROM `creature_spell_list` WHERE `Id` IN (1916601, 2154301);
 INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
@@ -24,3 +24,24 @@ INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `Combat
 
 UPDATE `creature_template` SET `SpellList` = 1916601 WHERE `entry` = 19166;
 UPDATE `creature_template` SET `SpellList` = 2154301 WHERE `entry` = 21543;
+
+
+-- Sunseeker Netherbinder 20059
+DELETE FROM `creature_template_spells` WHERE `entry` IN (20059, 21541);
+
+DELETE FROM `creature_spell_list_entry` WHERE `Id` IN (2005901, 2154101);
+INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `ChanceRangedAttack`) VALUES
+(2005901, 'The Mechanar - Sunseeker Netherbinder - Normal', 0, 0),
+(2154101, 'The Mechanar - Sunseeker Netherbinder - Heroic', 0, 0);
+
+DELETE FROM `creature_spell_list` WHERE `Id` IN (2005901, 2154101);
+INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
+(2005901, 1, 17201, 0, -1, 4, 0, 100, 0, 5000, 12000, 12000, 17000, 'Sunseeker Netherbinder - Dispel Magic - friendly cc'),
+(2005901, 1, 35261, 0, -1, 4, 0, 100, 0, 11000, 23000, 15000, 25000, 'Sunseeker Netherbinder - Arcane Nova - current'),
+(2005901, 1, 35243, 0, -1, 4, 0, 100, 0, 6000, 16000, 12000, 18000, 'Sunseeker Netherbinder - Starfire - current'),
+(2154101, 1, 17201, 0, -1, 4, 0, 100, 0, 5000, 12000, 12000, 17000, 'Sunseeker Netherbinder - Dispel Magic - friendly cc'),
+(2154101, 1, 38936, 0, -1, 4, 0, 100, 0, 11000, 23000, 15000, 25000, 'Sunseeker Netherbinder - Arcane Nova - current'),
+(2154101, 1, 38935, 0, -1, 4, 0, 100, 0, 6000, 16000, 12000, 18000, 'Sunseeker Netherbinder - Starfire - current');
+
+UPDATE `creature_template` SET `SpellList` = 2005901 WHERE `entry` = 20059;
+UPDATE `creature_template` SET `SpellList` = 2154101 WHERE `entry` = 21541;
