@@ -34,15 +34,15 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+2, 7, 34.1211, 59.8386, 0.16307, 3.15747, 0, 0),
 (@CGUID+2, 8, 30.8546, 55.8926, 0.16307, 4.0269, 0, 0),
 (@CGUID+3, 1, 28.923302,-18.143108,-0.0005735572, 100, 0, 0),
-(@CGUID+3, 2, 26.356697,-5.9867935,-0.000380761,3.33357, 10000, 0),
+(@CGUID+3, 2, 26.356697,-5.9867935,-0.000380761,3.33357, 10000, 0), -- 8 - 10 waittime
 (@CGUID+3, 3, 29.69342,-15.448353,-0.00058285974, 100, 0, 0),
 (@CGUID+3, 4, 35.844803,-23.9074,-0.0004889075, 100, 0, 0),
-(@CGUID+3, 5, 43.611073,-26.751925,0.006033899,3.0368728, 10000, 0),
+(@CGUID+3, 5, 43.611073,-26.751925,0.006033899,3.0368728, 10000, 0), -- 9 - 19 waittime
 (@CGUID+3, 6, 35.844803,-23.9074,-0.0004889075, 100, 0, 0),
 (@CGUID+4, 1, 27.243652,18.831352,-0.0004997472, 100, 0, 0),
-(@CGUID+4, 2, 24.297773,7.9234104,-0.00028621498,2.96705961, 10000, 0),
+(@CGUID+4, 2, 24.297773,7.9234104,-0.00028621498,2.96705961, 10000, 0), -- 8 - 12 waittime
 (@CGUID+4, 3, 28.086344,21.93921,-0.00050851365, 100, 0, 0),
-(@CGUID+4, 4, 41.327057,29.448656,0.0061041107,3.263765, 10000, 0),
+(@CGUID+4, 4, 41.327057,29.448656,0.0061041107,3.263765, 10000, 0), -- 10 - 16 waittime
 (@CGUID+4, 5, 32.220608,26.515696,0.0071369237, 100, 0, 0),
 (@CGUID+6, 1, 32.3648, -36.3204, 0.012541, 1.54505, 3000, 0),
 (@CGUID+6, 2, 31.3405, -52.5362, 0.161877, 4.80681, 0, 0),
@@ -340,10 +340,10 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+3, 'The Mechanar - Group 002', 0, 3, 0, 0, 0);
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
-(@SGGUID+1, 184940, 0, 1, 0), -- Bound Adamantite Chest 
-(@SGGUID+1, 184937, 0, 1, 0); -- Solid Adamantite Chest
+(@SGGUID+1, 184940, 0, 0, 0), -- Bound Adamantite Chest 
+(@SGGUID+1, 184937, 0, 0, 0); -- Solid Adamantite Chest
 
- INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
+INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+1, @OGUID+18, -1, 0),
 (@SGGUID+1, @OGUID+10, -1, 0),
 (@SGGUID+1, @OGUID+20, -1, 0),
@@ -356,7 +356,7 @@ INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`
 (@SGGUID+3, @CGUID+64, 0, 0),
 (@SGGUID+3, @CGUID+10, 1, 0),
 (@SGGUID+3, @CGUID+77, 2, 0);
-   
+
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (@SGGUID+2, 2, 2.5, 0, @SGGUID+2, 2, 'The Mechanar - Group 001'),
 (@SGGUID+3, 2, 2.5, 0, @SGGUID+3, 2, 'The Mechanar - Group 002');
