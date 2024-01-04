@@ -316,7 +316,7 @@ INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`
 
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+1, @OGUID+18, -1, 0),
-(@SGGUID+1, @OGUID+10, -1, 0),
+(@SGGUID+1, @OGUID+19, -1, 0),
 (@SGGUID+1, @OGUID+20, -1, 0),
 (@SGGUID+1, @OGUID+21, -1, 0),
 (@SGGUID+1, @OGUID+22, -1, 0),
