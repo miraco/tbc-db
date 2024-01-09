@@ -112,12 +112,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `e
 -- REPLACE INTO `creature_template_addon` (`entry`, `mount`, `stand_state`, `sheath_state`, `emote`, `moveflags`, `auras`) VALUES
 
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
-(@CGUID+41, @CGUID+53, 1155), -- Mechanar Wrecker -> Mechanar Tinkerer
-(@CGUID+42, @CGUID+53, 1155), -- Mechanar Wrecker -> Mechanar Tinkerer
-(@CGUID+52, @CGUID+53, 1155), -- Mechanar Tinkerer -> Mechanar Tinkerer
-(@CGUID+43, @CGUID+69, 1155), -- Mechanar Tinkerer -> Sunseeker Engineer
-(@CGUID+44, @CGUID+69, 1155), -- Mechanar Tinkerer -> Sunseeker Engineer
-(@CGUID+66, @CGUID+69, 1155), -- Sunseeker Engineer -> Sunseeker Engineer
 (@CGUID+19, @CGUID+18, 1155), -- Sunseeker Astromage -> Sunseeker Astromage
 (@CGUID+29, @CGUID+18, 1155), -- Bloodwarder Centurion -> Sunseeker Astromage
 (@CGUID+30, @CGUID+18, 1155), -- Bloodwarder Centurion -> Sunseeker Astromage
@@ -169,8 +163,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+38, 19712, 554, 3, 108.42352, -42.77960, 15.0079984, 5.166174, 7200, 7200, 0, 0), -- Mechanar Driller
 (@CGUID+39, 19713, 554, 3, 109.459, 58.57525, 15.0079, 5.28834, 7200, 7200, 0, 0), -- Mechanar Wrecker
 (@CGUID+40, 19713, 554, 3, 112.692, 45.97577, 15.0079, 1.0122, 7200, 7200, 0, 0), -- Mechanar Wrecker
-(@CGUID+41, 19713, 554, 3, 166.968, -17.1549, -0.00102673, 5.45003, 7200, 7200, 0, 0), -- Mechanar Wrecker
-(@CGUID+42, 19713, 554, 3, 174.259, -18.3418, -0.00102673, 3.7575, 7200, 7200, 0, 0), -- Mechanar Wrecker
+(@CGUID+41, 19713, 554, 3, 165.63903, -19.858942, 0.0833333, 5.881759643, 7200, 7200, 0, 0), -- Mechanar Wrecker
+(@CGUID+42, 19713, 554, 3, 174.124847, -17.48858, 0.083334, 3.961897, 7200, 7200, 0, 0), -- Mechanar Wrecker
 (@CGUID+43, 19716, 554, 3, 141.167, -45.2077, -0.00164767, 4.43249, 7200, 7200, 0, 0), -- Mechanar Tinkerer
 (@CGUID+44, 19716, 554, 3, 135.119, -44.8897, -0.00164767, 4.44427, 7200, 7200, 0, 0), -- Mechanar Tinkerer
 (@CGUID+45, 19716, 554, 3, 140.17654, 50.36528, 0.081192, 0.907571, 7200, 7200, 0, 0), -- Mechanar Tinkerer
@@ -287,7 +281,10 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+16, 'The Mechanar - Group 015 | Bloodwarder Slayer - Bloodwarder Physician', 0, 2, 0, 1, 0),
 (@SGGUID+17, 'The Mechanar - Group 016 | Bloodwarder Physician - Bloodwarder Centurion - Sunseeker Netherbinder', 0, 3, 0, 1, 0),
 (@SGGUID+18, 'The Mechanar - Group 017 | Mechanar Driller (2) - Mechanar Tinkerer (2)', 0, 4, 0, 1, 0),
-(@SGGUID+19, 'The Mechanar - Group 018 | Mechanar Driller - Mechanar Wrecker - Sunseeker Engineer', 0, 3, 0, 1, 0);
+(@SGGUID+19, 'The Mechanar - Group 018 | Mechanar Driller - Mechanar Wrecker - Sunseeker Engineer', 0, 3, 0, 1, 0),
+-- 2 groups at first boss
+(@SGGUID+20, 'The Mechanar - Group 019 | Mechanar Tinkerer (2) - Mechanar Wrecker (2)', 0, 4, 0, 1, 0),
+(@SGGUID+21, 'The Mechanar - Group 020 | Mechanar Tinkerer (2) - Sunseeker Engineer (2)', 0, 4, 0, 1, 0);
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
 (@SGGUID+1, 184940, 0, 0, 0), -- Bound Adamantite Chest 
@@ -353,7 +350,15 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+18, @CGUID+55, 3, 0),
 (@SGGUID+19, @CGUID+70, 0, 0),
 (@SGGUID+19, @CGUID+35, 1, 0),
-(@SGGUID+19, @CGUID+36, 2, 0);
+(@SGGUID+19, @CGUID+36, 2, 0),
+(@SGGUID+20, @CGUID+41, 0, 0),
+(@SGGUID+20, @CGUID+42, 1, 0),
+(@SGGUID+20, @CGUID+52, 2, 0),
+(@SGGUID+20, @CGUID+53, 3, 0),
+(@SGGUID+21, @CGUID+66, 0, 0),
+(@SGGUID+21, @CGUID+69, 1, 0),
+(@SGGUID+21, @CGUID+43, 2, 0),
+(@SGGUID+21, @CGUID+44, 3, 0);
 
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (@SGGUID+2, 2, 2.5, 0, @SGGUID+2, 2, 'The Mechanar - Group 001'),
