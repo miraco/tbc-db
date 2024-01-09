@@ -111,13 +111,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `e
 
 -- REPLACE INTO `creature_template_addon` (`entry`, `mount`, `stand_state`, `sheath_state`, `emote`, `moveflags`, `auras`) VALUES
 
-INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
-(@CGUID+19, @CGUID+18, 1155), -- Sunseeker Astromage -> Sunseeker Astromage
-(@CGUID+29, @CGUID+18, 1155), -- Bloodwarder Centurion -> Sunseeker Astromage
-(@CGUID+30, @CGUID+18, 1155), -- Bloodwarder Centurion -> Sunseeker Astromage
-(@CGUID+17, @CGUID+16, 1155), -- Sunseeker Astromage -> Sunseeker Astromage
-(@CGUID+27, @CGUID+16, 1155), -- Bloodwarder Centurion -> Sunseeker Astromage
-(@CGUID+28, @CGUID+16, 1155); -- Bloodwarder Centurion -> Sunseeker Astromage
+-- INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 
 REPLACE INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
 (20481, 554, 19221, 4113, 0); -- Raging Flames -> Nethermancer Sepethrea
@@ -138,21 +132,21 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+13, 19167, 554, 3, 37.17504, -51.86893, 0.246396, 4.118977, 7200, 7200, 0, 0), -- Bloodwarder Slayer
 (@CGUID+14, 19168, 554, 3, 226.5947, 45.0895, 0.076829, 3.17649, 7200, 7200, 0, 0), -- Sunseeker Astromage
 (@CGUID+15, 19168, 554, 3, 226.5711, 60.279705, 0.0791843, 3.08923, 7200, 7200, 0, 0), -- Sunseeker Astromage
-(@CGUID+16, 19168, 554, 3, 272.683, -24.5176, 26.3284, 0.0714562, 10800, 10800, 0, 0), -- Sunseeker Astromage
-(@CGUID+17, 19168, 554, 3, 272.424, -20.9008, 26.3284, 0.0714562, 10800, 10800, 0, 0), -- Sunseeker Astromage
-(@CGUID+18, 19168, 554, 3, 308.545, 15.4713, 25.3862, 3.14629, 10800, 10800, 0, 0), -- Sunseeker Astromage
-(@CGUID+19, 19168, 554, 3, 308.593, 5.20942, 25.3862, 3.14629, 10800, 10800, 0, 0), -- Sunseeker Astromage
+(@CGUID+16, 19168, 554, 3, 272.154907, -24.658304, 26.4117317, 6.16101217, 10800, 10800, 0, 0), -- Sunseeker Astromage
+(@CGUID+17, 19168, 554, 3, 272.07785, -20.9663429, 26.411729, 6.19591856, 10800, 10800, 0, 0), -- Sunseeker Astromage
+(@CGUID+18, 19168, 554, 3, 309.3312072, 15.133928, 25.46950149, 3.071779, 10800, 10800, 0, 0), -- Sunseeker Astromage
+(@CGUID+19, 19168, 554, 3, 309.38809, 5.2927131, 25.51544, 3.29867, 10800, 10800, 0, 0), -- Sunseeker Astromage
 (@CGUID+20, 19218, 554, 3, 85.5275, 20.2005, 15.0044, 0.66322, 7200, 7200, 0, 0), -- Gatewatcher Gyro-Kill
 (@CGUID+21, 19219, 554, 3, 210.416, 15.6408, -2.19211, 3.23112, 86400, 86400, 0, 2), -- Mechano-Lord Capacitus
-(@CGUID+22, 19221, 554, 3, 325.558, 12.5866, 27.8366, 3.05075, 86400, 86400, 0, 0), -- Nethermancer Sepethrea
+(@CGUID+22, 19221, 554, 3, 326.516754, 13.1959295, 27.919878, 3.2288591, 86400, 86400, 0, 0), -- Nethermancer Sepethrea
 (@CGUID+23, 19231, 554, 3, 90.85117,-74.31637,14.926526, 1.9576, 7200, 7200, 0, 4), -- Mechanar Crusher
 (@CGUID+24, 19510, 554, 3, 165.6997, 85.55811, 1.7688, 3.2114, 7200, 7200, 0, 0), -- Bloodwarder Centurion
 (@CGUID+25, 19510, 554, 3, 30.6968, 49.5820, 0.2443, 3.70009, 7200, 7200, 0, 0), -- Bloodwarder Centurion
 (@CGUID+26, 19510, 554, 3, 165.8437805, -73.6566925, 1.726465, 3.2463, 7200, 7200, 0, 0), -- Bloodwarder Centurion
-(@CGUID+27, 19510, 554, 3, 274.023, -17.8571, 26.3284, 6.26825, 10800, 10800, 0, 0), -- Bloodwarder Centurion
-(@CGUID+28, 19510, 554, 3, 273.889, -26.8161, 26.3284, 6.25254, 10800, 10800, 0, 0), -- Bloodwarder Centurion
-(@CGUID+29, 19510, 554, 3, 308.485, 20.3946, 25.3862, 3.12981, 10800, 10800, 0, 0), -- Bloodwarder Centurion
-(@CGUID+30, 19510, 554, 3, 308.485, 11.1399, 25.3862, 3.11175, 10800, 10800, 0, 0), -- Bloodwarder Centurion
+(@CGUID+27, 19510, 554, 3, 274.30203, -17.80636, 26.411733, 0.1570796, 10800, 10800, 0, 0), -- Bloodwarder Centurion
+(@CGUID+28, 19510, 554, 3, 274.13446, -28.706228, 26.4117336, 0, 10800, 10800, 0, 0), -- Bloodwarder Centurion
+(@CGUID+29, 19510, 554, 3, 309.5181575, 20.279687, 25.473518, 2.70526, 10800, 10800, 0, 0), -- Bloodwarder Centurion
+(@CGUID+30, 19510, 554, 3, 309.24331665, 10.2549448, 25.4695, 3.17649, 10800, 10800, 0, 0), -- Bloodwarder Centurion
 (@CGUID+31, 19710, 554, 3, 193.61458,-39.96439,0.002376377, 4.4057, 7200, 7200, 0, 2), -- Gatewatcher Iron-Hand
 (@CGUID+32, 19712, 554, 3, 147.889, 45.0173, -0.00156292, 0.426625, 7200, 7200, 0, 4), -- Mechanar Driller
 (@CGUID+33, 19712, 554, 3, 216.178588, -95.20417, 0.089169, 0.209439, 7200, 7200, 0, 0), -- Mechanar Driller
@@ -181,7 +175,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+56, 19716, 554, 3, 99.9307632, -77.951622, 15.0107879, 3.9269, 7200, 7200, 0, 0), -- Mechanar Tinkerer
 (@CGUID+57, 19716, 554, 3, 92.3547973, -79.298606, 15.0079984, 5.1836, 7200, 7200, 0, 0), -- Mechanar Tinkerer
 (@CGUID+58, 19716, 554, 3, 106.545, 52.6026, 14.9234, 0.0881336, 7200, 7200, 3, 1), -- Mechanar Tinkerer
-(@CGUID+59, 19735, 554, 3,203.69647,53.04169,-0.004259702, 3.1171770, 7200, 7200, 0, 2), -- Tempest-Forge Destroyer
+(@CGUID+59, 19735, 554, 3, 203.69647,53.04169,-0.004259702, 3.1171770, 7200, 7200, 0, 2), -- Tempest-Forge Destroyer
 (@CGUID+60, 19735, 554, 3, 290.6187, 29.12057, 25.4695, 1.692969, 7200, 7200, 0, 0), -- Tempest-Forge Destroyer
 (@CGUID+61, 19735, 554, 3, 297.3579, -14.26091, 25.38358, 1.81211, 7200, 7200, 4, 1), -- Tempest-Forge Destroyer
 (@CGUID+62, 20059, 554, 3, 169.3725, 92.116249, 0.659512, 3.351, 7200, 7200, 0, 0), -- Sunseeker Netherbinder
@@ -284,7 +278,10 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+19, 'The Mechanar - Group 018 | Mechanar Driller - Mechanar Wrecker - Sunseeker Engineer', 0, 3, 0, 1, 0),
 -- 2 groups at first boss
 (@SGGUID+20, 'The Mechanar - Group 019 | Mechanar Tinkerer (2) - Mechanar Wrecker (2)', 0, 4, 0, 1, 0),
-(@SGGUID+21, 'The Mechanar - Group 020 | Mechanar Tinkerer (2) - Sunseeker Engineer (2)', 0, 4, 0, 1, 0);
+(@SGGUID+21, 'The Mechanar - Group 020 | Mechanar Tinkerer (2) - Sunseeker Engineer (2)', 0, 4, 0, 1, 0),
+-- Groups on 2nd floor at 2nd boss
+(@SGGUID+22, 'The Mechanar - Group 021 | Bloodwarder Centurion (2) - Sunseeker Astromage (2)', 0, 4, 0, 1, 0),
+(@SGGUID+23, 'The Mechanar - Group 022 | Bloodwarder Centurion (2) - Sunseeker Astromage (2)', 0, 4, 0, 1, 0);
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
 (@SGGUID+1, 184940, 0, 0, 0), -- Bound Adamantite Chest 
@@ -358,7 +355,15 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+21, @CGUID+66, 0, 0),
 (@SGGUID+21, @CGUID+69, 1, 0),
 (@SGGUID+21, @CGUID+43, 2, 0),
-(@SGGUID+21, @CGUID+44, 3, 0);
+(@SGGUID+21, @CGUID+44, 3, 0),
+(@SGGUID+22, @CGUID+29, 0, 0),
+(@SGGUID+22, @CGUID+30, 1, 0),
+(@SGGUID+22, @CGUID+18, 2, 0),
+(@SGGUID+22, @CGUID+19, 3, 0),
+(@SGGUID+23, @CGUID+27, 0, 0),
+(@SGGUID+23, @CGUID+28, 1, 0),
+(@SGGUID+23, @CGUID+16, 2, 0),
+(@SGGUID+23, @CGUID+17, 3, 0);
 
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (@SGGUID+2, 2, 2.5, 0, @SGGUID+2, 2, 'The Mechanar - Group 001'),
