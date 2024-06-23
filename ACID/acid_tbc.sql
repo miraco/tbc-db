@@ -24396,6 +24396,10 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- Keli'dan the Breaker 17377 - boss_kelidan_the_breaker
 -- Broggok 17380 - boss_broggok
 -- The Maker 17381 - boss_the_maker
+('1738101','17381','4','0','100','0','0','0','0','0','0','0','1','17679','17680','17681','34','0','1','0','0','0','0','0','The Maker - Yell and Set Instance Data InProgress on Aggro'),
+('1738102','17381','6','0','100','0','0','0','0','0','0','0','1','17685','0','0','34','0','3','0','0','0','0','0','The Maker - Yell and Set Instance Data Done on Death'),
+('1738103','17381','5','0','100','1025','5000','5000','1','0','0','0','1','17683','17684','0','0','0','0','0','0','0','0','0','The Maker - Yell on Player Kill'),
+('1738104','17381','7','0','100','1025','0','0','0','0','0','0','34','0','2','0','0','0','0','0','0','0','0','0','The Maker - Set Instance Data Fail on Evade'),
 -- Shadowmoon Summoner 17395 - spell_list
 ('1739501','17395','4','0','15','0','0','0','0','0','0','0','54','0','0','11999','0','0','0','0','0','0','0','0','Shadowmoon Summoner - Random Say on Aggro'),
 -- Shadowmoon Adept 17397 - spell_list
@@ -26477,8 +26481,8 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2118601','21186','11','0','100','0','0','0','0','0','0','0','42','1','0','0','21','0','0','0','0','0','0','0','Arcane Warder Target - Set Invincible and Prevent Combat Movement on Spawn'),
 -- Arcane Explosion
 ('2129001','21290','11','0','100','0','0','0','0','0','0','0','11','36514','0','0','41','0','0','0','0','0','0','0','Arcane Explosion - Cast Energy and Forced Despawn on Spawn'),
--- Defender Corpse 21303
 ('2130301','21303','4','0','100','0','0','0','0','0','0','0','11','36599','0','2','11','36593','0','2','41','0','0','0','Defender Corpse - Cast Bloody Explosion and Corpse Burst and Despawn on Aggro'),
+-- Defender Corpse 21303
 ('2130302','21303','10','0','100','0','0','8','0','0','0','0','11','36599','0','2','11','36593','0','2','41','0','0','0','Defender Corpse - Cast Bloody Explosion and Corpse Burst and Despawn on 8 Yards LOS'),
 -- Warder Corpse 21304
 ('2130401','21304','4','0','100','0','0','0','0','0','0','0','11','36599','0','2','11','36593','0','2','41','0','0','0','Warder Corpse - Cast Bloody Explosion and Corpse Burst and Despawn on Aggro'),
