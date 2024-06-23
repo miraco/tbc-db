@@ -448,10 +448,10 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Worl
 (@SGGUID+40, 'Blood Furnace - Group 038 - Shadowmoon Warlock | Felguard Annihilator (2)', 0, 0, 0, 0, 1, 0),
 (@SGGUID+41, 'Blood Furnace - Laughing Skull Rogue - random spawns', 0, 4, 0, 0, 0, 0),
 -- Broggok Prison Cell npc groups
-(@SGGUID+42, 'Blood Furnace - Prison Cell Group Front Left', 0, 0, 0, 0, 3, @STRINGID+1),
-(@SGGUID+43, 'Blood Furnace - Prison Cell Group Front Righ', 0, 0, 0, 0, 3, @STRINGID+2),
-(@SGGUID+44, 'Blood Furnace - Prison Cell Group Back Left', 0, 0, 0, 0, 3, @STRINGID+3),
-(@SGGUID+45, 'Blood Furnace - Prison Cell Group Back Right', 0, 0, 0, 0, 3, @STRINGID+4);
+(@SGGUID+42, 'Blood Furnace - Prison Cell Group Front Left', 0, 0, 0, 0, 3, @STRINGID+3),
+(@SGGUID+43, 'Blood Furnace - Prison Cell Group Front Righ', 0, 0, 0, 0, 3, @STRINGID+4),
+(@SGGUID+44, 'Blood Furnace - Prison Cell Group Back Left', 0, 0, 0, 0, 3, @STRINGID+1),
+(@SGGUID+45, 'Blood Furnace - Prison Cell Group Back Right', 0, 0, 0, 0, 3, @STRINGID+2);
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
 (@SGGUID+7, 17371, 0, 0, 0), (@SGGUID+7, 17395, 0, 0, 0), -- Shadowmoon Warlock, Shadowmoon Summoner
