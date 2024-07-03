@@ -448,22 +448,27 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `e
 (@CGUID+39, 0, 8, 1, 0, 0, ''), -- creature_spawn_entry
 (@CGUID+40, 0, 0, 1, 69, 0, ''), -- creature_spawn_entry
 (@CGUID+41, 0, 0, 1, 69, 0, ''), -- creature_spawn_entry
-(@CGUID+54, 0, 1, 1, 0, 0, NULL), -- spawn_group_entry
-(@CGUID+55, 0, 8, 1, 0, 0, NULL), -- spawn_group_entry
+(@CGUID+54, 0, 1, 1, 0, 0, NULL), -- Cabal Deathsworn
+(@CGUID+55, 0, 8, 1, 0, 0, NULL), -- Cabal Deathsworn
 (@CGUID+56, 0, 0, 1, 69, 0, NULL), -- spawn_group_entry
 (@CGUID+57, 0, 0, 1, 69, 0, NULL), -- spawn_group_entry
 (@CGUID+58, 0, 1, 1, 0, 0, NULL), -- creature_spawn_entry
 (@CGUID+59, 0, 8, 1, 0, 0, NULL), -- creature_spawn_entry
 (@CGUID+60, 0, 0, 1, 69, 0, NULL), -- spawn_group_entry
-(@CGUID+61, 0, 1, 1, 0, 0, NULL), -- spawn_group_entry
+(@CGUID+61, 0, 1, 1, 0, 0, NULL), -- Cabal Deathsworn
 (@CGUID+62, 0, 0, 1, 69, 0, NULL), -- spawn_group_entry
 (@CGUID+63, 0, 0, 1, 69, 0, NULL), -- spawn_group_entry
 (@CGUID+64, 0, 8, 1, 0, 0, NULL), -- spawn_group_entry
-(@CGUID+66, 0, 8, 1, 0, 0, NULL), -- spawn_group_entry
+(@CGUID+66, 0, 8, 1, 0, 0, NULL), -- Cabal Deathsworn
+(@CGUID+84, 0, 1, 1, 0, 0, NULL), -- Cabal Acolyte
 (@CGUID+88, 0, 0, 1, 69, 0, NULL), -- spawn_group_entry
 (@CGUID+97, 0, 8, 1, 0, 0, NULL), -- creature_spawn_entry
 (@CGUID+98, 0, 1, 1, 0, 0, NULL), -- Cabal Deathsworn
 (@CGUID+99, 0, 8, 1, 0, 0, NULL), -- Cabal Deathsworn
+(@CGUID+114, 0, 8, 1, 0, 0, NULL), -- Cabal Acolyte
+(@CGUID+117, 0, 1, 1, 0, 0, NULL), -- Cabal Acolyte
+(@CGUID+118, 0, 8, 1, 0, 0, NULL), -- Cabal Acolyte
+
 (@CGUID+136, 0, 8, 1, 0, 0, NULL), -- creature_spawn_entry
 (@CGUID+150, 0, 0, 1, 0, 0, '32958'), -- Cabal Ritualist
 (@CGUID+151, 0, 0, 1, 0, 0, '32958'), -- Cabal Ritualist
@@ -774,7 +779,6 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+42, 0, 555, 3, -313.634, -259.705, 12.6837, 3.13859, 7200, 7200, 0, 0), -- creature_spawn_entry
 (@CGUID+43, 0, 555, 3, -276.84, -268.582, 12.6808, 0.0211422, 7200, 7200, 0, 0), -- creature_spawn_entry
 (@CGUID+44, 0, 555, 3, -277.14, -263.29, 12.6806, 0.0211422, 7200, 7200, 0, 0), -- creature_spawn_entry
-
 (@CGUID+45, 18632, 555, 3, -172.173, -325.754, 17.1697, 5.53269, 7200, 7200, 0, 0), -- Cabal Executioner
 (@CGUID+46, 18632, 555, 3, -168.532, -352.302, 17.1662, 4.83456, 7200, 7200, 0, 0), -- Cabal Executioner
 (@CGUID+47, 18632, 555, 3, -135.771, -329.128, 17.1687, 3.50811, 7200, 7200, 0, 0), -- Cabal Executioner
@@ -783,21 +787,20 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+50, 18632, 555, 3, -173.133, -366.97, 17.0828, 5.91667, 7200, 7200, 0, 0), -- Cabal Executioner
 (@CGUID+51, 18632, 555, 3, -142.203, -390.029, 17.0806, 4.4855, 7200, 7200, 0, 0), -- Cabal Executioner
 (@CGUID+52, 18632, 555, 3, -140.54, -410.52, 17.079, 1.44862, 7200, 7200, 0, 0), -- Cabal Executioner
-
 (@CGUID+53, 0, 555, 3, -91.0184, -63.4225, -1.05104, 0.31254, 7200, 7200, 0, 2), -- spawn_group_entry
-(@CGUID+54, 0, 555, 3, -47.365, -33.8044, -1.04484, 0.331613, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+55, 0, 555, 3, -41.8571, -33.4506, -1.04484, 2.87979, 7200, 7200, 0, 0), -- spawn_group_entry
+(@CGUID+54, 18635, 555, 3, -47.365, -33.8044, -1.04484, 0.331613, 7200, 7200, 0, 0), -- Cabal Deathsworn
+(@CGUID+55, 18635, 555, 3, -41.8571, -33.4506, -1.04484, 2.87979, 7200, 7200, 0, 0), -- Cabal Deathsworn
 (@CGUID+56, 0, 555, 3, -80.3716, -39.766, -1.04492, 2.00713, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+57, 0, 555, 3, -77.9535, -36.4069, -1.04492, 3.21141, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+58, 0, 555, 3, -31.8829, -81.4594, -1.0449, 4.04916, 7200, 7200, 0, 0), -- creature_spawn_entry
 (@CGUID+59, 0, 555, 3, -36.1315, -84.0624, -1.04494, 0.087266, 7200, 7200, 0, 0), -- creature_spawn_entry
 (@CGUID+60, 0, 555, 3, -58.1065, -26.6713, -1.04482, 2.96706, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+61, 0, 555, 3, -73.5278, -1.96912, -1.04486, 1.22173, 7200, 7200, 0, 0), -- spawn_group_entry
+(@CGUID+61, 18635, 555, 3, -73.5278, -1.96912, -1.04486, 1.22173, 7200, 7200, 0, 0), -- Cabal Deathsworn
 (@CGUID+62, 0, 555, 3, -78.7167, -46.4269, -1.04494, 4.50295, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+63, 0, 555, 3, -75.0824, -47.649, -1.04495, 3.75246, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+64, 0, 555, 3, -86.7252, 8.73865, -1.04486, 2.37365, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+65, 0, 555, 3, -85.9936, 11.2334, -1.04485, 3.56047, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+66, 0, 555, 3, -73.8878, 1.75605, -1.04487, 5.23599, 7200, 7200, 0, 0), -- spawn_group_entry
+(@CGUID+66, 18635, 555, 3, -73.8878, 1.75605, -1.04487, 5.23599, 7200, 7200, 0, 0), -- Cabal Deathsworn
 (@CGUID+67, 0, 555, 3, -48.3232, -89.7437, -1.04498, 5.27089, 7200, 7200, 0, 2), -- spawn_group_entry
 (@CGUID+68, 0, 555, 3, -90.69765, -92.35649, -1.044974, 0.715585, 7200, 7200, 0, 2), -- creature_spawn_entry
 (@CGUID+69, 0, 555, 3, -247.273, -49.6712, 8.15618, 3.03687, 7200, 7200, 0, 2), -- creature_spawn_entry
@@ -807,7 +810,6 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+73, 18633, 555, 3, -265.829, 0.056211, 8.15626, 3.68265, 7200, 7200, 0, 2), -- Cabal Acolyte
 (@CGUID+74, 18633, 555, 3, -272.845, -76.4279, 8.15625, 2.6529, 7200, 7200, 0, 2), -- Cabal Acolyte
 (@CGUID+75, 0, 555, 3, -454.315, -183.092, 12.7725, 5.06145, 7200, 7200, 0, 2), -- creature_spawn_entry
-
 (@CGUID+76, 18634, 555, 3, -175.894, -349.783, 17.166, 5.61996, 7200, 7200, 0, 0), -- Cabal Summoner
 (@CGUID+77, 18634, 555, 3, -156.498, -328.007, 17.1696, 3.14159, 7200, 7200, 0, 0), -- Cabal Summoner
 (@CGUID+78, 18634, 555, 3, -135.201, -360.271, 17.0819, 3.49066, 7200, 7200, 0, 0), -- Cabal Summoner
@@ -815,14 +817,13 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+80, 18634, 555, 3, -141.612, -363.212, 17.0827, 4.2586, 7200, 7200, 0, 0), -- Cabal Summoner
 (@CGUID+81, 18634, 555, 3, -171.826, -401.41, 17.0799, 0.890118, 7200, 7200, 0, 0), -- Cabal Summoner
 (@CGUID+82, 0, 555, 3, -134.274, -388.795, 17.1657, 3.14159, 5, 10, 0, 2), -- creature_spawn_entry
--- REUSE @CGUID+83
--- REUSE @CGUID+84
-
+(@CGUID+83, 18635, 555, 3, -74.3842, -0.151916, -1.04487, 0.034907, 7200, 7200, 0, 0), -- Cabal Deathsworn
+(@CGUID+84, 18633, 555, 3, -73.5278, -1.96912, -1.04486, 1.22173, 7200, 7200, 0, 0), -- Cabal Acolyte
 (@CGUID+85, 0, 555, 3, -91.7096, -19.436, -1.04486, 6.08963, 7200, 7200, 0, 2), -- spawn_group_entry
-(@CGUID+86, 0, 555, 3, -44.641, -34.6061, -1.04484, 1.44862, 7200, 7200, 0, 0), -- spawn_group_entry
+(@CGUID+86, 18633, 555, 3, -44.641, -34.6061, -1.04484, 1.44862, 7200, 7200, 0, 0), -- Cabal Acolyte
 (@CGUID+87, 0, 555, 3, -35.078, -81.0337, -1.04491, 5.18363, 7200, 7200, 0, 2), -- creature_spawn_entry
 (@CGUID+88, 0, 555, 3, -60.8069, -24.741, -1.04481, 5.44543, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+89, 0, 555, 3, -74.3842, -0.151916, -1.04487, 0.034907, 7200, 7200, 0, 0), -- spawn_group_entry
+(@CGUID+89, 18633, 555, 3, -74.3842, -0.151916, -1.04487, 0.034907, 7200, 7200, 0, 0), -- Cabal Acolyte
 (@CGUID+90, 0, 555, 3, -91.919, -88.183, -1.04498, 6.00393, 7200, 7200, 0, 2), -- creature_spawn_entry
 (@CGUID+91, 18635, 555, 3, -86.0825, -92.683, -1.04497, 1.95477, 7200, 7200, 0, 0), -- Cabal Deathsworn
 (@CGUID+92, 18635, 555, 3, -254.445, -49.5956, 8.15618, 3.01942, 7200, 7200, 0, 2), -- Cabal Deathsworn
@@ -848,11 +849,11 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 
 (@CGUID+112, 18639, 555, 3, -139.912, -353.917, 17.1665, 5.75959, 7200, 7200, 0, 0), -- Cabal Spellbinder
 (@CGUID+113, 18639, 555, 3, -140.42, -369.956, 17.0815, 3.03687, 7200, 7200, 0, 0), -- Cabal Spellbinder
--- REUSE @CGUID+114
+(@CGUID+114, 18633, 555, 3, -73.8878, 1.75605, -1.04487, 5.23599, 7200, 7200, 0, 0), -- Cabal Acolyte
 (@CGUID+115, 18639, 555, 3, -143.33, -397.343, 17.0801, 2.37365, 7200, 7200, 0, 0), -- Cabal Spellbinder
 (@CGUID+116, 0, 555, 3, -179.281, -350.271, 17.1665, 5.98648, 5, 10, 0, 2), -- creature_spawn_entry
--- REUSE @CGUID+117
--- REUSE @CGUID+118
+(@CGUID+117, 18633, 555, 3, -47.365, -33.8044, -1.04484, 0.331613, 7200, 7200, 0, 0), -- Cabal Acolyte
+(@CGUID+118, 18633, 555, 3, -41.8571, -33.4506, -1.04484, 2.87979, 7200, 7200, 0, 0), -- Cabal Acolyte
 (@CGUID+119, 18639, 555, 3, -151.682, -461.163, 17.1606, 4.57276, 7200, 7200, 0, 0), -- Cabal Spellbinder
 (@CGUID+120, 18639, 555, 3, -156.284, -461.871, 17.1606, 4.69494, 7200, 7200, 0, 0), -- Cabal Spellbinder
 (@CGUID+121, 18639, 555, 3, -160.956, -461.858, 17.1606, 4.90438, 7200, 7200, 0, 0), -- Cabal Spellbinder
@@ -986,7 +987,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+248, 0, 555, 3, -90.93845, -90.86178, -1.044974, 0.3665192, 7200, 7200, 0, 0), -- creature_spawn_entry
 (@CGUID+249, 18640, 555, 3, -35.07804, -81.03367, -1.044909, 5.183628, 7200, 7200, 0, 0), -- Cabal Warlock
 (@CGUID+250, 0, 555, 3, -33.50152, -80.52749, -1.044897, 4.921828, 7200, 7200, 0, 0), -- creature_spawn_entry
--- (@CGUID+251, PLEASE RE-USE
+(@CGUID+251, 18635, 555, 3, -44.641, -34.6061, -1.04484, 1.44862, 7200, 7200, 0, 0), -- Cabal Deathsworn
 (@CGUID+252, 14881, 555, 3, -122.0181, -8.897035, 8.156389, 2.569682, 900, 900, 2, 1), -- Spider
 (@CGUID+253, 14881, 555, 3, -29.05714, -46.55113, -1.128195, 5.245015, 900, 900, 0, 0), -- Spider
 (@CGUID+254, 14881, 555, 3, -96.70205, -8.718884, -1.1282, 1.507909, 900, 900, 2, 1), -- Spider
@@ -1144,57 +1145,75 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 -- SPAWN GROUPS
 -- ============
 
+DELETE FROM worldstate_name WHERE Id IN (@SGGUID+1, @SGGUID+2);
+INSERT INTO `worldstate_name` (`Id`, `Name`) VALUES 
+(@SGGUID+1, 'Shadow Labyrinth - Custom Group 002'),
+(@SGGUID+2, 'Shadow Labyrinth - Custom Group 003');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (@SGGUID+1, @SGGUID+4);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `value3`, `value4`, `flags`, `comments`) VALUES 
+(@SGGUID+1, 42, @SGGUID+1, 1, 0, 0, 0, 'Shadow Labyrinth - Custom Group 002 -  Type 1'),
+(@SGGUID+2, 42, @SGGUID+1, 1, 1, 0, 0, 'Shadow Labyrinth - Custom Group 002 -  Type 2'),
+(@SGGUID+3, 42, @SGGUID+2, 1, 0, 0, 0, 'Shadow Labyrinth - Custom Group 003 -  Type 1'),
+(@SGGUID+4, 42, @SGGUID+2, 1, 1, 0, 0, 'Shadow Labyrinth - Custom Group 003 -  Type 2');
+
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `WorldStateExpression`, `Flags`, `StringID`) VALUES
 (@SGGUID+1, 'Shadow Labyrinth - Group 001 - Cabal Acolyte/Cabal Deathsworn', 0, 0, 0, 0, 0, 0), -- solo Patrol, rnd entry
-(@SGGUID+2, 'Shadow Labyrinth - Group 002 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
-(@SGGUID+3, 'Shadow Labyrinth - Group 003 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
-(@SGGUID+4, 'Shadow Labyrinth - Group 004 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
-(@SGGUID+5, 'Shadow Labyrinth - Group 005 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
-(@SGGUID+6, 'Shadow Labyrinth - Group 006 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
-(@SGGUID+7, 'Shadow Labyrinth - Group 007 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
 
-(@SGGUID+8, 'Shadow Labyrinth - Group 008 - Cabal Acolyte/Cabal Deathsworn', 0, 0, 0, 0, 0, 0),
-
-(@SGGUID+9, 'Shadow Labyrinth - Group 009 - Cabal Acolyte/Cabal Deathsworn', 0, 0, 0, 0, 0, 0);  -- solo patrol, rnd entry
+(@SGGUID+2, 'Shadow Labyrinth - Group 002 - Cabal Acolyte / Cabal Deathsworn (2)', 0, 3, @SGGUID+1, 0, 1, 0), -- using worldstate to decide what group spawns
+(@SGGUID+3, 'Shadow Labyrinth - Group 002 - Cabal Deathsworn / Cabal Acolyte (2)', 0, 3, @SGGUID+2, 0, 1, 0), -- using worldstate to decide what group spawns
+(@SGGUID+4, 'Shadow Labyrinth - Group 003 - Cabal Acolyte / Cabal Deathsworn (2)', 0, 3, @SGGUID+3, 0, 1, 0), -- using worldstate to decide what group spawns
+(@SGGUID+5, 'Shadow Labyrinth - Group 003 - Cabal Deathsworn / Cabal Acolyte (2)', 0, 3, @SGGUID+4, 0, 1, 0), -- using worldstate to decide what group spawns
+(@SGGUID+6, 'Shadow Labyrinth - Group 004 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
+(@SGGUID+7, 'Shadow Labyrinth - Group 005 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
+(@SGGUID+8, 'Shadow Labyrinth - Group 006 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
+(@SGGUID+9, 'Shadow Labyrinth - Group 007 - Cabal Deathsworn / Cabal Acolyte', 0, 0, 0, 0, 1, 0),
+(@SGGUID+10, 'Shadow Labyrinth - Group 008 - Cabal Acolyte/Cabal Deathsworn', 0, 0, 0, 0, 0, 0),
+(@SGGUID+11, 'Shadow Labyrinth - Group 009 - Cabal Acolyte/Cabal Deathsworn', 0, 0, 0, 0, 0, 0);  -- solo patrol, rnd entry
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
 (@SGGUID+1, 18633, 0, 1, 0), (@SGGUID+1, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+2, 18633, 1, 2, 0), (@SGGUID+2, 18635, 1, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+3, 18633, 0, 2, 0), (@SGGUID+3, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+4, 18633, 0, 2, 0), (@SGGUID+4, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+5, 18633, 1, 2, 0), (@SGGUID+5, 18635, 1, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+6, 18633, 0, 2, 0), (@SGGUID+6, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+7, 18633, 0, 2, 0), (@SGGUID+7, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-
-(@SGGUID+8, 18633, 0, 1, 0), (@SGGUID+8, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+9, 18633, 0, 1, 0), (@SGGUID+9, 18635, 0, 1, 0); -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+8, 18633, 0, 2, 0), (@SGGUID+8, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+9, 18633, 0, 2, 0), (@SGGUID+9, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+10, 18633, 0, 1, 0), (@SGGUID+10, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+11, 18633, 0, 1, 0), (@SGGUID+11, 18635, 0, 1, 0); -- Cabal Acolyte, Cabal Deathsworn
 
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+1, @CGUID+85, 0, 0), -- spawn_group_entry
 
-(@SGGUID+2, @CGUID+89, 0, 0), -- spawn_group_entry center
-(@SGGUID+2, @CGUID+61, 1, 0), -- spawn_group_entry left
-(@SGGUID+2, @CGUID+66, 2, 0), -- spawn_group_entry right
+(@SGGUID+2, @CGUID+89, 0, 0), -- Cabal Acolyte center
+(@SGGUID+2, @CGUID+61, 1, 0), -- Cabal Deathsworn left
+(@SGGUID+2, @CGUID+66, 2, 0), -- Cabal Deathsworn right
 
-(@SGGUID+3, @CGUID+64, 0, 0), -- spawn_group_entry
-(@SGGUID+3, @CGUID+65, 1, 0), -- spawn_group_entry
+(@SGGUID+3, @CGUID+83, 0, 0), -- Cabal Deathsworn center
+(@SGGUID+3, @CGUID+84, 1, 0), -- Cabal Acolyte left
+(@SGGUID+3, @CGUID+114, 2, 0), -- Cabal Acolyte right
 
-(@SGGUID+4, @CGUID+60, 0, 0), -- spawn_group_entry
-(@SGGUID+4, @CGUID+88, 1, 0), -- spawn_group_entry
+(@SGGUID+4, @CGUID+86, 0, 0), -- Cabal Acolyte center
+(@SGGUID+4, @CGUID+55, 1, 0), -- Cabal Deathsworn left
+(@SGGUID+4, @CGUID+54, 2, 0), -- Cabal Deathsworn right
 
-(@SGGUID+5, @CGUID+86, 0, 0), -- spawn_group_entry center
-(@SGGUID+5, @CGUID+55, 1, 0), -- spawn_group_entry left
-(@SGGUID+5, @CGUID+54, 2, 0), -- spawn_group_entry right
+(@SGGUID+5, @CGUID+251, 0, 0), -- Cabal Deathsworn center
+(@SGGUID+5, @CGUID+118, 1, 0), -- Cabal Acolyte left
+(@SGGUID+5, @CGUID+117, 2, 0), -- Cabal Acolyte right
 
-(@SGGUID+6, @CGUID+56, 0, 0), -- spawn_group_entry
-(@SGGUID+6, @CGUID+57, 1, 0), -- spawn_group_entry
+(@SGGUID+6, @CGUID+64, 0, 0), -- spawn_group_entry
+(@SGGUID+6, @CGUID+65, 1, 0), -- spawn_group_entry
 
-(@SGGUID+7, @CGUID+62, 0, 0), -- spawn_group_entry
-(@SGGUID+7, @CGUID+63, 1, 0), -- spawn_group_entry
+(@SGGUID+7, @CGUID+60, 0, 0), -- spawn_group_entry
+(@SGGUID+7, @CGUID+88, 1, 0), -- spawn_group_entry
 
-(@SGGUID+8, @CGUID+53, 0, 0), -- spawn_group_entry
+(@SGGUID+8, @CGUID+56, 0, 0), -- spawn_group_entry
+(@SGGUID+8, @CGUID+57, 1, 0), -- spawn_group_entry
 
-(@SGGUID+9, @CGUID+67, 0, 0); -- spawn_group_entry
+(@SGGUID+9, @CGUID+62, 0, 0), -- spawn_group_entry
+(@SGGUID+9, @CGUID+63, 1, 0), -- spawn_group_entry
+
+(@SGGUID+10, @CGUID+53, 0, 0), -- spawn_group_entry
+
+(@SGGUID+11, @CGUID+67, 0, 0); -- spawn_group_entry
 
 -- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 
@@ -1500,7 +1519,7 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+4,0,0,20,2,@SGGUID+3,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 001 - PathID 3'),
 (@RELAYID+5,0,0,20,2,@SGGUID+4,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 001 - PathID 4');
 
-DELETE FROM dbscripts_on_creature_movement WHERE id IN BETWEEN @RELAYID+1 AND  @RELAYID+6;
+DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN @RELAYID+1 AND  @RELAYID+6;
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (@RELAYID+1, 0, 0, 45, 0, @RELAYID+1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 001 - choose random path'), 
 (@RELAYID+2, 3000, 0, 28, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 001 - set StandState Kneel'),
