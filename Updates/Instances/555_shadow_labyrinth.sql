@@ -247,16 +247,8 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+124, 2, -51.2688, -78.5158, -1.0449, 2.49582, 7000, 1864003),
 (@CGUID+124, 3, -51.2688, -78.5158, -1.0449, 2.49582, 7000, 1864004),
 (@CGUID+124, 4, -51.2688, -78.5158, -1.0449, 2.49582, 7000, 1864005),
-(@CGUID+125, 1, -74.4987, -77.2237, -1.04497, 1.55334, 9000, 1864001),
 (@CGUID+126, 1, -259.324, 5.18744, 8.15627, 3.64774, 26000, 1864006),
 (@CGUID+127, 1, -282.122, -76.7587, 8.15625, 2.72271, 26000, 1864006),
-(@CGUID+133, 1, -73.1844, -72.6354, -1.1283, 0, 2000, 1864101),
-(@CGUID+133, 2, -78.9781, -68.9761, -1.12973, 0, 0, 0),
-(@CGUID+133, 3, -79.0138, -64.0902, -1.1296, 0, 0, 0),
-(@CGUID+133, 4, -73.483, -62.1501, -1.1296, 0, 0, 0),
-(@CGUID+133, 5, -65.6294, -68.134, -1.1296, 0, 0, 0),
-(@CGUID+133, 6, -64.7255, -75.9003, -1.1296, 0, 0, 0),
-(@CGUID+133, 7, -70.5239, -77.2716, -1.1296, 0, 0, 0),
 (@CGUID+137, 1, -343.154, -16.6486, 12.6888, 0, 2000, 0),
 (@CGUID+137, 2, -323.331, -36.0149, 12.6888, 0, 8000, 0),
 (@CGUID+137, 3, -333.81, -60.0253, 12.6888, 0, 2000, 0),
@@ -532,8 +524,6 @@ INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 (@CGUID+130, @CGUID+124, 1155), -- Cabal Familiar -> Cabal Warlock
 (@CGUID+131, @CGUID+124, 1155), -- Cabal Familiar -> Cabal Warlock
 (@CGUID+132, @CGUID+124, 1155), -- Cabal Familiar -> Cabal Warlock
-(@CGUID+135, @CGUID+133, 1679), -- Fel Guardhound -> Cabal Familiar
-(@CGUID+125, @CGUID+133, 1155), -- Cabal Familiar -> Cabal Warlock
 (@CGUID+154, @CGUID+155, 1155), -- Cabal Ritualist -> Cabal Ritualist
 (@CGUID+156, @CGUID+155, 1155), -- Cabal Ritualist -> Cabal Ritualist
 (@CGUID+166, @CGUID+155, 1155), -- Cabal Ritualist -> Cabal Ritualist
@@ -845,7 +835,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+123, 0, 555, 3, -130.551, -443.696, 17.164, 3.14527, 5, 10, 0, 2), -- creature_spawn_entry
 
 (@CGUID+124, 18640, 555, 3, -51.2688, -78.5158, -1.0449, 2.49582, 7200, 7200, 0, 2), -- Cabal Warlock
-(@CGUID+125, 18640, 555, 3, -74.4987, -77.2237, -1.04497, 1.55334, 7200, 7200, 0, 2), -- Cabal Warlock
+(@CGUID+125, 18640, 555, 3, -74.4987, -77.2237, -1.04497, 1.55334, 7200, 7200, 0, 0), -- Cabal Warlock
 (@CGUID+126, 18640, 555, 3, -259.324, 5.18744, 8.15627, 3.64774, 7200, 7200, 0, 2), -- Cabal Warlock
 (@CGUID+127, 18640, 555, 3, -282.122, -76.7587, 8.15625, 2.72271, 7200, 7200, 0, 2), -- Cabal Warlock
 (@CGUID+128, 18641, 555, 3, -54.7495, -78.6855, -1.12821, 0.048723, 7200, 7200, 0, 0), -- Cabal Familiar
@@ -853,9 +843,9 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+130, 18641, 555, 3, -58.7448, -78.8803, -1.12822, 6.20498, 7200, 7200, 0, 0), -- Cabal Familiar
 (@CGUID+131, 18641, 555, 3, -60.7424, -78.9777, -1.12823, 0.138545, 7200, 7200, 0, 0), -- Cabal Familiar
 (@CGUID+132, 18641, 555, 3, -62.74, -79.0751, -1.12823, 6.27203, 7200, 7200, 0, 0), -- Cabal Familiar
-(@CGUID+133, 18641, 555, 3, -73.1844, -72.6355, -1.1283, 2.28426, 7200, 7200, 0, 2), -- Cabal Familiar
+(@CGUID+133, 18641, 555, 3, -73.184364, -72.63547, -1.1283, 2.284255, 7200, 7200, 0, 0), -- Cabal Familiar
 (@CGUID+134, 0, 555, 3, -257.898, 2.7362, 8.15626, 3.85718, 7200, 7200, 0, 0), -- creature_spawn_entry
-(@CGUID+135, 18642, 555, 3, -67.4098, -77.1873, -1.12827, 5.10697, 7200, 7200, 0, 0), -- Fel Guardhound
+(@CGUID+135, 18642, 555, 3, -66.63983, -80.196495, -1.1241438, 2.46894, 7200, 7200, 0, 0), -- Fel Guardhound
 (@CGUID+136, 0, 555, 3, -281.167, -74.066, 8.15624, 3.12414, 7200, 7200, 0, 0), -- creature_spawn_entry
 (@CGUID+137, 18667, 555, 3, -343.463, -16.4996, 12.6888, 5.09566, 86400, 86400, 0, 2), -- Blackheart the Inciter
 (@CGUID+138, 18708, 555, 3, -157.8953, -497.3225, 15.86508, 1.570796, 86400, 86400, 0, 0), -- Murmur
@@ -1188,13 +1178,14 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Worl
 (@SGGUID+10, 'Shadow Labyrinth - Group 008 - Cabal Acolyte / Cabal Deathsworn', 0, 0, 0, 0, 0, 0),
 (@SGGUID+11, 'Shadow Labyrinth - Group 009 - Cabal Acolyte / Cabal Deathsworn', 0, 0, 0, 0, 0, 0),  -- solo patrol, rnd entry
 -- Group under left tent, 3 possible variations of groups
-(@SGGUID+12, 'Shadow Labyrinth - Group 010 - Cabal Warlock + Felhound/Imp | Cabal Acolyte (1) | Cabal Deathsworn (1)', 0, 0, @SGGUID+5, 0, 1, 0), -- using worldstate to decide what group spawns
+(@SGGUID+12, 'Shadow Labyrinth - Group 010 - Cabal Warlock + Cabal Familiar/Fel Guardhound | Cabal Acolyte (1) | Cabal Deathsworn (1)', 0, 0, @SGGUID+5, 0, 1, 0), -- using worldstate to decide what group spawns
 (@SGGUID+13, 'Shadow Labyrinth - Group 010 - Cabal Acolyte (1) | Cabal Deathsworn (2)', 0, 0, @SGGUID+6, 0, 1, 0), -- using worldstate to decide what group spawns
 (@SGGUID+14, 'Shadow Labyrinth - Group 010 - Cabal Deathsworn (1) | Cabal Acolyte (2)', 0, 0, @SGGUID+7, 0, 1, 0), -- using worldstate to decide what group spawns
 -- Group under right tent, 3 possible variations of groups
-(@SGGUID+15, 'Shadow Labyrinth - Group 010 - Cabal Warlock + Felhound/Imp | Cabal Acolyte (1) | Cabal Deathsworn (1)', 0, 0, @SGGUID+8, 0, 1, 0), -- using worldstate to decide what group spawns
-(@SGGUID+16, 'Shadow Labyrinth - Group 010 - Cabal Acolyte (1) | Cabal Deathsworn (2)', 0, 0, @SGGUID+9, 0, 1, 0), -- using worldstate to decide what group spawns
-(@SGGUID+17, 'Shadow Labyrinth - Group 010 - Cabal Deathsworn (1) | Cabal Acolyte (2)', 0, 0, @SGGUID+10, 0, 1, 0); -- using worldstate to decide what group spawns
+(@SGGUID+15, 'Shadow Labyrinth - Group 011 - Cabal Warlock + Cabal Familiar/Fel Guardhound | Cabal Acolyte (1) | Cabal Deathsworn (1)', 0, 0, @SGGUID+8, 0, 1, 0), -- using worldstate to decide what group spawns
+(@SGGUID+16, 'Shadow Labyrinth - Group 011 - Cabal Acolyte (1) | Cabal Deathsworn (2)', 0, 0, @SGGUID+9, 0, 1, 0), -- using worldstate to decide what group spawns
+(@SGGUID+17, 'Shadow Labyrinth - Group 011 - Cabal Deathsworn (1) | Cabal Acolyte (2)', 0, 0, @SGGUID+10, 0, 1, 0), -- using worldstate to decide what group spawns
+(@SGGUID+18, 'Shadow Labyrinth - Group 012 - Cabal Familiar | Fel Guardhound', 0, 0, 0, 0, 1, 0); -- Fel Guardhound chasing the Cabal Familiar, not linked with Warlock
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
 (@SGGUID+1, 18633, 0, 1, 0), (@SGGUID+1, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
@@ -1266,15 +1257,20 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 
 (@SGGUID+17, @CGUID+297, 0, 0), -- Cabal Deathsworn
 (@SGGUID+17, @CGUID+298, 1, 0), -- Cabal Acolyte
-(@SGGUID+17, @CGUID+299, 2, 0); -- Cabal Acolyte
+(@SGGUID+17, @CGUID+299, 2, 0), -- Cabal Acolyte
 
--- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+(@SGGUID+18, @CGUID+133, 0, 0), -- Cabal Familiar
+(@SGGUID+18, @CGUID+135, 1, 0); -- Fel Guardhound
+
+INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
+(@SGGUID+18, 1, 10, 0, @SGGUID+18, 2, 'Shadow Labyrinth - Group 012 - Cabal Familiar | Fel Guardhound');
 
 INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
 (@SGGUID+1, 'Shadow Labyrinth - Group 001 Path 1'),
 (@SGGUID+2, 'Shadow Labyrinth - Group 001 Path 2'),
 (@SGGUID+3, 'Shadow Labyrinth - Group 001 Path 3'),
-(@SGGUID+4, 'Shadow Labyrinth - Group 001 Path 4');
+(@SGGUID+4, 'Shadow Labyrinth - Group 001 Path 4'),
+(@SGGUID+18, 'Shadow Labyrinth - Group 012 - Cabal Familiar | Fel Guardhound');
  
 INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Cabal Acolyte 4 different paths after Intro path
@@ -1289,7 +1285,11 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `Posit
 (@SGGUID+4, 3, -91.59668, -19.750717, -1.1281965, 100, 2000, 0),
 (@SGGUID+4, 4, -60.68144, -18.41702, -1.1281054, 100, 0, 0),
 (@SGGUID+4, 5, -59.339016, 8.937592, -1.1331869, 100, 0, 0),
-(@SGGUID+4, 6, -38.099854, 7.8367243, -1.139434, 100, 1, @RELAYID+1);
+(@SGGUID+4, 6, -38.099854, 7.8367243, -1.139434, 100, 1, @RELAYID+1),
+(@SGGUID+18, 1, -73.184364, -72.63547, -1.1283, 2.284255, 2000, 5), -- sniffed
+(@SGGUID+18, 2, -77.633, -68.360, -1.13, 100, 0, 0), -- custom made
+(@SGGUID+18, 3, -75.649, -65.359, -1.13, 100, 0, 0), -- custom made
+(@SGGUID+18, 4, -68.666, -71.273, -1.129, 100, 0, 0); -- custom 
 
 -- =======
 -- POOLING
