@@ -1528,7 +1528,15 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+2,0,0,20,2,@SGGUID+1,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 001 - PathID 1'),
 (@RELAYID+3,0,0,20,2,@SGGUID+2,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 001 - PathID 2'),
 (@RELAYID+4,0,0,20,2,@SGGUID+3,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 001 - PathID 3'),
-(@RELAYID+5,0,0,20,2,@SGGUID+4,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 001 - PathID 4');
+(@RELAYID+5,0,0,20,2,@SGGUID+4,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 001 - PathID 4'),
+-- Random Talk Events - using dbscript to get correct delays
+-- Multiple Groups (with 3 npcs) use to have a small RP Event 
+-- Leader use emote talk - one answers with emote laugh one with emote no
+-- leader use emote Exclamation - both answer with emote yes
+(@RELAYID+6,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Emote Talk'),
+(@RELAYID+6,1000,0,35,5,5,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Send AI Event A'),
+(@RELAYID+6,5000,0,1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Emote Exclamation'),
+(@RELAYID+6,6000,0,35,6,5,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Send AI Event B');
 
 DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN @RELAYID+1 AND  @RELAYID+6;
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
