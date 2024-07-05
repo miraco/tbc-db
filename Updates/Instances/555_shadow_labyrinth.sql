@@ -828,11 +828,11 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+125, 18640, 555, 3, -74.4987, -77.2237, -1.04497, 1.55334, 7200, 7200, 0, 0), -- Cabal Warlock
 (@CGUID+126, 18640, 555, 3, -259.324, 5.18744, 8.15627, 3.64774, 7200, 7200, 0, 2), -- Cabal Warlock
 (@CGUID+127, 18640, 555, 3, -282.122, -76.7587, 8.15625, 2.72271, 7200, 7200, 0, 2), -- Cabal Warlock
-(@CGUID+128, 18641, 555, 3, -54.7495, -78.6855, -1.12821, 0.048723, 7200, 7200, 0, 0), -- Cabal Familiar
-(@CGUID+129, 18641, 555, 3, -56.7471, -78.7829, -1.12821, 6.15284, 7200, 7200, 0, 0), -- Cabal Familiar
-(@CGUID+130, 18641, 555, 3, -58.7448, -78.8803, -1.12822, 6.20498, 7200, 7200, 0, 0), -- Cabal Familiar
-(@CGUID+131, 18641, 555, 3, -60.7424, -78.9777, -1.12823, 0.138545, 7200, 7200, 0, 0), -- Cabal Familiar
-(@CGUID+132, 18641, 555, 3, -62.74, -79.0751, -1.12823, 6.27203, 7200, 7200, 0, 0), -- Cabal Familiar
+(@CGUID+128, 18641, 555, 3, -56.442944,-80.5976,-1.1282377,0.43633, 7200, 7200, 0, 0), -- Cabal Familiar
+(@CGUID+129, 18641, 555, 3, -56.415737,-77.116615,-1.1265221,6.10865, 7200, 7200, 0, 0), -- Cabal Familiar
+(@CGUID+130, 18641, 555, 3, -54.432392,-73.951225,-1.1276934,5.4105, 7200, 7200, 0, 0), -- Cabal Familiar
+(@CGUID+131, 18641, 555, 3, -52.038002,-71.55674,-1.1290075,4.8869, 7200, 7200, 0, 0), -- Cabal Familiar
+(@CGUID+132, 18641, 555, 3, -49.07354,-70.97464,-1.1348934, 4.6197, 7200, 7200, 0, 0), -- Cabal Familiar
 (@CGUID+133, 18641, 555, 3, -73.184364, -72.63547, -1.1283, 2.284255, 7200, 7200, 0, 0), -- Cabal Familiar
 (@CGUID+134, 0, 555, 3, -257.898, 2.7362, 8.15626, 3.85718, 7200, 7200, 0, 0), -- creature_spawn_entry
 (@CGUID+135, 18642, 555, 3, -66.63983, -80.196495, -1.1241438, 2.46894, 7200, 7200, 0, 0), -- Fel Guardhound
@@ -1175,7 +1175,8 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Worl
 (@SGGUID+15, 'Shadow Labyrinth - Group 011 - Cabal Warlock + Cabal Familiar/Fel Guardhound | Cabal Acolyte (1) | Cabal Deathsworn (1)', 0, 0, @SGGUID+8, 0, 1, 0), -- using worldstate to decide what group spawns
 (@SGGUID+16, 'Shadow Labyrinth - Group 011 - Cabal Acolyte (1) | Cabal Deathsworn (2)', 0, 0, @SGGUID+9, 0, 1, 0), -- using worldstate to decide what group spawns
 (@SGGUID+17, 'Shadow Labyrinth - Group 011 - Cabal Deathsworn (1) | Cabal Acolyte (2)', 0, 0, @SGGUID+10, 0, 1, 0), -- using worldstate to decide what group spawns
-(@SGGUID+18, 'Shadow Labyrinth - Group 012 - Cabal Familiar | Fel Guardhound', 0, 0, 0, 0, 1, 0); -- Fel Guardhound chasing the Cabal Familiar, not linked with Warlock
+(@SGGUID+18, 'Shadow Labyrinth - Group 012 - Cabal Familiar | Fel Guardhound', 0, 0, 0, 0, 1, 0), -- Fel Guardhound chasing the Cabal Familiar, not linked with Warlock
+(@SGGUID+19, 'Shadow Labyrinth - Group 013 - Cabal Familiar (5)', 0, 0, 0, 0, 1, 0); -- 
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
 (@SGGUID+1, 18633, 0, 1, 0), (@SGGUID+1, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
@@ -1250,7 +1251,13 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+17, @CGUID+299, 2, 0), -- Cabal Acolyte
 
 (@SGGUID+18, @CGUID+133, 0, 0), -- Cabal Familiar
-(@SGGUID+18, @CGUID+135, 1, 0); -- Fel Guardhound
+(@SGGUID+18, @CGUID+135, 1, 0), -- Fel Guardhound
+
+(@SGGUID+19, @CGUID+128, 0, 0), -- Cabal Familiar
+(@SGGUID+19, @CGUID+129, 1, 0), -- Cabal Familiar
+(@SGGUID+19, @CGUID+130, 2, 0), -- Cabal Familiar
+(@SGGUID+19, @CGUID+131, 3, 0), -- Cabal Familiar
+(@SGGUID+19, @CGUID+132, 4, 0); -- Cabal Familiar
 
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (@SGGUID+18, 1, 10, 0, @SGGUID+18, 2, 'Shadow Labyrinth - Group 012 - Cabal Familiar | Fel Guardhound');
@@ -1536,7 +1543,15 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+6,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Emote Talk'),
 (@RELAYID+6,1000,0,35,5,5,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Send AI Event A'),
 (@RELAYID+6,5000,0,1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Emote Exclamation'),
-(@RELAYID+6,6000,0,35,6,5,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Send AI Event B');
+(@RELAYID+6,6000,0,35,6,5,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Send AI Event B'),
+-- Cabal Warlock group with 5 Imps
+(@RELAYID+7,0,0,1,25,0,0,0,0,0,0,0,0,0,0,0,0,0,'Cabal Warlock - Emote Point'),
+(@RELAYID+7,0,1,51,150,@SGGUID+19,0,0,0,0,1,0,0,0,2,0,0,0,'Cabal Warlock - Create Formation'),
+(@RELAYID+7,0,2,3,0,0,0,@SGGUID+19,256,0,0,0,0,0,-54.675922,-77.17647,-1.1273506, 6.199,'Cabal Warlock - Formation Move to Point'),
+(@RELAYID+7,6000,0,1,25,0,0,0,0,0,0,0,0,0,0,0,0,0,'Cabal Warlock - Emote Point'),
+(@RELAYID+7,6000,1,51,100,1,0,@SGGUID+19,256,0,0,0,0,0,0,0,0,0,'Cabal Warlock - Change Formation Shape'),
+(@RELAYID+7,6000,2,3,0,0,0,@SGGUID+19,256,0,0,0,0,0,-54.600212,-77.50109,-1.127364, 6.199,'Cabal Warlock - Formation Move to Point');
+
 
 DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN @RELAYID+1 AND  @RELAYID+6;
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
