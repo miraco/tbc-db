@@ -2913,7 +2913,7 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 -- Area 52 Roleplay NPCs (All other NPCs)
 (@SGGUID+64, 'Netherstorm - Group 064 - Area 52 RolePlay', 0, 0, 0, 0, 0),
 -- Engineering Crewmember
-(@SGGUID+65, 'Netherstorm - Group 065 - Engineering Crewmember', 0, 0, 0, 0, 0),
+(@SGGUID+65, 'Netherstorm - Group 065 - Engineering Crewmember', 0, 0, 0, 0, @STRINGID+3),
 -- Object for 'Quest Invaluable Asset Zapping'
 -- Multi-Spectrum Terrain Analyzer, Hyper Rotational Dig-A-Matic, Servo-Pneumatic Dredging Claw, Big Wagon Full of Explosives
 (@SGGUID+98, 'Netherstorm - Quest:Invaluable Asset Zapping - GameObjects', 1, 0, 0, 0, 0),
@@ -3781,7 +3781,6 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+62, @CGUID+802, -1, 0), -- Boots
 (@SGGUID+62, @CGUID+805, -1, 0), -- Kalynna Lathred
 (@SGGUID+62, @CGUID+818, -1, 0), -- Papa Wheeler
-(@SGGUID+62, @CGUID+822, -1, 0), -- Rocket-Chief Fuselage
 -- Ravandwyr + Pet Sagan
 (@SGGUID+63, @CGUID+770, 0, 0), -- Ravandwyr
 (@SGGUID+63, @CGUID+771, 1, 0), -- Sagan
@@ -3800,6 +3799,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+65, @CGUID+824, -1, 0), -- Engineering Crewmember
 (@SGGUID+65, @CGUID+825, -1, 0), -- Engineering Crewmember
 (@SGGUID+65, @CGUID+826, -1, 0), -- Engineering Crewmember
+(@SGGUID+65, @CGUID+822, -1, 0), -- Rocket-Chief Fuselage
 -- Object for 'Quest Invaluable Asset Zapping'
 (@SGGUID+98, @GGUID+60, -1, 0), -- Multi-Spectrum Terrain Analyzer
 (@SGGUID+98, @GGUID+61, -1, 0), -- Hyper Rotational Dig-A-Matic
@@ -3951,11 +3951,11 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `value3
 (@SGGUID+4, 42, @SGGUID+4, 1, 1, 0, 0, 'Netherstorm - Manaforge B''naar - Nether Anomaly fighting Sunfury Bloodwarder - 04'),
 (@SGGUID+5, 43, 1, 0, 0, 0, 0, 'Netherstorm - Zaxxis Stalker - Check OutOfCombat');
 
-DELETE FROM string_id WHERE Id IN (@STRINGID+1, @STRINGID+2);
+DELETE FROM string_id WHERE Id IN (@STRINGID+1, @STRINGID+2, @STRINGID+3);
 INSERT INTO `string_id` (Id, Name) VALUES 
 (@STRINGID+1, 'NETHERSTORM_SUNFURY_WARP_MASTER_RP_TARGET'),
-(@STRINGID+2, 'NETHERSTORM_IRRADIATED_WORKER_SPECIAL');
-
+(@STRINGID+2, 'NETHERSTORM_IRRADIATED_WORKER_SPECIAL'),
+(@STRINGID+3, 'NETHERSTORM_NEGATRON_TARGETS');
 
 -- Scripts
 SET @RELAYID := 18000;
