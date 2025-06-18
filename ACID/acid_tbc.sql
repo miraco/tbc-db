@@ -19158,7 +19158,15 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('1983002','19830','9','0','100','1025','0','8','12000','15000','0','0','11','33860','17','0','0','0','0','0','0','0','0','0','Arcanist Ardonis - Cast Arcane Explosion'),
 ('1983003','19830','9','0','100','1025','0','40','3400','4800','0','0','11','35853','1','256','0','0','0','0','0','0','0','0','Arcanist Ardonis - Cast Chain Fireball'),
 -- Commander Dawnforge (19831) - npc_commander_dawnforge
--- Doctor Vomisa, Ph.T. (19832) - NSR
+-- Doctor Vomisa, Ph.T. (19832)
+('1983201','19832','30','0','100','1','5','0','0','0','0','0','31','1','4','0','51','1','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Set Random Phase 1-4 and Pause Waypoints on ReceiveEventAI A'),
+('1983202','19832','30','0','100','1','6','0','0','0','0','0','22','5','0','0','51','1','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Set Random Phase 5 and Pause Waypoints on ReceiveEventAI B'),
+
+('1983203','19832','1','61','100','1','15000','30000','15000','30000','0','0','48','2','1','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Start Path1 and Set Phase 0 (Phase 1)'),
+('1983204','19832','1','59','100','1','15000','30000','15000','30000','0','0','48','2','2','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Start Path1 and Set Phase 0 (Phase 2)'),
+('1983205','19832','1','55','100','1','15000','30000','15000','30000','0','0','48','2','3','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Start Path1 and Set Phase 0 (Phase 3)'),
+('1983206','19832','1','47','100','1','15000','30000','15000','30000','0','0','48','2','4','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Start Path1 and Set Phase 0 (Phase 4)'),
+('1983207','19832','1','31','100','1','15000','30000','15000','30000','0','0','51','0','0','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Unpause Waypoints and Set Phase 0 (Phase 5)'),
 -- Lariel Sunrunner (19839) - NSR
 -- Caledis Brightdawn (19840) - NSR
 -- Invis KV Defender 19842
