@@ -19173,7 +19173,7 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('1984201','19842','1','0','100','1','2000','2000','1000','1000','0','0','11','34627','0','0','0','0','0','0','0','0','0','0','Invis KV Defender - Cast Nuke Mana Creature II OOC'),
 -- Scrap Reaver X6000 (19849) - npc_scrap_reaver
 -- Negatron 19851 - creature_spell_list
-('1985101','19851','11','0','100','0','0','0','0','0','0','0','11','34427','0','0','0','0','0','0','0','0','0','0','Negatron - Cast Ethereal Teleport on Spawn'),
+('1985101','19851','11','0','100','0','0','0','0','0','0','0','11','15742','0','0','0','0','0','0','0','0','0','0','Negatron - Cast Ashcrombe\'s Teleport on Spawn'),
 -- Artifact Seeker 19852 - spell_list
 -- Felblade Doomguard 19853 - spell_list
 -- Nether-Stalker Khay'ji 19880
