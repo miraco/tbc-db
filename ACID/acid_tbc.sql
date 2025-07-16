@@ -18954,7 +18954,8 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('1954604','19546','9','0','100','1025','0','30','5800','6600','0','0','11','34446','1','256','0','0','0','0','0','0','0','0','Abjurist Belmara - Cast Arcane Missiles'),
 -- Dimensius the All-Devouring (19554) - npc_dimensius
 -- Netherologist Coppernickels (19569) - NSR
--- Rocket-Chief Fuselage (19570) - NSR
+-- Rocket-Chief Fuselage (19570)
+('1957001','19570','30','0','100','1','8','0','0','0','0','0','48','2','1','0','0','0','0','0','0','0','0','0','ocket-Chief Fuselage - Start Path 1 on Receive AI Event C'),
 -- Innkeeper Remi Dodoso (19571) - NSR
 ('1957101','19571','30','0','100','1','5','19570','0','0','0','0','53','-10172','0','0','0','0','0','0','0','0','0','0','Innkeeper Remi Dodoso - Start Relay Script (Random Emote) on Receive AI Event 5'),
 -- Gant 19572
@@ -19129,16 +19130,20 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('530692401','-5306924','11','0','100','1','0','0','0','0','0','0','5','133','0','0','22','1','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Emote StateUsestandingNoSheath and Set Phase 1 on Spawn'),
 ('530692402','-5306924','1','5','100','1','35000','50000','35000','50000','0','0','5','233','0','0','22','2','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Emote StateMining and Set Phase 2 OOC (Phase 1'),
 ('530692403','-5306924','1','3','100','1','35000','50000','35000','50000','0','0','5','133','0','0','22','1','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Emote StateMining and Set Phase 1 (Phase 2)'),
+('530692404','-5306924','30','0','100','1','8','0','0','0','0','0','48','2','2','0','0','0','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Start Path 2 on Receive AI Event C'),
 
 ('530692501','-5306925','11','0','100','1','0','0','0','0','0','0','5','133','0','0','22','1','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Emote StateUsestandingNoSheath and Set Phase 1 on Spawn'),
 ('530692502','-5306925','1','5','100','1','35000','50000','35000','50000','0','0','5','233','0','0','22','2','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Emote StateMining and Set Phase 2 OOC (Phase 1'),
 ('530692503','-5306925','1','3','100','1','35000','50000','35000','50000','0','0','5','133','0','0','22','1','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Emote StateMining and Set Phase 1 (Phase 2)'),
+('530692504','-5306925','30','0','100','1','8','0','0','0','0','0','48','2','3','0','0','0','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Start Path 3 on Receive AI Event C'),
 
 ('530692601','-5306926','30','0','100','1','6','0','0','0','0','0','22','1','0','0','51','1','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Pause waypoints and Set Phase 1 on Receive AI Event B'),
 ('530692602','-5306926','1','5','100','1','30000','60000','30000','60000','0','0','51','0','0','0','22','0','0','0','5','0','0','0','Engineering Crewmember (Guid EAI) - Unpaus Waypoint remove EmoteState and set Phase 0 OOC (Phase 1'),
+('530692603','-5306926','30','0','100','1','8','0','0','0','0','0','48','2','4','0','0','0','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Start Path 4 on Receive AI Event C'),
 
-('530692301','-5306923','30','0','100','1','6','0','0','0','0','0','22','1','0','0','0','0','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) -Set Phase 1 on Receive AI Event B'),
+('530692301','-5306923','30','0','100','1','6','0','0','0','0','0','22','1','0','0','0','0','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Set Phase 1 on Receive AI Event B'),
 ('530692302','-5306923','1','5','100','1','10000','15000','10000','15000','0','0','59','0','1','0','22','0','0','0','5','0','0','0','Engineering Crewmember (Guid EAI) - reset orientation and set Phase 0 OOC (Phase 1'),
+('530692303','-5306923','30','0','100','1','8','0','0','0','0','0','48','2','1','0','0','0','0','0','0','0','0','0','Engineering Crewmember (Guid EAI) - Start Path 1 on Receive AI Event C'),
 -- Doomclaw
 ('1973801','19738','9','0','100','1025','0','5','8000','11000','0','0','11','34261','8','32','0','0','0','0','0','0','0','0','Doomclaw - Cast Slime Spray'),
 ('1973802','19738','9','0','100','1025','0','10','14000','18000','0','0','11','36205','0','0','11','36996','1','0','0','0','0','0','Doomclaw - Cast Claw Swipe'),
@@ -19160,13 +19165,14 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- Commander Dawnforge (19831) - npc_commander_dawnforge
 -- Doctor Vomisa, Ph.T. (19832)
 ('1983201','19832','30','0','100','1','5','0','0','0','0','0','31','1','4','0','51','1','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Set Random Phase 1-4 and Pause Waypoints on ReceiveEventAI A'),
-('1983202','19832','30','0','100','1','6','0','0','0','0','0','22','5','0','0','51','1','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Set Random Phase 5 and Pause Waypoints on ReceiveEventAI B'),
+('1983202','19832','30','0','100','1','6','0','0','0','0','0','22','5','0','0','51','1','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Set Phase 5 and Pause Waypoints on ReceiveEventAI B'),
 
 ('1983203','19832','1','61','100','1','15000','30000','15000','30000','0','0','48','2','1','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Start Path1 and Set Phase 0 (Phase 1)'),
 ('1983204','19832','1','59','100','1','15000','30000','15000','30000','0','0','48','2','2','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Start Path1 and Set Phase 0 (Phase 2)'),
 ('1983205','19832','1','55','100','1','15000','30000','15000','30000','0','0','48','2','3','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Start Path1 and Set Phase 0 (Phase 3)'),
 ('1983206','19832','1','47','100','1','15000','30000','15000','30000','0','0','48','2','4','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Start Path1 and Set Phase 0 (Phase 4)'),
 ('1983207','19832','1','31','100','1','15000','30000','15000','30000','0','0','51','0','0','0','22','0','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Unpause Waypoints and Set Phase 0 (Phase 5)'),
+('1983208','19832','30','0','100','1','8','0','0','0','0','0','22','0','0','0','0','1','0','0','0','0','0','0','Doctor Vomisa, Ph.T. - Set Phase 0 on ReceiveEventAI C'),
 -- Lariel Sunrunner (19839) - NSR
 -- Caledis Brightdawn (19840) - NSR
 -- Invis KV Defender 19842
