@@ -19332,26 +19332,20 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2022103','20221','0','0','100','1025','4000','6000','12000','13000','0','0','11','33731','1','0','0','0','0','0','0','0','0','0','Sunfury Flamekeeper - Cast Judgement of the Flame'),
 -- Karaaz (20242) - NSR
 -- Scrapped Fel Reaver (20243) - npc_scrapped_fel_reaver
--- Sunfury Nethermancer 20248
-('2024801','20248','1','0','100','1','1000','1000','300000','300000','0','0','11','36477','0','0','0','0','0','0','0','0','0','0','Sunfury Nethermancer - Cast Summon Mana Beast OOC'),
-('2024802','20248','4','0','100','0','0','0','0','0','0','0','57','2','35','0','0','0','0','0','0','0','0','0','Sunfury Nethermancer - Enable Range Mode on Aggro'),
-('2024803','20248','2','0','100','1024','15','0','0','0','0','0','25','0','0','0','1','1150','0','0','0','0','0','0','Sunfury Nethermancer - Flee at 15% HP'),
-('2024804','20248','0','0','100','1025','35000','38000','30000','35000','0','0','11','35778','0','0','0','0','0','0','0','0','0','0','Sunfury Nethermancer - Cast Bloodcrystal Surge'),
-('2024805','20248','2','0','75','1025','75','0','10000','20000','0','0','11','17173','1','0','0','0','0','0','0','0','0','0','Sunfury Nethermancer - Cast Drain Life below 75% HP'),
-('2024806','20248','9','0','100','1025','0','40','3400','4800','0','0','11','9613','1','256','0','0','0','0','0','0','0','0','Sunfury Nethermancer - Cast Shadow Bolt'),
+-- Sunfury Nethermancer 20248 - spell_list
+('2024801','20248','11','0','100','0','0','0','0','0','0','0','57','2','20','0','22','1','0','0','0','0','0','0','Sunfury Nethermancer - Enable Range Mode and Set Phase 1 on Spawn'),
+('2024802','20248','1','1','100','0','1000','4000','0','0','0','0','11','36477','0','0','22','0','0','0','0','0','0','0','Sunfury Nethermancer - Cast Mana Beastr on OOC (Phase 1) and set Phase 0'),
+('2024803','20248','25','0','100','1','21267','0','0','0','0','0','22','1','0','0','0','0','0','0','0','0','0','0','Sunfury Nethermancer - Set Phase 1 on Summoned Just Died'),
 -- Vixton Pinchwhistle (20278) - NSR
 -- Drijya (20281) - npc_drijya
 -- Dr. Boom 20284 - ss.35134 Boom Bot Rotation
 ('2028401','20284','11','0','100','0','0','0','0','0','0','0','0','0','0','0','21','0','0','0','0','0','0','0','Dr. Boom - Cast Boom Bot Rotation and Stop Combat Movement on Spawn'),
 ('2028402','20284','9','0','100','1025','0','15','7000','13000','0','0','11','35276','1','0','0','0','0','0','0','0','0','0','Dr. Boom - Cast Throw Dynamite'),
--- Gan'arg Warp-Tinker
-('2028501','20285','9','0','100','1025','0','5','11000','15000','0','0','11','36208','1','0','0','0','0','0','0','0','0','0','Gan''arg Warp-Tinker - Cast Steal Weapon'),
-('2028502','20285','0','0','100','1025','6000','11000','9000','14000','0','0','11','36846','16','0','0','0','0','0','0','0','0','0','Gan''arg Warp-Tinker - Cast Mana Bomb on Random Mana User'),
+-- Gan'arg Warp-Tinker - spell_list
 -- Zaxxis Ambusher (20287) - NSR
 -- Teleporter Explosion Trigger 20296 - NullAI
 -- Nova Terra (20297) - NSR
--- Mo'arg Warp-Master
-('2032601','20326','9','0','100','1025','0','5','16000','20000','0','0','11','36486','4','0','0','0','0','0','0','0','0','0','Mo''arg Warp-Master - Cast Slime Spray'),
+-- Mo'arg Warp-Master - spell_list
 -- Nether Dragon
 ('2033201','20332','9','0','100','1025','0','30','20000','24000','0','0','11','36513','0','0','0','0','0','0','0','0','0','0','Nether Dragon - Cast Intangible Presence'),
 ('2033202','20332','9','0','100','1025','0','5','9000','13000','0','0','11','36631','0','0','0','0','0','0','0','0','0','0','Nether Dragon - Cast Netherbreath'),
@@ -19585,9 +19579,7 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2080101','20801','0','0','100','1025','8000','12000','10000','18000','0','0','11','36253','1','0','0','0','0','0','0','0','0','0','Silroth - Cast Chemical Flames'),
 ('2080102','20801','0','0','100','1025','5000','11000','12000','15000','0','0','11','36252','0','0','0','0','0','0','0','0','0','0','Silroth - Cast Felforge Flames'),
 -- Protectorate Demolitionist 20802 - npc_protectorate_demolitionist
--- Overmaster Grindgarr
-('2080301','20803','9','0','100','1025','0','5','10000','18000','0','0','11','36487','0','0','0','0','0','0','0','0','0','0','Overmaster Grindgarr - Cast Fel Flames'),
-('2080302','20803','9','0','100','1025','0','5','15000','18000','0','0','11','35238','1','0','0','0','0','0','0','0','0','0','Overmaster Grindgarr - Cast War Stomp'),
+-- Overmaster Grindgarr - spell_list
 -- Void Waste Globule 20805
 ('2080501','20805','11','0','100','0','0','0','0','0','0','0','11','35242','0','0','0','0','0','0','0','0','0','0','Void Waste Globule - Cast Darkstalker Birth on Spawn'),
 -- Seeping Sludge Globule 20806
@@ -19678,8 +19670,7 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- Crash Bigbomb 21259 NSR
 -- Seeping Ooze 21264
 -- Parasitic Fleshling 21265
--- Mana Beast
-('2126701','21267','18','0','100','1025','100','1','5000','10000','0','0','11','36484','0','0','0','0','0','0','0','0','0','0','Mana Beast - Cast Mana Burn on Target Mana User'),
+-- Mana Beast 21267 - spell_list
 -- Ethereum Mace
 ('2128601','21286','11','0','100','0','0','0','0','0','0','0','11','12980','0','0','0','0','0','0','0','0','0','0','Ethereum Mace - Cast Simple Teleport on Spawn'),
 -- Warp Storm 21322
