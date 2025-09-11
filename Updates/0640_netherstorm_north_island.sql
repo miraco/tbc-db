@@ -11,7 +11,7 @@ SET @STRINGID := 28010; -- used for StringID's
  
 
 DELETE FROM creature WHERE guid IN (74129, 67673, 67656, 67655, 67661, 67659, 67660, 67662, 67665, 67663, 67664, 67666, 67667, 67668, 67670, 67669, 67671, 67673, 67672, 67657, 67658, 72203, 74122, 72062, 72063, 72064, 72065, 72069, 72074,
-72075, 72073, 72072, 72353, 71953, 71966, 71967, 71961, 71955, 73468, 72211, 72210, 72204, 72060, 72059, 72058);
+72075, 72073, 72072, 72353, 71953, 71966, 71967, 71961, 71955, 73468, 72211, 72210, 72204, 72060, 72059, 72058, 74123, 72061, 72071);
 
 DELETE FROM creature WHERE guid BETWEEN @CGUID+1 AND @CGUID+22;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
@@ -39,7 +39,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+21, 18879, 530, 1, 3775.55, 4091.97, 136.844, 0.530023, 120, 180, 0, 2), -- Phase Hunter guid before 67672 
 (@CGUID+22, 18879, 530, 1, 3699.91, 3970.87, 118.277, 6.18652, 120, 180, 0, 2), -- Phase Hunter guid before 67657 
 -- Trelleum Mine NPCs
-(@CGUID+24, 21089, 530, 1, 3775.55, 4091.97, 136.844, 0.530023, 300, 420, 0, 0), -- Sunfury Blood Knight guid before 74122 
+(@CGUID+24, 21089, 530, 1, 3803.53, 4002.03, 121.477, 3.59538, 300, 420, 0, 0), -- Sunfury Blood Knight guid before 74122 
 (@CGUID+25, 21089, 530, 1, 3802.58, 4023.16, 121.945, 2.72271, 300, 420, 0, 0), -- Sunfury Blood Knight guid before 74123 
 
 (@CGUID+26, 20285, 530, 1, 3853.89, 4012.15, 127.951, 0.702518, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72061
@@ -59,7 +59,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+40, 20285, 530, 1, 4027.31, 3955.87, 124.082, 5.49946, 360, 420, 0, 0), -- Gan'arg Warp-Tinker missing before
 (@CGUID+41, 20285, 530, 1, 4001.96, 3941.5, 124.642, 1.81514, 360, 420, 0, 0), -- Gan'arg Warp-Tinker missing before
 (@CGUID+42, 20285, 530, 1, 3985.9, 3922.47, 124.577, 4.7137, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72072
-(@CGUID+43, 20285, 530, 1, 3957.1, 3924.79, 123.606, 1.22173, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 
+(@CGUID+43, 20285, 530, 1, 3957.1, 3924.79, 123.606, 1.22173, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72071
 (@CGUID+44, 20393, 530, 1, 3884.9983, 4013.0713, 122.363174, 0.17453, 360, 420, 0, 0), -- Foreman Sundown old guid 72353
 (@CGUID+45, 20248, 530, 1, 3933.92, 4068.37, 123.317, 3.66519, 360, 420, 0, 0), -- Sunfury Nethermancer old guid 71953
 (@CGUID+46, 20248, 530, 1, 4102.04, 3982.77, 117.137, 2.49582, 360, 420, 0, 0), -- Sunfury Nethermancer old guid 71966
@@ -148,6 +148,8 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+22, 1, 3699.91, 3970.87, 118.277, 100, 0, 0),
 (@CGUID+22, 2, 3745.8037, 3995.3726, 102.548096, 100, 1000, 1887902);
 
+DELETE FROM creature_addon WHERE guid IN (71955, 72064, 72064, 72065, 72072, 72073, 72211);
+
 
 DELETE FROM spawn_group WHERE Id BETWEEN @SGGUID+67 AND @SGGUID+70;
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`, `StringId`) VALUES
@@ -200,6 +202,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+66, @CGUID+40, -1, 0),
 (@SGGUID+66, @CGUID+41, -1, 0),
 (@SGGUID+66, @CGUID+42, -1, 0),
+(@SGGUID+66, @CGUID+43, -1, 0),
 (@SGGUID+66, @CGUID+54, -1, 0),
 (@SGGUID+66, @CGUID+55, -1, 0),
 (@SGGUID+66, @CGUID+56, -1, 0),

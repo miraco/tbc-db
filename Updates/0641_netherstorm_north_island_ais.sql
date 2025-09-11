@@ -42,7 +42,7 @@ INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `C
 DELETE FROM `creature_spell_list` WHERE `Id` IN (2024801);
 INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
 (2024801, 1, 17173, 0, -1, 1, 0, 100, 0, 4000, 12000, 6000, 14000, 'Sunfury Nethermancer - Drain Life - current'),
-(2024801, 2, 9613, 1, -1, 1, 0, 100, 0, 0, 0, 0, 0, 'Sunfury Nethermancer - Shadow Bolt - current');
+(2024801, 2, 9613, 2, -1, 1, 0, 100, 0, 0, 0, 0, 0, 'Sunfury Nethermancer - Shadow Bolt - current');
 
 UPDATE `creature_template` SET `SpellList` = 2024801 WHERE `entry` = 20248;
 
