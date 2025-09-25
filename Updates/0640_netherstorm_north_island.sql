@@ -45,7 +45,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+26, 20285, 530, 1, 3853.89, 4012.15, 127.951, 0.702518, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72061
 (@CGUID+27, 20285, 530, 1, 3873.28, 4006.68, 122.858, 3.82268, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72062
 (@CGUID+28, 20285, 530, 1, 3903.22, 3985.75, 121.26, 4.34587, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72063
-(@CGUID+29, 20285, 530, 1, 3903.22, 3985.75, 121.26, 4.34587, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 
+-- (@CGUID+29, 20285, 530, 1, 3903.22, 3985.75, 121.26, 4.34587, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 
 (@CGUID+30, 20285, 530, 1, 3885.48, 4044.31, 120.626, 5.24306, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72064
 (@CGUID+31, 20285, 530, 1, 3912.11, 4053.39, 123.255, 1.53589, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72065
 (@CGUID+32, 20285, 530, 1, 3924.84, 4039.01, 115.434, 1.41372, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72069
@@ -253,10 +253,13 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+0, 4000, 0, 1, 233, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Foreman Sundown - Emote State'), 
 -- Gan'arg Warp-Tinker move to a near Netherstorm Use Standing Target
 (@RELAYID+1, 0, 0, 31, 19483, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Terminate Script if no Netherstorm Use Standing Target found'), 
+-- only change phase if script can continue
 (@RELAYID+1, 1, 1, 35, 5, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventA to self'), -- to change phase to 0
 (@RELAYID+1, 1, 2, 21, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - set Active object'), 
+(@RELAYID+1, 1, 3, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move idle'), 
+(@RELAYID+1, 1, 4, 36, 0, 0, 0, 19483, 45, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move idle'), 
 -- 0 yards + bounding radius of target s the best way for npcs inside of mine, else they will try to run out to get better contact point
-(@RELAYID+1, 1, 3, 37, 0, 0, 0, 19483, 45, 1, 0, @RELAYID+2, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move to Netherstorm Use Standing'), 
+(@RELAYID+1, 1000, 3, 37, 0, 0, 0, 19483, 45, 1, 0, @RELAYID+2, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move to Netherstorm Use Standing'), 
 -- Gan'arg Warp-Tinker when waypoint reached set EmoteState
 (@RELAYID+2, 0, 0, 35, 6, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventB'),
 (@RELAYID+2, 0, 1, 1, 173, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Emote StateWork'), -- 20:08:25.784 emote EmoteState: 173
@@ -264,4 +267,6 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - remove Emote StateWork'), -- 20:08:32.238
 (@RELAYID+3, 2000, 0, 3, @RELAYID+4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Move to Home Position'),-- 20:08:34.678 move home 
 -- Gan\'arg Warp-Tinker BaseScript when reached HomePosition - inform self to change phase
-(@RELAYID+4, 0, 0, 35, 8, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventC'); -- to change phase back to 1
+(@RELAYID+4, 0, 0, 35, 8, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventC'), -- to change phase back to 1
+(@RELAYID+4, 0, 1, 20, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Change to random Movement'), 
+(@RELAYID+4, 0, 2, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Remove Active object');
