@@ -77,8 +77,12 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 -- Netherstorm Use Standing Target 
 (@CGUID+57, 19483, 530, 1, 3826.89, 3903.93, 108.826, 4.76475, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69779
 (@CGUID+58, 19483, 530, 1, 3827.81, 3892.66, 109.092, 5.28835, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69778
-(@CGUID+59, 19483, 530, 1, 3840.54, 3884.4, 108.471, 3.75246, 300, 300, 0, 0); -- Netherstorm Use Standing Target guid before 69777
+(@CGUID+59, 19483, 530, 1, 3840.54, 3884.4, 108.471, 3.75246, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69777
 
+(@CGUID+60, 19483, 530, 1, 3859.39, 4017.11, 127.545, 2.49582, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69781
+(@CGUID+61, 19483, 530, 1, 3859.1, 4003.34, 126.694, 3.1765, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69782
+
+(@CGUID+61, 19483, 530, 1, 3869.87, 4000.86, 124.866, 3.22886, 300, 300, 0, 0); -- Netherstorm Use Standing Target guid before 69783
 
 DELETE FROM creature_spawn_data WHERE guid BETWEEN @CGUID+1 AND @CGUID+22;
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES
