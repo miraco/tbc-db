@@ -82,7 +82,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+60, 19483, 530, 1, 3859.39, 4017.11, 127.545, 2.49582, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69781
 (@CGUID+61, 19483, 530, 1, 3859.1, 4003.34, 126.694, 3.1765, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69782
 
-(@CGUID+61, 19483, 530, 1, 3869.87, 4000.86, 124.866, 3.22886, 300, 300, 0, 0); -- Netherstorm Use Standing Target guid before 69783
+(@CGUID+62, 19483, 530, 1, 3869.87, 4000.86, 124.866, 3.22886, 300, 300, 0, 0); -- Netherstorm Use Standing Target guid before 69783
 
 DELETE FROM creature_spawn_data WHERE guid BETWEEN @CGUID+1 AND @CGUID+22;
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES
@@ -233,13 +233,30 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 
 -- Scripts
 SET @RELAYID := 18100;
-DELETE FROM dbscripts_on_relay WHERE id BETWEEN @RELAYID+1 AND @RELAYID+4;
+DELETE FROM dbscript_random_templates WHERE id BETWEEN @RELAYID+0 AND @RELAYID+1;
+INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VALUES
+-- Foreman Sundown random text's
+(@RELAYID+0, 0, 18000, 0, 'Netherstorm - Foreman Sundown - Say 1'), 
+(@RELAYID+0, 0, 18001, 0, 'Netherstorm - Foreman Sundown - Say 2'), 
+(@RELAYID+0, 0, 18002, 0, 'Netherstorm - Foreman Sundown - Say 3'), 
+(@RELAYID+0, 0, 18003, 0, 'Netherstorm - Foreman Sundown - Say 4'), 
+(@RELAYID+0, 0, 18004, 0, 'Netherstorm - Foreman Sundown - Say 5'), 
+(@RELAYID+0, 0, 18005, 0, 'Netherstorm - Foreman Sundown - Say 6'), 
+(@RELAYID+0, 0, 18006, 0, 'Netherstorm - Foreman Sundown - Say 7'), 
+(@RELAYID+0, 0, 18007, 0, 'Netherstorm - Foreman Sundown - Say 8');
+
+
+DELETE FROM dbscripts_on_relay WHERE id BETWEEN @RELAYID+0 AND @RELAYID+4;
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+-- Foreman Sundown say random Text and change EmoteState
+(@RELAYID+0, 0, 0, 0, @RELAYID+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Foreman Sundown - Say RandomText'), 
+(@RELAYID+0, 4000, 0, 1, 233, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Foreman Sundown - Emote State'), 
 -- Gan'arg Warp-Tinker move to a near Netherstorm Use Standing Target
 (@RELAYID+1, 0, 0, 31, 19483, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Terminate Script if no Netherstorm Use Standing Target found'), 
 (@RELAYID+1, 1, 1, 35, 5, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventA to self'), -- to change phase to 0
 (@RELAYID+1, 1, 2, 21, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - set Active object'), 
-(@RELAYID+1, 1, 3, 37, 0, 0, 1, 19483, 45, 9, 0, @RELAYID+2, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move to Netherstorm Use Standing'), 
+-- 0 yards + bounding radius of target s the best way for npcs inside of mine, else they will try to run out to get better contact point
+(@RELAYID+1, 1, 3, 37, 0, 0, 0, 19483, 45, 1, 0, @RELAYID+2, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move to Netherstorm Use Standing'), 
 -- Gan'arg Warp-Tinker when waypoint reached set EmoteState
 (@RELAYID+2, 0, 0, 35, 6, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventB'),
 (@RELAYID+2, 0, 1, 1, 173, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Emote StateWork'), -- 20:08:25.784 emote EmoteState: 173
