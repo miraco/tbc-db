@@ -11,9 +11,9 @@ SET @STRINGID := 28010; -- used for StringID's
  
 
 DELETE FROM creature WHERE guid IN (74129, 67673, 67656, 67655, 67661, 67659, 67660, 67662, 67665, 67663, 67664, 67666, 67667, 67668, 67670, 67669, 67671, 67673, 67672, 67657, 67658, 72203, 74122, 72062, 72063, 72064, 72065, 72069, 72074,
-72075, 72073, 72072, 72353, 71953, 71966, 71967, 71961, 71955, 73468, 72211, 72210, 72204, 72060, 72059, 72058, 74123, 72061, 72071);
+72075, 72073, 72072, 72353, 71953, 71966, 71967, 71961, 71955, 73468, 72211, 72210, 72204, 72060, 72059, 72058, 74123, 72061, 72071, 69777, 69778, 69779);
 
-DELETE FROM creature WHERE guid BETWEEN @CGUID+1 AND @CGUID+22;
+DELETE FROM creature WHERE guid BETWEEN @CGUID+1 AND @CGUID+59;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 -- Phase-Hunter
 (@CGUID+1, 18879, 530, 1, 4079.78, 3665.91, 126.014, 2.08321, 120, 180, 0, 2), -- Phase Hunter guid before 67656 
@@ -71,9 +71,14 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+52, 20326, 530, 1, 3940.73, 4046.72, 116.406, 4.04487, 360, 420, 0, 0), -- Mo'arg Warp-Master old guid 72210
 (@CGUID+53, 20326, 530, 1, 3935.67, 3949.44, 123.835, 5.1906, 360, 420, 0, 0), -- Mo'arg Warp-Master old guid 72204
 
-(@CGUID+54, 20285, 530, 1, 3821.72, 3906.72, 109.735, 4.16128, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72060
+(@CGUID+54, 20285, 530, 1, 3821.72, 3906.72, 109.735, 5.7770, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72060
 (@CGUID+55, 20285, 530, 1, 3820.76, 3887.49, 109.646, 0.122173, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72059
-(@CGUID+56, 20285, 530, 1, 3841.27, 3877.35, 108.073, 2.95198, 360, 420, 0, 0); -- Gan'arg Warp-Tinker guid before 72058
+(@CGUID+56, 20285, 530, 1, 3841.27, 3877.35, 108.073, 1.3962, 360, 420, 0, 0), -- Gan'arg Warp-Tinker guid before 72058
+-- Netherstorm Use Standing Target 
+(@CGUID+57, 19483, 530, 1, 3826.89, 3903.93, 108.826, 4.76475, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69779
+(@CGUID+58, 19483, 530, 1, 3827.81, 3892.66, 109.092, 5.28835, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69778
+(@CGUID+59, 19483, 530, 1, 3840.54, 3884.4, 108.471, 3.75246, 300, 300, 0, 0); -- Netherstorm Use Standing Target guid before 69777
+
 
 DELETE FROM creature_spawn_data WHERE guid BETWEEN @CGUID+1 AND @CGUID+22;
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES
@@ -221,3 +226,21 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 -- Sunfury Blood Knight
 (@SGGUID+70, @CGUID+24, -1, 0),
 (@SGGUID+70, @CGUID+25, -1, 0);
+
+-- Scripts
+SET @RELAYID := 18100;
+DELETE FROM dbscripts_on_relay WHERE id BETWEEN @RELAYID+1 AND @RELAYID+4;
+INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+-- Gan'arg Warp-Tinker move to a near Netherstorm Use Standing Target
+(@RELAYID+1, 0, 0, 31, 19483, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Terminate Script if no Netherstorm Use Standing Target found'), 
+(@RELAYID+1, 1, 1, 35, 5, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventA to self'), -- to change phase to 0
+(@RELAYID+1, 1, 2, 21, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - set Active object'), 
+(@RELAYID+1, 1, 3, 37, 0, 0, 1, 19483, 45, 9, 0, @RELAYID+2, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move to Netherstorm Use Standing'), 
+-- Gan'arg Warp-Tinker when waypoint reached set EmoteState
+(@RELAYID+2, 0, 0, 35, 6, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventB'),
+(@RELAYID+2, 0, 1, 1, 173, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Emote StateWork'), -- 20:08:25.784 emote EmoteState: 173
+-- Gan'arg Warp-Tinker end RP and move home
+(@RELAYID+3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - remove Emote StateWork'), -- 20:08:32.238
+(@RELAYID+3, 2000, 0, 3, @RELAYID+4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Move to Home Position'),-- 20:08:34.678 move home 
+-- Gan\'arg Warp-Tinker BaseScript when reached HomePosition - inform self to change phase
+(@RELAYID+4, 0, 0, 35, 8, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventC'); -- to change phase back to 1
