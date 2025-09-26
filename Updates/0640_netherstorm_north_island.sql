@@ -11,7 +11,10 @@ SET @STRINGID := 28010; -- used for StringID's
  
 
 DELETE FROM creature WHERE guid IN (74129, 67673, 67656, 67655, 67661, 67659, 67660, 67662, 67665, 67663, 67664, 67666, 67667, 67668, 67670, 67669, 67671, 67673, 67672, 67657, 67658, 72203, 74122, 72062, 72063, 72064, 72065, 72069, 72074,
-72075, 72073, 72072, 72353, 71953, 71966, 71967, 71961, 71955, 73468, 72211, 72210, 72204, 72060, 72059, 72058, 74123, 72061, 72071, 69777, 69778, 69779);
+72075, 72073, 72072, 72353, 71953, 71966, 71967, 71961, 71955, 73468, 72211, 72210, 72204, 72060, 72059, 72058, 74123, 72061, 72071);
+
+-- Netherstorm Use Standing Target
+DELETE FROM creature WHERE guid IN (69779, 69778, 69777, 69781, 69782, 69783, 69801, 69792, 69793, 69785, 69789, 69780, 69784, 69786, 69796, 69787, 69791, 69797, 69788, 69803, 69808, 69794, 69795, 69807, 69790, 69798, 69805, 69806, 69809, 69804, 69799, 69800, 69802);
 
 DELETE FROM creature WHERE guid BETWEEN @CGUID+1 AND @CGUID+59;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
@@ -78,11 +81,40 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+57, 19483, 530, 1, 3826.89, 3903.93, 108.826, 4.76475, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69779
 (@CGUID+58, 19483, 530, 1, 3827.81, 3892.66, 109.092, 5.28835, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69778
 (@CGUID+59, 19483, 530, 1, 3840.54, 3884.4, 108.471, 3.75246, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69777
-
 (@CGUID+60, 19483, 530, 1, 3859.39, 4017.11, 127.545, 2.49582, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69781
 (@CGUID+61, 19483, 530, 1, 3859.1, 4003.34, 126.694, 3.1765, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69782
-
-(@CGUID+62, 19483, 530, 1, 3869.87, 4000.86, 124.866, 3.22886, 300, 300, 0, 0); -- Netherstorm Use Standing Target guid before 69783
+(@CGUID+62, 19483, 530, 1, 3869.87, 4000.86, 124.866, 3.22886, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69783
+(@CGUID+63, 19483, 530, 1, 4090.85, 3972.21, 118.577, 0.10472, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69801
+(@CGUID+64, 19483, 530, 1, 3940.06, 4104.45, 191.859, 1.69297, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69792
+(@CGUID+65, 19483, 530, 1, 3959.75, 4117.04, 190.492, 2.84489, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69793
+(@CGUID+66, 19483, 530, 1, 3879.24, 4051.63, 120.939, 2.49582, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69785
+(@CGUID+67, 19483, 530, 1, 3909.96, 4058.55, 123.02, 2.51327, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69789
+(@CGUID+68, 19483, 530, 1, 3876.51, 3998.69, 123.608, 2.9147, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69780
+(@CGUID+69, 19483, 530, 1, 3897.78, 3978.58, 123.336, 2.87979, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69784
+(@CGUID+70, 19483, 530, 1, 3904.73, 3977.05, 123.44, 2.93215, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69786
+(@CGUID+71, 19483, 530, 1, 3923.06, 3978.97, 123.437, 1.3439, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69796
+(@CGUID+72, 19483, 530, 1, 3919.66, 4001.44, 186.532, 4.81711, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69787
+(@CGUID+73, 19483, 530, 1, 3928.68, 4050.03, 116.278, 5.84685, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69791
+(@CGUID+74, 19483, 530, 1, 3931.81, 3982.08, 123.514, 3.22886, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69797
+(@CGUID+75, 19483, 530, 1, 3923.71, 4050.57, 189.414, 1.09956, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69788
+(@CGUID+76, 19483, 530, 1, 3954.96, 4026.19, 115.209, 5.16617, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69803
+(@CGUID+77, 19483, 530, 1, 3975.96, 4004.2, 118.819, 3.63028, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69808
+(@CGUID+78, 19483, 530, 1, 3936.15, 4086.53, 191.765, 5.67232, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69794
+(@CGUID+79, 19483, 530, 1, 3987.59, 4045.86, 194.303, 3.64774, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69795
+(@CGUID+80, 19483, 530, 1, 4024.76, 3995.58, 127.354, 2.51327, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69807
+(@CGUID+81, 19483, 530, 1, 3978.88, 3991.04, 194.309, 5.58505, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69790
+(@CGUID+82, 19483, 530, 1, 3959.49, 3931.2, 124.887, 4.13643, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69798
+(@CGUID+83, 19483, 530, 1, 4001.81, 3948.22, 125.21, 5.55015, 300, 300, 0, 0), -- Netherstorm Use Standing Target missing before
+(@CGUID+84, 19483, 530, 1, 4002.87, 4012.03, 192.191, 3.45575, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69805
+(@CGUID+85, 19483, 530, 1, 4007.12, 4021.18, 192.19, 6.21337, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69806
+(@CGUID+86, 19483, 530, 1, 4017.06, 4017.32, 192.19, 0.471239, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69809
+(@CGUID+87, 19483, 530, 1, 4013.08, 4007.37, 192.19, 1.09956, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69804
+(@CGUID+88, 19483, 530, 1, 4038.71, 3970.2, 125.31, 1.3439, 300, 300, 0, 0), -- Netherstorm Use Standing Target missing before
+(@CGUID+89, 19483, 530, 1, 4034.44, 3950.18, 124.331, 0.0698132, 300, 300, 0, 0), -- Netherstorm Use Standing Target missing before
+(@CGUID+90, 19483, 530, 1, 4056.27, 3985.73, 123.267, 2.80998, 300, 300, 0, 0), -- Netherstorm Use Standing Target missing before
+(@CGUID+91, 19483, 530, 1, 3980.71, 3914.13, 124.222, 4.5204, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69799
+(@CGUID+92, 19483, 530, 1, 4032.97, 3982.47, 194.304, 1.53589, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69800
+(@CGUID+93, 19483, 530, 1, 4040.88, 4038.16, 194.309, 2.46091, 300, 300, 0, 0); -- Netherstorm Use Standing Target guid before 69802
 
 DELETE FROM creature_spawn_data WHERE guid BETWEEN @CGUID+1 AND @CGUID+22;
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES
