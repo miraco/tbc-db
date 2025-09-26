@@ -1,6 +1,7 @@
 -- Reguid Zul'Aman Exterior InvisMan spawns outside of Zul Aman 
 
 SET @CGUID := 5308000;
+DELETE FROM creature WHERE guid BETWEEN 5307001 AND 5307050;
 DELETE FROM creature WHERE guid BETWEEN @CGUID+1 AND @CGUID+50;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (@CGUID+1, 23746, 530, 1, 6751.23, -7520.55, 130.214, 1.44862, 300, 300, 0, 0),
