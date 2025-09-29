@@ -189,65 +189,65 @@ INSERT INTO `creature_movement` (`id`, `point`, `PositionX`, `PositionY`, `Posit
 (@CGUID+22, 1, 3699.91, 3970.87, 118.277, 100, 0, 0),
 (@CGUID+22, 2, 3745.8037, 3995.3726, 102.548096, 100, 1000, 1887902),
 -- Mo'arg Warp-Master
-(@CGUID+51, 1, 3842.289, 4011.4714, 129.12753, 100, 0, 0),
-(@CGUID+51, 2, 3853.3828, 4008.5986, 127.607155, 100, 0, 0),
-(@CGUID+51, 3, 3862.4844, 4009.284, 125.23067, 100, 0, 0),
-(@CGUID+51, 4, 3868.7075, 4016.523, 123.55589, 100, 0, 0),
-(@CGUID+51, 5, 3868.967, 4024.6277, 124.13804, 100, 0, 0),
-(@CGUID+51, 6, 3871.3538, 4031.05, 123.228355, 100, 0, 0),
-(@CGUID+51, 7, 3878.985, 4039.4924, 120.8948, 100, 0, 0),
-(@CGUID+51, 8, 3886.5056, 4041.523, 120.37122, 100, 0, 0),
-(@CGUID+51, 9, 3890.7478, 4049.1597, 121.23505, 100, 0, 0),
-(@CGUID+51, 10, 3896.306, 4051.024, 123.89471, 100, 0, 0),
-(@CGUID+51, 11, 3907.3784, 4053.8386, 123.36023, 100, 0, 0),
-(@CGUID+51, 12, 3926.7783, 4067.159, 122.00788, 100, 0, 0),
-(@CGUID+51, 13, 3908.1033, 4053.3176, 123.425514, 100, 0, 0),
-(@CGUID+51, 14, 3896.298, 4049.8733, 123.99302, 100, 0, 0),
-(@CGUID+51, 15, 3891.279, 4048.001, 121.27564, 100, 0, 0),
-(@CGUID+51, 16, 3887.3096, 4040.9492, 120.42839, 100, 0, 0),
-(@CGUID+51, 17, 3879.6675, 4038.837, 120.83578, 100, 0, 0),
-(@CGUID+51, 18, 3871.9102, 4030.794, 123.19261, 100, 0, 0),
-(@CGUID+51, 19, 3869.5737, 4024.3867, 124.03175, 100, 0, 0),
-(@CGUID+51, 20, 3869.4788, 4016.5938, 123.40323, 100, 0, 0),
-(@CGUID+51, 21, 3880.0457, 4009.839, 121.70104, 100, 0, 0),
-(@CGUID+51, 22, 3893.4136, 3997.0833, 120.60881, 100, 0, 0),
-(@CGUID+51, 23, 3904.8672, 3989.7578, 121.1012, 100, 0, 0),
-(@CGUID+51, 24, 3915.4268, 3987.1338, 121.7632, 100, 0, 0),
-(@CGUID+51, 25, 3925.711, 3991.01, 122.07116, 100, 0, 0),
-(@CGUID+51, 26, 3936.4402, 3997.6345, 119.87072, 100, 0, 0),
-(@CGUID+51, 27, 3937.2607, 3999.5603, 119.58361, 100, 0, 0),
-(@CGUID+51, 28, 3938.8132, 4003.2036, 117.61888, 100, 0, 0),
-(@CGUID+51, 29, 3939.1777, 4004.0588, 116.928925, 100, 0, 0),
-(@CGUID+51, 30, 3940.708, 4007.6501, 115.903725, 100, 0, 0),
-(@CGUID+51, 31, 3942.006, 4010.6963, 115.46835, 100, 0, 0),
+(@CGUID+51, 1, 3842.289, 4011.4714, 129.12753, 100, 0, 2032601),
+(@CGUID+51, 2, 3853.3828, 4008.5986, 127.607155, 100, 0, 2032601),
+(@CGUID+51, 3, 3862.4844, 4009.284, 125.23067, 100, 0, 2032601),
+(@CGUID+51, 4, 3868.7075, 4016.523, 123.55589, 100, 0, 2032601),
+(@CGUID+51, 5, 3868.967, 4024.6277, 124.13804, 100, 0, 2032601),
+(@CGUID+51, 6, 3871.3538, 4031.05, 123.228355, 100, 0, 2032601),
+(@CGUID+51, 7, 3878.985, 4039.4924, 120.8948, 100, 0, 2032601),
+(@CGUID+51, 8, 3886.5056, 4041.523, 120.37122, 100, 0, 2032601),
+(@CGUID+51, 9, 3890.7478, 4049.1597, 121.23505, 100, 0, 2032601),
+(@CGUID+51, 10, 3896.306, 4051.024, 123.89471, 100, 0, 2032601),
+(@CGUID+51, 11, 3907.3784, 4053.8386, 123.36023, 100, 0, 2032601),
+(@CGUID+51, 12, 3926.7783, 4067.159, 122.00788, 100, 0, 2032601),
+(@CGUID+51, 13, 3908.1033, 4053.3176, 123.425514, 100, 0, 2032601),
+(@CGUID+51, 14, 3896.298, 4049.8733, 123.99302, 100, 0, 2032601),
+(@CGUID+51, 15, 3891.279, 4048.001, 121.27564, 100, 0, 2032601),
+(@CGUID+51, 16, 3887.3096, 4040.9492, 120.42839, 100, 0, 2032601),
+(@CGUID+51, 17, 3879.6675, 4038.837, 120.83578, 100, 0, 2032601),
+(@CGUID+51, 18, 3871.9102, 4030.794, 123.19261, 100, 0, 2032601),
+(@CGUID+51, 19, 3869.5737, 4024.3867, 124.03175, 100, 0, 2032601),
+(@CGUID+51, 20, 3869.4788, 4016.5938, 123.40323, 100, 0, 2032601),
+(@CGUID+51, 21, 3880.0457, 4009.839, 121.70104, 100, 0, 2032601),
+(@CGUID+51, 22, 3893.4136, 3997.0833, 120.60881, 100, 0, 2032601),
+(@CGUID+51, 23, 3904.8672, 3989.7578, 121.1012, 100, 0, 2032601),
+(@CGUID+51, 24, 3915.4268, 3987.1338, 121.7632, 100, 0, 2032601),
+(@CGUID+51, 25, 3925.711, 3991.01, 122.07116, 100, 0, 2032601),
+(@CGUID+51, 26, 3936.4402, 3997.6345, 119.87072, 100, 0, 2032601),
+(@CGUID+51, 27, 3937.2607, 3999.5603, 119.58361, 100, 0, 2032601),
+(@CGUID+51, 28, 3938.8132, 4003.2036, 117.61888, 100, 0, 2032601),
+(@CGUID+51, 29, 3939.1777, 4004.0588, 116.928925, 100, 0, 2032601),
+(@CGUID+51, 30, 3940.708, 4007.6501, 115.903725, 100, 0, 2032601),
+(@CGUID+51, 31, 3942.006, 4010.6963, 115.46835, 100, 0, 2032601),
 -- Mo'arg Warp-Master
-(@CGUID+52, 1, 3940.204, 4046.0479, 116.30853, 100, 0, 0),
-(@CGUID+52, 2, 3938.2864, 4037.5347, 115.95491, 100, 0, 0),
-(@CGUID+52, 3, 3945.486, 4019.2778, 113.65152, 100, 0, 0), 
-(@CGUID+52, 4, 3958.2275, 4015.4524, 115.47405, 100, 0, 0),
-(@CGUID+52, 5, 3971.6572, 4012.8098, 117.381744, 100, 0, 0),
-(@CGUID+52, 6, 3986.997, 4005.0574, 118.688354, 100, 0, 0),
-(@CGUID+52, 7, 3999.2727, 3997.5852, 120.37438, 100, 0, 0),
-(@CGUID+52, 8, 4014.3672, 3989.1165, 122.850006, 100, 0, 0),
-(@CGUID+52, 9, 4020.573, 3980.856, 123.21446, 100, 0, 0),
+(@CGUID+52, 1, 3940.204, 4046.0479, 116.30853, 100, 0, 2032601),
+(@CGUID+52, 2, 3938.2864, 4037.5347, 115.95491, 100, 0, 2032601),
+(@CGUID+52, 3, 3945.486, 4019.2778, 113.65152, 100, 0, 2032601), 
+(@CGUID+52, 4, 3958.2275, 4015.4524, 115.47405, 100, 0, 2032601),
+(@CGUID+52, 5, 3971.6572, 4012.8098, 117.381744, 100, 0, 2032601),
+(@CGUID+52, 6, 3986.997, 4005.0574, 118.688354, 100, 0, 2032601),
+(@CGUID+52, 7, 3999.2727, 3997.5852, 120.37438, 100, 0, 2032601),
+(@CGUID+52, 8, 4014.3672, 3989.1165, 122.850006, 100, 0, 2032601),
+(@CGUID+52, 9, 4020.573, 3980.856, 123.21446, 100, 0, 2032601),
 -- Mo'arg Warp-Master
-(@CGUID+53, 1, 3936.091, 3948.6182, 123.66802, 100, 0, 0),
-(@CGUID+53, 2, 3943.6675, 3934.0305, 123.15839, 100, 0, 0),
-(@CGUID+53, 3, 3952.8164, 3924.9978, 123.17521, 100, 0, 0),
-(@CGUID+53, 4, 3966.2795, 3921.3872, 123.92598, 100, 0, 0),
-(@CGUID+53, 5, 3976.4792, 3922.8782, 124.21473, 100, 0, 0),
-(@CGUID+53, 6, 3999.2083, 3901.4358, 122.303314, 100, 0, 0),
-(@CGUID+53, 7, 3989.837, 3922.6067, 124.430435, 100, 0, 0),
-(@CGUID+53, 8, 3989.6748, 3936.371, 124.37648, 100, 0, 0),
-(@CGUID+53, 9, 3995.8196, 3942.079, 124.43792, 100, 0, 0),
-(@CGUID+53, 10, 4005.5051, 3947.3025, 125.02232, 100, 0, 0),
-(@CGUID+53, 11, 4020.7688, 3955.944, 124.42176, 100, 0, 0),
-(@CGUID+53, 12, 4030.636, 3963.355, 125.3898, 100, 0, 0),
-(@CGUID+53, 13, 4029.4346, 3977.082, 124.20737, 100, 0, 0),
-(@CGUID+53, 14, 4036.929, 3981.8694, 125.2063, 100, 0, 0),
-(@CGUID+53, 15, 4048.8372, 3979.76, 123.279175, 100, 0, 0),
-(@CGUID+53, 16, 4070.049, 3976.9119, 119.15133, 100, 0, 0),
-(@CGUID+53, 17, 4087.3137, 3985.1328, 116.5652, 100, 0, 0);
+(@CGUID+53, 1, 3936.091, 3948.6182, 123.66802, 100, 0, 2032601),
+(@CGUID+53, 2, 3943.6675, 3934.0305, 123.15839, 100, 0, 2032601),
+(@CGUID+53, 3, 3952.8164, 3924.9978, 123.17521, 100, 0, 2032601),
+(@CGUID+53, 4, 3966.2795, 3921.3872, 123.92598, 100, 0, 2032601),
+(@CGUID+53, 5, 3976.4792, 3922.8782, 124.21473, 100, 0, 2032601),
+(@CGUID+53, 6, 3999.2083, 3901.4358, 122.303314, 100, 0, 2032601),
+(@CGUID+53, 7, 3989.837, 3922.6067, 124.430435, 100, 0, 2032601),
+(@CGUID+53, 8, 3989.6748, 3936.371, 124.37648, 100, 0, 2032601),
+(@CGUID+53, 9, 3995.8196, 3942.079, 124.43792, 100, 0, 2032601),
+(@CGUID+53, 10, 4005.5051, 3947.3025, 125.02232, 100, 0, 2032601),
+(@CGUID+53, 11, 4020.7688, 3955.944, 124.42176, 100, 0, 2032601),
+(@CGUID+53, 12, 4030.636, 3963.355, 125.3898, 100, 0, 2032601),
+(@CGUID+53, 13, 4029.4346, 3977.082, 124.20737, 100, 0, 2032601),
+(@CGUID+53, 14, 4036.929, 3981.8694, 125.2063, 100, 0, 2032601),
+(@CGUID+53, 15, 4048.8372, 3979.76, 123.279175, 100, 0, 2032601),
+(@CGUID+53, 16, 4070.049, 3976.9119, 119.15133, 100, 0, 2032601),
+(@CGUID+53, 17, 4087.3137, 3985.1328, 116.5652, 100, 0, 2032601);
 
 DELETE FROM creature_addon WHERE guid IN (71955, 72064, 72064, 72065, 72072, 72073, 72211);
 
@@ -335,10 +335,18 @@ INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VA
 (@RELAYID+0, 0, 18004, 0, 'Netherstorm - Foreman Sundown - Say 5'), 
 (@RELAYID+0, 0, 18005, 0, 'Netherstorm - Foreman Sundown - Say 6'), 
 (@RELAYID+0, 0, 18006, 0, 'Netherstorm - Foreman Sundown - Say 7'), 
-(@RELAYID+0, 0, 18007, 0, 'Netherstorm - Foreman Sundown - Say 8');
+(@RELAYID+0, 0, 18007, 0, 'Netherstorm - Foreman Sundown - Say 8'),
+-- Mo'arg Warp-Master 2 differen RPs
+(@RELAYID+1, 1, @RELAYID+5, 100, 'Netherstorm - Mo\'arg Warp-Master - RP 1'), 
+(@RELAYID+1, 1, @RELAYID+6, 0, 'Netherstorm - Mo\'arg Warp-Master - RP 12'), 
+(@RELAYID+1, 1, @RELAYID+4, 0, 'Netherstorm - Mo\'arg Warp-Master - Nothing');
 
+DELETE FROM dbscripts_on_creature_movement WHERE id IN (2032601);
+INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+-- Mo'arg Warp-Master
+(2032601, 0, 0, 45, 0, @RELAYID+1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Start RandomScript');
 
-DELETE FROM dbscripts_on_relay WHERE id BETWEEN @RELAYID+0 AND @RELAYID+4;
+DELETE FROM dbscripts_on_relay WHERE id BETWEEN @RELAYID+0 AND @RELAYID+6;
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Foreman Sundown say random Text and change EmoteState
 (@RELAYID+0, 0, 0, 0, @RELAYID+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Foreman Sundown - Say RandomText'), 
@@ -349,7 +357,6 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+1, 1, 1, 35, 5, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventA to self'), -- to change phase to 0
 (@RELAYID+1, 1, 2, 21, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - set Active object'), 
 (@RELAYID+1, 1, 3, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move idle'), 
-(@RELAYID+1, 1, 4, 36, 0, 0, 0, 19483, 45, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move idle'), 
 -- 0 yards + bounding radius of target s the best way for npcs inside of mine, else they will try to run out to get better contact point
 (@RELAYID+1, 1000, 3, 37, 0, 0, 0, 19483, 45, 1, 0, @RELAYID+2, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - move to Netherstorm Use Standing'), 
 -- Gan'arg Warp-Tinker when waypoint reached set EmoteState
@@ -360,5 +367,19 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+3, 2000, 0, 3, @RELAYID+4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Move to Home Position'),-- 20:08:34.678 move home 
 -- Gan\'arg Warp-Tinker BaseScript when reached HomePosition - inform self to change phase
 (@RELAYID+4, 0, 0, 35, 8, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventC'), -- to change phase back to 1
-(@RELAYID+4, 0, 1, 20, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Change to random Movement'), 
-(@RELAYID+4, 0, 2, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Remove Active object');
+(@RELAYID+4, 1000, 0, 20, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Change to random Movement'), 
+(@RELAYID+4, 1000, 1, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Remove Active object'),
+-- Mo'arg Warp-Master RP with Netherstorm Moarg Work Target
+(@RELAYID+5, 0, 0, 31, 20804, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Terminate Script if no Netherstorm Moarg Work Target'), 
+(@RELAYID+5, 1, 1, 21, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Set Active Object'), 
+(@RELAYID+5, 1, 2, 32, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Pause Waypoint'), 
+(@RELAYID+5, 1, 3, 37, 0, 0, 0, 20804, 15, 1, 0, @RELAYID+6, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - move to Netherstorm Moarg Work Target'), 
+-- Mo'arg Warp-Master RP when at Netherstorm Moarg Work Target
+(@RELAYID+6, 0, 0, 36, 0, 0, 0, 20804, 15, 1, 0,0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Face Netherstorm Moarg Work Target'), 
+(@RELAYID+6, 0, 1, 1, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Emote State'), 
+(@RELAYID+6, 5000, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Remove Emote State'), 
+(@RELAYID+6, 8000, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Resume Waypoints'),
+(@RELAYID+6, 8000, 1, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Remove Active Object'); 
+
+
+-- Mo'arg Warp-Master RP with Gan\'arg Warp-Tinker
