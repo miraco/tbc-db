@@ -13,8 +13,11 @@ SET @STRINGID := 28010; -- used for StringID's
 DELETE FROM creature WHERE guid IN (74129, 67673, 67656, 67655, 67661, 67659, 67660, 67662, 67665, 67663, 67664, 67666, 67667, 67668, 67670, 67669, 67671, 67673, 67672, 67657, 67658, 72203, 74122, 72062, 72063, 72064, 72065, 72069, 72074,
 72075, 72073, 72072, 72353, 71953, 71966, 71967, 71961, 71955, 73468, 72211, 72210, 72204, 72060, 72059, 72058, 74123, 72061, 72071);
 
--- Netherstorm Use Standing Target
+-- Old Netherstorm Use Standing Target spawns
 DELETE FROM creature WHERE guid IN (69779, 69778, 69777, 69781, 69782, 69783, 69801, 69792, 69793, 69785, 69789, 69780, 69784, 69786, 69796, 69787, 69791, 69797, 69788, 69803, 69808, 69794, 69795, 69807, 69790, 69798, 69805, 69806, 69809, 69804, 69799, 69800, 69802);
+
+-- Old Netherstorm Moarg Work Target spawns
+DELETE FROM creature WHERE guid IN (73484, 73482, 73481, 73490, 73486, 73483, 73487, 73488, 73489, 73473, 73485, 73480, 73479, 73475, 73471, 73474, 73472, 73469, 73470, 73476, 73477, 73478);
 
 DELETE FROM creature WHERE guid BETWEEN @CGUID+1 AND @CGUID+93;
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
@@ -114,7 +117,33 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+90, 19483, 530, 1, 4056.27, 3985.73, 123.267, 2.80998, 300, 300, 0, 0), -- Netherstorm Use Standing Target missing before
 (@CGUID+91, 19483, 530, 1, 3980.71, 3914.13, 124.222, 4.5204, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69799
 (@CGUID+92, 19483, 530, 1, 4032.97, 3982.47, 194.304, 1.53589, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69800
-(@CGUID+93, 19483, 530, 1, 4040.88, 4038.16, 194.309, 2.46091, 300, 300, 0, 0); -- Netherstorm Use Standing Target guid before 69802
+(@CGUID+93, 19483, 530, 1, 4040.88, 4038.16, 194.309, 2.46091, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69802
+
+(5880085, 20804, 530, 1, 4060.6, 3965.33, 123.124, 3.00197, 120, 0, 0, 0), -- Netherstorm Moarg Work Target missing before 
+(5880125, 20804, 530, 1, 3946.8, 4108.65, 191.547, 4.45059, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73478
+(5880126, 20804, 530, 1, 3957.66, 4115.33, 190.731, 3.82227, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73477
+(5880128, 20804, 530, 1, 3940.03, 4096.84, 191.957, 1.0472, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73476
+(5880139, 20804, 530, 1, 3875.81, 4018.51, 122.883, 2.46091, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73470
+(5880140, 20804, 530, 1, 3876.22, 4031.48, 122.736, 2.46091, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73469
+(5880141, 20804, 530, 1, 3902.85, 4047.02, 123.308, 5.95157, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73472
+(5880144, 20804, 530, 1, 3914.99, 4062.3, 122.868, 4.13643, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73474
+(5880149, 20804, 530, 1, 3887.53, 4035.94, 121.435, 1.98968, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73471
+(5880161, 20804, 530, 1, 3923.68, 3994.43, 122.617, 1.98968, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73475
+(5880165, 20804, 530, 1, 3935, 4008.3, 116.627, 4.13643, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73479
+(5880167, 20804, 530, 1, 3940.27, 3989.43, 120.831, 5.95157, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73480
+(5880169, 20804, 530, 1, 3950.95, 4013.32, 113.997, 0.994838, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73485
+(5880177, 20804, 530, 1, 3932.79, 4063.98, 190.351, 3.63028, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73473
+(5880179, 20804, 530, 1, 3976.12, 4018.11, 119.497, 6.24828, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73489
+(5880184, 20804, 530, 1, 3986.37, 4002.6, 119.238, 2.72271, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73488
+(5880187, 20804, 530, 1, 4020.6, 3999.03, 126.347, 4.18879, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73487
+(5880190, 20804, 530, 1, 3983.9, 3944.19, 125.306, 2.74017, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73483
+(5880197, 20804, 530, 1, 4021.36, 3973.67, 124.007, 4.90438, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73486
+(5880198, 20804, 530, 1, 4003.44, 3952.01, 126.081, 1.01229, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73490
+(5880204, 20804, 530, 1, 3940.63, 3921.39, 122.844, 3.97935, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73481
+(5880215, 20804, 530, 1, 3994.07, 3927.37, 125.098, 4.72984, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73482
+(5880222, 20804, 530, 1, 4027.58, 3942.31, 124.457, 3.14159, 120, 0, 0, 0), -- Netherstorm Moarg Work Target missing before 
+(5880245, 20804, 530, 1, 3989.3, 3897.51, 123.321, 3.78736, 120, 0, 0, 0); -- Netherstorm Moarg Work Target guid before 73484
+
 
 DELETE FROM creature_spawn_data WHERE guid BETWEEN @CGUID+1 AND @CGUID+22;
 INSERT INTO `creature_spawn_data` (`guid`, `id`) VALUES
