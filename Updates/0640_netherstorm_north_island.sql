@@ -119,30 +119,30 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+92, 19483, 530, 1, 4032.97, 3982.47, 194.304, 1.53589, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69800
 (@CGUID+93, 19483, 530, 1, 4040.88, 4038.16, 194.309, 2.46091, 300, 300, 0, 0), -- Netherstorm Use Standing Target guid before 69802
 
-(5880085, 20804, 530, 1, 4060.6, 3965.33, 123.124, 3.00197, 120, 0, 0, 0), -- Netherstorm Moarg Work Target missing before 
-(5880125, 20804, 530, 1, 3946.8, 4108.65, 191.547, 4.45059, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73478
-(5880126, 20804, 530, 1, 3957.66, 4115.33, 190.731, 3.82227, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73477
-(5880128, 20804, 530, 1, 3940.03, 4096.84, 191.957, 1.0472, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73476
-(5880139, 20804, 530, 1, 3875.81, 4018.51, 122.883, 2.46091, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73470
-(5880140, 20804, 530, 1, 3876.22, 4031.48, 122.736, 2.46091, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73469
-(5880141, 20804, 530, 1, 3902.85, 4047.02, 123.308, 5.95157, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73472
-(5880144, 20804, 530, 1, 3914.99, 4062.3, 122.868, 4.13643, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73474
-(5880149, 20804, 530, 1, 3887.53, 4035.94, 121.435, 1.98968, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73471
-(5880161, 20804, 530, 1, 3923.68, 3994.43, 122.617, 1.98968, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73475
-(5880165, 20804, 530, 1, 3935, 4008.3, 116.627, 4.13643, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73479
-(5880167, 20804, 530, 1, 3940.27, 3989.43, 120.831, 5.95157, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73480
-(5880169, 20804, 530, 1, 3950.95, 4013.32, 113.997, 0.994838, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73485
-(5880177, 20804, 530, 1, 3932.79, 4063.98, 190.351, 3.63028, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73473
-(5880179, 20804, 530, 1, 3976.12, 4018.11, 119.497, 6.24828, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73489
-(5880184, 20804, 530, 1, 3986.37, 4002.6, 119.238, 2.72271, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73488
-(5880187, 20804, 530, 1, 4020.6, 3999.03, 126.347, 4.18879, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73487
-(5880190, 20804, 530, 1, 3983.9, 3944.19, 125.306, 2.74017, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73483
-(5880197, 20804, 530, 1, 4021.36, 3973.67, 124.007, 4.90438, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73486
-(5880198, 20804, 530, 1, 4003.44, 3952.01, 126.081, 1.01229, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73490
-(5880204, 20804, 530, 1, 3940.63, 3921.39, 122.844, 3.97935, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73481
-(5880215, 20804, 530, 1, 3994.07, 3927.37, 125.098, 4.72984, 120, 0, 0, 0), -- Netherstorm Moarg Work Target guid before 73482
-(5880222, 20804, 530, 1, 4027.58, 3942.31, 124.457, 3.14159, 120, 0, 0, 0), -- Netherstorm Moarg Work Target missing before 
-(5880245, 20804, 530, 1, 3989.3, 3897.51, 123.321, 3.78736, 120, 0, 0, 0); -- Netherstorm Moarg Work Target guid before 73484
+(5880085, 20804, 530, 1, 4060.6, 3965.33, 123.124, 3.00197, 300, 300, 0, 0), -- Netherstorm Moarg Work Target missing before 
+(5880125, 20804, 530, 1, 3946.8, 4108.65, 191.547, 4.45059, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73478
+(5880126, 20804, 530, 1, 3957.66, 4115.33, 190.731, 3.82227, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73477
+(5880128, 20804, 530, 1, 3940.03, 4096.84, 191.957, 1.0472, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73476
+(5880139, 20804, 530, 1, 3875.81, 4018.51, 122.883, 2.46091, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73470
+(5880140, 20804, 530, 1, 3876.22, 4031.48, 122.736, 2.46091, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73469
+(5880141, 20804, 530, 1, 3902.85, 4047.02, 123.308, 5.95157, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73472
+(5880144, 20804, 530, 1, 3914.99, 4062.3, 122.868, 4.13643, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73474
+(5880149, 20804, 530, 1, 3887.53, 4035.94, 121.435, 1.98968, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73471
+(5880161, 20804, 530, 1, 3923.68, 3994.43, 122.617, 1.98968, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73475
+(5880165, 20804, 530, 1, 3935, 4008.3, 116.627, 4.13643, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73479
+(5880167, 20804, 530, 1, 3940.27, 3989.43, 120.831, 5.95157, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73480
+(5880169, 20804, 530, 1, 3950.95, 4013.32, 113.997, 0.994838, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73485
+(5880177, 20804, 530, 1, 3932.79, 4063.98, 190.351, 3.63028, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73473
+(5880179, 20804, 530, 1, 3976.12, 4018.11, 119.497, 6.24828, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73489
+(5880184, 20804, 530, 1, 3986.37, 4002.6, 119.238, 2.72271, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73488
+(5880187, 20804, 530, 1, 4020.6, 3999.03, 126.347, 4.18879, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73487
+(5880190, 20804, 530, 1, 3983.9, 3944.19, 125.306, 2.74017, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73483
+(5880197, 20804, 530, 1, 4021.36, 3973.67, 124.007, 4.90438, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73486
+(5880198, 20804, 530, 1, 4003.44, 3952.01, 126.081, 1.01229, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73490
+(5880204, 20804, 530, 1, 3940.63, 3921.39, 122.844, 3.97935, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73481
+(5880215, 20804, 530, 1, 3994.07, 3927.37, 125.098, 4.72984, 300, 300, 0, 0), -- Netherstorm Moarg Work Target guid before 73482
+(5880222, 20804, 530, 1, 4027.58, 3942.31, 124.457, 3.14159, 300, 300, 0, 0), -- Netherstorm Moarg Work Target missing before 
+(5880245, 20804, 530, 1, 3989.3, 3897.51, 123.321, 3.78736, 300, 300, 0, 0); -- Netherstorm Moarg Work Target guid before 73484
 
 
 DELETE FROM creature_spawn_data WHERE guid BETWEEN @CGUID+1 AND @CGUID+22;
@@ -366,8 +366,8 @@ INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VA
 (@RELAYID+0, 0, 18006, 0, 'Netherstorm - Foreman Sundown - Say 7'), 
 (@RELAYID+0, 0, 18007, 0, 'Netherstorm - Foreman Sundown - Say 8'),
 -- Mo'arg Warp-Master 2 differen RPs
-(@RELAYID+1, 1, @RELAYID+5, 100, 'Netherstorm - Mo\'arg Warp-Master - RP 1'), 
-(@RELAYID+1, 1, @RELAYID+6, 0, 'Netherstorm - Mo\'arg Warp-Master - RP 12'), 
+(@RELAYID+1, 1, @RELAYID+5, 0, 'Netherstorm - Mo\'arg Warp-Master - RP 1'), 
+(@RELAYID+1, 1, @RELAYID+7, 100, 'Netherstorm - Mo\'arg Warp-Master - RP 2'), 
 (@RELAYID+1, 1, @RELAYID+4, 0, 'Netherstorm - Mo\'arg Warp-Master - Nothing');
 
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2032601);
@@ -375,7 +375,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `priority`, `comman
 -- Mo'arg Warp-Master
 (2032601, 0, 0, 45, 0, @RELAYID+1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Start RandomScript');
 
-DELETE FROM dbscripts_on_relay WHERE id BETWEEN @RELAYID+0 AND @RELAYID+6;
+DELETE FROM dbscripts_on_relay WHERE id BETWEEN @RELAYID+0 AND @RELAYID+8;
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Foreman Sundown say random Text and change EmoteState
 (@RELAYID+0, 0, 0, 0, @RELAYID+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Foreman Sundown - Say RandomText'), 
@@ -395,7 +395,7 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - remove Emote StateWork'), -- 20:08:32.238
 (@RELAYID+3, 2000, 0, 3, @RELAYID+4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Move to Home Position'),-- 20:08:34.678 move home 
 -- Gan\'arg Warp-Tinker BaseScript when reached HomePosition - inform self to change phase
-(@RELAYID+4, 0, 0, 35, 8, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventC'), -- to change phase back to 1
+(@RELAYID+4, 0, 0, 35, 7, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventC'),
 (@RELAYID+4, 1000, 0, 20, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Change to random Movement'), 
 (@RELAYID+4, 1000, 1, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Remove Active object'),
 -- Mo'arg Warp-Master RP with Netherstorm Moarg Work Target
@@ -408,7 +408,22 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+6, 0, 1, 1, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Emote State'), 
 (@RELAYID+6, 5000, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Remove Emote State'), 
 (@RELAYID+6, 8000, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Resume Waypoints'),
-(@RELAYID+6, 8000, 1, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Remove Active Object'); 
-
-
+(@RELAYID+6, 8000, 1, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Remove Active Object'),
 -- Mo'arg Warp-Master RP with Gan\'arg Warp-Tinker
+(@RELAYID+7, 0, 0, 31, 20285, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Terminate Script if no Gan\'arg Warp-Tinker found'), 
+(@RELAYID+7, 1, 1, 35, 8, 0, 0, 20285, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - SendAIEventC to Gan\'arg Warp-Tinker'),
+-- Gan\'arg Warp-Tinker isnt in another RP state so start RP with Mo'arg Warp-Master
+(@RELAYID+8, 0, 0, 35, 5, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventA to self'), -- to change phase to 0
+(@RELAYID+8, 0, 1, 21, 1, 0, 0, 20326, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - stop waypoint'), 
+(@RELAYID+8, 0, 2, 32, 1, 0, 0, 20326, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - set ActiveObject'), 
+(@RELAYID+8, 0, 3, 37, 0, 0, 3, 20326, 20, 3, 0, @RELAYID+9, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master move to Gan\'arg Warp-Tinker'),
+-- Sunfury Astromancer script after reaching Sunfury Magister
+(@RELAYID+9, 1000, 0, 36, 0, 0, 0, 20285, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - facing to Mo\'arg Warp-Master'), 
+(@RELAYID+9, 1000, 1, 36, 0, 0, 0, 20285, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - face Gan\'arg Warp-Tinker'), 
+(@RELAYID+9, 1000, 2, 1, 66, 0, 0, 20285, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Emote OneShotSalute'), -- 13:29:30.031
+(@RELAYID+9, 2000, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Emote OneShotTalk'), -- 13:29:31.244 
+(@RELAYID+9, 3000, 2, 1, 1, 0, 0, 20285, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Emote OneShotTalk'),
+(@RELAYID+9, 4000, 0, 1, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Emote OneShotPoint'),
+(@RELAYID+9, 6000, 0, 3, @RELAYID+4, 0, 0, 20285, 5, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Move to Home Position'),
+(@RELAYID+9, 8000, 1, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - start waypoint'), 
+(@RELAYID+9, 8000, 2, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - remove ActiveObject');
