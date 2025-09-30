@@ -366,16 +366,16 @@ INSERT INTO dbscript_random_templates (id, type, target_id, chance, comments) VA
 (@RELAYID+0, 0, 18006, 0, 'Netherstorm - Foreman Sundown - Say 7'), 
 (@RELAYID+0, 0, 18007, 0, 'Netherstorm - Foreman Sundown - Say 8'),
 -- Mo'arg Warp-Master 2 differen RPs
-(@RELAYID+1, 1, @RELAYID+5, 0, 'Netherstorm - Mo\'arg Warp-Master - RP 1'), 
-(@RELAYID+1, 1, @RELAYID+7, 100, 'Netherstorm - Mo\'arg Warp-Master - RP 2'), 
-(@RELAYID+1, 1, @RELAYID+4, 0, 'Netherstorm - Mo\'arg Warp-Master - Nothing');
+(@RELAYID+1, 1, @RELAYID+5, 10, 'Netherstorm - Mo\'arg Warp-Master - RP 1'), 
+(@RELAYID+1, 1, @RELAYID+7, 10, 'Netherstorm - Mo\'arg Warp-Master - RP 2'), 
+(@RELAYID+1, 1, 0, 80, 'Netherstorm - Mo\'arg Warp-Master - Nothing');
 
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (2032601);
 INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Mo'arg Warp-Master
 (2032601, 0, 0, 45, 0, @RELAYID+1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - Start RandomScript');
 
-DELETE FROM dbscripts_on_relay WHERE id BETWEEN @RELAYID+0 AND @RELAYID+8;
+DELETE FROM dbscripts_on_relay WHERE id BETWEEN @RELAYID+0 AND @RELAYID+9;
 INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Foreman Sundown say random Text and change EmoteState
 (@RELAYID+0, 0, 0, 0, @RELAYID+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Foreman Sundown - Say RandomText'), 
@@ -414,10 +414,11 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+7, 1, 1, 35, 8, 0, 0, 20285, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - SendAIEventC to Gan\'arg Warp-Tinker'),
 -- Gan\'arg Warp-Tinker isnt in another RP state so start RP with Mo'arg Warp-Master
 (@RELAYID+8, 0, 0, 35, 5, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - SendAIEventA to self'), -- to change phase to 0
-(@RELAYID+8, 0, 1, 21, 1, 0, 0, 20326, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - stop waypoint'), 
-(@RELAYID+8, 0, 2, 32, 1, 0, 0, 20326, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - set ActiveObject'), 
-(@RELAYID+8, 0, 3, 37, 0, 0, 3, 20326, 20, 3, 0, @RELAYID+9, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master move to Gan\'arg Warp-Tinker'),
--- Sunfury Astromancer script after reaching Sunfury Magister
+(@RELAYID+8, 0, 1, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Move Idle'), 
+(@RELAYID+8, 0, 2, 21, 1, 0, 0, 20326, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - stop waypoint'), 
+(@RELAYID+8, 0, 3, 32, 1, 0, 0, 20326, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - set ActiveObject'), 
+(@RELAYID+8, 0, 4, 37, 0, 0, 2, 20326, 20, 3, 0, @RELAYID+9, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master move to Gan\'arg Warp-Tinker'),
+-- SMo'arg Warp-Master script after reaching Gan\'arg Warp-Tinker
 (@RELAYID+9, 1000, 0, 36, 0, 0, 0, 20285, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - facing to Mo\'arg Warp-Master'), 
 (@RELAYID+9, 1000, 1, 36, 0, 0, 0, 20285, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Mo\'arg Warp-Master - face Gan\'arg Warp-Tinker'), 
 (@RELAYID+9, 1000, 2, 1, 66, 0, 0, 20285, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Netherstorm - Gan\'arg Warp-Tinker - Emote OneShotSalute'), -- 13:29:30.031
