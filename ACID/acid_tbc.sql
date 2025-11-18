@@ -2588,23 +2588,17 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- =============
 -- Kobold Vermin 6 (2.4.2 Official Data)
 ('601','6','4','0','10','0','0','0','0','0','0','0','1','1868','1864','0','0','0','0','0','0','0','0','0','Kobold Vermin - Random Say on Aggro'),
--- Forest Spider (2.4.2 Official Data)
-('3001','30','11','0','100','0','0','0','0','0','0','0','11','11959','0','34','0','0','0','0','0','0','0','0','Forest Spider - Cast Poison Proc on Spawn'),
+-- Forest Spider 30 (2.4.2 Official Data)
 -- Defias Thug 38
 ('3801','38','4','0','30','0','0','0','0','0','0','0','54','0','0','35','0','0','0','0','0','0','0','0','Defias Thug - Random Say on Aggro'),
 ('3802','38','30','0','100','1','5','38','0','0','0','0','22','1','0','0','0','0','0','0','0','0','0','0','Defias Thug - Set Phase 1 on Receive AI Event Custom A'),
 ('3803','38','1','1','100','1','1000','6000','7000','16000','0','0','5','1','0','0','0','0','0','0','0','0','0','0','Defias Thug - Emote on OOC Timer (Phase 1)'),
--- Kobold Miner (2.4.2 Official Data)
+-- Kobold Miner 40 (2.4.2 Official Data) - spell_list
 ('4001','40','4','0','30','0','0','0','0','0','0','0','1','1868','0','0','0','0','0','0','0','0','0','0','Kobold Miner - Random Say on Aggro'),
-('4002','40','0','0','100','1025','4000','14100','38000','42000','0','0','11','6016','1','0','0','0','0','0','0','0','0','0','Kobold Miner - Cast Pierce Armor'),
--- Mine Spider (2.4.2 Official Data)
-('4301','43','1','0','100','0','1000','1000','0','0','0','0','11','11959','0','32','0','0','0','0','0','0','0','0','Mine Spider - Cast Poison Proc OOC'),
--- Murloc Forager (2.4.2 Official Data)
-('4601','46','2','0','100','1024','40','0','0','0','0','0','11','3368','0','0','0','0','0','0','0','0','0','0','Murloc Forager - Drink Minor Potion at 40% HP'),
+-- Mine Spider 43 (2.4.2 Official Data)
+-- Murloc Forager 46 (2.4.2 Official Data)
 -- Corina Steele (54) - NSR
--- Ruklar the Trapper (2.4.2 Official Data)
-('6001','60','0','0','100','1025','19600','19600','21000','31000','0','0','11','12024','1','0','0','0','0','0','0','0','0','0','Ruklar the Trapper - Cast Net'),
-('6002','60','0','0','100','1025','4300','8200','45000','50000','0','0','11','6016','1','0','0','0','0','0','0','0','0','0','Ruklar the Trapper - Cast Pierce Armor'),
+-- Ruklar the Trapper 60 (2.4.2 Official Data) - spell_list
 -- Thuros Lightfingers (2.4.2 Official Data)
 ('6101','61','4','0','40','0','0','0','0','0','0','0','54','0','0','36','0','0','0','0','0','0','0','0','Thuros Lightfingers - Random Say on Aggro'),
 ('6102','61','33','0','100','1025','0','0','3400','5400','0','0','11','7159','1','0','0','0','0','0','0','0','0','0','Thuros Lightfingers - Cast Backstab on Facing Target Back'),
