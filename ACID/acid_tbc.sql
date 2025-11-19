@@ -2599,43 +2599,34 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- Murloc Forager 46 (2.4.2 Official Data)
 -- Corina Steele (54) - NSR
 -- Ruklar the Trapper 60 (2.4.2 Official Data) - spell_list
--- Thuros Lightfingers (2.4.2 Official Data)
+-- Thuros Lightfingers 61 (2.4.2 Official Data) - spell_list
 ('6101','61','4','0','40','0','0','0','0','0','0','0','54','0','0','36','0','0','0','0','0','0','0','0','Thuros Lightfingers - Random Say on Aggro'),
-('6102','61','33','0','100','1025','0','0','3400','5400','0','0','11','7159','1','0','0','0','0','0','0','0','0','0','Thuros Lightfingers - Cast Backstab on Facing Target Back'),
 -- Tharynn Bouden (66) - NSR
--- Diseased Timber Wolf
+-- Diseased Timber Wolf 69
 ('6901','69','1','0','10','1','60000','600000','120000','600000','0','0','4','1018','0','0','5','393','0','0','0','0','0','0','Diseased Timber Wolf - Howl and Emote OOC'),
 -- Kurran Steele (74) - NSR
 -- Janos Hammerknuckle (78) - NSR
--- Narg the Taskmaster (2.4.2 Official Data)
+-- Narg the Taskmaster 79 (2.4.2 Official Data) - spell_list
 ('7901','79','4','0','30','0','0','0','0','0','0','0','1','1868','0','0','0','0','0','0','0','0','0','0','Narg the Taskmaster - Random Say on Aggro'),
-('7902','79','0','0','100','1025','2000','4000','18000','29000','0','0','11','9128','0','0','0','0','0','0','0','0','0','0','Narg the Taskmaster - Cast Battleshout'),
 -- Kobold Laborer 80
 ('8001','80','4','0','10','0','0','0','0','0','0','0','1','1868','1864','0','0','0','0','0','0','0','0','0','Kobold Laborer - Random Say on Aggro'),
--- Defias Cutpurse 94
+-- Defias Cutpurse 94 - spell_list
 ('9401','94','4','0','25','0','0','0','0','0','0','0','54','0','0','36','0','0','0','0','0','0','0','0','Defias Cutpurse - Random Say on Aggro'),
-('9402','94','33','0','100','1025','0','0','2400','7900','0','0','11','53','1','0','0','0','0','0','0','0','0','0','Defias Cutpurse - Cast Backstab on Facing Target Back'),
 -- Riverpaw Runt (2.4.2 Official Data)
 ('9701','97','4','0','30','0','0','0','0','0','0','0','1','1871','1870','0','0','0','0','0','0','0','0','0','Riverpaw Runt - Random Say on Aggro'),
 ('9702','97','2','0','100','0','15','0','0','0','0','0','25','0','0','0','1','1150','0','0','0','0','0','0','Riverpaw Runt - Flee at 15% HP'),
--- Morgaine the Sly (2.4.2 Official Data)
-('9901','99','11','0','100','0','0','0','0','0','0','0','11','11959','0','34','0','0','0','0','0','0','0','0','Morgaine the Sly - Cast Poison Proc on Spawn'),
-('9902','99','33','0','100','1025','1','0','16300','16300','0','0','11','1776','1','0','0','0','0','0','0','0','0','0','Morgaine the Sly - Cast Gouge on Facing Target'),
-('9903','99','33','0','100','1025','0','0','3400','5400','0','0','11','53','1','0','0','0','0','0','0','0','0','0','Morgaine the Sly - Cast Backstab on Facing Target Back'),
+-- Morgaine the Sly 99 (2.4.2 Official Data) - spell_list
 -- Gruff Swiftbite 100
 ('10001','100','11','0','100','0','0','0','0','0','0','0','11','3417','0','34','0','0','0','0','0','0','0','0','Gruff Swiftbite - Cast Thrash on Spawn'),
 ('10002','100','4','0','20','0','0','0','0','0','0','0','1','1871','1870','0','0','0','0','0','0','0','0','0','Gruff Swiftbite - Say on Aggro'),
--- Garrick Padfoot (2.4.2 Official Data)
+-- Garrick Padfoot 103 (2.4.2 Official Data)
 ('10301','103','4','0','100','0','0','0','0','0','0','0','11','7164','0','0','0','0','0','0','0','0','0','0','Garrick Padfoot - Cast Defensive Stance on Aggro'),
 ('10302','103','0','0','100','0','1000','1000','0','0','0','0','54','0','0','35','0','0','0','0','0','0','0','0','Garrick Padfoot - Random Say on Aggro'),
--- Stonetusk Boar 113
-('11301','113','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Stonetusk Boar - Cast Rushing Charge'),
--- Defias Bandit (2.4.2 Official Data)
+-- Stonetusk Boar 113 - spell_list
+-- Defias Bandit 116 (2.4.2 Official Data) - spell_list
 ('11601','116','4','0','25','0','0','0','0','0','0','0','54','0','0','36','0','0','0','0','0','0','0','0','Defias Bandit - Random Say on Aggro'),
-('11602','116','0','0','65','1025','4000','7000','5000','9000','0','0','11','8646','1','0','0','0','0','0','0','0','0','0','Defias Bandit - Cast Snap Kick'),
 -- Prowler (118) - NSR
--- Longsnout 119
-('11901','119','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Longsnout - Cast Rushing Charge'),
+-- Longsnout 119 - spell_list
 -- Brog Hamfist (151) - NSR
 -- Brother Danil (152) - NSR
 -- Dermot Johns (190) - NSR
