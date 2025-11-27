@@ -2652,30 +2652,25 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- Brown Horse (284) - NSR
 -- Murloc (285) - NSR
 -- Marshal Haggard (294) - NSR
--- Innkeeper Farley (2.4.2 Official Data)
+-- Innkeeper Farley 295 (2.4.2 Official Data)
 ('29501','295','1','0','40','1','30000','75000','600000','720000','0','0','1','84','85','86','0','0','0','0','0','0','0','0','Innkeeper Farley - Random OOC Say'),
--- Diseased Young Wolf (2.4.2 Official Data)
+-- Diseased Young Wolf 299 (2.4.2 Official Data)
 ('29901','299','1','0','10','1','30000','600000','120000','600000','0','0','4','1018','0','0','5','393','0','0','0','0','0','0','Diseased Young Wolf - Howl and Emote OOC'),
 -- Pinto (307) - NSR
 -- Theocritus (313) - NSR
--- Goldtooth (2.4.2 Official Data)
+-- Goldtooth 327 (2.4.2 Official Data)
 ('32701','327','4','0','40','0','0','0','0','0','0','0','1','1868','1864','0','0','0','0','0','0','0','0','0','Goldtooth - Random Say on Aggro'),
 ('32702','327','2','0','100','0','20','0','0','0','0','0','25','0','0','0','1','1150','0','0','0','0','0','0','Goldtooth - Flee at 20% HP'),
 -- Zaldimar Wefhellt (328) - NSR
--- Princess 330
-('33001','330','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Princess - Cast Rushing Charge'),
+-- Princess 330 - spell_list
 -- Priestess Anetta (375) - NSR
 -- Priestess Josetta (377) - NSR
 -- Jason Mathers (383) - NSR
 -- Katie Hunter (384)
--- Porcine Entourage 390
-('39001','390','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Porcine Entourage - Cast Rushing Charge'),
+-- Porcine Entourage 390 - spell_list
 -- Markus (395) - NSR
--- Hogger 448
+-- Hogger 448 - spell_list
 ('44801','448','4','0','75','0','0','0','0','0','0','0','1','1871','1870','0','0','0','0','0','0','0','0','0','Hogger - Random Say on Aggro'),
-('44802','448','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Hogger - Cast Rushing Charge'),
-('44803','448','0','0','100','1025','4800','6000','46000','48000','0','0','11','6016','1','0','0','0','0','0','0','0','0','0','Hogger - Cast Armor Pierce'),
-('44804','448','0','0','100','1025','1300','3700','20000','29000','0','0','11','6730','1','0','0','0','0','0','0','0','0','0','Hogger - Cast Head Butt'),
 -- Drusilla La Salle (459) - NSR
 -- Barkeep Dobbins (465) - NSR
 -- Mother Fang (2.4.2 Official Data)

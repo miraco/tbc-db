@@ -130,7 +130,6 @@ INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `Combat
 
 UPDATE `creature_template` SET `SpellList` = 9901 WHERE `entry` = 99;
 
--- TODO:
 -- Stonetusk Boar
 -- Casts Rushing Charge when player is not in melee range 
 -- old acid: ('11301','113','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Stonetusk Boar - Cast Rushing Charge'),
@@ -140,11 +139,17 @@ DELETE FROM `creature_spell_list_entry` WHERE `Id` = 11301;
 INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `ChanceRangedAttack`) VALUES
 (11301, 'Elwynn Forest - Stonetusk Boar', 0, 0);
 
+-- Sadly there isn't a correct combat_condition, so we create a custom one
+-- UnitCondition 45 Greater then 0
+-- https://wago.tools/db2/UnitCondition?build=2.5.4.44833&filter%5BID%5D=exact%3A45&page=1&sort%5BVariable_1%5D=asc
+-- Is attacking me? EQUAL TO 1
+-- In melee range? EQUAL TO 0
+DELETE FROM combat_condition WHERE Id = '-100';
+INSERT INTO `combat_condition` (`Id`, `EnemyConditionID_0`, `EnemyConditionOp_0`, `EnemyConditionCount_0`) VALUES ('-100', '45', '5', '0');
+
 DELETE FROM `creature_spell_list` WHERE `Id` = 11301;
--- unit_condition 
--- id 361 - Number of melee attackers EQUAL TO 0
 INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
-(11301, 1, 6268, 0, 361, 0, 0, 100, 0, 0, 4000, 2000, 6000, 'Stonetusk Boar - Rushing Charge - current');
+(11301, 1, 6268, 0, -100, 2, 0, 100, 0, 0, 4000, 2000, 6000, 'Stonetusk Boar - Rushing Charge - self');
 
 UPDATE `creature_template` SET `SpellList` = 11301 WHERE `entry` = 113;
 
@@ -164,19 +169,65 @@ INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `Combat
 
 UPDATE `creature_template` SET `SpellList` = 11601 WHERE `entry` = 116;
 
--- ToDO:
+
 -- Longsnout
 -- old acid ('11901','119','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Longsnout - Cast Rushing Charge'),
 DELETE FROM `creature_template_spells` WHERE `entry` = 119;
 
 DELETE FROM `creature_spell_list_entry` WHERE `Id` = 11901;
 INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `ChanceRangedAttack`) VALUES
-(11901, 'Elwynn Forest - Stonetusk Boar', 0, 0);
+(11901, 'Elwynn Forest - Longsnout', 0, 0);
 
 DELETE FROM `creature_spell_list` WHERE `Id` = 11901;
--- unit_condition 
--- id 361 - Number of melee attackers EQUAL TO 0
 INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
-(11901, 1, 6268, 0, 361, 0, 0, 100, 0, 0, 4000, 2000, 6000, 'Longsnout - Rushing Charge - current');
+(11901, 1, 6268, 0, -100, 2, 0, 100, 0, 0, 4000, 2000, 6000, 'Longsnout - Rushing Charge - self');
 
 UPDATE `creature_template` SET `SpellList` = 11901 WHERE `entry` = 119;
+
+-- Princess
+-- old acid ('33001','330','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Princess - Cast Rushing Charge'),
+DELETE FROM `creature_template_spells` WHERE `entry` = 330;
+
+DELETE FROM `creature_spell_list_entry` WHERE `Id` = 33001;
+INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `ChanceRangedAttack`) VALUES
+(33001, 'Elwynn Forest - Princess', 0, 0);
+
+DELETE FROM `creature_spell_list` WHERE `Id` = 33001;
+INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
+(33001, 1, 6268, 0, -100, 2, 0, 100, 0, 0, 4000, 2000, 6000, 'Princess - Rushing Charge - self');
+
+UPDATE `creature_template` SET `SpellList` = 33001 WHERE `entry` = 330;
+
+-- Porcine Entourage
+-- old acid ('39001','390','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Porcine Entourage - Cast Rushing Charge'),
+DELETE FROM `creature_template_spells` WHERE `entry` = 390;
+
+DELETE FROM `creature_spell_list_entry` WHERE `Id` = 39001;
+INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `ChanceRangedAttack`) VALUES
+(39001, 'Elwynn Forest - Porcine Entourage', 0, 0);
+
+DELETE FROM `creature_spell_list` WHERE `Id` = 39001;
+INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
+(39001, 1, 6268, 0, -100, 2, 0, 100, 0, 0, 4000, 2000, 6000, 'Porcine Entourage - Rushing Charge - self');
+
+UPDATE `creature_template` SET `SpellList` = 39001 WHERE `entry` = 390;
+
+
+-- Hogger
+-- old acid:
+-- ('44802','448','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Hogger - Cast Rushing Charge'),
+-- ('44803','448','0','0','100','1025','4800','6000','46000','48000','0','0','11','6016','1','0','0','0','0','0','0','0','0','0','Hogger - Cast Armor Pierce'),
+-- ('44804','448','0','0','100','1025','1300','3700','20000','29000','0','0','11','6730','1','0','0','0','0','0','0','0','0','0','Hogger - Cast Head Butt'),
+DELETE FROM `creature_template_spells` WHERE `entry` = 448;
+
+DELETE FROM `creature_spell_list_entry` WHERE `Id` = 44801;
+INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `ChanceRangedAttack`) VALUES
+(44801, 'Elwynn Forest - Hogger', 0, 0);
+
+DELETE FROM `creature_spell_list` WHERE `Id` = 44801;
+INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
+(44801, 1, 6268, 0, -100, 2, 0, 100, 0, 0, 4000, 2000, 6000, 'Hogger - Rushing Charge - self'),
+(44801, 2, 6016, 0, -1, 1, 0, 100, 0, 4000, 12000, 42000, 60000, 'Kobold Miner - Pierce Armor - current'),
+(44801, 3, 6730, 0, -1, 1, 0, 100, 0, 4000, 12000, 20000, 30000, 'Kobold Miner - Head Butt - current');
+
+UPDATE `creature_template` SET `SpellList` = 44801 WHERE `entry` = 448;
