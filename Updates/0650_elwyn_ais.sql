@@ -149,7 +149,7 @@ INSERT INTO `combat_condition` (`Id`, `EnemyConditionID_0`, `EnemyConditionOp_0`
 
 DELETE FROM `creature_spell_list` WHERE `Id` = 11301;
 INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
-(11301, 1, 6268, 0, -100, 2, 0, 100, 0, 0, 4000, 2000, 6000, 'Stonetusk Boar - Rushing Charge - self');
+(11301, 1, 6268, 0, -100, 2, 0, 100, 0, 0, 4000, 0, 6000, 'Stonetusk Boar - Rushing Charge - self');
 
 UPDATE `creature_template` SET `SpellList` = 11301 WHERE `entry` = 113;
 
@@ -214,6 +214,7 @@ UPDATE `creature_template` SET `SpellList` = 39001 WHERE `entry` = 390;
 
 
 -- Hogger
+-- Timers adjusted
 -- old acid:
 -- ('44802','448','9','0','100','1025','10','60','7000','9000','0','0','11','6268','0','0','0','0','0','0','0','0','0','0','Hogger - Cast Rushing Charge'),
 -- ('44803','448','0','0','100','1025','4800','6000','46000','48000','0','0','11','6016','1','0','0','0','0','0','0','0','0','0','Hogger - Cast Armor Pierce'),
@@ -227,7 +228,29 @@ INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `C
 DELETE FROM `creature_spell_list` WHERE `Id` = 44801;
 INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
 (44801, 1, 6268, 0, -100, 2, 0, 100, 0, 0, 4000, 2000, 6000, 'Hogger - Rushing Charge - self'),
-(44801, 2, 6016, 0, -1, 1, 0, 100, 0, 4000, 12000, 42000, 60000, 'Kobold Miner - Pierce Armor - current'),
-(44801, 3, 6730, 0, -1, 1, 0, 100, 0, 4000, 12000, 20000, 30000, 'Kobold Miner - Head Butt - current');
+(44801, 2, 6016, 0, -1, 1, 0, 100, 0, 4000, 12000, 42000, 66000, 'Kobold Miner - Pierce Armor - current'),
+(44801, 3, 6730, 0, -1, 1, 0, 100, 0, 4000, 12000, 22000, 50000, 'Kobold Miner - Head Butt - current');
 
 UPDATE `creature_template` SET `SpellList` = 44801 WHERE `entry` = 448;
+
+
+-- Mother Fang
+-- old acid
+-- ('47101','471','1','0','100','0','1000','1000','0','0','0','0','11','11919','0','32','0','0','0','0','0','0','0','0','Mother Fang - Cast Poison Proc OOC'),
+-- ('47102','471','0','0','100','1025','6700','6700','22900','30900','0','0','11','12023','1','0','0','0','0','0','0','0','0','0','Mother Fang - Cast Web'),
+-- Passive via creature_template_addon
+DELETE FROM creature_template_addon WHERE entry = 471;
+INSERT INTO creature_template_addon (`entry`, `mount`, `stand_state`, `sheath_state`, `emote`, `moveflags`, `auras`) VALUES (471, 0, 0, 1, 0, 0, 11919);
+
+DELETE FROM `creature_template_spells` WHERE `entry` = 471;
+
+DELETE FROM `creature_spell_list_entry` WHERE `Id` = 47101;
+INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `ChanceRangedAttack`) VALUES
+(47101, 'Elwynn Forest - Mother Fang', 0, 0);
+
+DELETE FROM `creature_spell_list` WHERE `Id` = 47101;
+INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
+(47101, 1, 12023, 0, -100, 2, 0, 100, 0, 0, 4000, 2000, 6000, 'Mother Fang - Web - self'),
+
+
+UPDATE `creature_template` SET `SpellList` = 47101 WHERE `entry` = 471;
