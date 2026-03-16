@@ -836,10 +836,6 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+278, 18797, 555, 3, -349.005, -250.166, 12.7684, 0.593412, 7200, 7200, 0, 0), -- Tortured Skeleton
 (@CGUID+279, 18797, 555, 3, -262.44, -281.317, 12.7646, 0.593412, 7200, 7200, 0, 0), -- Tortured Skeleton
 
-(@CGUID+283, 18635, 555, 3, -44.641, -34.6061, -1.04484, 1.44862, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+284, 18633, 555, 3, -41.8571, -33.4506, -1.04484, 2.87979, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+285, 18633, 555, 3, -47.365, -33.8044, -1.04484, 0.331613, 7200, 7200, 0, 0), -- Cabal Acolyte
-
 (@CGUID+286, 18635, 555, 3, -35.078, -81.0337, -1.04491, 5.18363, 7200, 7200, 0, 0), -- Cabal Deathsworn
 (@CGUID+287, 18633, 555, 3, -31.8829, -81.4594, -1.0449, 4.04916, 7200, 7200, 0, 0), -- Cabal Acolyte
 (@CGUID+288, 18633, 555, 3, -36.1315, -84.0624, -1.04494, 0.0872665, 7200, 7200, 0, 0), -- Cabal Acolyte
@@ -1042,8 +1038,7 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 -- Group of 2 with random entry
 (@SGGUID+5, 'Shadow Labyrinth - Group 004 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Group of 3 with 2 versions
-(@SGGUID+6, 'Shadow Labyrinth - Group 005 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, @CONDITIONID+3, 1, 0),
-(@SGGUID+7, 'Shadow Labyrinth - Group 005 - Cabal Deathsworn | Cabal Acolyte (2)', 0, 0, @CONDITIONID+4, 1, 0),
+(@SGGUID+6, 'Shadow Labyrinth - Group 005 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, 0, 1, 0),
 -- 2 group of 2 with random entry
 (@SGGUID+8, 'Shadow Labyrinth - Group 006 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 (@SGGUID+9, 'Shadow Labyrinth - Group 007 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
@@ -1233,13 +1228,9 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+5, @CGUID+60, 0, 0), -- spawn_group_entry
 (@SGGUID+5, @CGUID+88, 1, 0), -- spawn_group_entry
 
-(@SGGUID+6, @CGUID+86, 0, 0), -- Cabal Acolyte
-(@SGGUID+6, @CGUID+55, 1, 0), -- Cabal Deathsworn (left)
-(@SGGUID+6, @CGUID+54, 2, 0), -- Cabal Deathsworn (right)
-
-(@SGGUID+7, @CGUID+283, 0, 0), -- Cabal Acolyte
-(@SGGUID+7, @CGUID+284, 1, 0), -- Cabal Deathsworn (left)
-(@SGGUID+7, @CGUID+285, 2, 0), -- Cabal Deathsworn (right)
+(@SGGUID+6, @CGUID+86, 0, 0), -- spawn_group_squad
+(@SGGUID+6, @CGUID+55, 1, 0), -- spawn_group_squad (left)
+(@SGGUID+6, @CGUID+54, 2, 0), -- spawn_group_squad (right)
 
 (@SGGUID+8, @CGUID+56, 0, 0), -- spawn_group_entry
 (@SGGUID+8, @CGUID+57, 1, 0), -- spawn_group_entry
@@ -1585,8 +1576,16 @@ INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES
 
 (@SGGUID+1, 2, @CGUID+89, 18635), -- Cabal Deathsworn
 (@SGGUID+1, 2, @CGUID+61, 18633), -- Cabal Acolyte (left)
-(@SGGUID+1, 2, @CGUID+66, 18633); -- Cabal Acolyte (right)
+(@SGGUID+1, 2, @CGUID+66, 18633), -- Cabal Acolyte (right)
 
+
+(@SGGUID+6, 1, @CGUID+86, 18633), -- Cabal Acolyte
+(@SGGUID+6, 1, @CGUID+55, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+6, 1, @CGUID+54, 18635), -- Cabal Deathsworn (right)
+
+(@SGGUID+6, 2, @CGUID+86, 18635), -- Cabal Deathsworn
+(@SGGUID+6, 2, @CGUID+55, 18633), -- Cabal Acolyte (left)
+(@SGGUID+6, 2, @CGUID+54, 18633), -- Cabal Acolyte (right)
 
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (@SGGUID+13, 1, 10, 0, @SGGUID+13, 2, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
@@ -1731,7 +1730,6 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `Posit
 
 DELETE FROM worldstate_name WHERE Id BETWEEN @WORLDSTATEID+1 AND @WORLDSTATEID+20;
 INSERT INTO `worldstate_name` (`Id`, `Name`) VALUES 
-(@WORLDSTATEID+2, 'Shadow Labyrinth - Group 005'),
 (@WORLDSTATEID+3, 'Shadow Labyrinth - Group 012'),
 (@WORLDSTATEID+4, 'Shadow Labyrinth - Group 013'),
 (@WORLDSTATEID+5, 'Shadow Labyrinth - Group 023'),
@@ -1756,9 +1754,6 @@ INSERT INTO `worldstate_name` (`Id`, `Name`) VALUES
 
 DELETE FROM `conditions` WHERE `condition_entry` BETWEEN @CONDITIONID+1 AND @CONDITIONID+35;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `value3`, `value4`, `flags`, `comments`) VALUES 
-(@CONDITIONID+3, 42, @WORLDSTATEID+2, 1, 0, 0, 0, 'Shadow Labyrinth - Group 005 -  Type 1'),
-(@CONDITIONID+4, 42, @WORLDSTATEID+2, 1, 1, 0, 0, 'Shadow Labyrinth - Group 005 -  Type 2'),
-
 (@CONDITIONID+5, 42, @WORLDSTATEID+3, 1, 0, 0, 0, 'Shadow Labyrinth - Group 012 -  Type 1'),
 (@CONDITIONID+6, 42, @WORLDSTATEID+3, 1, 1, 0, 0, 'Shadow Labyrinth - Group 012 -  Type 2'),
 (@CONDITIONID+7, 42, @WORLDSTATEID+3, 1, 2, 0, 0, 'Shadow Labyrinth - Group 012 -  Type 3'),
