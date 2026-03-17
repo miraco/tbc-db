@@ -539,7 +539,6 @@ REPLACE INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`
 
 INSERT INTO creature_spawn_entry (guid, entry) VALUES
 -- Needed after rework
-(@CGUID+315, 18633), (@CGUID+315, 18637), -- Cabal Acolyte, Cabal Priest
 (@CGUID+320, 18631), (@CGUID+320, 18633), -- Cabal Cultist, Cabal Acolyte
 (@CGUID+325, 18631), (@CGUID+325, 18638), -- Cabal Cultist, Cabal Zealot
 (@CGUID+329, 18631), (@CGUID+329, 18638), -- Cabal Cultist, Cabal Zealot
@@ -579,7 +578,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+31, 0, 555, 3, -246.87, -45.9737, 8.15617, 3.10669, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+32, 18637, 555, 3, -255.435, -31.2176, 8.17054, 3.28122, 7200, 7200, 0, 0), -- Cabal Shadow Priest
 (@CGUID+33, 18633, 555, 3, -263.761, -29.1943, 8.18301, 3.12414, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+34, 18631, 555, 3, -271.784, -45.5444, 8.15619, 3.1765, 7200, 7200, 0, 0), -- Cabal Cultist
+(@CGUID+34, 0, 555, 3, -271.784, -45.5444, 8.15619, 3.1765, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+35, 18631, 555, 3, -275.089, -4.42197, 8.15625, 3.66519, 7200, 7200, 0, 0), -- Cabal Cultist
 (@CGUID+36, 18631, 555, 3, -273.674, -80.3384, 8.15627, 2.74017, 7200, 7200, 0, 0), -- Cabal Cultist
 (@CGUID+37, 0, 555, 3, -287.804, -96.3896, 8.15635, 5.48033, 7200, 7200, 0, 0), -- spawn_group_entry
@@ -616,8 +615,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 -- reuse +68
 (@CGUID+69, 0, 555, 3, -247.273, -49.6712, 8.15618, 3.03687, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+70, 18633, 555, 3, -255.77, -27.5678, 8.18844, 3.24631, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+71, 18633, 555, 3, -263.805, -48.9857, 8.15618, 3.10669, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+72, 18633, 555, 3, -271.978, -47.9963, 8.15619, 3.14159, 7200, 7200, 0, 0), -- Cabal Acolyte
+(@CGUID+71, 0, 555, 3, -263.805, -48.9857, 8.15618, 3.10669, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+72, 0, 555, 3, -271.978, -47.9963, 8.15619, 3.14159, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+73, 18633, 555, 3, -265.829, 0.056211, 8.15626, 3.68264, 7200, 7200, 0, 0), -- Cabal Acolyte
 (@CGUID+74, 18633, 555, 3, -272.845, -76.4279, 8.15625, 2.6529, 7200, 7200, 0, 0), -- Cabal Acolyte
 (@CGUID+75, 0, 555, 3, -454.315, -183.092, 12.7725, 5.06145, 7200, 7200, 0, 0), -- spawn_group_entry
@@ -640,14 +639,14 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+92, 0, 555, 3, -254.445, -49.5956, 8.15618, 3.01942, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+93, 18635, 555, 3, -265.305, -82.2931, 8.15626, 2.84489, 7200, 7200, 0, 0), -- Cabal Deathsworn
 (@CGUID+94, 18635, 555, 3, -263.687, -31.7085, 8.17044, 3.33358, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+95, 18635, 555, 3, -271.845, -50.1835, 8.15619, 3.1765, 7200, 7200, 0, 0), -- Cabal Deathsworn
+(@CGUID+95, 0, 555, 3, -271.845, -50.1835, 8.15619, 3.1765, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+96, 18635, 555, 3, -267.801, 3.11204, 8.15628, 3.76991, 7200, 7200, 0, 0), -- Cabal Deathsworn
 (@CGUID+97, 0, 555, 3, -281.939, 20.0421, 8.15636, 5.68977, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+98, 18631, 555, 3, -453.685, -186.804, 12.7725, 1.53589, 7200, 7200, 0, 0), -- Cabal Cultist
 (@CGUID+99, 18631, 555, 3, -454.978, -185.25, 12.7725, 0.05236, 7200, 7200, 0, 0), -- Cabal Cultist
 (@CGUID+100, 18636, 555, 3, -272.098, -140.052, 8.15023, 0.0727409, 7200, 7200, 0, 2), -- Cabal Assassin
 (@CGUID+101, 18636, 555, 3, -113.993, -148.454, 3.44560, 2.72472, 7200, 7200, 0, 2), -- Cabal Assassin
-(@CGUID+102, 18637, 555, 3, -263.226, -45.5273, 8.15618, 3.12414, 7200, 7200, 0, 0), -- Cabal Shadow Priest
+(@CGUID+102, 0, 555, 3, -263.226, -45.5273, 8.15618, 3.12414, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+103, 18637, 555, 3, -264.152, -79.2966, 8.15624, 2.87979, 7200, 7200, 0, 0), -- Cabal Shadow Priest
 (@CGUID+104, 18631, 555, 3, -263.794, -26.8056, 8.19487, 3.49066, 7200, 7200, 0, 0), -- Cabal Cultist
 (@CGUID+105, 18637, 555, 3, -275.427, -0.559913, 8.15628, 3.56047, 7200, 7200, 0, 0), -- Cabal Shadow Priest
@@ -837,12 +836,6 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+306, 18796, 555, 3, -192.969, -38.9048, 8.15644, 6.24828, 7200, 7200, 0, 0), -- Fel Overseer
 (@CGUID+307, 18796, 555, 3, -184.656, -40.3761, 8.07306, 3.14048, 7200, 7200, 0, 4), -- Fel Overseer
 -- 2nd boss room spawns for correct grouping
-(@CGUID+312, 18635, 555, 3, -271.845, -50.1835, 8.15619, 3.1765, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+313, 18631, 555, 3, -271.978, -47.9963, 8.15619, 3.14159, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+314, 18637, 555, 3, -271.784, -45.5444, 8.15619, 3.1765, 7200, 7200, 0, 0), -- Cabal Shadow Priest
-(@CGUID+315, 0, 555, 3, -263.805, -48.9857, 8.15618, 3.10669, 7200, 7200, 0, 0), -- creature_spawn_entry
-(@CGUID+316, 0, 555, 3, -263.226, -45.5273, 8.15618, 3.12414, 7200, 7200, 0, 0), -- spawn_group_entry
-
 (@CGUID+317, 18635, 555, 3, -263.687, -31.7085, 8.17044, 3.33358, 7200, 7200, 0, 0), -- Cabal Deathsworn
 (@CGUID+318, 18631, 555, 3, -263.761, -29.1943, 8.18301, 3.12414, 7200, 7200, 0, 0), -- Cabal Cultist
 (@CGUID+319, 18637, 555, 3, -263.794, -26.8056, 8.19487, 3.49066, 7200, 7200, 0, 0), -- Cabal Shadow Priest
@@ -1051,11 +1044,10 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 -- Cabal Cultist- Cabal Shadow Priest - Cabal Shadow Priest - Cabal Acolyte
 (@SGGUID+34, 'Shadow Labyrinth - Group 023 - Cabal Deathsworn | Cabal Cultist | Cabal Acolyte | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
 -- Middle Group left front - 5 npcs - 3 possible combinations
--- Deathsworn, Acolyte, Cultist (front), Acolyte Priest (back) - @SGGUID+36
--- Deathsworn, Cultist, Priest (Front), Priest, Acolyte (back) - @SGGUID+37
--- Deathsworn Cultist, Priest (front), Acolyte Cultist (back) - @SGGUID+37
-(@SGGUID+36, 'Shadow Labyrinth - Group 024 - Cabal Deathsworn | Cabal Acolyte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, @CONDITIONID+13, 1, @STRINGID+4),
-(@SGGUID+37, 'Shadow Labyrinth - Group 024 - Cabal Deathsworn | Cabal Shadow Priest/Cabal Acolyte/Cabal Cultist', 0, 0, @CONDITIONID+14, 1, @STRINGID+4),
+-- Cabal Deathsworn - Cabal Acolyte	- Cabal Cultist - Cabal Acolyte - Cabal Shadow Priest
+-- Cabal Deathsworn	- Cabal Cultist	- Cabal Shadow Priest - Cabal Acolyte- Cabal Cultist
+-- Cabal Deathsworn	- Cabal Cultist	- Cabal Shadow Priest - Cabal Shadow Priest- Cabal Acolyte
+(@SGGUID+36, 'Shadow Labyrinth - Group 024 - Cabal Deathsworn | Cabal Acolyte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
 -- Middle Group right - 5 npcs - 4 possible combinations
 -- Deathsworn, Acolyte Cultist (front), Shadow Priest Acolyte (back) (@SGGUID+38)
 -- Deathsworn Cultist Shadow Priest (front), Acolyte Cultist (back) (@SGGUID+39)
@@ -1159,7 +1151,6 @@ INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`
 (@SGGUID+30, 18633, 0, 1, 0), (@SGGUID+30, 18631, 0, 2, 0), (@SGGUID+30, 18635, 0, 2, 0),  -- Cabal Acolyte, Cabal Cultist, Cabal Deathsworn
 (@SGGUID+31, 18641, 0, 1, 0), (@SGGUID+31, 18642, 0, 1, 0), (@SGGUID+31, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
 (@SGGUID+35, 18631, 1, 1, 0), (@SGGUID+35, 18637, 1, 2, 0), -- Cabal Cultist, Cabal Shadow Priest
-(@SGGUID+37, 18631, 1, 2, 0), (@SGGUID+37, 18633, 1, 1, 0), -- Cabal Cultist, Cabal Acolyte
 (@SGGUID+39, 18631, 1, 2, 0), (@SGGUID+39, 18633, 1, 1, 0), (@SGGUID+39, 18637, 1, 2, 0), -- Cabal Cultist, Cabal Acolyte, Cabal Shadow Priest
 (@SGGUID+40, 18641, 0, 1, 0), (@SGGUID+40, 18642, 0, 1, 0), (@SGGUID+40, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
 (@SGGUID+41, 18633, 0, 1, 0), (@SGGUID+41, 18631, 0, 2, 0), (@SGGUID+41, 18635, 0, 2, 0),  -- Cabal Acolyte, Cabal Cultist, Cabal Deathsworn
@@ -1287,17 +1278,11 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+34, @CGUID+69, 2, 0), -- spawn_group_squad (back left)
 (@SGGUID+34, @CGUID+31, 3, 0), -- spawn_group_squad (back right)
 
-(@SGGUID+36, @CGUID+95, 0, 0), -- Cabal Deathsworn
-(@SGGUID+36, @CGUID+72, 1, 0), -- Cabal Acolyte (front middle)
-(@SGGUID+36, @CGUID+34, 2, 0), -- Cabal Cultist (front right)
-(@SGGUID+36, @CGUID+71, 3, 0), -- Cabal Acolyte (back left)
-(@SGGUID+36, @CGUID+102, 4, 0), -- Cabal Shadow Priest (back right)
-
-(@SGGUID+37, @CGUID+312, 0, 0), -- Cabal Deathsworn
-(@SGGUID+37, @CGUID+313, 1, 0), -- Cabal Cultist (front middle)
-(@SGGUID+37, @CGUID+314, 2, 0), -- Cabal Shadow Priest (front right)
-(@SGGUID+37, @CGUID+315, 3, 0), -- creature_spawn_entry (back left)
-(@SGGUID+37, @CGUID+316, 4, 0), -- spawn_group_entry (back right)
+(@SGGUID+36, @CGUID+95, 0, 0), -- spawn_group_squad (front left)
+(@SGGUID+36, @CGUID+72, 1, 0), -- spawn_group_squad (front middle)
+(@SGGUID+36, @CGUID+34, 2, 0), -- spawn_group_squad (front right)
+(@SGGUID+36, @CGUID+71, 3, 0), -- spawn_group_squad (back left)
+(@SGGUID+36, @CGUID+102, 4, 0), -- spawn_group_squad (back right)
 
 (@SGGUID+38, @CGUID+94, 0, 0), -- Cabal Deathsworn
 (@SGGUID+38, @CGUID+33, 1, 0), -- Cabal Acolyte (front middle)
@@ -1577,6 +1562,24 @@ INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES
 (@SGGUID+34, 3, @CGUID+69, 18637), -- Cabal Shadow Priest (back left)
 (@SGGUID+34, 3, @CGUID+31, 18633), -- Cabal Acolyte (back right)
 
+(@SGGUID+36, 1, @CGUID+85, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+36, 1, @CGUID+72, 18633), -- Cabal Acolyte (front middle)
+(@SGGUID+36, 1, @CGUID+34, 18631), -- Cabal Cultist (front right)
+(@SGGUID+36, 1, @CGUID+71, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+36, 1, @CGUID+102, 18637), -- Cabal Shadow Priest (back right)
+
+(@SGGUID+36, 2, @CGUID+85, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+36, 2, @CGUID+72, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+36, 2, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+36, 2, @CGUID+71, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+36, 2, @CGUID+102, 18631), -- Cabal Cultist (back right)
+
+(@SGGUID+36, 3, @CGUID+85, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+36, 3, @CGUID+72, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+36, 3, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+36, 3, @CGUID+71, 18637), -- Cabal Shadow Priest (back left)
+(@SGGUID+36, 3, @CGUID+102, 18633), -- Cabal Acolyte (back right)
+
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (@SGGUID+13, 1, 10, 0, @SGGUID+13, 2, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
 
@@ -1720,7 +1723,6 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `Posit
 
 DELETE FROM worldstate_name WHERE Id BETWEEN @WORLDSTATEID+1 AND @WORLDSTATEID+20;
 INSERT INTO `worldstate_name` (`Id`, `Name`) VALUES 
-(@WORLDSTATEID+6, 'Shadow Labyrinth - Group 024'),
 (@WORLDSTATEID+7, 'Shadow Labyrinth - Group 025'),
 (@WORLDSTATEID+8, 'Shadow Labyrinth - Group 033'),
 (@WORLDSTATEID+9, 'Shadow Labyrinth - Group 034'),
@@ -1741,9 +1743,6 @@ INSERT INTO `worldstate_name` (`Id`, `Name`) VALUES
 
 DELETE FROM `conditions` WHERE `condition_entry` BETWEEN @CONDITIONID+1 AND @CONDITIONID+35;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `value3`, `value4`, `flags`, `comments`) VALUES 
-(@CONDITIONID+13, 42, @WORLDSTATEID+6, 1, 0, 0, 0, 'Shadow Labyrinth - Group 024 -  Type 1'),
-(@CONDITIONID+14, 42, @WORLDSTATEID+6, 1, 1, 0, 0, 'Shadow Labyrinth - Group 024 -  Type 2'),
-
 (@CONDITIONID+15, 42, @WORLDSTATEID+7, 1, 0, 0, 0, 'Shadow Labyrinth - Group 025 -  Type 1'),
 (@CONDITIONID+16, 42, @WORLDSTATEID+7, 1, 1, 0, 0, 'Shadow Labyrinth - Group 025 -  Type 2'),
 
