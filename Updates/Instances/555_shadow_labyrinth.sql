@@ -1023,7 +1023,11 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 -- Fel Overseer with 4 different spawns/waypoints
 (@SGGUID+29, 'Shadow Labyrinth - Group 021 - Fel Overseer', 0, 1, 0, 0, 0),
 -- The Refectory
--- Group of 2 with random entrys
+-- Group of 2 - possible combinations found:
+-- Cabal Cultist- Cabal Cultist
+-- Cabal Acolyte - Cabal Cultist
+-- Cabal Deathsworn - Cabal Deathsworn
+-- Cabal Deathsworn - Cabal Cultist
 (@SGGUID+30, 'Shadow Labyrinth - Group 022 - Cabal Cultist/Cabal/Acolyte/Cabal Deathsworn', 0, 0, 0, 1, 0),
 -- Group of 6 all static, only warlock pet is random between 3 entrys
 (@SGGUID+31, 'Shadow Labyrinth - Group 023 - Cabal Shadow Priest | Cabal Deathsworn | Cabal Acolyte | Cabal Cultist | Cabal Warlock | Fel Guardhound/Maiden of Discipline/Cabal Familiar', 0, 0, 0, 1, @STRINGID+3),
@@ -1139,7 +1143,6 @@ INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`
 (@SGGUID+9, 18633, 0, 2, 0), (@SGGUID+9, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+10, 18633, 0, 1, 0), (@SGGUID+10, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+11, 18633, 0, 1, 0), (@SGGUID+11, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+30, 18633, 0, 1, 0), (@SGGUID+30, 18631, 0, 2, 0), (@SGGUID+30, 18635, 0, 2, 0),  -- Cabal Acolyte, Cabal Cultist, Cabal Deathsworn
 (@SGGUID+31, 18641, 0, 1, 0), (@SGGUID+31, 18642, 0, 1, 0), (@SGGUID+31, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
 (@SGGUID+35, 18631, 1, 1, 0), (@SGGUID+35, 18637, 1, 2, 0), -- Cabal Cultist, Cabal Shadow Priest
 (@SGGUID+40, 18641, 0, 1, 0), (@SGGUID+40, 18642, 0, 1, 0), (@SGGUID+40, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
@@ -1531,6 +1534,18 @@ INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES
 (@SGGUID+19, 4, @CGUID+91, 18635), -- Cabal Deathsworn (left)
 (@SGGUID+19, 4, @CGUID+90, 18633), -- Cabal Acolyte (right)
 
+(@SGGUID+30, 1, @CGUID+37, 18631), -- Cabal Cultist (right)
+(@SGGUID+30, 1, @CGUID+39, 18631), -- Cabal Cultist (left)
+
+(@SGGUID+30, 2, @CGUID+37, 18631), -- Cabal Cultist (right)
+(@SGGUID+30, 2, @CGUID+39, 18633), -- Cabal Acolyte (left)
+
+(@SGGUID+30, 3, @CGUID+37, 18635), -- Cabal Deathsworn (right)
+(@SGGUID+30, 3, @CGUID+39, 18635), -- Cabal Deathsworn (left)
+
+(@SGGUID+30, 4, @CGUID+37, 18631), -- Cabal Cultist (right)
+(@SGGUID+30, 4, @CGUID+39, 18635), -- Cabal Deathsworn (left)
+
 (@SGGUID+34, 1, @CGUID+92, 18635), --  Cabal Deathsworn (front left)
 (@SGGUID+34, 1, @CGUID+30, 18631), -- Cabal Cultist (front right)
 (@SGGUID+34, 1, @CGUID+69, 18637), -- Cabal Shadow Priest(back left)
@@ -1581,6 +1596,8 @@ INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES
 (@SGGUID+38, 3, @CGUID+104, 18637), -- Cabal Shadow Priest (front right)
 (@SGGUID+38, 3, @CGUID+32, 18631), -- Cabal Cultist (back left)
 (@SGGUID+38, 3, @CGUID+70, 18633), -- Cabal Acolyte (back right)
+
+
 
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
 (@SGGUID+13, 1, 10, 0, @SGGUID+13, 2, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
