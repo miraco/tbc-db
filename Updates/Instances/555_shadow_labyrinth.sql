@@ -1112,7 +1112,6 @@ INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`
 (@SGGUID+10, 18633, 0, 1, 0), (@SGGUID+10, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+11, 18633, 0, 1, 0), (@SGGUID+11, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+31, 18641, 0, 1, 0), (@SGGUID+31, 18642, 0, 1, 0), (@SGGUID+31, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
-(@SGGUID+35, 18631, 1, 1, 0), (@SGGUID+35, 18637, 1, 2, 0), -- Cabal Cultist, Cabal Shadow Priest
 (@SGGUID+40, 18641, 0, 1, 0), (@SGGUID+40, 18642, 0, 1, 0), (@SGGUID+40, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
 (@SGGUID+44, 18796, 0, 1, 0), (@SGGUID+44, 18848, 0, 1, 0), -- Fel Overseer, Malicious Instructor
 (@SGGUID+70, 18634, 0, 1, 0),  (@SGGUID+70, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
@@ -1495,19 +1494,19 @@ INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES
 (@SGGUID+34, 3, @CGUID+69, 18637), -- Cabal Shadow Priest (back left)
 (@SGGUID+34, 3, @CGUID+31, 18633), -- Cabal Acolyte (back right)
 
-(@SGGUID+36, 1, @CGUID+85, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+36, 1, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
 (@SGGUID+36, 1, @CGUID+72, 18633), -- Cabal Acolyte (front middle)
 (@SGGUID+36, 1, @CGUID+34, 18631), -- Cabal Cultist (front right)
 (@SGGUID+36, 1, @CGUID+71, 18633), -- Cabal Acolyte (back left)
 (@SGGUID+36, 1, @CGUID+102, 18637), -- Cabal Shadow Priest (back right)
 
-(@SGGUID+36, 2, @CGUID+85, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+36, 2, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
 (@SGGUID+36, 2, @CGUID+72, 18631), -- Cabal Cultist (front middle)
 (@SGGUID+36, 2, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
 (@SGGUID+36, 2, @CGUID+71, 18633), -- Cabal Acolyte (back left)
 (@SGGUID+36, 2, @CGUID+102, 18631), -- Cabal Cultist (back right)
 
-(@SGGUID+36, 3, @CGUID+85, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+36, 3, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
 (@SGGUID+36, 3, @CGUID+72, 18631), -- Cabal Cultist (front middle)
 (@SGGUID+36, 3, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
 (@SGGUID+36, 3, @CGUID+71, 18637), -- Cabal Shadow Priest (back left)
@@ -1567,17 +1566,17 @@ INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES
 -- from left to right
 (@SGGUID+52, 1, @CGUID+107, 18631), -- Cabal Cultist (left)
 (@SGGUID+52, 1, @CGUID+234, 18830), -- Cabal Fanatic (left mid)
-(@SGGUID+52, 1, @CGUID+75, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+52, 1, @CGUID+29, 18631), -- Cabal Cultist (right mid)
 (@SGGUID+52, 1, @CGUID+106, 18638), -- Cabal Zealot (right)
 
 (@SGGUID+52, 2, @CGUID+107, 18638), -- Cabal Zealot (left)
 (@SGGUID+52, 2, @CGUID+234, 18830), -- Cabal Fanatic (left mid)
-(@SGGUID+52, 2, @CGUID+75, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+52, 2, @CGUID+29, 18631), -- Cabal Cultist (right mid)
 (@SGGUID+52, 2, @CGUID+106, 18830), -- Cabal Fanatic (right)
 
 (@SGGUID+52, 3, @CGUID+107, 18638), -- Cabal Zealot (left)
 (@SGGUID+52, 3, @CGUID+234, 18830), -- Cabal Fanatic (left mid)
-(@SGGUID+52, 3, @CGUID+75, 18830), -- Cabal Fanatic (right mid)
+(@SGGUID+52, 3, @CGUID+29, 18830), -- Cabal Fanatic (right mid)
 (@SGGUID+52, 3, @CGUID+106, 18638), -- Cabal Zealot (right)
 
 -- from left to right
