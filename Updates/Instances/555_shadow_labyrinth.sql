@@ -22,7 +22,7 @@ SET @STRINGID := 5550000; -- used for StringID's
 SET @RELAYID := 5550000; -- used for dbscript_relay
 SET @CONDITIONID := 5550000; -- used for conditions
 SET @WORLDSTATEID := 5550000; -- used for worldstates
-
+SET @PATHID := 5550000; -- used for waypoint_path
 
 -- =========
 -- CREATURES
@@ -1629,139 +1629,139 @@ INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES
 
 
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
-(@SGGUID+13, 1, 10, 0, @SGGUID+13, 2, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
-(@SGGUID+52, 2, 2, 0, @SGGUID+52, 2, 'Shadow Labyrinth - Group 035 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 01'),
-(@SGGUID+58, 2, 2, 0, @SGGUID+58, 2, 'Shadow Labyrinth - Group 040 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 02'),
-(@SGGUID+62, 2, 2, 0, @SGGUID+62, 2, 'Shadow Labyrinth - Group 042 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 03');
+(@SGGUID+13, 1, 10, 0, @PATHID+13, 2, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
+(@SGGUID+52, 2, 2, 0, @PATHID+52, 2, 'Shadow Labyrinth - Group 035 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 01'),
+(@SGGUID+58, 2, 2, 0, @PATHID+58, 2, 'Shadow Labyrinth - Group 040 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 02'),
+(@SGGUID+62, 2, 2, 0, @PATHID+62, 2, 'Shadow Labyrinth - Group 042 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 03');
 
 INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
-(@SGGUID+1, 'Shadow Labyrinth - Group 003 Path 1'),
-(@SGGUID+2, 'Shadow Labyrinth - Group 003 Path 2'),
-(@SGGUID+3, 'Shadow Labyrinth - Group 003 Path 3'),
-(@SGGUID+4, 'Shadow Labyrinth - Group 003 Path 4'),
-(@SGGUID+13, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
+(@PATHID+1, 'Shadow Labyrinth - Group 003 Path 1'),
+(@PATHID+2, 'Shadow Labyrinth - Group 003 Path 2'),
+(@PATHID+3, 'Shadow Labyrinth - Group 003 Path 3'),
+(@PATHID+4, 'Shadow Labyrinth - Group 003 Path 4'),
+(@PATHID+13, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
  -- Group 010 RP Waypoints
-(@SGGUID+14, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 1'),
-(@SGGUID+15, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 2'),
-(@SGGUID+16, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 3'),
+(@PATHID+14, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 1'),
+(@PATHID+15, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 2'),
+(@PATHID+16, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 3'),
 -- Patrol 01
-(@SGGUID+52, 'Shadow Labyrinth - Group 035 - Patrol 01'),
+(@PATHID+52, 'Shadow Labyrinth - Group 035 - Patrol 01'),
 -- Patrol 02
-(@SGGUID+58, 'Shadow Labyrinth - Group 040 - Patrol 02'),
+(@PATHID+58, 'Shadow Labyrinth - Group 040 - Patrol 02'),
 -- Patrol 03
-(@SGGUID+62, 'Shadow Labyrinth - Group 042 - Patrol 03'),
+(@PATHID+62, 'Shadow Labyrinth - Group 042 - Patrol 03'),
 -- Murmur room
 -- Runner 1 random waypoints
-(@SGGUID+70, 'Shadow Labyrinth - Group 049 - Path 1'),
-(@SGGUID+71, 'Shadow Labyrinth - Group 049 - Path 2'),
-(@SGGUID+72, 'Shadow Labyrinth - Group 049 - Path 3'),
-(@SGGUID+73, 'Shadow Labyrinth - Group 049 - Path 4'),
+(@PATHID+70, 'Shadow Labyrinth - Group 049 - Path 1'),
+(@PATHID+71, 'Shadow Labyrinth - Group 049 - Path 2'),
+(@PATHID+72, 'Shadow Labyrinth - Group 049 - Path 3'),
+(@PATHID+73, 'Shadow Labyrinth - Group 049 - Path 4'),
 -- Runner 2 random waypoints
-(@SGGUID+74, 'Shadow Labyrinth - Group 050 - Path 1'),
-(@SGGUID+75, 'Shadow Labyrinth - Group 050 - Path 2'),
-(@SGGUID+76, 'Shadow Labyrinth - Group 050 - Path 3'),
-(@SGGUID+77, 'Shadow Labyrinth - Group 050 - Path 4'),
+(@PATHID+74, 'Shadow Labyrinth - Group 050 - Path 1'),
+(@PATHID+75, 'Shadow Labyrinth - Group 050 - Path 2'),
+(@PATHID+76, 'Shadow Labyrinth - Group 050 - Path 3'),
+(@PATHID+77, 'Shadow Labyrinth - Group 050 - Path 4'),
 -- Runner 3 random waypoints
-(@SGGUID+78, 'Shadow Labyrinth - Group 051 - Path 1'),
-(@SGGUID+79, 'Shadow Labyrinth - Group 051 - Path 2'),
-(@SGGUID+80, 'Shadow Labyrinth - Group 051 - Path 3'),
-(@SGGUID+81, 'Shadow Labyrinth - Group 051 - Path 4'),
-(@SGGUID+82, 'Shadow Labyrinth - Group 051 - Path 5'),
-(@SGGUID+83, 'Shadow Labyrinth - Group 051 - Path 6'),
+(@PATHID+78, 'Shadow Labyrinth - Group 051 - Path 1'),
+(@PATHID+79, 'Shadow Labyrinth - Group 051 - Path 2'),
+(@PATHID+80, 'Shadow Labyrinth - Group 051 - Path 3'),
+(@PATHID+81, 'Shadow Labyrinth - Group 051 - Path 4'),
+(@PATHID+82, 'Shadow Labyrinth - Group 051 - Path 5'),
+(@PATHID+83, 'Shadow Labyrinth - Group 051 - Path 6'),
  -- Runner 4 random waypoints
-(@SGGUID+84, 'Shadow Labyrinth - Group 052 - Path 1'),
-(@SGGUID+85, 'Shadow Labyrinth - Group 052 - Path 2'),
-(@SGGUID+86, 'Shadow Labyrinth - Group 052 - Path 3'),
-(@SGGUID+87, 'Shadow Labyrinth - Group 052 - Path 4'),
-(@SGGUID+88, 'Shadow Labyrinth - Group 052 - Path 5'),
-(@SGGUID+89, 'Shadow Labyrinth - Group 052 - Path 6'),
+(@PATHID+84, 'Shadow Labyrinth - Group 052 - Path 1'),
+(@PATHID+85, 'Shadow Labyrinth - Group 052 - Path 2'),
+(@PATHID+86, 'Shadow Labyrinth - Group 052 - Path 3'),
+(@PATHID+87, 'Shadow Labyrinth - Group 052 - Path 4'),
+(@PATHID+88, 'Shadow Labyrinth - Group 052 - Path 5'),
+(@PATHID+89, 'Shadow Labyrinth - Group 052 - Path 6'),
   -- Runner 5 random waypoints
-(@SGGUID+90, 'Shadow Labyrinth - Group 053 - Path 1'),
-(@SGGUID+91, 'Shadow Labyrinth - Group 053 - Path 2'),
-(@SGGUID+92, 'Shadow Labyrinth - Group 053 - Path 3'),
-(@SGGUID+93, 'Shadow Labyrinth - Group 053 - Path 4'),
-(@SGGUID+94, 'Shadow Labyrinth - Group 053 - Path 5'),
-(@SGGUID+95, 'Shadow Labyrinth - Group 053 - Path 6');
+(@PATHID+90, 'Shadow Labyrinth - Group 053 - Path 1'),
+(@PATHID+91, 'Shadow Labyrinth - Group 053 - Path 2'),
+(@PATHID+92, 'Shadow Labyrinth - Group 053 - Path 3'),
+(@PATHID+93, 'Shadow Labyrinth - Group 053 - Path 4'),
+(@PATHID+94, 'Shadow Labyrinth - Group 053 - Path 5'),
+(@PATHID+95, 'Shadow Labyrinth - Group 053 - Path 6');
 
 INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Cabal Acolyte 4 different paths after Intro path
-(@SGGUID+1, 1, -39.472927, -2.8820992, -1.1310382, 3.9095, 18000, @RELAYID+2),
-(@SGGUID+1, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
-(@SGGUID+2, 1, -45.58315, 18.34784, -1.1280077, 2.4085, 18000, @RELAYID+2),
-(@SGGUID+2, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
-(@SGGUID+3, 1, -56.151814, 15.847561,-1.1280965, 1.5009, 18000, @RELAYID+2),
-(@SGGUID+3, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
-(@SGGUID+4, 1, -59.339016, 8.937592, -1.1331869, 100, 0, 0),
-(@SGGUID+4, 2, -60.68144, -18.41702, -1.1281054, 100, 0, 0),
-(@SGGUID+4, 3, -91.59668, -19.750717, -1.1281965, 100, 2000, 0),
-(@SGGUID+4, 4, -60.68144, -18.41702, -1.1281054, 100, 0, 0),
-(@SGGUID+4, 5, -59.339016, 8.937592, -1.1331869, 100, 0, 0),
-(@SGGUID+4, 6, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
-(@SGGUID+13, 1, -73.184364, -72.63547, -1.1283, 2.284255, 4000, 5),
-(@SGGUID+13, 2, -73.684364, -72.63547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 3, -77.434364, -70.38547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 4, -77.934364, -66.63547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 5, -74.184364, -65.63547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 6, -68.184364, -70.13547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 7, -68.184364, -73.88547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 8, -71.434364, -74.38547, -0.87829995, 100, 0, 0),
+(@PATHID+1, 1, -39.472927, -2.8820992, -1.1310382, 3.9095, 18000, @RELAYID+2),
+(@PATHID+1, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
+(@PATHID+2, 1, -45.58315, 18.34784, -1.1280077, 2.4085, 18000, @RELAYID+2),
+(@PATHID+2, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
+(@PATHID+3, 1, -56.151814, 15.847561,-1.1280965, 1.5009, 18000, @RELAYID+2),
+(@PATHID+3, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
+(@PATHID+4, 1, -59.339016, 8.937592, -1.1331869, 100, 0, 0),
+(@PATHID+4, 2, -60.68144, -18.41702, -1.1281054, 100, 0, 0),
+(@PATHID+4, 3, -91.59668, -19.750717, -1.1281965, 100, 2000, 0),
+(@PATHID+4, 4, -60.68144, -18.41702, -1.1281054, 100, 0, 0),
+(@PATHID+4, 5, -59.339016, 8.937592, -1.1331869, 100, 0, 0),
+(@PATHID+4, 6, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
+(@PATHID+13, 1, -73.184364, -72.63547, -1.1283, 2.284255, 4000, 5),
+(@PATHID+13, 2, -73.684364, -72.63547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 3, -77.434364, -70.38547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 4, -77.934364, -66.63547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 5, -74.184364, -65.63547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 6, -68.184364, -70.13547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 7, -68.184364, -73.88547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 8, -71.434364, -74.38547, -0.87829995, 100, 0, 0),
 -- Group 010 RP Waypoints
-(@SGGUID+14, 1, -54.60242,-78.51944,-1.1282262, 100, 1000, @RELAYID+7),
-(@SGGUID+15, 1, -54.600212,-77.50109,-1.127364, 100, 1000, @RELAYID+8),
-(@SGGUID+16, 1, -54.675922,-77.17647,-1.1273506, 100, 1000, @RELAYID+9), -- Generic Movement Idle
+(@PATHID+14, 1, -54.60242,-78.51944,-1.1282262, 100, 1000, @RELAYID+7),
+(@PATHID+15, 1, -54.600212,-77.50109,-1.127364, 100, 1000, @RELAYID+8),
+(@PATHID+16, 1, -54.675922,-77.17647,-1.1273506, 100, 1000, @RELAYID+9), -- Generic Movement Idle
 -- Patrol 01
-(@SGGUID+52, 1, -367.58914, -267.65616, 12.689051, 0.0349, 15000, @RELAYID+10),
-(@SGGUID+52, 2, -354.83398, -267.55493, 12.68742, 100, 15000, @RELAYID+10),
+(@PATHID+52, 1, -367.58914, -267.65616, 12.689051, 0.0349, 15000, @RELAYID+10),
+(@PATHID+52, 2, -354.83398, -267.55493, 12.68742, 100, 15000, @RELAYID+10),
 -- Patrol 02
-(@SGGUID+58, 1, -323.5248, -264.78464, 12.684626, 0.01745, 15000, @RELAYID+11),
-(@SGGUID+58, 2, -290.12753, -263.76453, 12.682338, 100, 15000, @RELAYID+11),
+(@PATHID+58, 1, -323.5248, -264.78464, 12.684626, 0.01745, 15000, @RELAYID+11),
+(@PATHID+58, 2, -290.12753, -263.76453, 12.682338, 100, 15000, @RELAYID+11),
 -- Patrol 03 - around the boss
-(@SGGUID+62, 1, -279.3916,-269.65582,12.681446, 100, 100, @RELAYID+12),
-(@SGGUID+62, 2, -271.79556,-275.23175,12.6813135, 100, 100, @RELAYID+12),
-(@SGGUID+62, 3, -264.27405,-279.25732,12.680406, 100, 100, @RELAYID+12),
-(@SGGUID+62, 4, -257.4364,-281.72037,12.679068, 100, 100, @RELAYID+12),
-(@SGGUID+62, 5, -246.49648,-282.56845,17.086329, 100, 100, @RELAYID+12),
-(@SGGUID+62, 6, -238.89442,-277.1962,17.086287, 100, 100, @RELAYID+12),
-(@SGGUID+62, 7, -232.98311,-270.28983,17.086288, 100, 100, @RELAYID+12),
-(@SGGUID+62, 8, -231.82408,-256.32004,17.086378, 100, 100, @RELAYID+12),
-(@SGGUID+62, 9, -240.6651,-248.60138,17.086283, 100, 100, @RELAYID+12),
-(@SGGUID+62, 10, -247.90907,-247.09088,17.086376, 100, 100, @RELAYID+12),
-(@SGGUID+62, 11, -258.20337,-246.84099,12.67995, 100, 100, @RELAYID+12),
-(@SGGUID+62, 12, -268.21298,-248.91357,12.064231, 100, 100, @RELAYID+12),
-(@SGGUID+62, 13, -275.60107,-252.21254,12.681708, 100, 100, @RELAYID+12),
-(@SGGUID+62, 14, -279.302,-258.68976,12.681697, 100, 100, @RELAYID+12),
+(@PATHID+62, 1, -279.3916,-269.65582,12.681446, 100, 100, @RELAYID+12),
+(@PATHID+62, 2, -271.79556,-275.23175,12.6813135, 100, 100, @RELAYID+12),
+(@PATHID+62, 3, -264.27405,-279.25732,12.680406, 100, 100, @RELAYID+12),
+(@PATHID+62, 4, -257.4364,-281.72037,12.679068, 100, 100, @RELAYID+12),
+(@PATHID+62, 5, -246.49648,-282.56845,17.086329, 100, 100, @RELAYID+12),
+(@PATHID+62, 6, -238.89442,-277.1962,17.086287, 100, 100, @RELAYID+12),
+(@PATHID+62, 7, -232.98311,-270.28983,17.086288, 100, 100, @RELAYID+12),
+(@PATHID+62, 8, -231.82408,-256.32004,17.086378, 100, 100, @RELAYID+12),
+(@PATHID+62, 9, -240.6651,-248.60138,17.086283, 100, 100, @RELAYID+12),
+(@PATHID+62, 10, -247.90907,-247.09088,17.086376, 100, 100, @RELAYID+12),
+(@PATHID+62, 11, -258.20337,-246.84099,12.67995, 100, 100, @RELAYID+12),
+(@PATHID+62, 12, -268.21298,-248.91357,12.064231, 100, 100, @RELAYID+12),
+(@PATHID+62, 13, -275.60107,-252.21254,12.681708, 100, 100, @RELAYID+12),
+(@PATHID+62, 14, -279.302,-258.68976,12.681697, 100, 100, @RELAYID+12),
 -- Murmur room
 -- Runner 1
-(@SGGUID+70, 1, -149.76266, -341.32974, 17.084673, 4.6603012, 100, @RELAYID+13),
-(@SGGUID+71, 1, -156.56253, -339.00937, 17.085264, 4.7039709, 100, @RELAYID+13),
-(@SGGUID+72, 1, -156.86292, -338.40677, 17.08532, 4.705892, 100, @RELAYID+13),
-(@SGGUID+73, 1, -162.85062, -344.2074, 17.083673, 4.7447409, 100, @RELAYID+13),
+(@PATHID+70, 1, -149.76266, -341.32974, 17.084673, 4.6603012, 100, @RELAYID+13),
+(@PATHID+71, 1, -156.56253, -339.00937, 17.085264, 4.7039709, 100, @RELAYID+13),
+(@PATHID+72, 1, -156.86292, -338.40677, 17.08532, 4.705892, 100, @RELAYID+13),
+(@PATHID+73, 1, -162.85062, -344.2074, 17.083673, 4.7447409, 100, @RELAYID+13),
 -- Runner 2
-(@SGGUID+74, 1, -149.78711, -366.49707, 17.082535, 4.65049, 100, @RELAYID+14),
-(@SGGUID+75, 1, -155.3374, -366.17404, 17.082674, 4.692888, 100, @RELAYID+14),
-(@SGGUID+76, 1, -157.32748, -365.99078, 17.082611, 4.7080655, 100, @RELAYID+14),
-(@SGGUID+77, 1, -162.91078, -365.29044, 17.082392, 4.750358, 100, @RELAYID+14),
+(@PATHID+74, 1, -149.78711, -366.49707, 17.082535, 4.65049, 100, @RELAYID+14),
+(@PATHID+75, 1, -155.3374, -366.17404, 17.082674, 4.692888, 100, @RELAYID+14),
+(@PATHID+76, 1, -157.32748, -365.99078, 17.082611, 4.7080655, 100, @RELAYID+14),
+(@PATHID+77, 1, -162.91078, -365.29044, 17.082392, 4.750358, 100, @RELAYID+14),
 -- Runner 3
-(@SGGUID+78, 1, -149.53552, -401.48837, 17.079496, 4.625377, 100, @RELAYID+15),
-(@SGGUID+79, 1, -153.48389, -402.04773, 17.07955, 4.66612, 100, @RELAYID+15),
-(@SGGUID+80, 1, -155.46968, -402.09506, 17.079538, 4.68692, 100, @RELAYID+15),
-(@SGGUID+81, 1, -159.01439, -402.48212, 17.079556, 4.724188, 100, @RELAYID+15),
-(@SGGUID+82, 1, -160.97226, -402.33005, 17.079668, 4.744769, 100, @RELAYID+15),
-(@SGGUID+83, 1, -164.68327, -401.2923, 17.079756, 4.782957, 100, @RELAYID+15),
+(@PATHID+78, 1, -149.53552, -401.48837, 17.079496, 4.625377, 100, @RELAYID+15),
+(@PATHID+79, 1, -153.48389, -402.04773, 17.07955, 4.66612, 100, @RELAYID+15),
+(@PATHID+80, 1, -155.46968, -402.09506, 17.079538, 4.68692, 100, @RELAYID+15),
+(@PATHID+81, 1, -159.01439, -402.48212, 17.079556, 4.724188, 100, @RELAYID+15),
+(@PATHID+82, 1, -160.97226, -402.33005, 17.079668, 4.744769, 100, @RELAYID+15),
+(@PATHID+83, 1, -164.68327, -401.2923, 17.079756, 4.782957, 100, @RELAYID+15),
 -- Runner 4
-(@SGGUID+84, 1, -151.01328, -429.674, 17.07774, 4.6110053, 100, @RELAYID+16),
-(@SGGUID+85, 1, -157.67725, -431.36533, 17.07778, 4.7090826, 100, @RELAYID+16),
-(@SGGUID+86, 1, -159.64238, -431.67798, 17.077719, 4.7389965, 100, @RELAYID+16),
-(@SGGUID+87, 1, -160.99547, -431.54495, 17.077776, 4.7594852, 100, @RELAYID+16),
-(@SGGUID+88, 1, -162.98616, -431.72394, 17.0778, 4.7898397, 100, @RELAYID+16),
-(@SGGUID+89, 1, -165.48152, -432.09207, 17.077868, 4.828167, 100, @RELAYID+16),
+(@PATHID+84, 1, -151.01328, -429.674, 17.07774, 4.6110053, 100, @RELAYID+16),
+(@PATHID+85, 1, -157.67725, -431.36533, 17.07778, 4.7090826, 100, @RELAYID+16),
+(@PATHID+86, 1, -159.64238, -431.67798, 17.077719, 4.7389965, 100, @RELAYID+16),
+(@PATHID+87, 1, -160.99547, -431.54495, 17.077776, 4.7594852, 100, @RELAYID+16),
+(@PATHID+88, 1, -162.98616, -431.72394, 17.0778, 4.7898397, 100, @RELAYID+16),
+(@PATHID+89, 1, -165.48152, -432.09207, 17.077868, 4.828167, 100, @RELAYID+16),
 -- Runner 5
-(@SGGUID+90, 1, -142.49638, -444.06284, 17.080399, 4.4309349, 100, @RELAYID+17),
-(@SGGUID+91, 1, -149.68015, -443.9279, 17.077744, 4.5597286, 100, @RELAYID+17),
-(@SGGUID+92, 1, -151.67984, -443.92792, 17.07782, 4.5965042, 100, @RELAYID+17),
-(@SGGUID+93, 1, -154.00215, -443.80365, 17.077858, 4.639773, 100, @RELAYID+17),
-(@SGGUID+94, 1, -155.9756, -444.01428, 17.077868, 4.676393, 100, @RELAYID+17),
-(@SGGUID+95, 1, -160.1806, -444.94754, 17.077879, 4.755994, 100, @RELAYID+17);
+(@PATHID+90, 1, -142.49638, -444.06284, 17.080399, 4.4309349, 100, @RELAYID+17),
+(@PATHID+91, 1, -149.68015, -443.9279, 17.077744, 4.5597286, 100, @RELAYID+17),
+(@PATHID+92, 1, -151.67984, -443.92792, 17.07782, 4.5965042, 100, @RELAYID+17),
+(@PATHID+93, 1, -154.00215, -443.80365, 17.077858, 4.639773, 100, @RELAYID+17),
+(@PATHID+94, 1, -155.9756, -444.01428, 17.077868, 4.676393, 100, @RELAYID+17),
+(@PATHID+95, 1, -160.1806, -444.94754, 17.077879, 4.755994, 100, @RELAYID+17);
 
 DELETE FROM worldstate_name WHERE Id BETWEEN @WORLDSTATEID+1 AND @WORLDSTATEID+20;
 INSERT INTO `worldstate_name` (`Id`, `Name`) VALUES 
@@ -2017,10 +2017,10 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 -- Shadow Labyrinth - Group 003 - Cabal Acolyte/Cabal Deathsworn 4 differnt paths after static Intro
 (@RELAYID+1,0,0,45,0,@RELAYID+1,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - choose random path'),
 -- Choose Path
-(@RELAYID+2,0,0,20,2,@SGGUID+1,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 1'),
-(@RELAYID+3,0,0,20,2,@SGGUID+2,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 2'),
-(@RELAYID+4,0,0,20,2,@SGGUID+3,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 3'),
-(@RELAYID+5,0,0,20,2,@SGGUID+4,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 4'),
+(@RELAYID+2,0,0,20,2,@PATHID+1,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 1'),
+(@RELAYID+3,0,0,20,2,@PATHID+2,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 2'),
+(@RELAYID+4,0,0,20,2,@PATHID+3,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 3'),
+(@RELAYID+5,0,0,20,2,@PATHID+4,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 4'),
 -- Random Talk Events - using dbscript to get correct delays
 -- Multiple Groups (with 3 npcs) use to have a small RP Event 
 -- Leader use emote talk - one answers with emote laugh one with emote no
@@ -2038,17 +2038,17 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 -- (@RELAYID+7, 1, 1, 20, 2, @SGGUID+14, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 1'),
 -- 
 (@RELAYID+7, 5000, 0, 1, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Warlock - Emote OneShotPoint'),
-(@RELAYID+7, 5000, 1, 20, 2, @SGGUID+15, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 2'),
+(@RELAYID+7, 5000, 1, 20, 2, @PATHID+15, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 2'),
 -- Change Formation Shape to Circle around the Leader
 (@RELAYID+7, 10000, 0, 1, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Warlock - Emote OneShotPoint'),
-(@RELAYID+7, 10000, 1, 20, 2, @SGGUID+16, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 3'),
+(@RELAYID+7, 10000, 1, 20, 2, @PATHID+16, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 3'),
 -- All Cabal Familiar should play dead
 (@RELAYID+7, 15000, 0, 1, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Warlock - Emote OneShotRoar'),
 (@RELAYID+7, 15000, 1, 28, 7, 0, 0, @STRINGID+2, 15, 2567, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - StandState Death'),
 -- Delete Formation and let all npcs reset
 (@RELAYID+7, 20000, 0, 1, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Warlock - Emote OneShotLaugh'),
 (@RELAYID+7, 20000, 1, 28, 0, 0, 0, @STRINGID+2, 15, 2560, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - StandState Stand'),
-(@RELAYID+7, 20000, 2, 51, 151, @SGGUID+15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - Delete Formation'),
+(@RELAYID+7, 20000, 2, 51, 151, @PATHID+15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - Delete Formation'),
 (@RELAYID+7, 20000, 3, 3, 0, 0, 0, @STRINGID+2, 15, 2560, 2, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - StandState Stand'),
 -- Blackheart Inciter random path
 (@RELAYID+8,0,0,20,2,1,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Blackheart Inciter - PathID 1'),
@@ -2094,36 +2094,36 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+25, 100, 1, 15, 33335, 0, 0, 18708, 200, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Summoner/Spellbinder - Cast Shadow Bolt on Murmur'),
 -- Murmur room runners
 -- First runner has 4 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+26,0,0,20,2,@SGGUID+70,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 1'),
-(@RELAYID+27,0,0,20,2,@SGGUID+71,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 2'),
-(@RELAYID+28,0,0,20,2,@SGGUID+72,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 3'),
-(@RELAYID+29,0,0,20,2,@SGGUID+73,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 4'),
+(@RELAYID+26,0,0,20,2,@PATHID+70,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 1'),
+(@RELAYID+27,0,0,20,2,@PATHID+71,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 2'),
+(@RELAYID+28,0,0,20,2,@PATHID+72,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 3'),
+(@RELAYID+29,0,0,20,2,@PATHID+73,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 4'),
 -- 2nd runner has 4 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+30,0,0,20,2,@SGGUID+74,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 1'),
-(@RELAYID+31,0,0,20,2,@SGGUID+75,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 2'),
-(@RELAYID+32,0,0,20,2,@SGGUID+76,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 3'),
-(@RELAYID+33,0,0,20,2,@SGGUID+77,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 4'),
+(@RELAYID+30,0,0,20,2,@PATHID+74,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 1'),
+(@RELAYID+31,0,0,20,2,@PATHID+75,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 2'),
+(@RELAYID+32,0,0,20,2,@PATHID+76,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 3'),
+(@RELAYID+33,0,0,20,2,@PATHID+77,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 4'),
 -- 3nd runner has 6 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+34,0,0,20,2,@SGGUID+78,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 1'),
-(@RELAYID+35,0,0,20,2,@SGGUID+79,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 2'),
-(@RELAYID+36,0,0,20,2,@SGGUID+80,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 3'),
-(@RELAYID+37,0,0,20,2,@SGGUID+81,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 4'),
-(@RELAYID+38,0,0,20,2,@SGGUID+82,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 5'),
-(@RELAYID+39,0,0,20,2,@SGGUID+83,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 6'),
+(@RELAYID+34,0,0,20,2,@PATHID+78,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 1'),
+(@RELAYID+35,0,0,20,2,@PATHID+79,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 2'),
+(@RELAYID+36,0,0,20,2,@PATHID+80,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 3'),
+(@RELAYID+37,0,0,20,2,@PATHID+81,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 4'),
+(@RELAYID+38,0,0,20,2,@PATHID+82,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 5'),
+(@RELAYID+39,0,0,20,2,@PATHID+83,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 6'),
 -- 4th runner has 6 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+40,0,0,20,2,@SGGUID+84,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 1'),
-(@RELAYID+41,0,0,20,2,@SGGUID+85,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 2'),
-(@RELAYID+42,0,0,20,2,@SGGUID+86,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 3'),
-(@RELAYID+43,0,0,20,2,@SGGUID+87,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 4'),
-(@RELAYID+44,0,0,20,2,@SGGUID+88,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 5'),
-(@RELAYID+45,0,0,20,2,@SGGUID+89,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 6'),
+(@RELAYID+40,0,0,20,2,@PATHID+84,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 1'),
+(@RELAYID+41,0,0,20,2,@PATHID+85,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 2'),
+(@RELAYID+42,0,0,20,2,@PATHID+86,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 3'),
+(@RELAYID+43,0,0,20,2,@PATHID+87,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 4'),
+(@RELAYID+44,0,0,20,2,@PATHID+88,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 5'),
+(@RELAYID+45,0,0,20,2,@PATHID+89,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 6'),
 -- 5th runner has 6 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+46,0,0,20,2,@SGGUID+90,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 1'),
-(@RELAYID+47,0,0,20,2,@SGGUID+91,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 2'),
-(@RELAYID+48,0,0,20,2,@SGGUID+92,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 3'),
-(@RELAYID+49,0,0,20,2,@SGGUID+93,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 4'),
-(@RELAYID+50,0,0,20,2,@SGGUID+94,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 5'),
-(@RELAYID+51,0,0,20,2,@SGGUID+95,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 6');
+(@RELAYID+46,0,0,20,2,@PATHID+90,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 1'),
+(@RELAYID+47,0,0,20,2,@PATHID+91,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 2'),
+(@RELAYID+48,0,0,20,2,@PATHID+92,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 3'),
+(@RELAYID+49,0,0,20,2,@PATHID+93,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 4'),
+(@RELAYID+50,0,0,20,2,@PATHID+94,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 5'),
+(@RELAYID+51,0,0,20,2,@PATHID+95,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 6');
 
 DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN @RELAYID+1 AND  @RELAYID+17;
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (1866701, 1866702, 1866703, 1866704, 1866705, 1866706, 1873101, 1873102, 1863201, 1863401);
