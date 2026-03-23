@@ -1085,17 +1085,17 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+52, 'Shadow Labyrinth - Group 047 - Cabal Spellbinder (3)', 0, 0, 0, 1, 0),
 -- Runner groups
 -- 2 Cabal Summoner that get active when door opens, run their waypoints and then die
-(@SGGUID+53, 'Shadow Labyrinth - Group 048 - Cabal Summoner (2)', 0, 0, @CONDITIONID+29, 0, 0),
+(@SGGUID+53, 'Shadow Labyrinth - Group 048 - Cabal Summoner (2)', 0, 0, @CONDITIONID+1, 0, 0),
 -- Running npc between first and 2nd group
 -- Spawns on door opening and stops respawning when Group 043 is dead
-(@SGGUID+54, 'Shadow Labyrinth - Group 049 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+30, 0, @STRINGID+13), -- Runner 1
-(@SGGUID+55, 'Shadow Labyrinth - Group 050 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+31, 0, @STRINGID+13), -- Runner 2
-(@SGGUID+56, 'Shadow Labyrinth - Group 051 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+32, 0, @STRINGID+13), -- Runner 3
-(@SGGUID+57, 'Shadow Labyrinth - Group 052 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+33, 0, @STRINGID+13), -- Runner 4
-(@SGGUID+58, 'Shadow Labyrinth - Group 053 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+33, 0, @STRINGID+13), -- Runner 5
+(@SGGUID+54, 'Shadow Labyrinth - Group 049 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+2, 0, @STRINGID+13), -- Runner 1
+(@SGGUID+55, 'Shadow Labyrinth - Group 050 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+3, 0, @STRINGID+13), -- Runner 2
+(@SGGUID+56, 'Shadow Labyrinth - Group 051 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+4, 0, @STRINGID+13), -- Runner 3
+(@SGGUID+57, 'Shadow Labyrinth - Group 052 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+5, 0, @STRINGID+13), -- Runner 4
+(@SGGUID+58, 'Shadow Labyrinth - Group 053 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+5, 0, @STRINGID+13), -- Runner 5
 -- Cabal Assasins
-(@SGGUID+59, 'Shadow Labyrinth - Group 055 - Cabal Assasin', 0, 0, @CONDITIONID+34, 8, 0), -- Blackheart the Inciter room 
-(@SGGUID+60, 'Shadow Labyrinth - Group 056 - Cabal Assasin', 0, 0, @CONDITIONID+35, 8, 0),
+(@SGGUID+59, 'Shadow Labyrinth - Group 055 - Cabal Assasin', 0, 0, @CONDITIONID+6, 8, 0), -- Blackheart the Inciter room 
+(@SGGUID+60, 'Shadow Labyrinth - Group 056 - Cabal Assasin', 0, 0, @CONDITIONID+7, 8, 0),
 -- Single pulled Tortured Skeleton after 2nd boss 
 (@SGGUID+61, 'Shadow Labyrinth - Group 057 - Tortured Skeleton - Group 01', 0, 1, 0, 0, 0),
 (@SGGUID+62, 'Shadow Labyrinth - Group 058 - Tortured Skeleton - Group 02', 0, 1, 0, 0, 0),
@@ -1763,31 +1763,31 @@ INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `Posit
 (@PATHID+94, 1, -155.9756, -444.01428, 17.077868, 4.676393, 100, @RELAYID+17),
 (@PATHID+95, 1, -160.1806, -444.94754, 17.077879, 4.755994, 100, @RELAYID+17);
 
-DELETE FROM worldstate_name WHERE Id BETWEEN @WORLDSTATEID+1 AND @WORLDSTATEID+20;
+DELETE FROM worldstate_name WHERE Id BETWEEN @WORLDSTATEID+1 AND @WORLDSTATEID+7;
 INSERT INTO `worldstate_name` (`Id`, `Name`) VALUES 
 -- The Screaming Hall - Murmur Worldstates
 -- Gets active when door opens
-(@WORLDSTATEID+14, 'Shadow Labyrinth - Group 048'),
-(@WORLDSTATEID+15, 'Shadow Labyrinth - Group 049'),
-(@WORLDSTATEID+16, 'Shadow Labyrinth - Group 050'),
-(@WORLDSTATEID+17, 'Shadow Labyrinth - Group 051'),
-(@WORLDSTATEID+18, 'Shadow Labyrinth - Group 052'),
+(@WORLDSTATEID+1, 'Shadow Labyrinth - Group 048'),
+(@WORLDSTATEID+2, 'Shadow Labyrinth - Group 049'),
+(@WORLDSTATEID+3, 'Shadow Labyrinth - Group 050'),
+(@WORLDSTATEID+4, 'Shadow Labyrinth - Group 051'),
+(@WORLDSTATEID+5, 'Shadow Labyrinth - Group 052'),
 -- Cabal Assasins
-(@WORLDSTATEID+19, 'Shadow Labyrinth - Group 055 - Cabal Assasin'),
-(@WORLDSTATEID+20, 'Shadow Labyrinth - Group 056 - Cabal Assasin');
+(@WORLDSTATEID+6, 'Shadow Labyrinth - Group 055 - Cabal Assasin'),
+(@WORLDSTATEID+7, 'Shadow Labyrinth - Group 056 - Cabal Assasin');
 
-DELETE FROM `conditions` WHERE `condition_entry` BETWEEN @CONDITIONID+1 AND @CONDITIONID+35;
+DELETE FROM `conditions` WHERE `condition_entry` BETWEEN @CONDITIONID+1 AND @CONDITIONID+7;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `value3`, `value4`, `flags`, `comments`) VALUES 
 -- the Screaming Hall
 -- Despawned on default, spawns group 48 adter door opens
-(@CONDITIONID+29, 42, @WORLDSTATEID+14, 1, 1, 0, 0, 'Shadow Labyrinth - Group 048'),
-(@CONDITIONID+30, 42, @WORLDSTATEID+15, 1, 1, 0, 0, 'Shadow Labyrinth - Group 049'),
-(@CONDITIONID+31, 42, @WORLDSTATEID+16, 1, 1, 0, 0, 'Shadow Labyrinth - Group 050'),
-(@CONDITIONID+32, 42, @WORLDSTATEID+17, 1, 1, 0, 0, 'Shadow Labyrinth - Group 051'),
-(@CONDITIONID+33, 42, @WORLDSTATEID+18, 1, 1, 0, 0, 'Shadow Labyrinth - Group 052'),
+(@CONDITIONID+1, 42, @WORLDSTATEID+1, 1, 1, 0, 0, 'Shadow Labyrinth - Group 048'),
+(@CONDITIONID+2, 42, @WORLDSTATEID+2, 1, 1, 0, 0, 'Shadow Labyrinth - Group 049'),
+(@CONDITIONID+3, 42, @WORLDSTATEID+3, 1, 1, 0, 0, 'Shadow Labyrinth - Group 050'),
+(@CONDITIONID+4, 42, @WORLDSTATEID+4, 1, 1, 0, 0, 'Shadow Labyrinth - Group 051'),
+(@CONDITIONID+5, 42, @WORLDSTATEID+5, 1, 1, 0, 0, 'Shadow Labyrinth - Group 052'),
 -- Cabal Assasins
-(@CONDITIONID+34, 42, @WORLDSTATEID+19, 1, 1, 0, 0, 'Shadow Labyrinth - Group 055 - Cabal Assasin'),
-(@CONDITIONID+35, 42, @WORLDSTATEID+20, 1, 1, 0, 0, 'Shadow Labyrinth - Group 056 - Cabal Assasin');
+(@CONDITIONID+6, 42, @WORLDSTATEID+6, 1, 1, 0, 0, 'Shadow Labyrinth - Group 055 - Cabal Assasin'),
+(@CONDITIONID+7, 42, @WORLDSTATEID+7, 1, 1, 0, 0, 'Shadow Labyrinth - Group 056 - Cabal Assasin');
 
 -- StringIDs
 DELETE FROM string_id WHERE Id BETWEEN @STRINGID+1 AND @STRINGID+13;
@@ -1944,11 +1944,11 @@ DELETE FROM dbscripts_on_go_template_use WHERE id IN (183295);
 INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Screaming Hall Door
 (183295, 0, 0, 20, 2, 0, 0, @STRINGID+10, 200, 2560, 0, 0, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - StringID - Change MovementType to Waypoint Movement'),
-(183295, 0, 1, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+14, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'),
-(183295, 0, 2, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+15, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 1
-(183295, 0, 3, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+16, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 2
-(183295, 0, 4, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+17, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 3
-(183295, 0, 5, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+18, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'); -- runner 4+5
+(183295, 0, 1, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+1, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'),
+(183295, 0, 2, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+2, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 1
+(183295, 0, 3, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+3, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 2
+(183295, 0, 4, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+4, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 3
+(183295, 0, 5, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+5, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'); -- runner 4+5
 
 -- Reworked DBScripts, will be merged into single Inserts when done with full rework
 DELETE FROM dbscript_random_templates WHERE id BETWEEN @RELAYID+1 AND @RELAYID+11;
