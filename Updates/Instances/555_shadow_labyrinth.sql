@@ -998,39 +998,39 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 -- Cabal Acolyte - Cabal Cultist
 -- Cabal Deathsworn - Cabal Deathsworn
 -- Cabal Deathsworn - Cabal Cultist
-(@SGGUID+30, 'Shadow Labyrinth - Group 022 - Cabal Cultist/Cabal/Acolyte/Cabal Deathsworn', 0, 0, 0, 1, 0),
+(@SGGUID+24, 'Shadow Labyrinth - Group 022 - Cabal Cultist/Cabal/Acolyte/Cabal Deathsworn', 0, 0, 0, 1, 0),
 -- Group of 6 all static, only warlock pet is random between 3 entrys
-(@SGGUID+31, 'Shadow Labyrinth - Group 023 - Cabal Shadow Priest | Cabal Deathsworn | Cabal Acolyte | Cabal Cultist | Cabal Warlock | Fel Guardhound/Maiden of Discipline/Cabal Familiar', 0, 0, 0, 1, @STRINGID+3),
+(@SGGUID+25, 'Shadow Labyrinth - Group 023 - Cabal Shadow Priest | Cabal Deathsworn | Cabal Acolyte | Cabal Cultist | Cabal Warlock | Fel Guardhound/Maiden of Discipline/Cabal Familiar', 0, 0, 0, 1, @STRINGID+3),
 -- Solo Patrol linked to boss
-(@SGGUID+32, 'Shadow Labyrinth - Group 024 - Malicious Instructor', 0, 0, 0, 0, 0),
+(@SGGUID+26, 'Shadow Labyrinth - Group 024 - Malicious Instructor', 0, 0, 0, 0, 0),
 -- Middle Patrol
-(@SGGUID+33, 'Shadow Labyrinth - Group 025 - Malicious Instructor', 0, 0, 0, 0, 0),
+(@SGGUID+27, 'Shadow Labyrinth - Group 025 - Malicious Instructor', 0, 0, 0, 0, 0),
 -- Middle Group left back - 4 npcs 3 possible combinations:
 -- Cabal Deathsworn- Cabal Cultist - Cabal Shadow Priest - Cabal Acolyte
 -- Cabal Deathsworn- Cabal Cultist - Cabal Acolyte -	Cabal Cultist
 -- Cabal Cultist- Cabal Shadow Priest - Cabal Shadow Priest - Cabal Acolyte
-(@SGGUID+34, 'Shadow Labyrinth - Group 023 - Cabal Deathsworn | Cabal Cultist | Cabal Acolyte | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
+(@SGGUID+28, 'Shadow Labyrinth - Group 023 - Cabal Deathsworn | Cabal Cultist | Cabal Acolyte | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
 -- Middle Group left front - 5 npcs - 3 possible combinations
 -- Cabal Deathsworn - Cabal Acolyte	- Cabal Cultist - Cabal Acolyte - Cabal Shadow Priest
 -- Cabal Deathsworn	- Cabal Cultist	- Cabal Shadow Priest - Cabal Acolyte- Cabal Cultist
 -- Cabal Deathsworn	- Cabal Cultist	- Cabal Shadow Priest - Cabal Shadow Priest- Cabal Acolyte
-(@SGGUID+36, 'Shadow Labyrinth - Group 024 - Cabal Deathsworn | Cabal Acolyte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
+(@SGGUID+29, 'Shadow Labyrinth - Group 024 - Cabal Deathsworn | Cabal Acolyte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
 -- Middle Group right - 5 npcs - 4 possible combinations
 -- Cabal Deathsworn - Cabal Cultist - Cabal Shadow Priest - Cabal Acolyte - Cabal Shadow Priest
 -- Cabal Deathsworn - Cabal Acolyte - Cabal Cultist - Cabal Shadow Priest - Cabal Acolyte
 -- Cabal Deathsworn - Cabal Cultist - Cabal Shadow Priest - Cabal Cultist - Cabal Acolyte
-(@SGGUID+38, 'Shadow Labyrinth - Group 025 - Cabal Deathsworn | Cabal Acolte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
+(@SGGUID+30, 'Shadow Labyrinth - Group 025 - Cabal Deathsworn | Cabal Acolte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
 -- Group of 6 all static, only warlock pet is random between 3 entrys
-(@SGGUID+40, 'Shadow Labyrinth - Group 026 - Cabal Shadow Priest | Cabal Deathsworn | Cabal Acolyte | Cabal Cultist | Cabal Warlock | Fel Guardhound/Maiden of Discipline/Cabal Familiar', 0, 0, 0, 1, @STRINGID+5),
+(@SGGUID+31, 'Shadow Labyrinth - Group 026 - Cabal Shadow Priest | Cabal Deathsworn | Cabal Acolyte | Cabal Cultist | Cabal Warlock | Fel Guardhound/Maiden of Discipline/Cabal Familiar', 0, 0, 0, 1, @STRINGID+5),
 -- Group of 2 possible combinations
 -- Cabal Acolyt - Cabal Cultist
 -- Cabal Deathsworn - Cabal Deathsworn
 -- Cabal Deathsworn - Cabal Cultist
-(@SGGUID+41, 'Shadow Labyrinth - Group 027 - Cabal Cultist/Cabal/Acolyte/Cabal Deathsworn', 0, 0, 0, 1, 0),
+(@SGGUID+32, 'Shadow Labyrinth - Group 027 - Cabal Cultist/Cabal/Acolyte/Cabal Deathsworn', 0, 0, 0, 1, 0),
 -- Solo Patrol right side
-(@SGGUID+42, 'Shadow Labyrinth - Group 028 - Malicious Instructor', 0, 0, 0, 0, 0),
+(@SGGUID+33, 'Shadow Labyrinth - Group 028 - Malicious Instructor', 0, 0, 0, 0, 0),
 -- Boss Blackheart the Inciter to link all groups in his room to him for aggro
-(@SGGUID+43, 'Shadow Labyrinth - Group 029 - Blackheart the Inciter', 0, 0, 0, 0, 0),
+(@SGGUID+34, 'Shadow Labyrinth - Group 029 - Blackheart the Inciter', 0, 0, 0, 0, 0),
 -- Solo Patrol with spawn_group_entry
 (@SGGUID+44, 'Shadow Labyrinth - Group 030 - Fel Overseer/Malicious Instructor', 0, 0, 0, 0, 0),
 -- 2 groups of 4 Tortured Skeleton on hills
@@ -1111,8 +1111,8 @@ INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`
 (@SGGUID+7, 18633, 0, 2, 0), (@SGGUID+7, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+8, 18633, 0, 1, 0), (@SGGUID+8, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+9, 18633, 0, 1, 0), (@SGGUID+9, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+25, 18641, 0, 1, 0), (@SGGUID+25, 18642, 0, 1, 0), (@SGGUID+25, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
 (@SGGUID+31, 18641, 0, 1, 0), (@SGGUID+31, 18642, 0, 1, 0), (@SGGUID+31, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
-(@SGGUID+40, 18641, 0, 1, 0), (@SGGUID+40, 18642, 0, 1, 0), (@SGGUID+40, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
 (@SGGUID+44, 18796, 0, 1, 0), (@SGGUID+44, 18848, 0, 1, 0), -- Fel Overseer, Malicious Instructor
 (@SGGUID+70, 18634, 0, 1, 0),  (@SGGUID+70, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
 (@SGGUID+71, 18634, 0, 1, 0),  (@SGGUID+71, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
@@ -1212,50 +1212,50 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+23, @CGUID+306, -1, 0), -- Fel Overseer
 (@SGGUID+23, @CGUID+307, -1, 0), -- Fel Overseer
 
-(@SGGUID+30, @CGUID+37, 0, 0), -- spawn_group_squad
-(@SGGUID+30, @CGUID+39, 1, 0), -- spawn_group_squad
+(@SGGUID+24, @CGUID+37, 0, 0), -- spawn_group_squad
+(@SGGUID+24, @CGUID+39, 1, 0), -- spawn_group_squad
 
-(@SGGUID+31, @CGUID+127, 0, 0), -- Cabal Warlock
-(@SGGUID+31, @CGUID+136, 1, 0), -- spawn_group_entry
-(@SGGUID+31, @CGUID+74, 2, 0), -- Cabal Acolyte
-(@SGGUID+31, @CGUID+36, 3, 0), -- Cabal Cultist
-(@SGGUID+31, @CGUID+103, 4, 0), -- Cabal Shadowpriest
-(@SGGUID+31, @CGUID+93, 5, 0), -- Cabal Deathsworn
+(@SGGUID+25, @CGUID+127, 0, 0), -- Cabal Warlock
+(@SGGUID+25, @CGUID+136, 1, 0), -- spawn_group_entry
+(@SGGUID+25, @CGUID+74, 2, 0), -- Cabal Acolyte
+(@SGGUID+25, @CGUID+36, 3, 0), -- Cabal Cultist
+(@SGGUID+25, @CGUID+103, 4, 0), -- Cabal Shadowpriest
+(@SGGUID+25, @CGUID+93, 5, 0), -- Cabal Deathsworn
 
-(@SGGUID+32, @CGUID+242, -1, 0), -- Malicious Instructor
+(@SGGUID+26, @CGUID+242, -1, 0), -- Malicious Instructor
 
-(@SGGUID+33, @CGUID+241, -1, 0), -- Malicious Instructor
+(@SGGUID+27, @CGUID+241, -1, 0), -- Malicious Instructor
 
-(@SGGUID+34, @CGUID+92, 0, 0), -- spawn_group_squad (front left)
-(@SGGUID+34, @CGUID+30, 1, 0), -- spawn_group_squad (front right)
-(@SGGUID+34, @CGUID+69, 2, 0), -- spawn_group_squad (back left)
-(@SGGUID+34, @CGUID+31, 3, 0), -- spawn_group_squad (back right)
+(@SGGUID+28, @CGUID+92, 0, 0), -- spawn_group_squad (front left)
+(@SGGUID+28, @CGUID+30, 1, 0), -- spawn_group_squad (front right)
+(@SGGUID+28, @CGUID+69, 2, 0), -- spawn_group_squad (back left)
+(@SGGUID+28, @CGUID+31, 3, 0), -- spawn_group_squad (back right)
 
-(@SGGUID+36, @CGUID+95, 0, 0), -- spawn_group_squad (front left)
-(@SGGUID+36, @CGUID+72, 1, 0), -- spawn_group_squad (front middle)
-(@SGGUID+36, @CGUID+34, 2, 0), -- spawn_group_squad (front right)
-(@SGGUID+36, @CGUID+71, 3, 0), -- spawn_group_squad (back left)
-(@SGGUID+36, @CGUID+102, 4, 0), -- spawn_group_squad (back right)
+(@SGGUID+29, @CGUID+95, 0, 0), -- spawn_group_squad (front left)
+(@SGGUID+29, @CGUID+72, 1, 0), -- spawn_group_squad (front middle)
+(@SGGUID+29, @CGUID+34, 2, 0), -- spawn_group_squad (front right)
+(@SGGUID+29, @CGUID+71, 3, 0), -- spawn_group_squad (back left)
+(@SGGUID+29, @CGUID+102, 4, 0), -- spawn_group_squad (back right)
 
-(@SGGUID+38, @CGUID+94, 0, 0), -- spawn_group_squad (front left)
-(@SGGUID+38, @CGUID+33, 1, 0), -- spawn_group_squad (front middle)
-(@SGGUID+38, @CGUID+104, 2, 0), -- spawn_group_squad (front right)
-(@SGGUID+38, @CGUID+32, 3, 0), -- spawn_group_squad (back left)
-(@SGGUID+38, @CGUID+70, 4, 0), -- spawn_group_squad (back right)
+(@SGGUID+30, @CGUID+94, 0, 0), -- spawn_group_squad (front left)
+(@SGGUID+30, @CGUID+33, 1, 0), -- spawn_group_squad (front middle)
+(@SGGUID+30, @CGUID+104, 2, 0), -- spawn_group_squad (front right)
+(@SGGUID+30, @CGUID+32, 3, 0), -- spawn_group_squad (back left)
+(@SGGUID+30, @CGUID+70, 4, 0), -- spawn_group_squad (back right)
 
-(@SGGUID+40, @CGUID+126, 0, 0), -- Cabal Warlock
-(@SGGUID+40, @CGUID+134, 1, 0), -- spawn_group_entry
-(@SGGUID+40, @CGUID+73, 2, 0), -- Cabal Acolyte
-(@SGGUID+40, @CGUID+35, 3, 0), -- Cabal Cultist
-(@SGGUID+40, @CGUID+105, 4, 0), -- Cabal Shadowpriest
-(@SGGUID+40, @CGUID+96, 5, 0), -- Cabal Deathsworn
+(@SGGUID+31, @CGUID+126, 0, 0), -- Cabal Warlock
+(@SGGUID+31, @CGUID+134, 1, 0), -- spawn_group_entry
+(@SGGUID+31, @CGUID+73, 2, 0), -- Cabal Acolyte
+(@SGGUID+31, @CGUID+35, 3, 0), -- Cabal Cultist
+(@SGGUID+31, @CGUID+105, 4, 0), -- Cabal Shadowpriest
+(@SGGUID+31, @CGUID+96, 5, 0), -- Cabal Deathsworn
 
-(@SGGUID+41, @CGUID+38, 0, 0), -- spawn_group_squad
-(@SGGUID+41, @CGUID+97, 1, 0), -- spawn_group_squad
+(@SGGUID+32, @CGUID+38, 0, 0), -- spawn_group_squad
+(@SGGUID+32, @CGUID+97, 1, 0), -- spawn_group_squad
 
-(@SGGUID+42, @CGUID+240, 0, 0), -- spawn_group_entry
+(@SGGUID+33, @CGUID+240, 0, 0), -- spawn_group_entry
 
-(@SGGUID+43, @CGUID+137, 0, 0), -- Blackheart the Inciter
+(@SGGUID+34, @CGUID+137, 0, 0), -- Blackheart the Inciter
 
 (@SGGUID+44, @CGUID+171, 0, 0), -- spawn_group_entry
 
@@ -1403,16 +1403,16 @@ INSERT INTO `spawn_group_linked_group` (`Id`, `LinkedId`) VALUES
 (@SGGUID+12, @SGGUID+13),
 (@SGGUID+13, @SGGUID+12),
 -- Blackheart the Inciter aggro linking
-(@SGGUID+43, @SGGUID+30),
-(@SGGUID+43, @SGGUID+31),
-(@SGGUID+43, @SGGUID+32),
-(@SGGUID+43, @SGGUID+33),
-(@SGGUID+43, @SGGUID+34),
-(@SGGUID+43, @SGGUID+36),
-(@SGGUID+43, @SGGUID+38),
-(@SGGUID+43, @SGGUID+40),
-(@SGGUID+43, @SGGUID+41),
-(@SGGUID+43, @SGGUID+42);
+(@SGGUID+34, @SGGUID+24),
+(@SGGUID+34, @SGGUID+25),
+(@SGGUID+34, @SGGUID+26),
+(@SGGUID+34, @SGGUID+27),
+(@SGGUID+34, @SGGUID+28),
+(@SGGUID+34, @SGGUID+29),
+(@SGGUID+34, @SGGUID+30),
+(@SGGUID+34, @SGGUID+31),
+(@SGGUID+34, @SGGUID+32),
+(@SGGUID+34, @SGGUID+33);
 
 INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES 
 (@SGGUID+1, 1, @CGUID+89, 18633), -- Cabal Acolyte
@@ -1467,77 +1467,77 @@ INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES
 (@SGGUID+15, 4, @CGUID+91, 18635), -- Cabal Deathsworn (left)
 (@SGGUID+15, 4, @CGUID+90, 18633), -- Cabal Acolyte (right)
 
-(@SGGUID+30, 1, @CGUID+37, 18631), -- Cabal Cultist (right)
-(@SGGUID+30, 1, @CGUID+39, 18631), -- Cabal Cultist (left)
+(@SGGUID+24, 1, @CGUID+37, 18631), -- Cabal Cultist (right)
+(@SGGUID+24, 1, @CGUID+39, 18631), -- Cabal Cultist (left)
 
-(@SGGUID+30, 2, @CGUID+37, 18631), -- Cabal Cultist (right)
-(@SGGUID+30, 2, @CGUID+39, 18633), -- Cabal Acolyte (left)
+(@SGGUID+24, 2, @CGUID+37, 18631), -- Cabal Cultist (right)
+(@SGGUID+24, 2, @CGUID+39, 18633), -- Cabal Acolyte (left)
 
-(@SGGUID+30, 3, @CGUID+37, 18635), -- Cabal Deathsworn (right)
-(@SGGUID+30, 3, @CGUID+39, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+24, 3, @CGUID+37, 18635), -- Cabal Deathsworn (right)
+(@SGGUID+24, 3, @CGUID+39, 18635), -- Cabal Deathsworn (left)
 
-(@SGGUID+30, 4, @CGUID+37, 18631), -- Cabal Cultist (right)
-(@SGGUID+30, 4, @CGUID+39, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+24, 4, @CGUID+37, 18631), -- Cabal Cultist (right)
+(@SGGUID+24, 4, @CGUID+39, 18635), -- Cabal Deathsworn (left)
 
-(@SGGUID+34, 1, @CGUID+92, 18635), --  Cabal Deathsworn (front left)
-(@SGGUID+34, 1, @CGUID+30, 18631), -- Cabal Cultist (front right)
-(@SGGUID+34, 1, @CGUID+69, 18637), -- Cabal Shadow Priest(back left)
-(@SGGUID+34, 1, @CGUID+31, 18633), -- Cabal Acolyte (back right)
+(@SGGUID+28, 1, @CGUID+92, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+28, 1, @CGUID+30, 18631), -- Cabal Cultist (front right)
+(@SGGUID+28, 1, @CGUID+69, 18637), -- Cabal Shadow Priest(back left)
+(@SGGUID+28, 1, @CGUID+31, 18633), -- Cabal Acolyte (back right)
 
-(@SGGUID+34, 2, @CGUID+92, 18635), --  Cabal Deathsworn (front left)
-(@SGGUID+34, 2, @CGUID+30, 18631), -- Cabal Cultist (front right)
-(@SGGUID+34, 2, @CGUID+69, 18633), -- Cabal Acolyte (back left)
-(@SGGUID+34, 2, @CGUID+31, 18631), -- Cabal Cultist (back right)
+(@SGGUID+28, 2, @CGUID+92, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+28, 2, @CGUID+30, 18631), -- Cabal Cultist (front right)
+(@SGGUID+28, 2, @CGUID+69, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+28, 2, @CGUID+31, 18631), -- Cabal Cultist (back right)
 
-(@SGGUID+34, 3, @CGUID+92, 18631), --  Cabal Cultist (front left)
-(@SGGUID+34, 3, @CGUID+30, 18637), -- Cabal Shadow Priest (front right)
-(@SGGUID+34, 3, @CGUID+69, 18637), -- Cabal Shadow Priest (back left)
-(@SGGUID+34, 3, @CGUID+31, 18633), -- Cabal Acolyte (back right)
+(@SGGUID+28, 3, @CGUID+92, 18631), --  Cabal Cultist (front left)
+(@SGGUID+28, 3, @CGUID+30, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+28, 3, @CGUID+69, 18637), -- Cabal Shadow Priest (back left)
+(@SGGUID+28, 3, @CGUID+31, 18633), -- Cabal Acolyte (back right)
 
-(@SGGUID+36, 1, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
-(@SGGUID+36, 1, @CGUID+72, 18633), -- Cabal Acolyte (front middle)
-(@SGGUID+36, 1, @CGUID+34, 18631), -- Cabal Cultist (front right)
-(@SGGUID+36, 1, @CGUID+71, 18633), -- Cabal Acolyte (back left)
-(@SGGUID+36, 1, @CGUID+102, 18637), -- Cabal Shadow Priest (back right)
+(@SGGUID+29, 1, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+29, 1, @CGUID+72, 18633), -- Cabal Acolyte (front middle)
+(@SGGUID+29, 1, @CGUID+34, 18631), -- Cabal Cultist (front right)
+(@SGGUID+29, 1, @CGUID+71, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+29, 1, @CGUID+102, 18637), -- Cabal Shadow Priest (back right)
 
-(@SGGUID+36, 2, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
-(@SGGUID+36, 2, @CGUID+72, 18631), -- Cabal Cultist (front middle)
-(@SGGUID+36, 2, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
-(@SGGUID+36, 2, @CGUID+71, 18633), -- Cabal Acolyte (back left)
-(@SGGUID+36, 2, @CGUID+102, 18631), -- Cabal Cultist (back right)
+(@SGGUID+29, 2, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+29, 2, @CGUID+72, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+29, 2, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+29, 2, @CGUID+71, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+29, 2, @CGUID+102, 18631), -- Cabal Cultist (back right)
 
-(@SGGUID+36, 3, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
-(@SGGUID+36, 3, @CGUID+72, 18631), -- Cabal Cultist (front middle)
-(@SGGUID+36, 3, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
-(@SGGUID+36, 3, @CGUID+71, 18637), -- Cabal Shadow Priest (back left)
-(@SGGUID+36, 3, @CGUID+102, 18633), -- Cabal Acolyte (back right)
+(@SGGUID+29, 3, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+29, 3, @CGUID+72, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+29, 3, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+29, 3, @CGUID+71, 18637), -- Cabal Shadow Priest (back left)
+(@SGGUID+29, 3, @CGUID+102, 18633), -- Cabal Acolyte (back right)
 
-(@SGGUID+38, 1, @CGUID+94, 18635), --  Cabal Deathsworn (front left)
-(@SGGUID+38, 1, @CGUID+33, 18631), -- Cabal Cultist (front middle)
-(@SGGUID+38, 1, @CGUID+104, 18637), -- Cabal Shadow Priest (front right)
-(@SGGUID+38, 1, @CGUID+32, 18633), -- Cabal Acolyte (back left)
-(@SGGUID+38, 1, @CGUID+70, 18637), -- Cabal Shadow Priest (back right)
+(@SGGUID+30, 1, @CGUID+94, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+30, 1, @CGUID+33, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+30, 1, @CGUID+104, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+30, 1, @CGUID+32, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+30, 1, @CGUID+70, 18637), -- Cabal Shadow Priest (back right)
 
-(@SGGUID+38, 2, @CGUID+94, 18635), --  Cabal Deathsworn (front left)
-(@SGGUID+38, 2, @CGUID+33, 18633), -- Cabal Acolyte (front middle)
-(@SGGUID+38, 2, @CGUID+104, 18631), -- Cabal Cultist (front right)
-(@SGGUID+38, 2, @CGUID+32, 18637), -- Cabal Shadow Priest (back left)
-(@SGGUID+38, 2, @CGUID+70, 18633), -- Cabal Acolyte (back right)
+(@SGGUID+30, 2, @CGUID+94, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+30, 2, @CGUID+33, 18633), -- Cabal Acolyte (front middle)
+(@SGGUID+30, 2, @CGUID+104, 18631), -- Cabal Cultist (front right)
+(@SGGUID+30, 2, @CGUID+32, 18637), -- Cabal Shadow Priest (back left)
+(@SGGUID+30, 2, @CGUID+70, 18633), -- Cabal Acolyte (back right)
 
-(@SGGUID+38, 3, @CGUID+94, 18635), --  Cabal Deathsworn (front left)
-(@SGGUID+38, 3, @CGUID+33, 18631), -- Cabal Cultist (front middle)
-(@SGGUID+38, 3, @CGUID+104, 18637), -- Cabal Shadow Priest (front right)
-(@SGGUID+38, 3, @CGUID+32, 18631), -- Cabal Cultist (back left)
-(@SGGUID+38, 3, @CGUID+70, 18633), -- Cabal Acolyte (back right)
+(@SGGUID+30, 3, @CGUID+94, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+30, 3, @CGUID+33, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+30, 3, @CGUID+104, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+30, 3, @CGUID+32, 18631), -- Cabal Cultist (back left)
+(@SGGUID+30, 3, @CGUID+70, 18633), -- Cabal Acolyte (back right)
 
-(@SGGUID+41, 1, @CGUID+38, 18631), -- Cabal Cultist (right)
-(@SGGUID+41, 1, @CGUID+97, 18633), -- Cabal Acolyte (left)
+(@SGGUID+32, 1, @CGUID+38, 18631), -- Cabal Cultist (right)
+(@SGGUID+32, 1, @CGUID+97, 18633), -- Cabal Acolyte (left)
 
-(@SGGUID+41, 2, @CGUID+38, 18631), -- Cabal Cultist (right)
-(@SGGUID+41, 2, @CGUID+97, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+32, 2, @CGUID+38, 18631), -- Cabal Cultist (right)
+(@SGGUID+32, 2, @CGUID+97, 18635), -- Cabal Deathsworn (left)
 
-(@SGGUID+41, 3, @CGUID+38, 18635), -- Cabal Deathsworn (right)
-(@SGGUID+41, 3, @CGUID+97, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+32, 3, @CGUID+38, 18635), -- Cabal Deathsworn (right)
+(@SGGUID+32, 3, @CGUID+97, 18635), -- Cabal Deathsworn (left)
 
 (@SGGUID+47, 1, @CGUID+40, 18631), -- Cabal Cultist (left)
 (@SGGUID+47, 1, @CGUID+41, 18633), -- Cabal Acolyte (right)
