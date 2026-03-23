@@ -982,16 +982,16 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+15, 'Shadow Labyrinth - Group 013 - Cabal Warlock | Cabal Familiar/Fel Guardhound | Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- The Arcanium
 -- Cabal Ritualist groups have 3 spawned on normal and 4 on Heroic (spawnmask)
-(@SGGUID+22, 'Shadow Labyrinth - Group 014 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+23, 'Shadow Labyrinth - Group 015 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+24, 'Shadow Labyrinth - Group 016 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+25, 'Shadow Labyrinth - Group 017 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+26, 'Shadow Labyrinth - Group 018 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+27, 'Shadow Labyrinth - Group 019 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+16, 'Shadow Labyrinth - Group 014 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+17, 'Shadow Labyrinth - Group 015 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+18, 'Shadow Labyrinth - Group 016 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+19, 'Shadow Labyrinth - Group 017 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+20, 'Shadow Labyrinth - Group 018 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+21, 'Shadow Labyrinth - Group 019 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
 -- Fel Overseer 6 different spawns/waypoints onyl 1 spawned
-(@SGGUID+28, 'Shadow Labyrinth - Group 020 - Fel Overseer', 0, 1, 0, 0, 0),
+(@SGGUID+22, 'Shadow Labyrinth - Group 020 - Fel Overseer', 0, 1, 0, 0, 0),
 -- Fel Overseer with 4 different spawns/waypoints
-(@SGGUID+29, 'Shadow Labyrinth - Group 021 - Fel Overseer', 0, 1, 0, 0, 0),
+(@SGGUID+23, 'Shadow Labyrinth - Group 021 - Fel Overseer', 0, 1, 0, 0, 0),
 -- The Refectory
 -- Group of 2 - possible combinations found:
 -- Cabal Cultist- Cabal Cultist
@@ -1085,7 +1085,7 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+68, 'Shadow Labyrinth - Group 047 - Cabal Spellbinder (3)', 0, 0, 0, 1, 0),
 -- Runner groups
 -- 2 Cabal Summoner that get active when door opens, run their waypoints and then die
-(@SGGUID+69, 'Shadow Labyrinth - Group 048 - Cabal Summoner (2)', 0, 0, @SGGUID+29, 0, 0),
+(@SGGUID+69, 'Shadow Labyrinth - Group 048 - Cabal Summoner (2)', 0, 0, @CONDITIONID+29, 0, 0),
 -- Running npc between first and 2nd group
 -- Spawns on door opening and stops respawning when Group 043 is dead
 (@SGGUID+70, 'Shadow Labyrinth - Group 049 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+30, 0, @STRINGID+13), -- Runner 1
@@ -1170,47 +1170,47 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+15, @CGUID+90, 2, 0), -- spawn_group_entry (right side)
 (@SGGUID+15, @CGUID+91, 3, 0), -- spawn_group_entry (left side)
 
-(@SGGUID+22, @CGUID+154, 0, 0), -- Cabal Ritualist
-(@SGGUID+22, @CGUID+155, 1, 0), -- Cabal Ritualist
-(@SGGUID+22, @CGUID+156, 2, 0), -- Cabal Ritualist
-(@SGGUID+22, @CGUID+166, 3, 0), -- Cabal Ritualist (Heroic Only)
+(@SGGUID+16, @CGUID+154, 0, 0), -- Cabal Ritualist
+(@SGGUID+16, @CGUID+155, 1, 0), -- Cabal Ritualist
+(@SGGUID+16, @CGUID+156, 2, 0), -- Cabal Ritualist
+(@SGGUID+16, @CGUID+166, 3, 0), -- Cabal Ritualist (Heroic Only)
 
-(@SGGUID+23, @CGUID+158, 0, 0), -- Cabal Ritualist
-(@SGGUID+23, @CGUID+159, 1, 0), -- Cabal Ritualist
-(@SGGUID+23, @CGUID+160, 2, 0), -- Cabal Ritualist
-(@SGGUID+23, @CGUID+165, 3, 0), -- Cabal Ritualist (Heroic Only)
+(@SGGUID+17, @CGUID+158, 0, 0), -- Cabal Ritualist
+(@SGGUID+17, @CGUID+159, 1, 0), -- Cabal Ritualist
+(@SGGUID+17, @CGUID+160, 2, 0), -- Cabal Ritualist
+(@SGGUID+17, @CGUID+165, 3, 0), -- Cabal Ritualist (Heroic Only)
 
-(@SGGUID+24, @CGUID+150, 0, 0), -- Cabal Ritualist
-(@SGGUID+24, @CGUID+151, 1, 0), -- Cabal Ritualist
-(@SGGUID+24, @CGUID+152, 2, 0), -- Cabal Ritualist
-(@SGGUID+24, @CGUID+167, 3, 0), -- Cabal Ritualist (Heroic Only)
+(@SGGUID+18, @CGUID+150, 0, 0), -- Cabal Ritualist
+(@SGGUID+18, @CGUID+151, 1, 0), -- Cabal Ritualist
+(@SGGUID+18, @CGUID+152, 2, 0), -- Cabal Ritualist
+(@SGGUID+18, @CGUID+167, 3, 0), -- Cabal Ritualist (Heroic Only)
 
-(@SGGUID+25, @CGUID+147, 0, 0), -- Cabal Ritualist
-(@SGGUID+25, @CGUID+148, 1, 0), -- Cabal Ritualist
-(@SGGUID+25, @CGUID+149, 2, 0), -- Cabal Ritualist
-(@SGGUID+25, @CGUID+168, 3, 0), -- Cabal Ritualist (Heroic Only)
+(@SGGUID+19, @CGUID+147, 0, 0), -- Cabal Ritualist
+(@SGGUID+19, @CGUID+148, 1, 0), -- Cabal Ritualist
+(@SGGUID+19, @CGUID+149, 2, 0), -- Cabal Ritualist
+(@SGGUID+19, @CGUID+168, 3, 0), -- Cabal Ritualist (Heroic Only)
 
-(@SGGUID+26, @CGUID+153, 0, 0), -- Cabal Ritualist
-(@SGGUID+26, @CGUID+161, 1, 0), -- Cabal Ritualist
-(@SGGUID+26, @CGUID+162, 2, 0), -- Cabal Ritualist
-(@SGGUID+26, @CGUID+170, 3, 0), -- Cabal Ritualist (Heroic Only)
+(@SGGUID+20, @CGUID+153, 0, 0), -- Cabal Ritualist
+(@SGGUID+20, @CGUID+161, 1, 0), -- Cabal Ritualist
+(@SGGUID+20, @CGUID+162, 2, 0), -- Cabal Ritualist
+(@SGGUID+20, @CGUID+170, 3, 0), -- Cabal Ritualist (Heroic Only)
 
-(@SGGUID+27, @CGUID+157, 0, 0), -- Cabal Ritualist
-(@SGGUID+27, @CGUID+163, 1, 0), -- Cabal Ritualist
-(@SGGUID+27, @CGUID+164, 2, 0), -- Cabal Ritualist
-(@SGGUID+27, @CGUID+169, 3, 0), -- Cabal Ritualist (Heroic Only)
+(@SGGUID+21, @CGUID+157, 0, 0), -- Cabal Ritualist
+(@SGGUID+21, @CGUID+163, 1, 0), -- Cabal Ritualist
+(@SGGUID+21, @CGUID+164, 2, 0), -- Cabal Ritualist
+(@SGGUID+21, @CGUID+169, 3, 0), -- Cabal Ritualist (Heroic Only)
 
-(@SGGUID+28, @CGUID+298, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+299, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+300, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+301, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+302, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+303, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+298, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+299, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+300, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+301, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+302, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+303, -1, 0), -- Fel Overseer
 
-(@SGGUID+29, @CGUID+304, -1, 0), -- Fel Overseer
-(@SGGUID+29, @CGUID+305, -1, 0), -- Fel Overseer
-(@SGGUID+29, @CGUID+306, -1, 0), -- Fel Overseer
-(@SGGUID+29, @CGUID+307, -1, 0), -- Fel Overseer
+(@SGGUID+23, @CGUID+304, -1, 0), -- Fel Overseer
+(@SGGUID+23, @CGUID+305, -1, 0), -- Fel Overseer
+(@SGGUID+23, @CGUID+306, -1, 0), -- Fel Overseer
+(@SGGUID+23, @CGUID+307, -1, 0), -- Fel Overseer
 
 (@SGGUID+30, @CGUID+37, 0, 0), -- spawn_group_squad
 (@SGGUID+30, @CGUID+39, 1, 0), -- spawn_group_squad
