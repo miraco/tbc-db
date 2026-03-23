@@ -956,18 +956,18 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`, `StringId`) VALUES
 (@SGGUID+1, 'Shadow Labyrinth - Group 001 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, 0, 1, 0),
 -- Right tent group of 2
-(@SGGUID+3, 'Shadow Labyrinth - Group 002 - Cabal Deathsworn/Cabal Acolyte (2)', 0, 0, 0, 1, 0),
+(@SGGUID+2, 'Shadow Labyrinth - Group 002 - Cabal Deathsworn/Cabal Acolyte (2)', 0, 0, 0, 1, 0),
 -- Solo Patrol using spawn_group_entry
-(@SGGUID+4, 'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+3, 'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Group of 2 with random entry
-(@SGGUID+5, 'Shadow Labyrinth - Group 004 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+4, 'Shadow Labyrinth - Group 004 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Group of 3 with 2 versions
-(@SGGUID+6, 'Shadow Labyrinth - Group 005 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, 0, 1, 0),
+(@SGGUID+5, 'Shadow Labyrinth - Group 005 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, 0, 1, 0),
 -- 2 group of 2 with random entry
-(@SGGUID+8, 'Shadow Labyrinth - Group 006 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
-(@SGGUID+9, 'Shadow Labyrinth - Group 007 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+6, 'Shadow Labyrinth - Group 006 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+7, 'Shadow Labyrinth - Group 007 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Solo Patrol that gets sleep aura at the end of his path
-(@SGGUID+10, 'Shadow Labyrinth - Group 008 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+8, 'Shadow Labyrinth - Group 008 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Solo Patrol at the end of the room
 (@SGGUID+11, 'Shadow Labyrinth - Group 009 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Right sight cabal warlock solo spawn group to link it to Fel Guard/Familiar chasing
@@ -1104,12 +1104,12 @@ INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flag
 (@SGGUID+81, 'Shadow Labyrinth - Group 061 - Tortured Skeleton - Group 05', 0, 1, 0, 0, 0);
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
-(@SGGUID+3, 18633, 0, 2, 0), (@SGGUID+3, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+4, 18633, 0, 1, 0), (@SGGUID+4, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+5, 18633, 0, 2, 0), (@SGGUID+5, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+8, 18633, 0, 2, 0), (@SGGUID+8, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+9, 18633, 0, 2, 0), (@SGGUID+9, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+10, 18633, 0, 1, 0), (@SGGUID+10, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+2, 18633, 0, 2, 0), (@SGGUID+2, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+3, 18633, 0, 1, 0), (@SGGUID+3, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+4, 18633, 0, 2, 0), (@SGGUID+4, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+6, 18633, 0, 2, 0), (@SGGUID+6, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+7, 18633, 0, 2, 0), (@SGGUID+7, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+8, 18633, 0, 1, 0), (@SGGUID+8, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+11, 18633, 0, 1, 0), (@SGGUID+11, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
 (@SGGUID+31, 18641, 0, 1, 0), (@SGGUID+31, 18642, 0, 1, 0), (@SGGUID+31, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
 (@SGGUID+40, 18641, 0, 1, 0), (@SGGUID+40, 18642, 0, 1, 0), (@SGGUID+40, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
@@ -1125,25 +1125,25 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
 (@SGGUID+1, @CGUID+61, 1, 0), -- spawn_group_squad
 (@SGGUID+1, @CGUID+66, 2, 0), -- spawn_group_squad
 
-(@SGGUID+3, @CGUID+64, 0, 0), -- spawn_group_entry
-(@SGGUID+3, @CGUID+65, 1, 0), -- spawn_group_entry
+(@SGGUID+2, @CGUID+64, 0, 0), -- spawn_group_entry
+(@SGGUID+2, @CGUID+65, 1, 0), -- spawn_group_entry
 
-(@SGGUID+4, @CGUID+85, 0, 0), -- spawn_group_entry
+(@SGGUID+3, @CGUID+85, 0, 0), -- spawn_group_entry
 
-(@SGGUID+5, @CGUID+60, 0, 0), -- spawn_group_entry
-(@SGGUID+5, @CGUID+88, 1, 0), -- spawn_group_entry
+(@SGGUID+4, @CGUID+60, 0, 0), -- spawn_group_entry
+(@SGGUID+4, @CGUID+88, 1, 0), -- spawn_group_entry
 
-(@SGGUID+6, @CGUID+86, 0, 0), -- spawn_group_squad
-(@SGGUID+6, @CGUID+55, 1, 0), -- spawn_group_squad (left)
-(@SGGUID+6, @CGUID+54, 2, 0), -- spawn_group_squad (right)
+(@SGGUID+5, @CGUID+86, 0, 0), -- spawn_group_squad
+(@SGGUID+5, @CGUID+55, 1, 0), -- spawn_group_squad (left)
+(@SGGUID+5, @CGUID+54, 2, 0), -- spawn_group_squad (right)
 
-(@SGGUID+8, @CGUID+56, 0, 0), -- spawn_group_entry
-(@SGGUID+8, @CGUID+57, 1, 0), -- spawn_group_entry
+(@SGGUID+6, @CGUID+56, 0, 0), -- spawn_group_entry
+(@SGGUID+6, @CGUID+57, 1, 0), -- spawn_group_entry
 
-(@SGGUID+9, @CGUID+62, 0, 0), -- spawn_group_entry
-(@SGGUID+9, @CGUID+63, 1, 0), -- spawn_group_entry
+(@SGGUID+7, @CGUID+62, 0, 0), -- spawn_group_entry
+(@SGGUID+7, @CGUID+63, 1, 0), -- spawn_group_entry
 
-(@SGGUID+10, @CGUID+53, 0, 0), -- spawn_group_entry
+(@SGGUID+8, @CGUID+53, 0, 0), -- spawn_group_entry
 
 (@SGGUID+11, @CGUID+67, 0, 0), -- spawn_group_entry
 
@@ -1423,13 +1423,13 @@ INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES
 (@SGGUID+1, 2, @CGUID+61, 18633), -- Cabal Acolyte (left)
 (@SGGUID+1, 2, @CGUID+66, 18633), -- Cabal Acolyte (right)
 
-(@SGGUID+6, 1, @CGUID+86, 18633), -- Cabal Acolyte
-(@SGGUID+6, 1, @CGUID+55, 18635), -- Cabal Deathsworn (left)
-(@SGGUID+6, 1, @CGUID+54, 18635), -- Cabal Deathsworn (right)
+(@SGGUID+5, 1, @CGUID+86, 18633), -- Cabal Acolyte
+(@SGGUID+5, 1, @CGUID+55, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+5, 1, @CGUID+54, 18635), -- Cabal Deathsworn (right)
 
-(@SGGUID+6, 2, @CGUID+86, 18635), -- Cabal Deathsworn
-(@SGGUID+6, 2, @CGUID+55, 18633), -- Cabal Acolyte (left)
-(@SGGUID+6, 2, @CGUID+54, 18633), -- Cabal Acolyte (right)
+(@SGGUID+5, 2, @CGUID+86, 18635), -- Cabal Deathsworn
+(@SGGUID+5, 2, @CGUID+55, 18633), -- Cabal Acolyte (left)
+(@SGGUID+5, 2, @CGUID+54, 18633), -- Cabal Acolyte (right)
 
 (@SGGUID+16, 1, @CGUID+249, 18633), -- Cabal Acolyte
 (@SGGUID+16, 1, @CGUID+58, 18635), -- Cabal Deathsworn (left)
