@@ -22,7 +22,7 @@ SET @STRINGID := 5550000; -- used for StringID's
 SET @RELAYID := 5550000; -- used for dbscript_relay
 SET @CONDITIONID := 5550000; -- used for conditions
 SET @WORLDSTATEID := 5550000; -- used for worldstates
-
+SET @PATHID := 5550000; -- used for waypoint_path
 
 -- =========
 -- CREATURES
@@ -448,11 +448,11 @@ INSERT INTO `creature_spawn_data_template` (`Entry`, `StringId`, `Name`) VALUES
 (1863402, @STRINGID+12, 'Shadow Labyrinth - WrathTarget 02');
 
 INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `emote`, `moveflags`, `auras`) VALUES
-(@CGUID+37, 0, 1, 1, 0, 0, ''), -- spawn_group_entry
-(@CGUID+38, 0, 0, 1, 69, 0, ''), -- spawn_group_entry
-(@CGUID+39, 0, 8, 1, 0, 0, ''), -- spawn_group_entry
-(@CGUID+40, 0, 0, 1, 69, 0, ''), -- Cabal Acolyte
-(@CGUID+41, 0, 0, 1, 69, 0, ''), -- Cabal Acolyte
+(@CGUID+37, 0, 1, 1, 0, 0, ''), -- spawn_group_squad
+(@CGUID+38, 0, 0, 1, 69, 0, ''), -- spawn_group_squad
+(@CGUID+39, 0, 8, 1, 0, 0, ''), -- spawn_group_squad
+(@CGUID+40, 0, 0, 1, 69, 0, ''), -- spawn_group_squad
+(@CGUID+41, 0, 0, 1, 69, 0, ''), -- spawn_group_squad
 (@CGUID+54, 0, 1, 1, 0, 0, NULL), -- Cabal Deathsworn
 (@CGUID+55, 0, 8, 1, 0, 0, NULL), -- creature_spawn_entry
 (@CGUID+56, 0, 0, 1, 69, 0, NULL), -- spawn_group_entry
@@ -465,14 +465,10 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `e
 (@CGUID+63, 0, 0, 1, 69, 0, NULL), -- spawn_group_entry
 (@CGUID+64, 0, 8, 1, 0, 0, NULL), -- creature_spawn_entry
 (@CGUID+66, 0, 8, 1, 0, 0, NULL), -- Cabal Deathsworn
-(@CGUID+83, 0, 0, 1, 69, 0, ''), -- Cabal Cultist
-(@CGUID+84, 0, 0, 1, 69, 0, ''), -- spawn_group_entry
 (@CGUID+88, 0, 0, 1, 69, 0, NULL), -- spawn_group_entry
-(@CGUID+97, 0, 8, 1, 0, 0, NULL), -- spawn_group_entry
-(@CGUID+98, 0, 1, 1, 0, 0, NULL), -- Cabal Cultist
-(@CGUID+99, 0, 8, 1, 0, 0, NULL), -- Cabal Cultist
-(@CGUID+117, 0, 1, 1, 0, 0, NULL), -- Cabal Deathsworn
-(@CGUID+118, 0, 8, 1, 0, 0, NULL), -- Cabal Deathsworn
+(@CGUID+97, 0, 8, 1, 0, 0, NULL), -- spawn_group_squad
+(@CGUID+98, 0, 1, 1, 0, 0, NULL), -- spawn_group_squad
+(@CGUID+99, 0, 8, 1, 0, 0, NULL), -- spawn_group_squad
 (@CGUID+136, 0, 8, 1, 0, 0, NULL), -- spawn_group_entry
 (@CGUID+150, 0, 0, 1, 0, 0, '32958'), -- Cabal Ritualist
 (@CGUID+151, 0, 0, 1, 0, 0, '32958'), -- Cabal Ritualist
@@ -504,15 +500,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `stand_state`, `sheath_state`, `e
 (@CGUID+214, 0, 0, 1, 0, 0, NULL), -- Tortured Skeleton
 (@CGUID+215, 0, 0, 1, 0, 0, NULL), -- Tortured Skeleton
 (@CGUID+216, 0, 0, 1, 0, 0, NULL), -- Tortured Skeleton
-(@CGUID+217, 0, 0, 1, 0, 0, NULL), -- Tortured Skeleton
-(@CGUID+281, 0, 1, 1, 0, 0, NULL), -- Cabal Acolyte
-(@CGUID+282, 0, 8, 1, 0, 0, NULL), -- Cabal Acolyte
-(@CGUID+285, 0, 1, 1, 0, 0, NULL), -- Cabal Deathsworn
-(@CGUID+284, 0, 8, 1, 0, 0, NULL), -- creature_spawn_entry
-(@CGUID+287, 0, 1, 1, 0, 0, NULL), -- Cabal Acolyte
-(@CGUID+288, 0, 8, 1, 0, 0, NULL), -- Cabal Acolyte
-(@CGUID+290, 0, 1, 1, 0, 0, NULL), -- Cabal Deathsworn
-(@CGUID+291, 0, 8, 1, 0, 0, NULL); -- Cabal Deathsworn
+(@CGUID+217, 0, 0, 1, 0, 0, NULL); -- Tortured Skeleton
 
 REPLACE INTO `creature_template_addon` (`entry`, `mount`, `stand_state`, `sheath_state`, `emote`, `moveflags`, `auras`) VALUES
 (18631, 0, 0, 1, 0, 0, '8876'), -- Cabal Cultist
@@ -545,16 +533,7 @@ REPLACE INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`
 (19224, 555, 18732, 4112, 0), -- Void Portal -> Grandmaster Vorpil
 (19226, 555, 18732, 4112, 0); -- Void Traveler -> Grandmaster Vorpil
 
-INSERT INTO creature_spawn_entry (guid, entry) VALUES
--- Needed after rework
-(@CGUID+248, 18641), (@CGUID+248, 18642), (@CGUID+248, 18663), -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
-(@CGUID+250, 18641), (@CGUID+250, 18642), (@CGUID+250, 18663), -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
-(@CGUID+308, 18631), (@CGUID+308, 18635), -- Cabal Cultist, Cabal Deathsworn
-(@CGUID+315, 18633), (@CGUID+315, 18637), -- Cabal Acolyte, Cabal Priest
-(@CGUID+320, 18631), (@CGUID+320, 18633), -- Cabal Cultist, Cabal Acolyte
-(@CGUID+325, 18631), (@CGUID+325, 18638), -- Cabal Cultist, Cabal Zealot
-(@CGUID+329, 18631), (@CGUID+329, 18638), -- Cabal Cultist, Cabal Zealot
-(@CGUID+337, 18631), (@CGUID+337, 18638); -- Cabal Cultist, Cabal Zealot
+-- INSERT INTO creature_spawn_entry (guid, entry) VALUES
 
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecsmin`, `spawntimesecsmax`, `spawndist`, `MovementType`) VALUES
 (@CGUID+1, 14881, 555, 3, -20.8387, -7.04335, -1.12801, 6.15025, 900, 900, 5, 1), -- Spider
@@ -585,22 +564,22 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+26, 14881, 555, 3, -162.248, -306.623, 17.1683, 5.25344, 900, 900, 5, 1), -- Spider
 (@CGUID+27, 14881, 555, 3, -107.903, -509.374, 21.4761, 1.04233, 900, 900, 5, 1), -- Spider
 (@CGUID+28, 14881, 555, 3, -200.733, -518.375, 21.4759, 1.61224, 900, 900, 5, 1), -- Spider
-(@CGUID+29, 18830, 555, 3, -367.596, -267.656, 12.689, 0.0351511, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+30, 18631, 555, 3, -254.365, -46.4247, 8.15618, 3.08923, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+31, 18631, 555, 3, -246.87, -45.9737, 8.15617, 3.10669, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+32, 18637, 555, 3, -255.435, -31.2176, 8.17054, 3.28122, 7200, 7200, 0, 0), -- Cabal Shadow Priest
-(@CGUID+33, 18633, 555, 3, -263.761, -29.1943, 8.18301, 3.12414, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+34, 18631, 555, 3, -271.784, -45.5444, 8.15619, 3.1765, 7200, 7200, 0, 0), -- Cabal Cultist
+(@CGUID+29, 0, 555, 3, -367.596, -267.656, 12.689, 0.0351511, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+30, 0, 555, 3, -254.365, -46.4247, 8.15618, 3.08923, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+31, 0, 555, 3, -246.87, -45.9737, 8.15617, 3.10669, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+32, 0, 555, 3, -255.435, -31.2176, 8.17054, 3.28122, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+33, 0, 555, 3, -263.761, -29.1943, 8.18301, 3.12414, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+34, 0, 555, 3, -271.784, -45.5444, 8.15619, 3.1765, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+35, 18631, 555, 3, -275.089, -4.42197, 8.15625, 3.66519, 7200, 7200, 0, 0), -- Cabal Cultist
 (@CGUID+36, 18631, 555, 3, -273.674, -80.3384, 8.15627, 2.74017, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+37, 0, 555, 3, -287.804, -96.3896, 8.15635, 5.48033, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+38, 0, 555, 3, -276.704, 22.5176, 8.15633, 0.0174533, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+39, 0, 555, 3, -286.707, -99.5, 8.15633, 1.32645, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+40, 18633, 555, 3, -443.04, -193.835, 12.7725, 3.4383, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+41, 18633, 555, 3, -446.493, -192.12, 12.7725, 4.72984, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+42, 18830, 555, 3, -323.557, -262.785, 12.6846, 6.27565, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+43, 18830, 555, 3, -279.362, -266.05, 12.6813, 0.092857, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+44, 18830, 555, 3, -279.074, -264.494, 12.6812, 0.0332374, 7200, 7200, 0, 0), -- Cabal Fanatic
+(@CGUID+37, 0, 555, 3, -287.804, -96.3896, 8.15635, 5.48033, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+38, 0, 555, 3, -276.704, 22.5176, 8.15633, 0.0174533, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+39, 0, 555, 3, -286.707, -99.5, 8.15633, 1.32645, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+40, 0, 555, 3, -443.04, -193.835, 12.7725, 3.4383, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+41, 0, 555, 3, -446.493, -192.12, 12.7725, 4.72984, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+42, 0, 555, 3, -323.557, -262.785, 12.6846, 6.27565, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+43, 0, 555, 3, -279.362, -266.05, 12.6813, 0.092857, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+44, 0, 555, 3, -279.074, -264.494, 12.6812, 0.0332374, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+45, 18632, 555, 3, -172.173, -325.754, 17.1697, 5.53269, 7200, 7200, 0, 0), -- Cabal Executioner
 (@CGUID+46, 18632, 555, 3, -168.532, -352.302, 17.1662, 4.83456, 7200, 7200, 0, 0), -- Cabal Executioner
 (@CGUID+47, 18632, 555, 3, -135.771, -329.128, 17.1687, 3.50811, 7200, 7200, 0, 0), -- Cabal Executioner
@@ -610,28 +589,28 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+51, 18632, 555, 3, -142.203, -390.029, 17.1639, 4.4855, 7200, 7200, 0, 0), -- Cabal Executioner
 (@CGUID+52, 18632, 555, 3, -140.54, -410.52, 17.1623, 1.44862, 7200, 7200, 0, 0), -- Cabal Executioner
 (@CGUID+53, 0, 555, 3, -91.0184, -63.4225, -1.05104, 0.31254, 7200, 7200, 0, 2), -- spawn_group_entry
-(@CGUID+54, 18635, 555, 3, -47.365, -33.8044, -1.04484, 0.331613, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+55, 18635, 555, 3, -41.8571, -33.4506, -1.04484, 2.87979, 7200, 7200, 0, 0), -- Cabal Deathsworn
+(@CGUID+54, 0, 555, 3, -47.365, -33.8044, -1.04484, 0.331613, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+55, 0, 555, 3, -41.8571, -33.4506, -1.04484, 2.87979, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+56, 0, 555, 3, -80.3716, -39.766, -1.04492, 2.00713, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+57, 0, 555, 3, -77.9535, -36.4069, -1.04492, 3.21141, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+58, 0, 555, 3, -31.8829, -81.4594, -1.0449, 4.04916, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+59, 0, 555, 3, -36.1315, -84.0624, -1.04494, 0.0872665, 7200, 7200, 0, 0), -- spawn_group_entry
+(@CGUID+58, 0, 555, 3, -31.8829, -81.4594, -1.0449, 4.04916, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+59, 0, 555, 3, -36.1315, -84.0624, -1.04494, 0.0872665, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+60, 0, 555, 3, -58.1065, -26.6713, -1.04482, 2.96706, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+61, 18635, 555, 3, -73.5278, -1.96912, -1.04486, 1.22173, 7200, 7200, 0, 0), -- Cabal Deathsworn
+(@CGUID+61, 0, 555, 3, -73.5278, -1.96912, -1.04486, 1.22173, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+62, 0, 555, 3, -78.7167, -46.4269, -1.04494, 4.50295, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+63, 0, 555, 3, -75.0824, -47.649, -1.04495, 3.75246, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+64, 0, 555, 3, -86.7252, 8.73865, -1.04486, 2.37365, 7200, 7200, 0, 0), -- spawn_group_entry
 (@CGUID+65, 0, 555, 3, -85.9936, 11.2334, -1.04485, 3.56047, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+66, 18635, 555, 3, -73.8878, 1.75605, -1.04487, 5.23599, 7200, 7200, 0, 0), -- Cabal Deathsworn
+(@CGUID+66, 0, 555, 3, -73.8878, 1.75605, -1.04487, 5.23599, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+67, 0, 555, 3, -48.3232, -89.7437, -1.04498, 5.27089, 7200, 7200, 0, 2), -- spawn_group_entry
 -- reuse +68
-(@CGUID+69, 18633, 555, 3, -247.273, -49.6712, 8.15618, 3.03687, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+70, 18633, 555, 3, -255.77, -27.5678, 8.18844, 3.24631, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+71, 18633, 555, 3, -263.805, -48.9857, 8.15618, 3.10669, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+72, 18633, 555, 3, -271.978, -47.9963, 8.15619, 3.14159, 7200, 7200, 0, 0), -- Cabal Acolyte
+(@CGUID+69, 0, 555, 3, -247.273, -49.6712, 8.15618, 3.03687, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+70, 0, 555, 3, -255.77, -27.5678, 8.18844, 3.24631, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+71, 0, 555, 3, -263.805, -48.9857, 8.15618, 3.10669, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+72, 0, 555, 3, -271.978, -47.9963, 8.15619, 3.14159, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+73, 18633, 555, 3, -265.829, 0.056211, 8.15626, 3.68264, 7200, 7200, 0, 0), -- Cabal Acolyte
 (@CGUID+74, 18633, 555, 3, -272.845, -76.4279, 8.15625, 2.6529, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+75, 0, 555, 3, -454.315, -183.092, 12.7725, 5.06145, 7200, 7200, 0, 0), -- spawn_group_entry
+(@CGUID+75, 0, 555, 3, -454.315, -183.092, 12.7725, 5.06145, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+76, 18634, 555, 3, -175.894, -349.783, 17.166, 5.68544, 7200, 7200, 0, 2), -- Cabal Summoner
 (@CGUID+77, 18634, 555, 3, -156.498, -328.007, 17.1696, 3.14159, 7200, 7200, 0, 2), -- Cabal Summoner
 (@CGUID+78, 18634, 555, 3, -135.201, -360.271, 17.1652, 3.49066, 7200, 7200, 0, 0), -- Cabal Summoner
@@ -639,47 +618,45 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+80, 18634, 555, 3, -141.612, -363.212, 17.166, 4.2586, 7200, 7200, 0, 0), -- Cabal Summoner
 (@CGUID+81, 18634, 555, 3, -171.826, -401.41, 17.1632, 0.890118, 7200, 7200, 0, 0), -- Cabal Summoner
 (@CGUID+82, 0, 555, 3, -179.281, -350.271, 17.1665, 5.98648, 5, 10, 0, 0), -- spawn_group_entry
-(@CGUID+83, 18631, 555, 3, -443.04, -193.835, 12.7725, 3.4383, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+84, 0, 555, 3, -446.493, -192.12, 12.7725, 4.72984, 7200, 7200, 0, 0), -- spawn_group_entry
+-- REUSE @CGUID+83 @CGUID+84
 (@CGUID+85, 0, 555, 3, -91.7096, -19.436, -1.04486, 6.08963, 7200, 7200, 0, 2), -- spawn_group_entry
-(@CGUID+86, 18633, 555, 3, -44.641, -34.6061, -1.04484, 1.44862, 7200, 7200, 0, 0), -- Cabal Acolyte
+(@CGUID+86, 0, 555, 3, -44.641, -34.6061, -1.04484, 1.44862, 7200, 7200, 0, 0), -- spawn_group_squad
 -- REUSE @CGUID+87
 (@CGUID+88, 0, 555, 3, -60.8069, -24.741, -1.04481, 5.44543, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+89, 18633, 555, 3, -74.3842, -0.151916, -1.04487, 0.0349066, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+90, 0, 555, 3, -91.919, -88.183, -1.04497, 6.00393, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+91, 0, 555, 3, -86.0825, -92.683, -1.04496, 1.95477, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+92, 18635, 555, 3, -254.445, -49.5956, 8.15618, 3.01942, 7200, 7200, 0, 0), -- Cabal Deathsworn
+(@CGUID+89, 0, 555, 3, -74.3842, -0.151916, -1.04487, 0.0349066, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+90, 0, 555, 3, -91.919, -88.183, -1.04497, 6.00393, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+91, 0, 555, 3, -86.0825, -92.683, -1.04496, 1.95477, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+92, 0, 555, 3, -254.445, -49.5956, 8.15618, 3.01942, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+93, 18635, 555, 3, -265.305, -82.2931, 8.15626, 2.84489, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+94, 18635, 555, 3, -263.687, -31.7085, 8.17044, 3.33358, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+95, 18635, 555, 3, -271.845, -50.1835, 8.15619, 3.1765, 7200, 7200, 0, 0), -- Cabal Deathsworn
+(@CGUID+94, 0, 555, 3, -263.687, -31.7085, 8.17044, 3.33358, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+95, 0, 555, 3, -271.845, -50.1835, 8.15619, 3.1765, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+96, 18635, 555, 3, -267.801, 3.11204, 8.15628, 3.76991, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+97, 0, 555, 3, -281.939, 20.0421, 8.15636, 5.68977, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+98, 18631, 555, 3, -453.685, -186.804, 12.7725, 1.53589, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+99, 18631, 555, 3, -454.978, -185.25, 12.7725, 0.05236, 7200, 7200, 0, 0), -- Cabal Cultist
+(@CGUID+97, 0, 555, 3, -281.939, 20.0421, 8.15636, 5.68977, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+98, 0, 555, 3, -453.685, -186.804, 12.7725, 1.53589, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+99, 0, 555, 3, -454.978, -185.25, 12.7725, 0.05236, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+100, 18636, 555, 3, -272.098, -140.052, 8.15023, 0.0727409, 7200, 7200, 0, 2), -- Cabal Assassin
 (@CGUID+101, 18636, 555, 3, -113.993, -148.454, 3.44560, 2.72472, 7200, 7200, 0, 2), -- Cabal Assassin
-(@CGUID+102, 18637, 555, 3, -263.226, -45.5273, 8.15618, 3.12414, 7200, 7200, 0, 0), -- Cabal Shadow Priest
+(@CGUID+102, 0, 555, 3, -263.226, -45.5273, 8.15618, 3.12414, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+103, 18637, 555, 3, -264.152, -79.2966, 8.15624, 2.87979, 7200, 7200, 0, 0), -- Cabal Shadow Priest
-(@CGUID+104, 18631, 555, 3, -263.794, -26.8056, 8.19487, 3.49066, 7200, 7200, 0, 0), -- Cabal Cultist
+(@CGUID+104, 0, 555, 3, -263.794, -26.8056, 8.19487, 3.49066, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+105, 18637, 555, 3, -275.427, -0.559913, 8.15628, 3.56047, 7200, 7200, 0, 0), -- Cabal Shadow Priest
 (@CGUID+106, 18638, 555, 3, -367.799, -269.302, 12.689, 0.0494639, 7200, 7200, 0, 0), -- Cabal Zealot
 (@CGUID+107, 18638, 555, 3, -367.629, -263.964, 12.689, 0.0027925, 7200, 7200, 0, 0), -- Cabal Zealot
-(@CGUID+108, 18830, 555, 3, -323.525, -264.785, 12.6846, 0.0162754, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+109, 18638, 555, 3, -270.18, -258.579, 12.7637, 5.98751, 7200, 7200, 0, 0), -- Cabal Zealot
-(@CGUID+110, 18830, 555, 3, -271.337, -261.466, 12.7637, 6.16129, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+111, 18638, 555, 3, -323.492, -266.784, 12.6846, 0.16265, 7200, 7200, 0, 0), -- Cabal Zealot
+(@CGUID+108, 0, 555, 3, -323.525, -264.785, 12.6846, 0.0162754, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+109, 0, 555, 3, -270.18, -258.579, 12.7637, 5.98751, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+110, 0, 555, 3, -271.337, -261.466, 12.7637, 6.16129, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+111, 0, 555, 3, -323.492, -266.784, 12.6846, 0.16265, 7200, 7200, 0, 0), -- spawn_group_squad
 (@CGUID+112, 18639, 555, 3, -139.912, -353.917, 17.1665, 5.75959, 7200, 7200, 0, 0), -- Cabal Spellbinder
 (@CGUID+113, 18639, 555, 3, -140.42, -369.956, 17.1648, 3.03687, 7200, 7200, 0, 0), -- Cabal Spellbinder
-(@CGUID+114, 18633, 555, 3, -454.315, -183.092, 12.7725, 5.06145, 7200, 7200, 0, 0), -- Cabal Acolyte
+-- REUSE @CGUID+114
 (@CGUID+115, 18639, 555, 3, -143.33, -397.343, 17.1634, 2.37365, 7200, 7200, 0, 0), -- Cabal Spellbinder
 (@CGUID+116, 0, 555, 3, -134.274, -388.795, 17.1657, 3.86548, 5, 10, 0, 0), -- spawn_group_entry
-(@CGUID+117, 18635, 555, 3, -453.685, -186.804, 12.7725, 1.53589, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+118, 18635, 555, 3, -454.978, -185.25, 12.7725, 0.05236, 7200, 7200, 0, 0), -- Cabal Deathsworn
+-- REUSE @CGUID+117 - @CGUID+118
 (@CGUID+119, 18639, 555, 3, -151.68169, -461.16348, 17.160606, 4.572762489318847656, 7200, 7200, 0, 0), -- Cabal Spellbinder
 (@CGUID+120, 18639, 555, 3, -156.28352, -461.87067, 17.1606, 4.694935798645019531, 7200, 7200, 0, 0), -- Cabal Spellbinder
 (@CGUID+121, 18639, 555, 3, -160.95567, -461.85803, 17.160603, 4.904375076293945312, 7200, 7200, 0, 0), -- Cabal Spellbinder
-(@CGUID+122, 0, 555, 3, -176.776, -434.265, 17.1622, 0.279253, 5, 10, 0, 2), -- creature_spawn_entry
-(@CGUID+123, 0, 555, 3, -130.551, -443.696, 17.164, 3.14527, 5, 10, 0, 2), -- creature_spawn_entry
+(@CGUID+122, 0, 555, 3, -176.776, -434.265, 17.1622, 0.279253, 5, 10, 0, 0), -- creature_spawn_entry
+(@CGUID+123, 0, 555, 3, -130.551, -443.696, 17.164, 3.14527, 5, 10, 0, 0), -- creature_spawn_entry
 (@CGUID+124, 18640, 555, 3, -51.2688, -78.5158, -1.0449, 2.49582, 7200, 7200, 0, 0), -- Cabal Warlock
 (@CGUID+125, 18640, 555, 3, -74.4987, -77.2237, -1.04497, 1.55334, 7200, 7200, 0, 0), -- Cabal Warlock
 (@CGUID+126, 18640, 555, 3, -259.324, 5.18744, 8.15627, 3.64774, 7200, 7200, 0, 0), -- Cabal Warlock
@@ -788,12 +765,12 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+230, 18797, 555, 3, -415.485, -172.984, 12.7231, 2.30383, 7200, 7200, 0, 0), -- Tortured Skeleton
 (@CGUID+231, 18797, 555, 3, -435.36, -266.77, 12.771, 5.75959, 7200, 7200, 0, 0), -- Tortured Skeleton
 (@CGUID+232, 18797, 555, 3, -322.287, -241.187, 12.7673, 3.05433, 7200, 7200, 0, 0), -- Tortured Skeleton
-(@CGUID+233, 18638, 555, 3, -279.64, -267.609, 12.6814, 0.150747, 7200, 7200, 0, 0), -- Cabal Zealot
-(@CGUID+234, 18830, 555, 3, -367.7, -265.894, 12.689, 0.0196957, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+235, 18638, 555, 3, -323.59, -260.785, 12.6847, 0.103578, 7200, 7200, 0, 0), -- Cabal Zealot
-(@CGUID+236, 18830, 555, 3, -271.362, -265.765, 12.7637, 0.11843, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+237, 18638, 555, 3, -270.873, -268.766, 12.7638, 0.287388, 7200, 7200, 0, 0), -- Cabal Zealot
-(@CGUID+238, 18638, 555, 3, -279.733, -262.067, 12.6813, 6.22297, 7200, 7200, 0, 0), -- Cabal Zealot
+(@CGUID+233, 0, 555, 3, -279.64, -267.609, 12.6814, 0.150747, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+234, 0, 555, 3, -367.7, -265.894, 12.689, 0.0196957, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+235, 0, 555, 3, -323.59, -260.785, 12.6847, 0.103578, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+236, 0, 555, 3, -271.362, -265.765, 12.7637, 0.11843, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+237, 0, 555, 3, -270.873, -268.766, 12.7638, 0.287388, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+238, 0, 555, 3, -279.733, -262.067, 12.6813, 6.22297, 7200, 7200, 0, 0), -- spawn_group_squad
 -- reuse 239
 (@CGUID+240, 18848, 555, 3, -292.375, 2.19825, 8.07303, 5.94921, 7200, 7200, 0, 4), -- Malicious Instructor
 (@CGUID+241, 18848, 555, 3, -275.090, -29.0206, 8.099, 4.6119, 7200, 7200, 0, 2), -- Malicious Instructor
@@ -802,10 +779,10 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+244, 21159, 555, 3, -157.247, -19.3744, 19.939, 5.23599, 7200, 7200, 0, 0), -- Containment Beam
 (@CGUID+245, 21159, 555, 3, -138.52, 0.111671, 20.1447, 1.85005, 7200, 7200, 0, 0), -- Containment Beam
 (@CGUID+246, 21159, 555, 3, -174.652, 0.44945, 19.8231, 5.72468, 7200, 7200, 0, 0), -- Containment Beam
-(@CGUID+247, 18640, 555, 3, -90.6977, -92.3565, -1.04497, 0.715585, 7200, 7200, 0, 0), -- Cabal Warlock
-(@CGUID+248, 0, 555, 3, -90.9385, -90.8618, -1.04497, 0.366519, 7200, 7200, 0, 0), -- creature_spawn_entry
-(@CGUID+249, 18640, 555, 3, -35.078, -81.0337, -1.04491, 5.18363, 7200, 7200, 0, 0), -- Cabal Warlock
-(@CGUID+250, 0, 555, 3, -33.5015, -80.5275, -1.0449, 4.92183, 7200, 7200, 0, 0), -- creature_spawn_entry
+(@CGUID+247, 0, 555, 3, -90.6977, -92.3565, -1.04497, 0.715585, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+248, 0, 555, 3, -90.9385, -90.8618, -1.04497, 0.366519, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+249, 0, 555, 3, -35.078, -81.0337, -1.04491, 5.18363, 7200, 7200, 0, 0), -- spawn_group_squad
+(@CGUID+250, 0, 555, 3, -33.5015, -80.5275, -1.0449, 4.92183, 7200, 7200, 0, 0), -- spawn_group_squad
 -- reuse 251
 (@CGUID+252, 14881, 555, 3, -122.0181, -8.897035, 8.156389, 2.569682, 900, 900, 2, 1), -- Spider
 (@CGUID+253, 14881, 555, 3, -29.05714, -46.55113, -1.128195, 5.245015, 900, 900, 0, 0), -- Spider
@@ -835,33 +812,9 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+277, 18797, 555, 3, -406.8246, -104.6223, 12.77247, 1.361357, 7200, 7200, 0, 0), -- Tortured Skeleton
 (@CGUID+278, 18797, 555, 3, -349.005, -250.166, 12.7684, 0.593412, 7200, 7200, 0, 0), -- Tortured Skeleton
 (@CGUID+279, 18797, 555, 3, -262.44, -281.317, 12.7646, 0.593412, 7200, 7200, 0, 0), -- Tortured Skeleton
-
-(@CGUID+280, 18635, 555, 3, -74.3842, -0.151916, -1.04487, 0.0349066, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+281, 18633, 555, 3, -73.5278, -1.96912, -1.04486, 1.22173, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+282, 18633, 555, 3, -73.8878, 1.75605, -1.04487, 5.23599, 7200, 7200, 0, 0), -- Cabal Acolyte
-
-(@CGUID+283, 18635, 555, 3, -44.641, -34.6061, -1.04484, 1.44862, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+284, 18633, 555, 3, -41.8571, -33.4506, -1.04484, 2.87979, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+285, 18633, 555, 3, -47.365, -33.8044, -1.04484, 0.331613, 7200, 7200, 0, 0), -- Cabal Acolyte
-
-(@CGUID+286, 18635, 555, 3, -35.078, -81.0337, -1.04491, 5.18363, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+287, 18633, 555, 3, -31.8829, -81.4594, -1.0449, 4.04916, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+288, 18633, 555, 3, -36.1315, -84.0624, -1.04494, 0.0872665, 7200, 7200, 0, 0), -- Cabal Acolyte
-
-(@CGUID+289, 18633, 555, 3, -35.078, -81.0337, -1.04491, 5.18363, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+290, 18635, 555, 3, -31.8829, -81.4594, -1.0449, 4.04916, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+291, 18635, 555, 3, -36.1315, -84.0624, -1.04494, 0.0872665, 7200, 7200, 0, 0), -- Cabal Deathsworn
-
-(@CGUID+292, 18635, 555, 3, -90.6977, -92.3565, -1.04497, 0.715585, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+293, 18633, 555, 3, -91.919, -88.183, -1.04497, 6.00393, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+294, 18633, 555, 3, -86.0825, -92.683, -1.04496, 1.95477, 7200, 7200, 0, 0), -- Cabal Acolyte
-
-(@CGUID+295, 18633, 555, 3, -90.6977, -92.3565, -1.04497, 0.715585, 7200, 7200, 0, 0), -- Cabal Acolyte
-(@CGUID+296, 18635, 555, 3, -91.919, -88.183, -1.04497, 6.00393, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+297, 18635, 555, 3, -86.0825, -92.683, -1.04496, 1.95477, 7200, 7200, 0, 0), -- Cabal Deathsworn
 -- Middle Fel Overseer with 5 different spawn positions and waypoints
 (@CGUID+298, 18796, 555, 3, -166.74, -67.0093, 8.10394, 5.74872, 7200, 7200, 0, 2), -- Fel Overseer
-(@CGUID+299, 18796, 555, 3, 166.836, -67.1498, 8.11011, 5.57027, 7200, 7200, 0, 2), -- Fel Overseer
+(@CGUID+299, 18796, 555, 3, -166.836, -67.1498, 8.11011, 5.57027, 7200, 7200, 0, 2), -- Fel Overseer
 (@CGUID+300, 18796, 555, 3, -167.172, -67.4014, 8.09211, 5.12902, 7200, 7200, 0, 4), -- Fel Overseer
 (@CGUID+301, 18796, 555, 3, -166.891, -67.2173, 8.12082, 5.47944, 7200, 7200, 0, 4), -- Fel Overseer
 (@CGUID+302, 18796, 555, 3, -167.626, -65.556, 8.14667, 1.63875, 7200, 7200, 0, 2), -- Fel Overseer
@@ -870,44 +823,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `position_x`, `positio
 (@CGUID+304, 18796, 555, 3, -192.957, -38.9073, 8.07312, 0.188621, 7200, 7200, 0, 2), -- Fel Overseer
 (@CGUID+305, 18796, 555, 3, -193.973, -39.0894, 8.14046, 3.32358, 7200, 7200, 0, 2), -- Fel Overseer
 (@CGUID+306, 18796, 555, 3, -192.969, -38.9048, 8.15644, 6.24828, 7200, 7200, 0, 0), -- Fel Overseer
-(@CGUID+307, 18796, 555, 3, -184.656, -40.3761, 8.07306, 3.14048, 7200, 7200, 0, 4), -- Fel Overseer
--- 2nd boss room spawns for correct grouping
-(@CGUID+308, 0, 555, 3, -254.445, -49.5956, 8.15618, 3.01942, 7200, 7200, 0, 0), -- spawn_group_entry/creature_spawn_entry
-(@CGUID+309, 0, 555, 3, -254.365, -46.4247, 8.15618, 3.08923, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+310, 18637, 555, 3, -247.273, -49.6712, 8.15618, 3.03687, 7200, 7200, 0, 0), -- Cabal Shadow Priest
-(@CGUID+311, 18633, 555, 3, -246.87, -45.9737, 8.15617, 3.10669, 7200, 7200, 0, 0), -- Cabal Acolyte
-
-(@CGUID+312, 18635, 555, 3, -271.845, -50.1835, 8.15619, 3.1765, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+313, 18631, 555, 3, -271.978, -47.9963, 8.15619, 3.14159, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+314, 18637, 555, 3, -271.784, -45.5444, 8.15619, 3.1765, 7200, 7200, 0, 0), -- Cabal Shadow Priest
-(@CGUID+315, 0, 555, 3, -263.805, -48.9857, 8.15618, 3.10669, 7200, 7200, 0, 0), -- creature_spawn_entry
-(@CGUID+316, 0, 555, 3, -263.226, -45.5273, 8.15618, 3.12414, 7200, 7200, 0, 0), -- spawn_group_entry
-
-(@CGUID+317, 18635, 555, 3, -263.687, -31.7085, 8.17044, 3.33358, 7200, 7200, 0, 0), -- Cabal Deathsworn
-(@CGUID+318, 18631, 555, 3, -263.761, -29.1943, 8.18301, 3.12414, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+319, 18637, 555, 3, -263.794, -26.8056, 8.19487, 3.49066, 7200, 7200, 0, 0), -- Cabal Shadow Priest
-(@CGUID+320, 0, 555, 3, -255.435, -31.2176, 8.17054, 3.28122, 7200, 7200, 0, 0), -- creature_spawn_entry
-(@CGUID+321, 0, 555, 3, -255.77, -27.5678, 8.18844, 3.24631, 7200, 7200, 0, 0), -- spawn_group_entry
-
-(@CGUID+322, 18631, 555, 3, -367.596, -267.656, 12.689, 0.0351511, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+323, 18830, 555, 3, -367.7, -265.894, 12.689, 0.0196957, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+324, 0, 555, 3, -367.799, -269.302, 12.689, 0.0494639, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+325, 0, 555, 3, -367.629, -263.964, 12.689, 0.0027925, 7200, 7200, 0, 0), -- creature_spawn_entry
-
-(@CGUID+326, 18631, 555, 3, -323.525, -264.785, 12.6846, 0.0162754, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+327, 18830, 555, 3, -323.557, -262.785, 12.6846, 6.27565, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+328, 0, 555, 3, -323.492, -266.784, 12.6846, 0.16265, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+329, 0, 555, 3, -323.59, -260.785, 12.6847, 0.103578, 7200, 7200, 0, 0), -- creature_spawn_entry
-
-(@CGUID+330, 18631, 555, 3, -270.18, -258.579, 12.7637, 5.98751, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+331, 18830, 555, 3, -271.337, -261.466, 12.7637, 6.16129, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+332, 18631, 555, 3, -271.362, -265.765, 12.7637, 0.11843, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+333, 18638, 555, 3, -270.873, -268.766, 12.7638, 0.287388, 7200, 7200, 0, 0), -- Cabal Zealot
-
-(@CGUID+334, 18631, 555, 3, -279.362, -266.05, 12.6813, 0.092857, 7200, 7200, 0, 0), -- Cabal Cultist
-(@CGUID+335, 18830, 555, 3, -279.074, -264.494, 12.6812, 0.0332374, 7200, 7200, 0, 0), -- Cabal Fanatic
-(@CGUID+336, 0, 555, 3, -279.64, -267.609, 12.6814, 0.150747, 7200, 7200, 0, 0), -- spawn_group_entry
-(@CGUID+337, 0, 555, 3, -279.733, -262.067, 12.6813, 6.22297, 7200, 7200, 0, 0); -- creature_spawn_entry
+(@CGUID+307, 18796, 555, 3, -184.656, -40.3761, 8.07306, 3.14048, 7200, 7200, 0, 4); -- Fel Overseer
 
 -- ===========
 -- GAMEOBJECTS
@@ -1038,774 +954,840 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 -- ============
 
 INSERT INTO `spawn_group` (`Id`, `Name`, `Type`, `MaxCount`, `WorldState`, `Flags`, `StringId`) VALUES
-(@SGGUID+1, 'Shadow Labyrinth - Group 001 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, @CONDITIONID+1, 1, 0),
-(@SGGUID+2, 'Shadow Labyrinth - Group 001 - Cabal Deathsworn | Cabal Acolyte (2)', 0, 0, @CONDITIONID+2, 1, 0),
+(@SGGUID+1, 'Shadow Labyrinth - Group 001 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, 0, 1, 0),
 -- Right tent group of 2
-(@SGGUID+3, 'Shadow Labyrinth - Group 002 - Cabal Deathsworn/Cabal Acolyte (2)', 0, 0, 0, 1, 0),
+(@SGGUID+2, 'Shadow Labyrinth - Group 002 - Cabal Deathsworn/Cabal Acolyte (2)', 0, 0, 0, 1, 0),
 -- Solo Patrol using spawn_group_entry
-(@SGGUID+4, 'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+3, 'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Group of 2 with random entry
-(@SGGUID+5, 'Shadow Labyrinth - Group 004 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+4, 'Shadow Labyrinth - Group 004 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Group of 3 with 2 versions
-(@SGGUID+6, 'Shadow Labyrinth - Group 005 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, @CONDITIONID+3, 1, 0),
-(@SGGUID+7, 'Shadow Labyrinth - Group 005 - Cabal Deathsworn | Cabal Acolyte (2)', 0, 0, @CONDITIONID+4, 1, 0),
+(@SGGUID+5, 'Shadow Labyrinth - Group 005 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, 0, 1, 0),
 -- 2 group of 2 with random entry
-(@SGGUID+8, 'Shadow Labyrinth - Group 006 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
-(@SGGUID+9, 'Shadow Labyrinth - Group 007 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+6, 'Shadow Labyrinth - Group 006 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+7, 'Shadow Labyrinth - Group 007 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Solo Patrol that gets sleep aura at the end of his path
-(@SGGUID+10, 'Shadow Labyrinth - Group 008 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+8, 'Shadow Labyrinth - Group 008 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Solo Patrol at the end of the room
-(@SGGUID+11, 'Shadow Labyrinth - Group 009 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
+(@SGGUID+9, 'Shadow Labyrinth - Group 009 - Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Right sight cabal warlock solo spawn group to link it to Fel Guard/Familiar chasing
-(@SGGUID+12, 'Shadow Labyrinth - Group 010 - Cabal Warlock', 0, 0, 0, 1, 0),
-(@SGGUID+13, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound', 0, 0, 0, 1, 0),
+(@SGGUID+10, 'Shadow Labyrinth - Group 010 - Cabal Warlock', 0, 0, 0, 1, 0),
+(@SGGUID+11, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound', 0, 0, 0, 1, 0),
 -- Left side Cabal Warlock + 5 Cabal Familiar with RP
-(@SGGUID+14, 'Shadow Labyrinth - Group 011 - Cabal Warlock', 0, 0, 0, 1, @STRINGID+1),
-(@SGGUID+15, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5)', 0, 0, 0, 1, @STRINGID+2),
+(@SGGUID+12, 'Shadow Labyrinth - Group 011 - Cabal Warlock', 0, 0, 0, 1, @STRINGID+1),
+(@SGGUID+13, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5)', 0, 0, 0, 1, @STRINGID+2),
 -- Left Tent Group has 3 different versions that can spawn
-(@SGGUID+16, 'Shadow Labyrinth - Group 012 - Cabal Warlock | Cabal Familiar/Fel Guardhound | Cabal Deathsworn/Cabal Acolyte', 0, 0, @CONDITIONID+5, 1, 0),
-(@SGGUID+17, 'Shadow Labyrinth - Group 012 - Cabal Deathsworn | Cabal Acolyte (2)', 0, 0, @CONDITIONID+6, 1, 0),
-(@SGGUID+18, 'Shadow Labyrinth - Group 012 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, @CONDITIONID+7, 1, 0),
+(@SGGUID+14, 'Shadow Labyrinth - Group 012 - Cabal Warlock | Cabal Familiar/Fel Guardhound | Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- Right Tent Group has 3 different versions that can spawn
-(@SGGUID+19, 'Shadow Labyrinth - Group 013 - Cabal Warlock | Cabal Familiar/Fel Guardhound | Cabal Deathsworn/Cabal Acolyte', 0, 0, @CONDITIONID+8, 1, 0),
-(@SGGUID+20, 'Shadow Labyrinth - Group 013 - Cabal Deathsworn | Cabal Acolyte (2)', 0, 0, @CONDITIONID+9, 1, 0),
-(@SGGUID+21, 'Shadow Labyrinth - Group 013 - Cabal Acolyte | Cabal Deathsworn (2)', 0, 0, @CONDITIONID+10, 1, 0),
+(@SGGUID+15, 'Shadow Labyrinth - Group 013 - Cabal Warlock | Cabal Familiar/Fel Guardhound | Cabal Deathsworn/Cabal Acolyte', 0, 0, 0, 1, 0),
 -- The Arcanium
 -- Cabal Ritualist groups have 3 spawned on normal and 4 on Heroic (spawnmask)
-(@SGGUID+22, 'Shadow Labyrinth - Group 014 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+23, 'Shadow Labyrinth - Group 015 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+24, 'Shadow Labyrinth - Group 016 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+25, 'Shadow Labyrinth - Group 017 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+26, 'Shadow Labyrinth - Group 018 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
-(@SGGUID+27, 'Shadow Labyrinth - Group 019 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+16, 'Shadow Labyrinth - Group 014 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+17, 'Shadow Labyrinth - Group 015 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+18, 'Shadow Labyrinth - Group 016 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+19, 'Shadow Labyrinth - Group 017 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+20, 'Shadow Labyrinth - Group 018 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
+(@SGGUID+21, 'Shadow Labyrinth - Group 019 - Cabal Ritualist (3)', 0, 0, 0, 1, 0),
 -- Fel Overseer 6 different spawns/waypoints onyl 1 spawned
-(@SGGUID+28, 'Shadow Labyrinth - Group 020 - Fel Overseer', 0, 1, 0, 0, 0),
+(@SGGUID+22, 'Shadow Labyrinth - Group 020 - Fel Overseer', 0, 1, 0, 0, 0),
 -- Fel Overseer with 4 different spawns/waypoints
-(@SGGUID+29, 'Shadow Labyrinth - Group 021 - Fel Overseer', 0, 1, 0, 0, 0),
+(@SGGUID+23, 'Shadow Labyrinth - Group 021 - Fel Overseer', 0, 1, 0, 0, 0),
 -- The Refectory
--- Group of 2 with random entrys
-(@SGGUID+30, 'Shadow Labyrinth - Group 022 - Cabal Cultist/Cabal/Acolyte/Cabal Deathsworn', 0, 0, 0, 1, 0),
+-- Group of 2 - possible combinations found:
+-- Cabal Cultist- Cabal Cultist
+-- Cabal Acolyte - Cabal Cultist
+-- Cabal Deathsworn - Cabal Deathsworn
+-- Cabal Deathsworn - Cabal Cultist
+(@SGGUID+24, 'Shadow Labyrinth - Group 022 - Cabal Cultist/Cabal/Acolyte/Cabal Deathsworn', 0, 0, 0, 1, 0),
 -- Group of 6 all static, only warlock pet is random between 3 entrys
-(@SGGUID+31, 'Shadow Labyrinth - Group 023 - Cabal Shadow Priest | Cabal Deathsworn | Cabal Acolyte | Cabal Cultist | Cabal Warlock | Fel Guardhound/Maiden of Discipline/Cabal Familiar', 0, 0, 0, 1, @STRINGID+3),
+(@SGGUID+25, 'Shadow Labyrinth - Group 023 - Cabal Shadow Priest | Cabal Deathsworn | Cabal Acolyte | Cabal Cultist | Cabal Warlock | Fel Guardhound/Maiden of Discipline/Cabal Familiar', 0, 0, 0, 1, @STRINGID+3),
 -- Solo Patrol linked to boss
-(@SGGUID+32, 'Shadow Labyrinth - Group 024 - Malicious Instructor', 0, 0, 0, 0, 0),
+(@SGGUID+26, 'Shadow Labyrinth - Group 024 - Malicious Instructor', 0, 0, 0, 0, 0),
 -- Middle Patrol
-(@SGGUID+33, 'Shadow Labyrinth - Group 025 - Malicious Instructor', 0, 0, 0, 0, 0),
+(@SGGUID+27, 'Shadow Labyrinth - Group 025 - Malicious Instructor', 0, 0, 0, 0, 0),
 -- Middle Group left back - 4 npcs 3 possible combinations:
--- Deathsworn Cultist (front) - Acolyte/Cultist (back) (SGGUID+34)
--- Deathsworn Cultist (front) - Priest/Acolyte (back) (SGGUID+35)
--- Cultist Priest (front) - Priest/acolyte (back) (SGGUID+35)
-(@SGGUID+34, 'Shadow Labyrinth - Group 023 - Cabal Deathsworn | Cabal Cultist (2) | Cabal Acolyte', 0, 0, @CONDITIONID+11, 1, @STRINGID+4),
-(@SGGUID+35, 'Shadow Labyrinth - Group 023 - Cabal Deathsworn | Cabal Cultist | Cabal Priest/Cabal Acolyte', 0, 0, @CONDITIONID+12, 1, @STRINGID+4),
+-- Cabal Deathsworn- Cabal Cultist - Cabal Shadow Priest - Cabal Acolyte
+-- Cabal Deathsworn- Cabal Cultist - Cabal Acolyte -	Cabal Cultist
+-- Cabal Cultist- Cabal Shadow Priest - Cabal Shadow Priest - Cabal Acolyte
+(@SGGUID+28, 'Shadow Labyrinth - Group 023 - Cabal Deathsworn | Cabal Cultist | Cabal Acolyte | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
 -- Middle Group left front - 5 npcs - 3 possible combinations
--- Deathsworn, Acolyte, Cultist (front), Acolyte Priest (back) - @SGGUID+36
--- Deathsworn, Cultist, Priest (Front), Priest, Acolyte (back) - @SGGUID+37
--- Deathsworn Cultist, Priest (front), Acolyte Cultist (back) - @SGGUID+37
-(@SGGUID+36, 'Shadow Labyrinth - Group 024 - Cabal Deathsworn | Cabal Acolyte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, @CONDITIONID+13, 1, @STRINGID+4),
-(@SGGUID+37, 'Shadow Labyrinth - Group 024 - Cabal Deathsworn | Cabal Shadow Priest/Cabal Acolyte/Cabal Cultist', 0, 0, @CONDITIONID+14, 1, @STRINGID+4),
+-- Cabal Deathsworn - Cabal Acolyte	- Cabal Cultist - Cabal Acolyte - Cabal Shadow Priest
+-- Cabal Deathsworn	- Cabal Cultist	- Cabal Shadow Priest - Cabal Acolyte- Cabal Cultist
+-- Cabal Deathsworn	- Cabal Cultist	- Cabal Shadow Priest - Cabal Shadow Priest- Cabal Acolyte
+(@SGGUID+29, 'Shadow Labyrinth - Group 024 - Cabal Deathsworn | Cabal Acolyte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
 -- Middle Group right - 5 npcs - 4 possible combinations
--- Deathsworn, Acolyte Cultist (front), Shadow Priest Acolyte (back) (@SGGUID+38)
--- Deathsworn Cultist Shadow Priest (front), Acolyte Cultist (back) (@SGGUID+39)
--- Deathsworn Cultist Shadow Priest (front), Cultist Acolyte (back) (@SGGUID+39)
--- Deathsworn Cultist Shadow Priest (front), Acolyte Priest (back) (@SGGUID+39)
-(@SGGUID+38, 'Shadow Labyrinth - Group 025 - Cabal Deathsworn | Cabal Acolte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, @CONDITIONID+15, 1, @STRINGID+4),
-(@SGGUID+39, 'Shadow Labyrinth - Group 025 - Cabal Deathsworn | Cabal Cultist | Cabal Shadow Priest | Cabal Acolyte/Cabal Cultist/Cabal Shadowpriest', 0, 0, @CONDITIONID+16, 1, @STRINGID+4),
+-- Cabal Deathsworn - Cabal Cultist - Cabal Shadow Priest - Cabal Acolyte - Cabal Shadow Priest
+-- Cabal Deathsworn - Cabal Acolyte - Cabal Cultist - Cabal Shadow Priest - Cabal Acolyte
+-- Cabal Deathsworn - Cabal Cultist - Cabal Shadow Priest - Cabal Cultist - Cabal Acolyte
+(@SGGUID+30, 'Shadow Labyrinth - Group 025 - Cabal Deathsworn | Cabal Acolte (2) | Cabal Cultist | Cabal Shadow Priest', 0, 0, 0, 1, @STRINGID+4),
 -- Group of 6 all static, only warlock pet is random between 3 entrys
-(@SGGUID+40, 'Shadow Labyrinth - Group 026 - Cabal Shadow Priest | Cabal Deathsworn | Cabal Acolyte | Cabal Cultist | Cabal Warlock | Fel Guardhound/Maiden of Discipline/Cabal Familiar', 0, 0, 0, 1, @STRINGID+5),
--- Group of 2 with random entrys
-(@SGGUID+41, 'Shadow Labyrinth - Group 027 - Cabal Cultist/Cabal/Acolyte/Cabal Deathsworn', 0, 0, 0, 1, 0),
+(@SGGUID+31, 'Shadow Labyrinth - Group 026 - Cabal Shadow Priest | Cabal Deathsworn | Cabal Acolyte | Cabal Cultist | Cabal Warlock | Fel Guardhound/Maiden of Discipline/Cabal Familiar', 0, 0, 0, 1, @STRINGID+5),
+-- Group of 2 possible combinations
+-- Cabal Acolyt - Cabal Cultist
+-- Cabal Deathsworn - Cabal Deathsworn
+-- Cabal Deathsworn - Cabal Cultist
+(@SGGUID+32, 'Shadow Labyrinth - Group 027 - Cabal Cultist/Cabal/Acolyte/Cabal Deathsworn', 0, 0, 0, 1, 0),
 -- Solo Patrol right side
-(@SGGUID+42, 'Shadow Labyrinth - Group 028 - Malicious Instructor', 0, 0, 0, 0, 0),
+(@SGGUID+33, 'Shadow Labyrinth - Group 028 - Malicious Instructor', 0, 0, 0, 0, 0),
 -- Boss Blackheart the Inciter to link all groups in his room to him for aggro
-(@SGGUID+43, 'Shadow Labyrinth - Group 029 - Blackheart the Inciter', 0, 0, 0, 0, 0),
+(@SGGUID+34, 'Shadow Labyrinth - Group 029 - Blackheart the Inciter', 0, 0, 0, 0, 0),
 -- Solo Patrol with spawn_group_entry
-(@SGGUID+44, 'Shadow Labyrinth - Group 030 - Fel Overseer/Malicious Instructor', 0, 0, 0, 0, 0),
+(@SGGUID+35, 'Shadow Labyrinth - Group 030 - Fel Overseer/Malicious Instructor', 0, 0, 0, 0, 0),
 -- 2 groups of 4 Tortured Skeleton on hills
-(@SGGUID+45, 'Shadow Labyrinth - Group 031 - Tortured Skeleton (4)', 0, 0, 0, 1, 0),
-(@SGGUID+46, 'Shadow Labyrinth - Group 032 - Tortured Skeleton (4)', 0, 0, 0, 1, 0),
+(@SGGUID+36, 'Shadow Labyrinth - Group 031 - Tortured Skeleton (4)', 0, 0, 0, 1, 0),
+(@SGGUID+37, 'Shadow Labyrinth - Group 032 - Tortured Skeleton (4)', 0, 0, 0, 1, 0),
 -- Group of 2, possible combinations
--- Acolyte x2 (@SGGUID+47)
--- Cultist, Acolyte (@SGGUID+48)
--- Cultist, Deathsworn (@SGGUID+48)
--- Cultist, Cultist (@SGGUID+48)
-(@SGGUID+47, 'Shadow Labyrinth - Group 033 - Cabal Acolyte (2)', 0, 0, @CONDITIONID+17, 1, 0),
-(@SGGUID+48, 'Shadow Labyrinth - Group 033 - Cabal Cultist | Cabal Acolyte/Cabal Deathsworn/Cabal Cultist', 0, 0, @CONDITIONID+18, 1, 0),
+-- Cabal Cultist - Cabal Acolyte
+-- Cabal Cultist - Cabal Cultist
+-- Cabal Acolyte - Cabal Acolyte
+-- Cabal Cultist - Cabal Deathsworn
+(@SGGUID+38, 'Shadow Labyrinth - Group 033 - Cabal Acolyte ', 0, 0, 0, 1, 0),
 -- Group of 3, possible combinations
--- Cultist Cultist Acolyte (@SGGUID+49)
--- Cultist Cultist Deathsworn (@SGGUID+49)
--- Deathsworn Deathsworn Acolyte (@SGGUID+50)
-(@SGGUID+49, 'Shadow Labyrinth - Group 034 - Cabal Cultist (2) | Cabal Acolyte', 0, 0, @CONDITIONID+19, 1, 0),
-(@SGGUID+50, 'Shadow Labyrinth - Group 034 - Cabal Deathsworn (2) | Cabal Acolyte', 0, 0, @CONDITIONID+20, 1, 0),
+-- Cabal Cultist - Cabal Cultist - Cabal Deathsworn
+-- Cabal Deathsworn - Cabal Deathsworn - Cabal Acolyte
+-- Cabal Cultist - Cabal Cultist - Cabal Acolyte
+(@SGGUID+39, 'Shadow Labyrinth - Group 034 - Cabal Cultist (2) | Cabal Acolyte', 0, 0, 0, 1, 0),
 -- 3rd Boss room
 -- Patrol 1 - 3 combinations
--- Zealot Fanatic Fanatic Zealot (@SGGUID+52)
--- Cultist Fanatic Cultist Zealot (@SGGUID+53)
--- Zealot Fanatic Cultist Fanatic (@SGGUID+53)
-(@SGGUID+52, 'Shadow Labyrinth - Group 035 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 01', 0, 0, @CONDITIONID+21, 1, @STRINGID+6),
-(@SGGUID+53, 'Shadow Labyrinth - Group 035 - Cabal Fanatic | Cabal Zealot/Cabal Cultist - Patrol 01', 0, 0, @CONDITIONID+22, 1, @STRINGID+6),
+-- Cabal Cultist - Cabal Fanaitic - Cabal Cultist - Cabal Zealot
+-- Cabal Zealot - Cabal Fanaitic - Cabal Cultist - Cabal Fanaitic
+-- Cabal Zealot - Cabal Fanaitic - Cabal Fanaitic - Cabal Zealot
+(@SGGUID+40, 'Shadow Labyrinth - Group 035 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 01', 0, 0, 0, 1, @STRINGID+6),
 -- Right side front hill skeletons
-(@SGGUID+54, 'Shadow Labyrinth - Group 036 - Tortured Skeleton (10)', 0, 0, 0, 1, 0),
+(@SGGUID+41, 'Shadow Labyrinth - Group 036 - Tortured Skeleton (10)', 0, 0, 0, 1, 0),
 -- left side front hill skeletons
-(@SGGUID+55, 'Shadow Labyrinth - Group 037 - Tortured Skeleton (10)', 0, 0, 0, 1, 0),
+(@SGGUID+42, 'Shadow Labyrinth - Group 037 - Tortured Skeleton (10)', 0, 0, 0, 1, 0),
 -- right side back hill skeletons
-(@SGGUID+56, 'Shadow Labyrinth - Group 038 - Tortured Skeleton (10)', 0, 0, 0, 1, 0),
+(@SGGUID+43, 'Shadow Labyrinth - Group 038 - Tortured Skeleton (10)', 0, 0, 0, 1, 0),
 -- left side back hill skeletons
-(@SGGUID+57, 'Shadow Labyrinth - Group 039 - Tortured Skeleton (10)', 0, 0, 0, 1, 0),
+(@SGGUID+44, 'Shadow Labyrinth - Group 039 - Tortured Skeleton (10)', 0, 0, 0, 1, 0),
 -- 3rd Boss room
 -- Patrol 2 - 3 combinations
--- Zealot Fanatic Fanatic Zealot (@SGGUID+59)
--- Zealot Fanatic Cultist Fanatic (@SGGUID+59)
--- Cultist Fanatic Cultist Zealot (@SGGUID+59)
-(@SGGUID+58, 'Shadow Labyrinth - Group 040 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 02', 0, 0, @CONDITIONID+23, 1, @STRINGID+7),
-(@SGGUID+59, 'Shadow Labyrinth - Group 040 - Cabal Fanatic | Cabal Zealot/Cabal Cultist - Patrol 02', 0, 0, @CONDITIONID+24, 1, @STRINGID+7),
--- Static Group before boss 2 combinations
--- Zealot, Fanatic Fanatic Zealot
--- Cultist Fanatic Cultist Zealot
-(@SGGUID+60, 'Shadow Labyrinth - Group 041 - Cabal Fanatic (2) | Cabal Zealot (2)', 0, 0, @CONDITIONID+25, 1, @STRINGID+8),
-(@SGGUID+61, 'Shadow Labyrinth - Group 041 - Cabal Cultist (2) | Cabal Zealot | Cabal Fanatic', 0, 0, @CONDITIONID+26, 1, @STRINGID+8),
+-- Cabal Zealot - Cabal Fanatic	Cabal Cultist - Cabal Fanatic
+-- Cabal Cultist - Cabal Fanatic - Cabal Cultist - Cabal Zealot
+-- Cabal Zealot - Cabal Fanatic - Cabal Fanatic - Cabal Zealot
+(@SGGUID+45, 'Shadow Labyrinth - Group 040 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 02', 0, 0, 0, 1, @STRINGID+7),
+-- Static Group before boss 3 combinations
+-- Cabal Cultist - Cabal Fanatic - Cabal Cultist - Cabal Zealot
+-- Cabal Zealot - Cabal Fanatic - Cabal Fanatic - Cabal Zealot
+-- Cabal Zealot - Cabal Fanatic - Cabal Cultist - Cabal Fanatic
+(@SGGUID+46, 'Shadow Labyrinth - Group 041 - Cabal Fanatic (2) | Cabal Zealot (2)', 0, 0, 0, 1, @STRINGID+8),
 -- Group that runs in circle around the boss
--- Zealot Fanatic Fanatic Zealot (@SGGUID+62)
--- Zealot Fanatic Cultist Fanatic (@SGGUID+62)
--- Cultist Fanatic Cultist Zealot (@SGGUID+62)
-(@SGGUID+62, 'Shadow Labyrinth - Group 042 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 03', 0, 0, @CONDITIONID+27, 1, @STRINGID+9),
-(@SGGUID+63, 'Shadow Labyrinth - Group 042 - Cabal Fanatic | Cabal Zealot/Cabal Cultist - Patrol 03', 0, 0, @CONDITIONID+28, 1, @STRINGID+9),
+-- Cabal Zealot - Cabal Fanatic - Cabal Fanatic - Cabal Zealot
+-- Cabal Zealot - Cabal Fanatic - Cabal Cultist - Cabal Fanatic
+-- Cabal Cultist - Cabal Fanatic - Cabal Cultist - Cabal Zealot
+(@SGGUID+47, 'Shadow Labyrinth - Group 042 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 03', 0, 0, 0, 1, @STRINGID+9),
 -- The Screaming Hall
-(@SGGUID+64, 'Shadow Labyrinth - Group 043 - Cabal Executioner (2)', 0, 0, 0, 1, @STRINGID+10),
-(@SGGUID+65, 'Shadow Labyrinth - Group 044 - Cabal Executioner (2) | Cabal Spellbinder | Cabal Summoner', 0, 0, 0, 1, @STRINGID+10),
-(@SGGUID+66, 'Shadow Labyrinth - Group 045 - Cabal Executioner (2) | Cabal Spellbinder | Cabal Summoner', 0, 0, 0, 1, @STRINGID+10),
-(@SGGUID+67, 'Shadow Labyrinth - Group 046 - Cabal Executioner (2) | Cabal Spellbinder | Cabal Summoner', 0, 0, 0, 1, @STRINGID+10),
-(@SGGUID+68, 'Shadow Labyrinth - Group 047 - Cabal Spellbinder (3)', 0, 0, 0, 1, 0),
+(@SGGUID+48, 'Shadow Labyrinth - Group 043 - Cabal Executioner (2)', 0, 0, 0, 1, @STRINGID+10),
+(@SGGUID+49, 'Shadow Labyrinth - Group 044 - Cabal Executioner (2) | Cabal Spellbinder | Cabal Summoner', 0, 0, 0, 1, @STRINGID+10),
+(@SGGUID+50, 'Shadow Labyrinth - Group 045 - Cabal Executioner (2) | Cabal Spellbinder | Cabal Summoner', 0, 0, 0, 1, @STRINGID+10),
+(@SGGUID+51, 'Shadow Labyrinth - Group 046 - Cabal Executioner (2) | Cabal Spellbinder | Cabal Summoner', 0, 0, 0, 1, @STRINGID+10),
+(@SGGUID+52, 'Shadow Labyrinth - Group 047 - Cabal Spellbinder (3)', 0, 0, 0, 1, 0),
 -- Runner groups
 -- 2 Cabal Summoner that get active when door opens, run their waypoints and then die
-(@SGGUID+69, 'Shadow Labyrinth - Group 048 - Cabal Summoner (2)', 0, 0, @SGGUID+29, 0, 0),
+(@SGGUID+53, 'Shadow Labyrinth - Group 048 - Cabal Summoner (2)', 0, 0, @CONDITIONID+1, 0, 0),
 -- Running npc between first and 2nd group
 -- Spawns on door opening and stops respawning when Group 043 is dead
-(@SGGUID+70, 'Shadow Labyrinth - Group 049 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+30, 0, @STRINGID+13), -- Runner 1
-(@SGGUID+71, 'Shadow Labyrinth - Group 050 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+31, 0, @STRINGID+13), -- Runner 2
-(@SGGUID+72, 'Shadow Labyrinth - Group 051 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+32, 0, @STRINGID+13), -- Runner 3
-(@SGGUID+73, 'Shadow Labyrinth - Group 052 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+33, 0, @STRINGID+13), -- Runner 4
-(@SGGUID+74, 'Shadow Labyrinth - Group 053 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+33, 0, @STRINGID+13), -- Runner 5
+(@SGGUID+54, 'Shadow Labyrinth - Group 049 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+2, 0, @STRINGID+13), -- Runner 1
+(@SGGUID+55, 'Shadow Labyrinth - Group 050 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+3, 0, @STRINGID+13), -- Runner 2
+(@SGGUID+56, 'Shadow Labyrinth - Group 051 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+4, 0, @STRINGID+13), -- Runner 3
+(@SGGUID+57, 'Shadow Labyrinth - Group 052 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+5, 0, @STRINGID+13), -- Runner 4
+(@SGGUID+58, 'Shadow Labyrinth - Group 053 - Cabal Summoner/Cabal Spellbinder', 0, 0, @CONDITIONID+5, 0, @STRINGID+13), -- Runner 5
 -- Cabal Assasins
-(@SGGUID+75, 'Shadow Labyrinth - Group 055 - Cabal Assasin', 0, 0, @CONDITIONID+34, 8, 0), -- Blackheart the Inciter room 
-(@SGGUID+76, 'Shadow Labyrinth - Group 056 - Cabal Assasin', 0, 0, @CONDITIONID+35, 8, 0),
+(@SGGUID+59, 'Shadow Labyrinth - Group 055 - Cabal Assasin', 0, 0, @CONDITIONID+6, 8, 0), -- Blackheart the Inciter room 
+(@SGGUID+60, 'Shadow Labyrinth - Group 056 - Cabal Assasin', 0, 0, @CONDITIONID+7, 8, 0),
 -- Single pulled Tortured Skeleton after 2nd boss 
-(@SGGUID+77, 'Shadow Labyrinth - Group 057 - Tortured Skeleton - Group 01', 0, 1, 0, 0, 0),
-(@SGGUID+78, 'Shadow Labyrinth - Group 058 - Tortured Skeleton - Group 02', 0, 1, 0, 0, 0),
-(@SGGUID+79, 'Shadow Labyrinth - Group 059 - Tortured Skeleton - Group 03', 0, 1, 0, 0, 0),
-(@SGGUID+80, 'Shadow Labyrinth - Group 060 - Tortured Skeleton - Group 04', 0, 1, 0, 0, 0),
-(@SGGUID+81, 'Shadow Labyrinth - Group 061 - Tortured Skeleton - Group 05', 0, 1, 0, 0, 0);
+(@SGGUID+61, 'Shadow Labyrinth - Group 057 - Tortured Skeleton - Group 01', 0, 1, 0, 0, 0),
+(@SGGUID+62, 'Shadow Labyrinth - Group 058 - Tortured Skeleton - Group 02', 0, 1, 0, 0, 0),
+(@SGGUID+63, 'Shadow Labyrinth - Group 059 - Tortured Skeleton - Group 03', 0, 1, 0, 0, 0),
+(@SGGUID+64, 'Shadow Labyrinth - Group 060 - Tortured Skeleton - Group 04', 0, 1, 0, 0, 0),
+(@SGGUID+65, 'Shadow Labyrinth - Group 061 - Tortured Skeleton - Group 05', 0, 1, 0, 0, 0);
 
 INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`) VALUES
-(@SGGUID+3, 18633, 0, 2, 0), (@SGGUID+3, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+4, 18633, 0, 1, 0), (@SGGUID+4, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+5, 18633, 0, 2, 0), (@SGGUID+5, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+8, 18633, 0, 2, 0), (@SGGUID+8, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+9, 18633, 0, 2, 0), (@SGGUID+9, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+10, 18633, 0, 1, 0), (@SGGUID+10, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+11, 18633, 0, 1, 0), (@SGGUID+11, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+16, 18633, 0, 1, 0), (@SGGUID+16, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+19, 18633, 0, 1, 0), (@SGGUID+19, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+30, 18633, 0, 1, 0), (@SGGUID+30, 18631, 0, 2, 0), (@SGGUID+30, 18635, 0, 2, 0),  -- Cabal Acolyte, Cabal Cultist, Cabal Deathsworn
+(@SGGUID+2, 18633, 0, 2, 0), (@SGGUID+2, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+3, 18633, 0, 1, 0), (@SGGUID+3, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+4, 18633, 0, 2, 0), (@SGGUID+4, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+6, 18633, 0, 2, 0), (@SGGUID+6, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+7, 18633, 0, 2, 0), (@SGGUID+7, 18635, 0, 2, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+8, 18633, 0, 1, 0), (@SGGUID+8, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+9, 18633, 0, 1, 0), (@SGGUID+9, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
+(@SGGUID+25, 18641, 0, 1, 0), (@SGGUID+25, 18642, 0, 1, 0), (@SGGUID+25, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
 (@SGGUID+31, 18641, 0, 1, 0), (@SGGUID+31, 18642, 0, 1, 0), (@SGGUID+31, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
-(@SGGUID+35, 18631, 1, 1, 0), (@SGGUID+35, 18637, 1, 2, 0), -- Cabal Cultist, Cabal Shadow Priest
-(@SGGUID+37, 18631, 1, 2, 0), (@SGGUID+37, 18633, 1, 1, 0), -- Cabal Cultist, Cabal Acolyte
-(@SGGUID+39, 18631, 1, 2, 0), (@SGGUID+39, 18633, 1, 1, 0), (@SGGUID+39, 18637, 1, 2, 0), -- Cabal Cultist, Cabal Acolyte, Cabal Shadow Priest
-(@SGGUID+40, 18641, 0, 1, 0), (@SGGUID+40, 18642, 0, 1, 0), (@SGGUID+40, 18663, 0, 1, 0),  -- Cabal Familiar, Fel Guardhound, Maiden of Discipline
-(@SGGUID+41, 18633, 0, 1, 0), (@SGGUID+41, 18631, 0, 2, 0), (@SGGUID+41, 18635, 0, 2, 0),  -- Cabal Acolyte, Cabal Cultist, Cabal Deathsworn
-(@SGGUID+44, 18796, 0, 1, 0), (@SGGUID+44, 18848, 0, 1, 0), -- Fel Overseer, Malicious Instructor
-(@SGGUID+48, 18633, 0, 0, 0), (@SGGUID+48, 18631, 0, 0, 0), (@SGGUID+48, 18635, 0, 0, 0),  -- Cabal Acolyte, Cabal Cultist, Cabal Deathsworn
-(@SGGUID+49, 18633, 0, 1, 0), (@SGGUID+49, 18635, 0, 1, 0), -- Cabal Acolyte, Cabal Deathsworn
-(@SGGUID+53, 18638, 1, 1, 0),  (@SGGUID+53, 18830, 0, 2, 0), -- Cabal Zealot, Cabal Fanatic
-(@SGGUID+59, 18638, 1, 1, 0),  (@SGGUID+59, 18830, 0, 2, 0), -- Cabal Zealot, Cabal Fanatic
-(@SGGUID+63, 18638, 1, 1, 0),  (@SGGUID+63, 18830, 0, 2, 0), -- Cabal Zealot, Cabal Fanatic
-
-(@SGGUID+70, 18634, 0, 1, 0),  (@SGGUID+70, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
-(@SGGUID+71, 18634, 0, 1, 0),  (@SGGUID+71, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
-(@SGGUID+72, 18634, 0, 1, 0),  (@SGGUID+72, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
-(@SGGUID+73, 18634, 0, 1, 0),  (@SGGUID+73, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
-(@SGGUID+74, 18634, 0, 1, 0),  (@SGGUID+74, 18639, 0, 1, 0); -- Cabal Summoner, Cabal Spellbinder
+(@SGGUID+35, 18796, 0, 1, 0), (@SGGUID+35, 18848, 0, 1, 0), -- Fel Overseer, Malicious Instructor
+(@SGGUID+54, 18634, 0, 1, 0),  (@SGGUID+54, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
+(@SGGUID+55, 18634, 0, 1, 0),  (@SGGUID+55, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
+(@SGGUID+56, 18634, 0, 1, 0),  (@SGGUID+56, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
+(@SGGUID+57, 18634, 0, 1, 0),  (@SGGUID+57, 18639, 0, 1, 0), -- Cabal Summoner, Cabal Spellbinder
+(@SGGUID+58, 18634, 0, 1, 0),  (@SGGUID+58, 18639, 0, 1, 0); -- Cabal Summoner, Cabal Spellbinder
 
 INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`, `Chance`) VALUES
-(@SGGUID+1, @CGUID+89, 0, 0), -- Cabal Acolyte
-(@SGGUID+1, @CGUID+61, 1, 0), -- Cabal Deathsworn (left)
-(@SGGUID+1, @CGUID+66, 2, 0), -- Cabal Deathsworn (right)
+(@SGGUID+1, @CGUID+89, 0, 0), -- spawn_group_squad
+(@SGGUID+1, @CGUID+61, 1, 0), -- spawn_group_squad
+(@SGGUID+1, @CGUID+66, 2, 0), -- spawn_group_squad
 
-(@SGGUID+2, @CGUID+280, 0, 0), -- Cabal Deathsworn
-(@SGGUID+2, @CGUID+281, 1, 0), -- Cabal Acolyte (left)
-(@SGGUID+2, @CGUID+282, 2, 0), -- Cabal Acolyte (right)
+(@SGGUID+2, @CGUID+64, 0, 0), -- spawn_group_entry
+(@SGGUID+2, @CGUID+65, 1, 0), -- spawn_group_entry
 
-(@SGGUID+3, @CGUID+64, 0, 0), -- spawn_group_entry
-(@SGGUID+3, @CGUID+65, 1, 0), -- spawn_group_entry
+(@SGGUID+3, @CGUID+85, 0, 0), -- spawn_group_entry
 
-(@SGGUID+4, @CGUID+85, 0, 0), -- spawn_group_entry
+(@SGGUID+4, @CGUID+60, 0, 0), -- spawn_group_entry
+(@SGGUID+4, @CGUID+88, 1, 0), -- spawn_group_entry
 
-(@SGGUID+5, @CGUID+60, 0, 0), -- spawn_group_entry
-(@SGGUID+5, @CGUID+88, 1, 0), -- spawn_group_entry
+(@SGGUID+5, @CGUID+86, 0, 0), -- spawn_group_squad
+(@SGGUID+5, @CGUID+55, 1, 0), -- spawn_group_squad (left)
+(@SGGUID+5, @CGUID+54, 2, 0), -- spawn_group_squad (right)
+
+(@SGGUID+6, @CGUID+56, 0, 0), -- spawn_group_entry
+(@SGGUID+6, @CGUID+57, 1, 0), -- spawn_group_entry
+
+(@SGGUID+7, @CGUID+62, 0, 0), -- spawn_group_entry
+(@SGGUID+7, @CGUID+63, 1, 0), -- spawn_group_entry
+
+(@SGGUID+8, @CGUID+53, 0, 0), -- spawn_group_entry
+
+(@SGGUID+9, @CGUID+67, 0, 0), -- spawn_group_entry
+
+(@SGGUID+10, @CGUID+125, 0, 0), -- Cabal Warlock
+
+(@SGGUID+11, @CGUID+133, 0, 0), -- Cabal Familiar
+(@SGGUID+11, @CGUID+135, 1, 0), -- Fel Guardhound
+
+(@SGGUID+12, @CGUID+124, 0, 0), -- Cabal Warlock
+
+(@SGGUID+13, @CGUID+128, 0, 0), -- Cabal Familiar
+(@SGGUID+13, @CGUID+129, 1, 0), -- Cabal Familiar
+(@SGGUID+13, @CGUID+130, 2, 0), -- Cabal Familiar
+(@SGGUID+13, @CGUID+131, 3, 0), -- Cabal Familiar
+(@SGGUID+13, @CGUID+132, 4, 0), -- Cabal Familiar
 
-(@SGGUID+6, @CGUID+86, 0, 0), -- Cabal Acolyte
-(@SGGUID+6, @CGUID+55, 1, 0), -- Cabal Deathsworn (left)
-(@SGGUID+6, @CGUID+54, 2, 0), -- Cabal Deathsworn (right)
+(@SGGUID+14, @CGUID+249, 0, 0), -- spawn_group_squad (Middle)
+(@SGGUID+14, @CGUID+250, 1, 0), -- spawn_group_squad (pet spawned to Warlock)
+(@SGGUID+14, @CGUID+58, 2, 0), -- spawn_group_squad (left side)
+(@SGGUID+14, @CGUID+59, 3, 0), -- spawn_group_squad (right side)
 
-(@SGGUID+7, @CGUID+283, 0, 0), -- Cabal Acolyte
-(@SGGUID+7, @CGUID+284, 1, 0), -- Cabal Deathsworn (left)
-(@SGGUID+7, @CGUID+285, 2, 0), -- Cabal Deathsworn (right)
-
-(@SGGUID+8, @CGUID+56, 0, 0), -- spawn_group_entry
-(@SGGUID+8, @CGUID+57, 1, 0), -- spawn_group_entry
-
-(@SGGUID+9, @CGUID+62, 0, 0), -- spawn_group_entry
-(@SGGUID+9, @CGUID+63, 1, 0), -- spawn_group_entry
+(@SGGUID+15, @CGUID+247, 0, 0), -- Cabal Warlock (Middle)
+(@SGGUID+15, @CGUID+248, 1, 0), -- creature_spawn_entry (pet spawned to Warlock)
+(@SGGUID+15, @CGUID+90, 2, 0), -- spawn_group_entry (right side)
+(@SGGUID+15, @CGUID+91, 3, 0), -- spawn_group_entry (left side)
 
-(@SGGUID+10, @CGUID+53, 0, 0), -- spawn_group_entry
-
-(@SGGUID+11, @CGUID+67, 0, 0), -- spawn_group_entry
-
-(@SGGUID+12, @CGUID+125, 0, 0), -- Cabal Warlock
-
-(@SGGUID+13, @CGUID+133, 0, 0), -- Cabal Familiar
-(@SGGUID+13, @CGUID+135, 1, 0), -- Fel Guardhound
-
-(@SGGUID+14, @CGUID+124, 0, 0), -- Cabal Warlock
-
-(@SGGUID+15, @CGUID+128, 0, 0), -- Cabal Familiar
-(@SGGUID+15, @CGUID+129, 1, 0), -- Cabal Familiar
-(@SGGUID+15, @CGUID+130, 2, 0), -- Cabal Familiar
-(@SGGUID+15, @CGUID+131, 3, 0), -- Cabal Familiar
-(@SGGUID+15, @CGUID+132, 4, 0), -- Cabal Familiar
-
-(@SGGUID+16, @CGUID+249, 0, 0), -- Cabal Warlock (Middle)
-(@SGGUID+16, @CGUID+250, 1, 0), -- creature_spawn_entry (pet spawned to Warlock)
-(@SGGUID+16, @CGUID+58, 2, 0), -- spawn_group_entry (left side)
-(@SGGUID+16, @CGUID+59, 3, 0), -- spawn_group_entry (right side)
-
-(@SGGUID+17, @CGUID+286, 0, 0), -- Cabal Deathsworn (Middle)
-(@SGGUID+17, @CGUID+287, 1, 0), -- Cabal Acolyte (left side)
-(@SGGUID+17, @CGUID+288, 2, 0), -- Cabal Acolyte (right side)
-
-(@SGGUID+18, @CGUID+289, 0, 0), -- Cabal Acolyte (Middle)
-(@SGGUID+18, @CGUID+290, 1, 0), -- Cabal Deathsworn (left side)
-(@SGGUID+18, @CGUID+291, 2, 0), -- Cabal Deathsworn (right side)
-
-(@SGGUID+19, @CGUID+247, 0, 0), -- Cabal Warlock (Middle)
-(@SGGUID+19, @CGUID+248, 1, 0), -- creature_spawn_entry (pet spawned to Warlock)
-(@SGGUID+19, @CGUID+90, 2, 0), -- spawn_group_entry (right side)
-(@SGGUID+19, @CGUID+91, 3, 0), -- spawn_group_entry (left side)
-
-(@SGGUID+20, @CGUID+292, 0, 0), -- Cabal Deathsworn (Middle)
-(@SGGUID+20, @CGUID+293, 1, 0), -- Cabal Acolyte (right side)
-(@SGGUID+20, @CGUID+294, 2, 0), -- Cabal Acolyte (left side)
-
-(@SGGUID+21, @CGUID+295, 0, 0), -- Cabal Acolyte (Middle)
-(@SGGUID+21, @CGUID+296, 1, 0), -- Cabal Deathsworn (right side)
-(@SGGUID+21, @CGUID+297, 2, 0), -- Cabal Deathsworn (left side)
-
-(@SGGUID+22, @CGUID+154, 0, 0), -- Cabal Ritualist
-(@SGGUID+22, @CGUID+155, 1, 0), -- Cabal Ritualist
-(@SGGUID+22, @CGUID+156, 2, 0), -- Cabal Ritualist
-(@SGGUID+22, @CGUID+166, 3, 0), -- Cabal Ritualist (Heroic Only)
-
-(@SGGUID+23, @CGUID+158, 0, 0), -- Cabal Ritualist
-(@SGGUID+23, @CGUID+159, 1, 0), -- Cabal Ritualist
-(@SGGUID+23, @CGUID+160, 2, 0), -- Cabal Ritualist
-(@SGGUID+23, @CGUID+165, 3, 0), -- Cabal Ritualist (Heroic Only)
-
-(@SGGUID+24, @CGUID+150, 0, 0), -- Cabal Ritualist
-(@SGGUID+24, @CGUID+151, 1, 0), -- Cabal Ritualist
-(@SGGUID+24, @CGUID+152, 2, 0), -- Cabal Ritualist
-(@SGGUID+24, @CGUID+167, 3, 0), -- Cabal Ritualist (Heroic Only)
-
-(@SGGUID+25, @CGUID+147, 0, 0), -- Cabal Ritualist
-(@SGGUID+25, @CGUID+148, 1, 0), -- Cabal Ritualist
-(@SGGUID+25, @CGUID+149, 2, 0), -- Cabal Ritualist
-(@SGGUID+25, @CGUID+168, 3, 0), -- Cabal Ritualist (Heroic Only)
-
-(@SGGUID+26, @CGUID+153, 0, 0), -- Cabal Ritualist
-(@SGGUID+26, @CGUID+161, 1, 0), -- Cabal Ritualist
-(@SGGUID+26, @CGUID+162, 2, 0), -- Cabal Ritualist
-(@SGGUID+26, @CGUID+170, 3, 0), -- Cabal Ritualist (Heroic Only)
-
-(@SGGUID+27, @CGUID+157, 0, 0), -- Cabal Ritualist
-(@SGGUID+27, @CGUID+163, 1, 0), -- Cabal Ritualist
-(@SGGUID+27, @CGUID+164, 2, 0), -- Cabal Ritualist
-(@SGGUID+27, @CGUID+169, 3, 0), -- Cabal Ritualist (Heroic Only)
-
-(@SGGUID+28, @CGUID+298, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+299, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+300, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+301, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+302, -1, 0), -- Fel Overseer
-(@SGGUID+28, @CGUID+303, -1, 0), -- Fel Overseer
-
-(@SGGUID+29, @CGUID+304, -1, 0), -- Fel Overseer
-(@SGGUID+29, @CGUID+305, -1, 0), -- Fel Overseer
-(@SGGUID+29, @CGUID+306, -1, 0), -- Fel Overseer
-(@SGGUID+29, @CGUID+307, -1, 0), -- Fel Overseer
-
-(@SGGUID+30, @CGUID+37, 0, 0), -- spawn_group_entry
-(@SGGUID+30, @CGUID+39, 1, 0), -- spawn_group_entry
-
-(@SGGUID+31, @CGUID+127, 0, 0), -- Cabal Warlock
-(@SGGUID+31, @CGUID+136, 1, 0), -- spawn_group_entry
-(@SGGUID+31, @CGUID+74, 2, 0), -- Cabal Acolyte
-(@SGGUID+31, @CGUID+36, 3, 0), -- Cabal Cultist
-(@SGGUID+31, @CGUID+103, 4, 0), -- Cabal Shadowpriest
-(@SGGUID+31, @CGUID+93, 5, 0), -- Cabal Deathsworn
-
-(@SGGUID+32, @CGUID+242, -1, 0), -- Malicious Instructor
-
-(@SGGUID+33, @CGUID+241, -1, 0), -- Malicious Instructor
-
-(@SGGUID+34, @CGUID+92, 0, 0), -- Cabal Deathsworn (front left)
-(@SGGUID+34, @CGUID+30, 1, 0), -- Cabal Cultist (front right)
-(@SGGUID+34, @CGUID+69, 2, 0), -- Cabal Acolyte (back left)
-(@SGGUID+34, @CGUID+31, 3, 0), -- Cabal Cultist (back right)
-
-(@SGGUID+35, @CGUID+308, 0, 0), -- creature_spawn_entry (front left)
-(@SGGUID+35, @CGUID+309, 1, 0), -- spawn_group_entry (front right)
-(@SGGUID+35, @CGUID+310, 2, 0), -- Cabal Shadow Priest (back left)
-(@SGGUID+35, @CGUID+311, 3, 0), -- Cabal Acolyte (back right)
-
-(@SGGUID+36, @CGUID+95, 0, 0), -- Cabal Deathsworn
-(@SGGUID+36, @CGUID+72, 1, 0), -- Cabal Acolyte (front middle)
-(@SGGUID+36, @CGUID+34, 2, 0), -- Cabal Cultist (front right)
-(@SGGUID+36, @CGUID+71, 3, 0), -- Cabal Acolyte (back left)
-(@SGGUID+36, @CGUID+102, 4, 0), -- Cabal Shadow Priest (back right)
-
-(@SGGUID+37, @CGUID+312, 0, 0), -- Cabal Deathsworn
-(@SGGUID+37, @CGUID+313, 1, 0), -- Cabal Cultist (front middle)
-(@SGGUID+37, @CGUID+314, 2, 0), -- Cabal Shadow Priest (front right)
-(@SGGUID+37, @CGUID+315, 3, 0), -- creature_spawn_entry (back left)
-(@SGGUID+37, @CGUID+316, 4, 0), -- spawn_group_entry (back right)
-
-(@SGGUID+38, @CGUID+94, 0, 0), -- Cabal Deathsworn
-(@SGGUID+38, @CGUID+33, 1, 0), -- Cabal Acolyte (front middle)
-(@SGGUID+38, @CGUID+104, 2, 0), -- Cabal Cultist (front right)
-(@SGGUID+38, @CGUID+32, 3, 0), -- Cabal Shadow Priest (back left)
-(@SGGUID+38, @CGUID+70, 4, 0), -- Cabal Acolyte (back right)
-
-(@SGGUID+39, @CGUID+317, 0, 0), -- Cabal Deathsworn
-(@SGGUID+39, @CGUID+318, 1, 0), -- Cabal Cultist (front middle)
-(@SGGUID+39, @CGUID+319, 2, 0), -- Cabal Shadow Priest (front right)
-(@SGGUID+39, @CGUID+320, 3, 0), -- creature_spawn_entry (back left)
-(@SGGUID+39, @CGUID+321, 4, 0), -- spawn_group_entry (back right)
-
-(@SGGUID+40, @CGUID+126, 0, 0), -- Cabal Warlock
-(@SGGUID+40, @CGUID+134, 1, 0), -- spawn_group_entry
-(@SGGUID+40, @CGUID+73, 2, 0), -- Cabal Acolyte
-(@SGGUID+40, @CGUID+35, 3, 0), -- Cabal Cultist
-(@SGGUID+40, @CGUID+105, 4, 0), -- Cabal Shadowpriest
-(@SGGUID+40, @CGUID+96, 5, 0), -- Cabal Deathsworn
-
-(@SGGUID+41, @CGUID+38, 0, 0), -- spawn_group_entry
-(@SGGUID+41, @CGUID+97, 1, 0), -- spawn_group_entry
-
-(@SGGUID+42, @CGUID+240, 0, 0), -- spawn_group_entry
-
-(@SGGUID+43, @CGUID+137, 0, 0), -- Blackheart the Inciter
-
-(@SGGUID+44, @CGUID+171, 0, 0), -- spawn_group_entry
-
-(@SGGUID+45, @CGUID+176, -1, 0), -- Tortured Skeleton
-(@SGGUID+45, @CGUID+177, -1, 0), -- Tortured Skeleton
-(@SGGUID+45, @CGUID+178, -1, 0), -- Tortured Skeleton
-(@SGGUID+45, @CGUID+179, -1, 0), -- Tortured Skeleton
-
-(@SGGUID+46, @CGUID+181, -1, 0), -- Tortured Skeleton
-(@SGGUID+46, @CGUID+182, -1, 0), -- Tortured Skeleton
-(@SGGUID+46, @CGUID+183, -1, 0), -- Tortured Skeleton
-(@SGGUID+46, @CGUID+184, -1, 0), -- Tortured Skeleton
-
-(@SGGUID+47, @CGUID+40, 0, 0), -- Cabal Acolyte
-(@SGGUID+47, @CGUID+41, 1, 0), -- Cabal Acolyte
-
-(@SGGUID+48, @CGUID+83, 0, 0), -- Cabal Cultist
-(@SGGUID+48, @CGUID+84, 1, 0), -- spawn_group_entry
-
-(@SGGUID+49, @CGUID+75, 0, 0), -- spawn_group_entry
-(@SGGUID+49, @CGUID+98, 1, 0), -- Cabal Cultist
-(@SGGUID+49, @CGUID+99, 2, 0), -- Cabal Cultist
-
-(@SGGUID+50, @CGUID+114, 0, 0), -- Cabal Acolyte
-(@SGGUID+50, @CGUID+117, 1, 0), -- Cabal Deathsworn
-(@SGGUID+50, @CGUID+118, 2, 0), -- Cabal Deathsworn
-
-(@SGGUID+52, @CGUID+29, 0, 0), -- Cabal Fanatic
-(@SGGUID+52, @CGUID+234, 1, 0), -- Cabal Fanatic
-(@SGGUID+52, @CGUID+106, 2, 0), -- Cabal Zealot
-(@SGGUID+52, @CGUID+107, 3, 0), -- Cabal Zealot
-
-(@SGGUID+53, @CGUID+322, 0, 0), -- Cabal Cultist
-(@SGGUID+53, @CGUID+323, 1, 0), -- Cabal Fanatic
-(@SGGUID+53, @CGUID+324, 2, 0), -- spawn_group_entry
-(@SGGUID+53, @CGUID+325, 3, 0), -- creature_spawn_entry
-
-(@SGGUID+54, @CGUID+194, -1, 0), -- Tortured Skeleton
-(@SGGUID+54, @CGUID+195, -1, 0), -- Tortured Skeleton
-(@SGGUID+54, @CGUID+196, -1, 0), -- Tortured Skeleton
-(@SGGUID+54, @CGUID+197, -1, 0), -- Tortured Skeleton
-(@SGGUID+54, @CGUID+198, -1, 0), -- Tortured Skeleton
-(@SGGUID+54, @CGUID+199, -1, 0), -- Tortured Skeleton
-(@SGGUID+54, @CGUID+200, -1, 0), -- Tortured Skeleton
-(@SGGUID+54, @CGUID+201, -1, 0), -- Tortured Skeleton
-(@SGGUID+54, @CGUID+202, -1, 0), -- Tortured Skeleton
-(@SGGUID+54, @CGUID+203, -1, 0), -- Tortured Skeleton
-
-(@SGGUID+55, @CGUID+186, -1, 0), -- Tortured Skeleton
-(@SGGUID+55, @CGUID+187, -1, 0), -- Tortured Skeleton
-(@SGGUID+55, @CGUID+188, -1, 0), -- Tortured Skeleton
-(@SGGUID+55, @CGUID+189, -1, 0), -- Tortured Skeleton
-(@SGGUID+55, @CGUID+190, -1, 0), -- Tortured Skeleton
-(@SGGUID+55, @CGUID+191, -1, 0), -- Tortured Skeleton
-(@SGGUID+55, @CGUID+192, -1, 0), -- Tortured Skeleton
-(@SGGUID+55, @CGUID+193, -1, 0), -- Tortured Skeleton
-(@SGGUID+55, @CGUID+205, -1, 0), -- Tortured Skeleton
-(@SGGUID+55, @CGUID+206, -1, 0), -- Tortured Skeleton
-
-(@SGGUID+56, @CGUID+208, -1, 0), -- Tortured Skeleton
-(@SGGUID+56, @CGUID+209, -1, 0), -- Tortured Skeleton
-(@SGGUID+56, @CGUID+210, -1, 0), -- Tortured Skeleton
-(@SGGUID+56, @CGUID+211, -1, 0), -- Tortured Skeleton
-(@SGGUID+56, @CGUID+212, -1, 0), -- Tortured Skeleton
-(@SGGUID+56, @CGUID+213, -1, 0), -- Tortured Skeleton
-(@SGGUID+56, @CGUID+214, -1, 0), -- Tortured Skeleton
-(@SGGUID+56, @CGUID+215, -1, 0), -- Tortured Skeleton
-(@SGGUID+56, @CGUID+216, -1, 0), -- Tortured Skeleton
-(@SGGUID+56, @CGUID+217, -1, 0), -- Tortured Skeleton
-
-
-(@SGGUID+57, @CGUID+218, -1, 0), -- Tortured Skeleton
-(@SGGUID+57, @CGUID+219, -1, 0), -- Tortured Skeleton
-(@SGGUID+57, @CGUID+220, -1, 0), -- Tortured Skeleton
-(@SGGUID+57, @CGUID+221, -1, 0), -- Tortured Skeleton
-(@SGGUID+57, @CGUID+222, -1, 0), -- Tortured Skeleton
-(@SGGUID+57, @CGUID+223, -1, 0), -- Tortured Skeleton
-(@SGGUID+57, @CGUID+224, -1, 0), -- Tortured Skeleton
-(@SGGUID+57, @CGUID+225, -1, 0), -- Tortured Skeleton
-(@SGGUID+57, @CGUID+226, -1, 0), -- Tortured Skeleton
-(@SGGUID+57, @CGUID+227, -1, 0), -- Tortured Skeleton
-
-(@SGGUID+58, @CGUID+108, 0, 0), -- Cabal Fanatic
-(@SGGUID+58, @CGUID+42, 1, 0), -- Cabal Fanatic
-(@SGGUID+58, @CGUID+111, 2, 0), -- Cabal Zealot
-(@SGGUID+58, @CGUID+235, 3, 0), -- Cabal Zealot
-
-(@SGGUID+59, @CGUID+326, 0, 0), -- Cabal Cultist
-(@SGGUID+59, @CGUID+327, 1, 0), -- Cabal Fanatic
-(@SGGUID+59, @CGUID+328, 2, 0), -- spawn_group_entry
-(@SGGUID+59, @CGUID+329, 3, 0), -- creature_spawn_entry
-
-(@SGGUID+60, @CGUID+109, 0, 0), -- Cabal Zealot
-(@SGGUID+60, @CGUID+110, 1, 0), -- Cabal Fanatic
-(@SGGUID+60, @CGUID+236, 2, 0), -- Cabal Fanatic
-(@SGGUID+60, @CGUID+237, 3, 0), -- Cabal Zealot
-
-(@SGGUID+61, @CGUID+330, 0, 0), -- Cabal Cultist
-(@SGGUID+61, @CGUID+331, 1, 0), -- Cabal Fanatic
-(@SGGUID+61, @CGUID+332, 2, 0), -- Cabal Cultist
-(@SGGUID+61, @CGUID+333, 3, 0), -- Cabal Zealot
-
-(@SGGUID+62, @CGUID+43, 0, 0), -- Cabal Fanatic
-(@SGGUID+62, @CGUID+44, 1, 0), -- Cabal Fanatic
-(@SGGUID+62, @CGUID+233, 2, 0), -- Cabal Zealot
-(@SGGUID+62, @CGUID+238, 3, 0), -- Cabal Zealot
-
-(@SGGUID+63, @CGUID+334, 0, 0), -- Cabal Cultist
-(@SGGUID+63, @CGUID+335, 1, 0), -- Cabal Fanatic
-(@SGGUID+63, @CGUID+336, 2, 0), -- spawn_group_entry
-(@SGGUID+63, @CGUID+337, 3, 0), -- creature_spawn_entry
-
-(@SGGUID+64, @CGUID+45, 0, 0), -- Cabal Executioner
-(@SGGUID+64, @CGUID+47, 1, 0), -- Cabal Executioner
-
-(@SGGUID+65, @CGUID+46, 0, 0), -- Cabal Executioner
-(@SGGUID+65, @CGUID+112, 1, 0), -- Cabal Spellbinder
-(@SGGUID+65, @CGUID+78, 2, 0), -- Cabal Summoner
-(@SGGUID+65, @CGUID+48, 3, 0), -- Cabal Executioner
-
-(@SGGUID+66, @CGUID+49, 0, 0), -- Cabal Executioner
-(@SGGUID+66, @CGUID+113, 1, 0), -- Cabal Spellbinder
-(@SGGUID+66, @CGUID+80, 2, 0), -- Cabal Summoner
-(@SGGUID+66, @CGUID+50, 3, 0), -- Cabal Executioner
-
-(@SGGUID+67, @CGUID+51, 0, 0), -- Cabal Executioner
-(@SGGUID+67, @CGUID+115, 1, 0), -- Cabal Spellbinder
-(@SGGUID+67, @CGUID+81, 2, 0), -- Cabal Summoner
-(@SGGUID+67, @CGUID+52, 3, 0), -- Cabal Executioner
-
-(@SGGUID+68, @CGUID+119, 0, 0), -- Cabal Spellbinder
-(@SGGUID+68, @CGUID+120, 1, 0), -- Cabal Spellbinder
-(@SGGUID+68, @CGUID+121, 2, 0), -- Cabal Spellbinder
-
-(@SGGUID+69, @CGUID+76, 0, 0), -- Cabal Spellbinder
-(@SGGUID+69, @CGUID+77, 1, 0), -- Cabal Spellbinder
-
-(@SGGUID+70, @CGUID+79, 0, 0), -- spawn_group_entry
-(@SGGUID+71, @CGUID+82, 0, 0), -- spawn_group_entry
-(@SGGUID+72, @CGUID+116, 0, 0), -- spawn_group_entry
-(@SGGUID+73, @CGUID+122, 0, 0), -- spawn_group_entry
-(@SGGUID+74, @CGUID+123, 0, 0), -- spawn_group_entry
+(@SGGUID+16, @CGUID+154, 0, 0), -- Cabal Ritualist
+(@SGGUID+16, @CGUID+155, 1, 0), -- Cabal Ritualist
+(@SGGUID+16, @CGUID+156, 2, 0), -- Cabal Ritualist
+(@SGGUID+16, @CGUID+166, 3, 0), -- Cabal Ritualist (Heroic Only)
+
+(@SGGUID+17, @CGUID+158, 0, 0), -- Cabal Ritualist
+(@SGGUID+17, @CGUID+159, 1, 0), -- Cabal Ritualist
+(@SGGUID+17, @CGUID+160, 2, 0), -- Cabal Ritualist
+(@SGGUID+17, @CGUID+165, 3, 0), -- Cabal Ritualist (Heroic Only)
+
+(@SGGUID+18, @CGUID+150, 0, 0), -- Cabal Ritualist
+(@SGGUID+18, @CGUID+151, 1, 0), -- Cabal Ritualist
+(@SGGUID+18, @CGUID+152, 2, 0), -- Cabal Ritualist
+(@SGGUID+18, @CGUID+167, 3, 0), -- Cabal Ritualist (Heroic Only)
+
+(@SGGUID+19, @CGUID+147, 0, 0), -- Cabal Ritualist
+(@SGGUID+19, @CGUID+148, 1, 0), -- Cabal Ritualist
+(@SGGUID+19, @CGUID+149, 2, 0), -- Cabal Ritualist
+(@SGGUID+19, @CGUID+168, 3, 0), -- Cabal Ritualist (Heroic Only)
+
+(@SGGUID+20, @CGUID+153, 0, 0), -- Cabal Ritualist
+(@SGGUID+20, @CGUID+161, 1, 0), -- Cabal Ritualist
+(@SGGUID+20, @CGUID+162, 2, 0), -- Cabal Ritualist
+(@SGGUID+20, @CGUID+170, 3, 0), -- Cabal Ritualist (Heroic Only)
+
+(@SGGUID+21, @CGUID+157, 0, 0), -- Cabal Ritualist
+(@SGGUID+21, @CGUID+163, 1, 0), -- Cabal Ritualist
+(@SGGUID+21, @CGUID+164, 2, 0), -- Cabal Ritualist
+(@SGGUID+21, @CGUID+169, 3, 0), -- Cabal Ritualist (Heroic Only)
+
+(@SGGUID+22, @CGUID+298, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+299, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+300, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+301, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+302, -1, 0), -- Fel Overseer
+(@SGGUID+22, @CGUID+303, -1, 0), -- Fel Overseer
+
+(@SGGUID+23, @CGUID+304, -1, 0), -- Fel Overseer
+(@SGGUID+23, @CGUID+305, -1, 0), -- Fel Overseer
+(@SGGUID+23, @CGUID+306, -1, 0), -- Fel Overseer
+(@SGGUID+23, @CGUID+307, -1, 0), -- Fel Overseer
+
+(@SGGUID+24, @CGUID+37, 0, 0), -- spawn_group_squad
+(@SGGUID+24, @CGUID+39, 1, 0), -- spawn_group_squad
+
+(@SGGUID+25, @CGUID+127, 0, 0), -- Cabal Warlock
+(@SGGUID+25, @CGUID+136, 1, 0), -- spawn_group_entry
+(@SGGUID+25, @CGUID+74, 2, 0), -- Cabal Acolyte
+(@SGGUID+25, @CGUID+36, 3, 0), -- Cabal Cultist
+(@SGGUID+25, @CGUID+103, 4, 0), -- Cabal Shadowpriest
+(@SGGUID+25, @CGUID+93, 5, 0), -- Cabal Deathsworn
+
+(@SGGUID+26, @CGUID+242, -1, 0), -- Malicious Instructor
+
+(@SGGUID+27, @CGUID+241, -1, 0), -- Malicious Instructor
+
+(@SGGUID+28, @CGUID+92, 0, 0), -- spawn_group_squad (front left)
+(@SGGUID+28, @CGUID+30, 1, 0), -- spawn_group_squad (front right)
+(@SGGUID+28, @CGUID+69, 2, 0), -- spawn_group_squad (back left)
+(@SGGUID+28, @CGUID+31, 3, 0), -- spawn_group_squad (back right)
+
+(@SGGUID+29, @CGUID+95, 0, 0), -- spawn_group_squad (front left)
+(@SGGUID+29, @CGUID+72, 1, 0), -- spawn_group_squad (front middle)
+(@SGGUID+29, @CGUID+34, 2, 0), -- spawn_group_squad (front right)
+(@SGGUID+29, @CGUID+71, 3, 0), -- spawn_group_squad (back left)
+(@SGGUID+29, @CGUID+102, 4, 0), -- spawn_group_squad (back right)
+
+(@SGGUID+30, @CGUID+94, 0, 0), -- spawn_group_squad (front left)
+(@SGGUID+30, @CGUID+33, 1, 0), -- spawn_group_squad (front middle)
+(@SGGUID+30, @CGUID+104, 2, 0), -- spawn_group_squad (front right)
+(@SGGUID+30, @CGUID+32, 3, 0), -- spawn_group_squad (back left)
+(@SGGUID+30, @CGUID+70, 4, 0), -- spawn_group_squad (back right)
+
+(@SGGUID+31, @CGUID+126, 0, 0), -- Cabal Warlock
+(@SGGUID+31, @CGUID+134, 1, 0), -- spawn_group_entry
+(@SGGUID+31, @CGUID+73, 2, 0), -- Cabal Acolyte
+(@SGGUID+31, @CGUID+35, 3, 0), -- Cabal Cultist
+(@SGGUID+31, @CGUID+105, 4, 0), -- Cabal Shadowpriest
+(@SGGUID+31, @CGUID+96, 5, 0), -- Cabal Deathsworn
+
+(@SGGUID+32, @CGUID+38, 0, 0), -- spawn_group_squad
+(@SGGUID+32, @CGUID+97, 1, 0), -- spawn_group_squad
+
+(@SGGUID+33, @CGUID+240, 0, 0), -- spawn_group_entry
+
+(@SGGUID+34, @CGUID+137, 0, 0), -- Blackheart the Inciter
+
+(@SGGUID+35, @CGUID+171, 0, 0), -- spawn_group_entry
+
+(@SGGUID+36, @CGUID+176, -1, 0), -- Tortured Skeleton
+(@SGGUID+36, @CGUID+177, -1, 0), -- Tortured Skeleton
+(@SGGUID+36, @CGUID+178, -1, 0), -- Tortured Skeleton
+(@SGGUID+36, @CGUID+179, -1, 0), -- Tortured Skeleton
+
+(@SGGUID+37, @CGUID+181, -1, 0), -- Tortured Skeleton
+(@SGGUID+37, @CGUID+182, -1, 0), -- Tortured Skeleton
+(@SGGUID+37, @CGUID+183, -1, 0), -- Tortured Skeleton
+(@SGGUID+37, @CGUID+184, -1, 0), -- Tortured Skeleton
+
+(@SGGUID+38, @CGUID+40, 0, 0), -- spawn_group_squad
+(@SGGUID+38, @CGUID+41, 1, 0), -- spawn_group_squad
+
+(@SGGUID+39, @CGUID+75, 0, 0), -- spawn_group_squad
+(@SGGUID+39, @CGUID+98, 1, 0), -- spawn_group_squad
+(@SGGUID+39, @CGUID+99, 2, 0), -- spawn_group_squad
+
+(@SGGUID+40, @CGUID+29, 0, 0), -- Cabal Fanatic
+(@SGGUID+40, @CGUID+234, 1, 0), -- Cabal Fanatic
+(@SGGUID+40, @CGUID+106, 2, 0), -- Cabal Zealot
+(@SGGUID+40, @CGUID+107, 3, 0), -- Cabal Zealot
+
+(@SGGUID+41, @CGUID+194, -1, 0), -- Tortured Skeleton
+(@SGGUID+41, @CGUID+195, -1, 0), -- Tortured Skeleton
+(@SGGUID+41, @CGUID+196, -1, 0), -- Tortured Skeleton
+(@SGGUID+41, @CGUID+197, -1, 0), -- Tortured Skeleton
+(@SGGUID+41, @CGUID+198, -1, 0), -- Tortured Skeleton
+(@SGGUID+41, @CGUID+199, -1, 0), -- Tortured Skeleton
+(@SGGUID+41, @CGUID+200, -1, 0), -- Tortured Skeleton
+(@SGGUID+41, @CGUID+201, -1, 0), -- Tortured Skeleton
+(@SGGUID+41, @CGUID+202, -1, 0), -- Tortured Skeleton
+(@SGGUID+41, @CGUID+203, -1, 0), -- Tortured Skeleton
+
+(@SGGUID+42, @CGUID+186, -1, 0), -- Tortured Skeleton
+(@SGGUID+42, @CGUID+187, -1, 0), -- Tortured Skeleton
+(@SGGUID+42, @CGUID+188, -1, 0), -- Tortured Skeleton
+(@SGGUID+42, @CGUID+189, -1, 0), -- Tortured Skeleton
+(@SGGUID+42, @CGUID+190, -1, 0), -- Tortured Skeleton
+(@SGGUID+42, @CGUID+191, -1, 0), -- Tortured Skeleton
+(@SGGUID+42, @CGUID+192, -1, 0), -- Tortured Skeleton
+(@SGGUID+42, @CGUID+193, -1, 0), -- Tortured Skeleton
+(@SGGUID+42, @CGUID+205, -1, 0), -- Tortured Skeleton
+(@SGGUID+42, @CGUID+206, -1, 0), -- Tortured Skeleton
+
+(@SGGUID+43, @CGUID+208, -1, 0), -- Tortured Skeleton
+(@SGGUID+43, @CGUID+209, -1, 0), -- Tortured Skeleton
+(@SGGUID+43, @CGUID+210, -1, 0), -- Tortured Skeleton
+(@SGGUID+43, @CGUID+211, -1, 0), -- Tortured Skeleton
+(@SGGUID+43, @CGUID+212, -1, 0), -- Tortured Skeleton
+(@SGGUID+43, @CGUID+213, -1, 0), -- Tortured Skeleton
+(@SGGUID+43, @CGUID+214, -1, 0), -- Tortured Skeleton
+(@SGGUID+43, @CGUID+215, -1, 0), -- Tortured Skeleton
+(@SGGUID+43, @CGUID+216, -1, 0), -- Tortured Skeleton
+(@SGGUID+43, @CGUID+217, -1, 0), -- Tortured Skeleton
+
+
+(@SGGUID+44, @CGUID+218, -1, 0), -- Tortured Skeleton
+(@SGGUID+44, @CGUID+219, -1, 0), -- Tortured Skeleton
+(@SGGUID+44, @CGUID+220, -1, 0), -- Tortured Skeleton
+(@SGGUID+44, @CGUID+221, -1, 0), -- Tortured Skeleton
+(@SGGUID+44, @CGUID+222, -1, 0), -- Tortured Skeleton
+(@SGGUID+44, @CGUID+223, -1, 0), -- Tortured Skeleton
+(@SGGUID+44, @CGUID+224, -1, 0), -- Tortured Skeleton
+(@SGGUID+44, @CGUID+225, -1, 0), -- Tortured Skeleton
+(@SGGUID+44, @CGUID+226, -1, 0), -- Tortured Skeleton
+(@SGGUID+44, @CGUID+227, -1, 0), -- Tortured Skeleton
+
+(@SGGUID+45, @CGUID+108, 0, 0), -- spawn_group_squad
+(@SGGUID+45, @CGUID+42, 1, 0), -- spawn_group_squad
+(@SGGUID+45, @CGUID+111, 2, 0), -- spawn_group_squad
+(@SGGUID+45, @CGUID+235, 3, 0), -- spawn_group_squad
+
+(@SGGUID+46, @CGUID+109, 0, 0), -- spawn_group_squad
+(@SGGUID+46, @CGUID+110, 1, 0), -- spawn_group_squad
+(@SGGUID+46, @CGUID+236, 2, 0), -- spawn_group_squad
+(@SGGUID+46, @CGUID+237, 3, 0), -- spawn_group_squad
+
+(@SGGUID+47, @CGUID+43, 0, 0), -- spawn_group_squad
+(@SGGUID+47, @CGUID+44, 1, 0), -- spawn_group_squad
+(@SGGUID+47, @CGUID+233, 2, 0), -- spawn_group_squad
+(@SGGUID+47, @CGUID+238, 3, 0), -- spawn_group_squad
+
+(@SGGUID+48, @CGUID+45, 0, 0), -- Cabal Executioner
+(@SGGUID+48, @CGUID+47, 1, 0), -- Cabal Executioner
+
+(@SGGUID+49, @CGUID+46, 0, 0), -- Cabal Executioner
+(@SGGUID+49, @CGUID+112, 1, 0), -- Cabal Spellbinder
+(@SGGUID+49, @CGUID+78, 2, 0), -- Cabal Summoner
+(@SGGUID+49, @CGUID+48, 3, 0), -- Cabal Executioner
+
+(@SGGUID+50, @CGUID+49, 0, 0), -- Cabal Executioner
+(@SGGUID+50, @CGUID+113, 1, 0), -- Cabal Spellbinder
+(@SGGUID+50, @CGUID+80, 2, 0), -- Cabal Summoner
+(@SGGUID+50, @CGUID+50, 3, 0), -- Cabal Executioner
+
+(@SGGUID+51, @CGUID+51, 0, 0), -- Cabal Executioner
+(@SGGUID+51, @CGUID+115, 1, 0), -- Cabal Spellbinder
+(@SGGUID+51, @CGUID+81, 2, 0), -- Cabal Summoner
+(@SGGUID+51, @CGUID+52, 3, 0), -- Cabal Executioner
+
+(@SGGUID+52, @CGUID+119, 0, 0), -- Cabal Spellbinder
+(@SGGUID+52, @CGUID+120, 1, 0), -- Cabal Spellbinder
+(@SGGUID+52, @CGUID+121, 2, 0), -- Cabal Spellbinder
+
+(@SGGUID+53, @CGUID+76, 0, 0), -- Cabal Spellbinder
+(@SGGUID+53, @CGUID+77, 1, 0), -- Cabal Spellbinder
+
+(@SGGUID+54, @CGUID+79, 0, 0), -- spawn_group_entry
+(@SGGUID+55, @CGUID+82, 0, 0), -- spawn_group_entry
+(@SGGUID+56, @CGUID+116, 0, 0), -- spawn_group_entry
+(@SGGUID+57, @CGUID+122, 0, 0), -- spawn_group_entry
+(@SGGUID+58, @CGUID+123, 0, 0), -- spawn_group_entry
 -- Cabal Assasins
-(@SGGUID+75, @CGUID+100, 0, 0), -- Cabal Assasin
-(@SGGUID+76, @CGUID+101, 0, 0), -- Cabal Assasin
+(@SGGUID+59, @CGUID+100, 0, 0), -- Cabal Assasin
+(@SGGUID+60, @CGUID+101, 0, 0), -- Cabal Assasin
 -- Skeleton Group 1
-(@SGGUID+77, @CGUID+229, -1, 0), -- Tortured Skeletion
-(@SGGUID+77, @CGUID+175, -1, 0), -- Tortured Skeletion
-(@SGGUID+77, @CGUID+276, -1, 0), -- Tortured Skeletion
-(@SGGUID+77, @CGUID+270, -1, 0), -- Tortured Skeletion
+(@SGGUID+61, @CGUID+229, -1, 0), -- Tortured Skeletion
+(@SGGUID+61, @CGUID+175, -1, 0), -- Tortured Skeletion
+(@SGGUID+61, @CGUID+276, -1, 0), -- Tortured Skeletion
+(@SGGUID+61, @CGUID+270, -1, 0), -- Tortured Skeletion
 -- Skeleton Group 2
-(@SGGUID+78, @CGUID+277, -1, 0), -- Tortured Skeletion
-(@SGGUID+78, @CGUID+271, -1, 0), -- Tortured Skeletion 
-(@SGGUID+78, @CGUID+230,-1, 0), -- Tortured Skeletion 
-(@SGGUID+78, @CGUID+180, -1, 0), -- Tortured Skeletion 
+(@SGGUID+62, @CGUID+277, -1, 0), -- Tortured Skeletion
+(@SGGUID+62, @CGUID+271, -1, 0), -- Tortured Skeletion 
+(@SGGUID+62, @CGUID+230,-1, 0), -- Tortured Skeletion 
+(@SGGUID+62, @CGUID+180, -1, 0), -- Tortured Skeletion 
 -- Skeleton Group 2
-(@SGGUID+79, @CGUID+231, -1, 0), -- Tortured Skeletion  
-(@SGGUID+79, @CGUID+274, -1, 0), -- Tortured Skeletion 
+(@SGGUID+63, @CGUID+231, -1, 0), -- Tortured Skeletion  
+(@SGGUID+63, @CGUID+274, -1, 0), -- Tortured Skeletion 
 -- Skeleton Group 3
-(@SGGUID+80, @CGUID+185, -1, 0), -- Tortured Skeletion
-(@SGGUID+80, @CGUID+278, -1, 0), -- Tortured Skeletion 
-(@SGGUID+80, @CGUID+273, -1, 0), -- Tortured Skeletion 
-(@SGGUID+80, @CGUID+232, -1, 0), -- Tortured Skeletion 
+(@SGGUID+64, @CGUID+185, -1, 0), -- Tortured Skeletion
+(@SGGUID+64, @CGUID+278, -1, 0), -- Tortured Skeletion 
+(@SGGUID+64, @CGUID+273, -1, 0), -- Tortured Skeletion 
+(@SGGUID+64, @CGUID+232, -1, 0), -- Tortured Skeletion 
 -- Skeleton Group 4
-(@SGGUID+81, @CGUID+279, -1, 0), -- Tortured Skeletion 
-(@SGGUID+81, @CGUID+272, -1, 0), -- Tortured Skeletion 
-(@SGGUID+81, @CGUID+275, -1, 0); -- Tortured Skeletion
+(@SGGUID+65, @CGUID+279, -1, 0), -- Tortured Skeletion 
+(@SGGUID+65, @CGUID+272, -1, 0), -- Tortured Skeletion 
+(@SGGUID+65, @CGUID+275, -1, 0); -- Tortured Skeletion
 
 INSERT INTO `spawn_group_linked_group` (`Id`, `LinkedId`) VALUES
+(@SGGUID+10, @SGGUID+11),
+(@SGGUID+11, @SGGUID+10),
 (@SGGUID+12, @SGGUID+13),
 (@SGGUID+13, @SGGUID+12),
-(@SGGUID+14, @SGGUID+15),
-(@SGGUID+15, @SGGUID+14),
 -- Blackheart the Inciter aggro linking
-(@SGGUID+43, @SGGUID+30),
-(@SGGUID+43, @SGGUID+31),
-(@SGGUID+43, @SGGUID+32),
-(@SGGUID+43, @SGGUID+33),
-(@SGGUID+43, @SGGUID+34),
-(@SGGUID+43, @SGGUID+36),
-(@SGGUID+43, @SGGUID+38),
-(@SGGUID+43, @SGGUID+40),
-(@SGGUID+43, @SGGUID+41),
-(@SGGUID+43, @SGGUID+42);
+(@SGGUID+34, @SGGUID+24),
+(@SGGUID+34, @SGGUID+25),
+(@SGGUID+34, @SGGUID+26),
+(@SGGUID+34, @SGGUID+27),
+(@SGGUID+34, @SGGUID+28),
+(@SGGUID+34, @SGGUID+29),
+(@SGGUID+34, @SGGUID+30),
+(@SGGUID+34, @SGGUID+31),
+(@SGGUID+34, @SGGUID+32),
+(@SGGUID+34, @SGGUID+33);
+
+INSERT INTO `spawn_group_squad` (`Id`, `SquadId`, `Guid`, `Entry`) VALUES 
+(@SGGUID+1, 1, @CGUID+89, 18633), -- Cabal Acolyte
+(@SGGUID+1, 1, @CGUID+61, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+1, 1, @CGUID+66, 18635), -- Cabal Deathsworn (right)
+
+(@SGGUID+1, 2, @CGUID+89, 18635), -- Cabal Deathsworn
+(@SGGUID+1, 2, @CGUID+61, 18633), -- Cabal Acolyte (left)
+(@SGGUID+1, 2, @CGUID+66, 18633), -- Cabal Acolyte (right)
+
+(@SGGUID+5, 1, @CGUID+86, 18633), -- Cabal Acolyte
+(@SGGUID+5, 1, @CGUID+55, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+5, 1, @CGUID+54, 18635), -- Cabal Deathsworn (right)
+
+(@SGGUID+5, 2, @CGUID+86, 18635), -- Cabal Deathsworn
+(@SGGUID+5, 2, @CGUID+55, 18633), -- Cabal Acolyte (left)
+(@SGGUID+5, 2, @CGUID+54, 18633), -- Cabal Acolyte (right)
+
+(@SGGUID+14, 1, @CGUID+249, 18633), -- Cabal Acolyte
+(@SGGUID+14, 1, @CGUID+58, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+14, 1, @CGUID+59, 18635), -- Cabal Deathsworn (right)
+
+(@SGGUID+14, 2, @CGUID+249, 18635), -- Cabal Deathsworn
+(@SGGUID+14, 2, @CGUID+58, 18633), -- Cabal Acolyte (left)
+(@SGGUID+14, 2, @CGUID+59, 18633), -- Cabal Acolyte (right)
+
+(@SGGUID+14, 3, @CGUID+249, 18640), -- Cabal Warlock
+(@SGGUID+14, 3, @CGUID+250, 18641), -- Cabal Familiar (left)
+(@SGGUID+14, 3, @CGUID+58, 18633), -- Cabal Acolyte (left)
+(@SGGUID+14, 3, @CGUID+59, 18635), -- Cabal Deathsworn (right)
+
+(@SGGUID+14, 4, @CGUID+249, 18640), -- Cabal Warlock
+(@SGGUID+14, 4, @CGUID+250, 18642), -- Fel Guardhound (left)
+(@SGGUID+14, 4, @CGUID+58, 18633), -- Cabal Acolyte (left)
+(@SGGUID+14, 4, @CGUID+59, 18635), -- Cabal Deathsworn (right)
+
+(@SGGUID+15, 1, @CGUID+247, 18633), -- Cabal Acolyte
+(@SGGUID+15, 1, @CGUID+91, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+15, 1, @CGUID+90, 18635), -- Cabal Deathsworn (right)
+
+(@SGGUID+15, 2, @CGUID+247, 18635), -- Cabal Deathsworn
+(@SGGUID+15, 2, @CGUID+91, 18633), -- Cabal Acolyte (left)
+(@SGGUID+15, 2, @CGUID+90, 18633), -- Cabal Acolyte (right)
+
+(@SGGUID+15, 3, @CGUID+247, 18640), -- Cabal Warlock
+(@SGGUID+15, 3, @CGUID+248, 18641), -- Cabal Familiar (left)
+(@SGGUID+15, 3, @CGUID+91, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+15, 3, @CGUID+90, 18633), -- Cabal Acolyte (right)
+
+(@SGGUID+15, 4, @CGUID+247, 18640), -- Cabal Warlock
+(@SGGUID+15, 4, @CGUID+248, 18642), -- Fel Guardhound (left)
+(@SGGUID+15, 4, @CGUID+91, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+15, 4, @CGUID+90, 18633), -- Cabal Acolyte (right)
+
+(@SGGUID+24, 1, @CGUID+37, 18631), -- Cabal Cultist (right)
+(@SGGUID+24, 1, @CGUID+39, 18631), -- Cabal Cultist (left)
+
+(@SGGUID+24, 2, @CGUID+37, 18631), -- Cabal Cultist (right)
+(@SGGUID+24, 2, @CGUID+39, 18633), -- Cabal Acolyte (left)
+
+(@SGGUID+24, 3, @CGUID+37, 18635), -- Cabal Deathsworn (right)
+(@SGGUID+24, 3, @CGUID+39, 18635), -- Cabal Deathsworn (left)
+
+(@SGGUID+24, 4, @CGUID+37, 18631), -- Cabal Cultist (right)
+(@SGGUID+24, 4, @CGUID+39, 18635), -- Cabal Deathsworn (left)
+
+(@SGGUID+28, 1, @CGUID+92, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+28, 1, @CGUID+30, 18631), -- Cabal Cultist (front right)
+(@SGGUID+28, 1, @CGUID+69, 18637), -- Cabal Shadow Priest(back left)
+(@SGGUID+28, 1, @CGUID+31, 18633), -- Cabal Acolyte (back right)
+
+(@SGGUID+28, 2, @CGUID+92, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+28, 2, @CGUID+30, 18631), -- Cabal Cultist (front right)
+(@SGGUID+28, 2, @CGUID+69, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+28, 2, @CGUID+31, 18631), -- Cabal Cultist (back right)
+
+(@SGGUID+28, 3, @CGUID+92, 18631), --  Cabal Cultist (front left)
+(@SGGUID+28, 3, @CGUID+30, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+28, 3, @CGUID+69, 18637), -- Cabal Shadow Priest (back left)
+(@SGGUID+28, 3, @CGUID+31, 18633), -- Cabal Acolyte (back right)
+
+(@SGGUID+29, 1, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+29, 1, @CGUID+72, 18633), -- Cabal Acolyte (front middle)
+(@SGGUID+29, 1, @CGUID+34, 18631), -- Cabal Cultist (front right)
+(@SGGUID+29, 1, @CGUID+71, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+29, 1, @CGUID+102, 18637), -- Cabal Shadow Priest (back right)
+
+(@SGGUID+29, 2, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+29, 2, @CGUID+72, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+29, 2, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+29, 2, @CGUID+71, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+29, 2, @CGUID+102, 18631), -- Cabal Cultist (back right)
+
+(@SGGUID+29, 3, @CGUID+95, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+29, 3, @CGUID+72, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+29, 3, @CGUID+34, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+29, 3, @CGUID+71, 18637), -- Cabal Shadow Priest (back left)
+(@SGGUID+29, 3, @CGUID+102, 18633), -- Cabal Acolyte (back right)
+
+(@SGGUID+30, 1, @CGUID+94, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+30, 1, @CGUID+33, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+30, 1, @CGUID+104, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+30, 1, @CGUID+32, 18633), -- Cabal Acolyte (back left)
+(@SGGUID+30, 1, @CGUID+70, 18637), -- Cabal Shadow Priest (back right)
+
+(@SGGUID+30, 2, @CGUID+94, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+30, 2, @CGUID+33, 18633), -- Cabal Acolyte (front middle)
+(@SGGUID+30, 2, @CGUID+104, 18631), -- Cabal Cultist (front right)
+(@SGGUID+30, 2, @CGUID+32, 18637), -- Cabal Shadow Priest (back left)
+(@SGGUID+30, 2, @CGUID+70, 18633), -- Cabal Acolyte (back right)
+
+(@SGGUID+30, 3, @CGUID+94, 18635), --  Cabal Deathsworn (front left)
+(@SGGUID+30, 3, @CGUID+33, 18631), -- Cabal Cultist (front middle)
+(@SGGUID+30, 3, @CGUID+104, 18637), -- Cabal Shadow Priest (front right)
+(@SGGUID+30, 3, @CGUID+32, 18631), -- Cabal Cultist (back left)
+(@SGGUID+30, 3, @CGUID+70, 18633), -- Cabal Acolyte (back right)
+
+(@SGGUID+32, 1, @CGUID+38, 18631), -- Cabal Cultist (right)
+(@SGGUID+32, 1, @CGUID+97, 18633), -- Cabal Acolyte (left)
+
+(@SGGUID+32, 2, @CGUID+38, 18631), -- Cabal Cultist (right)
+(@SGGUID+32, 2, @CGUID+97, 18635), -- Cabal Deathsworn (left)
+
+(@SGGUID+32, 3, @CGUID+38, 18635), -- Cabal Deathsworn (right)
+(@SGGUID+32, 3, @CGUID+97, 18635), -- Cabal Deathsworn (left)
+
+(@SGGUID+38, 1, @CGUID+40, 18631), -- Cabal Cultist (left)
+(@SGGUID+38, 1, @CGUID+41, 18633), -- Cabal Acolyte (right)
+
+(@SGGUID+38, 2, @CGUID+40, 18631), -- Cabal Cultist (left)
+(@SGGUID+38, 2, @CGUID+41, 18631), -- Cabal Cultist (right)
+
+(@SGGUID+38, 3, @CGUID+40, 18633), -- Cabal Acolyte (left)
+(@SGGUID+38, 3, @CGUID+41, 18633), -- Cabal Acolyte (right)
+
+(@SGGUID+38, 4, @CGUID+40, 18631), -- Cabal Cultist (left)
+(@SGGUID+38, 4, @CGUID+41, 18635), -- Cabal Deathsworn (right)
+
+(@SGGUID+39, 1, @CGUID+75, 18635), -- Cabal Deathsworn (right)
+(@SGGUID+39, 1, @CGUID+98, 18631), -- Cabal Cultist (left)
+(@SGGUID+39, 1, @CGUID+99, 18631), -- Cabal Cultist (left)
+
+(@SGGUID+39, 2, @CGUID+75, 18633), -- Cabal Acolyte (right)
+(@SGGUID+39, 2, @CGUID+98, 18631), -- Cabal Cultist (left)
+(@SGGUID+39, 2, @CGUID+99, 18631), -- Cabal Cultist (left)
+
+(@SGGUID+39, 3, @CGUID+75, 18633), -- Cabal Acolyte (right)
+(@SGGUID+39, 3, @CGUID+98, 18635), -- Cabal Deathsworn (left)
+(@SGGUID+39, 3, @CGUID+99, 18635), -- Cabal Deathsworn (left)
+
+-- from left to right
+(@SGGUID+40, 1, @CGUID+107, 18631), -- Cabal Cultist (left)
+(@SGGUID+40, 1, @CGUID+234, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+40, 1, @CGUID+29, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+40, 1, @CGUID+106, 18638), -- Cabal Zealot (right)
+
+(@SGGUID+40, 2, @CGUID+107, 18638), -- Cabal Zealot (left)
+(@SGGUID+40, 2, @CGUID+234, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+40, 2, @CGUID+29, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+40, 2, @CGUID+106, 18830), -- Cabal Fanatic (right)
+
+(@SGGUID+40, 3, @CGUID+107, 18638), -- Cabal Zealot (left)
+(@SGGUID+40, 3, @CGUID+234, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+40, 3, @CGUID+29, 18830), -- Cabal Fanatic (right mid)
+(@SGGUID+40, 3, @CGUID+106, 18638), -- Cabal Zealot (right)
+
+-- from left to right
+(@SGGUID+45, 1, @CGUID+235, 18638), -- Cabal Zealot (left)
+(@SGGUID+45, 1, @CGUID+42, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+45, 1, @CGUID+108, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+45, 1, @CGUID+111, 18830), -- Cabal Fanatic (right)
+
+(@SGGUID+45, 2, @CGUID+235, 18638), -- Cabal Zealot (left)
+(@SGGUID+45, 2, @CGUID+42, 18638), -- Cabal Zealot (left mid)
+(@SGGUID+45, 2, @CGUID+108, 18830), -- Cabal Fanatic (right mid)
+(@SGGUID+45, 2, @CGUID+111, 18830), -- Cabal Fanatic (right)
+
+(@SGGUID+45, 3, @CGUID+235, 18631), -- Cabal Cultist (left)
+(@SGGUID+45, 3, @CGUID+42, 18638), -- Cabal Zealot (left mid)
+(@SGGUID+45, 3, @CGUID+108, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+45, 3, @CGUID+111, 18830), -- Cabal Fanatic (right)
+
+-- from left to right
+(@SGGUID+46, 1, @CGUID+109, 18631), -- Cabal Cultist (left)
+(@SGGUID+46, 1, @CGUID+110, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+46, 1, @CGUID+236, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+46, 1, @CGUID+237, 18638), -- Cabal Zealot (right)
+
+(@SGGUID+46, 2, @CGUID+109, 18638), -- Cabal Zealot (left)
+(@SGGUID+46, 2, @CGUID+110, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+46, 2, @CGUID+236, 18830), -- Cabal Fanatic (right mid)
+(@SGGUID+46, 2, @CGUID+237, 18638), -- Cabal Zealot (right)
+
+(@SGGUID+46, 3, @CGUID+109, 18638), -- Cabal Zealot (left)
+(@SGGUID+46, 3, @CGUID+110, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+46, 3, @CGUID+236, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+46, 3, @CGUID+237, 18830), -- Cabal Fanatic (right)
+
+-- from left to right
+(@SGGUID+47, 1, @CGUID+238, 18638), -- Cabal Zealot (left)
+(@SGGUID+47, 1, @CGUID+44, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+47, 1, @CGUID+43, 18830), -- Cabal Fanatic (right mid)
+(@SGGUID+47, 1, @CGUID+233, 18638), -- Cabal Zealot (right)
+
+(@SGGUID+47, 2, @CGUID+238, 18638), -- Cabal Zealot (left)
+(@SGGUID+47, 2, @CGUID+44, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+47, 2, @CGUID+43, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+47, 2, @CGUID+233, 18830), -- Cabal Fanatic (right)
+
+(@SGGUID+47, 3, @CGUID+238, 18631), -- Cabal Cultist (left)
+(@SGGUID+47, 3, @CGUID+44, 18830), -- Cabal Fanatic (left mid)
+(@SGGUID+47, 3, @CGUID+43, 18631), -- Cabal Cultist (right mid)
+(@SGGUID+47, 3, @CGUID+233, 18638); -- Cabal Zealot (right)
+
 
 INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
-(@SGGUID+13, 1, 10, 0, @SGGUID+13, 2, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
-
-(@SGGUID+52, 2, 2, 0, @SGGUID+52, 2, 'Shadow Labyrinth - Group 035 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 01'),
-(@SGGUID+53, 2, 2, 0, @SGGUID+52, 2, 'Shadow Labyrinth - Group 035 - Cabal Fanatic | Cabal Zealot/Cabal Cultist - Patrol 01'),
-
-(@SGGUID+58, 2, 2, 0, @SGGUID+58, 2, 'Shadow Labyrinth - Group 040 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 02'),
-(@SGGUID+59, 2, 2, 0, @SGGUID+58, 2, 'Shadow Labyrinth - Group 040 - Cabal Fanatic | Cabal Zealot/Cabal Cultist - Patrol 02'),
-
-(@SGGUID+62, 2, 2, 0, @SGGUID+62, 2, 'Shadow Labyrinth - Group 042 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 03'),
-(@SGGUID+63, 2, 2, 0, @SGGUID+62, 2, 'Shadow Labyrinth - Group 042 - Cabal Fanatic | Cabal Zealot/Cabal Cultist - Patrol 03');
+(@SGGUID+11, 1, 10, 0, @PATHID+13, 2, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
+(@SGGUID+40, 2, 2, 0, @PATHID+52, 2, 'Shadow Labyrinth - Group 035 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 01'),
+(@SGGUID+45, 2, 2, 0, @PATHID+58, 2, 'Shadow Labyrinth - Group 040 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 02'),
+(@SGGUID+47, 2, 2, 0, @PATHID+62, 2, 'Shadow Labyrinth - Group 042 - Cabal Fanatic (2) | Cabal Zealot (2) - Patrol 03');
 
 INSERT INTO `waypoint_path_name` (`PathId`, `Name`) VALUES
-(@SGGUID+1, 'Shadow Labyrinth - Group 003 Path 1'),
-(@SGGUID+2, 'Shadow Labyrinth - Group 003 Path 2'),
-(@SGGUID+3, 'Shadow Labyrinth - Group 003 Path 3'),
-(@SGGUID+4, 'Shadow Labyrinth - Group 003 Path 4'),
-(@SGGUID+13, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
+(@PATHID+1, 'Shadow Labyrinth - Group 003 Path 1'),
+(@PATHID+2, 'Shadow Labyrinth - Group 003 Path 2'),
+(@PATHID+3, 'Shadow Labyrinth - Group 003 Path 3'),
+(@PATHID+4, 'Shadow Labyrinth - Group 003 Path 4'),
+(@PATHID+13, 'Shadow Labyrinth - Group 010 - Cabal Familiar | Fel Guardhound'),
  -- Group 010 RP Waypoints
-(@SGGUID+14, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 1'),
-(@SGGUID+15, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 2'),
-(@SGGUID+16, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 3'),
+(@PATHID+14, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 1'),
+(@PATHID+15, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 2'),
+(@PATHID+16, 'Shadow Labyrinth - Group 011 - Cabal Familiar (5) Waypoint 3'),
 -- Patrol 01
-(@SGGUID+52, 'Shadow Labyrinth - Group 035 - Patrol 01'),
+(@PATHID+52, 'Shadow Labyrinth - Group 035 - Patrol 01'),
 -- Patrol 02
-(@SGGUID+58, 'Shadow Labyrinth - Group 040 - Patrol 02'),
+(@PATHID+58, 'Shadow Labyrinth - Group 040 - Patrol 02'),
 -- Patrol 03
-(@SGGUID+62, 'Shadow Labyrinth - Group 042 - Patrol 03'),
+(@PATHID+62, 'Shadow Labyrinth - Group 042 - Patrol 03'),
 -- Murmur room
 -- Runner 1 random waypoints
-(@SGGUID+70, 'Shadow Labyrinth - Group 049 - Path 1'),
-(@SGGUID+71, 'Shadow Labyrinth - Group 049 - Path 2'),
-(@SGGUID+72, 'Shadow Labyrinth - Group 049 - Path 3'),
-(@SGGUID+73, 'Shadow Labyrinth - Group 049 - Path 4'),
+(@PATHID+70, 'Shadow Labyrinth - Group 049 - Path 1'),
+(@PATHID+71, 'Shadow Labyrinth - Group 049 - Path 2'),
+(@PATHID+72, 'Shadow Labyrinth - Group 049 - Path 3'),
+(@PATHID+73, 'Shadow Labyrinth - Group 049 - Path 4'),
 -- Runner 2 random waypoints
-(@SGGUID+74, 'Shadow Labyrinth - Group 050 - Path 1'),
-(@SGGUID+75, 'Shadow Labyrinth - Group 050 - Path 2'),
-(@SGGUID+76, 'Shadow Labyrinth - Group 050 - Path 3'),
-(@SGGUID+77, 'Shadow Labyrinth - Group 050 - Path 4'),
+(@PATHID+74, 'Shadow Labyrinth - Group 050 - Path 1'),
+(@PATHID+75, 'Shadow Labyrinth - Group 050 - Path 2'),
+(@PATHID+76, 'Shadow Labyrinth - Group 050 - Path 3'),
+(@PATHID+77, 'Shadow Labyrinth - Group 050 - Path 4'),
 -- Runner 3 random waypoints
-(@SGGUID+78, 'Shadow Labyrinth - Group 051 - Path 1'),
-(@SGGUID+79, 'Shadow Labyrinth - Group 051 - Path 2'),
-(@SGGUID+80, 'Shadow Labyrinth - Group 051 - Path 3'),
-(@SGGUID+81, 'Shadow Labyrinth - Group 051 - Path 4'),
-(@SGGUID+82, 'Shadow Labyrinth - Group 051 - Path 5'),
-(@SGGUID+83, 'Shadow Labyrinth - Group 051 - Path 6'),
+(@PATHID+78, 'Shadow Labyrinth - Group 051 - Path 1'),
+(@PATHID+79, 'Shadow Labyrinth - Group 051 - Path 2'),
+(@PATHID+80, 'Shadow Labyrinth - Group 051 - Path 3'),
+(@PATHID+81, 'Shadow Labyrinth - Group 051 - Path 4'),
+(@PATHID+82, 'Shadow Labyrinth - Group 051 - Path 5'),
+(@PATHID+83, 'Shadow Labyrinth - Group 051 - Path 6'),
  -- Runner 4 random waypoints
-(@SGGUID+84, 'Shadow Labyrinth - Group 052 - Path 1'),
-(@SGGUID+85, 'Shadow Labyrinth - Group 052 - Path 2'),
-(@SGGUID+86, 'Shadow Labyrinth - Group 052 - Path 3'),
-(@SGGUID+87, 'Shadow Labyrinth - Group 052 - Path 4'),
-(@SGGUID+88, 'Shadow Labyrinth - Group 052 - Path 5'),
-(@SGGUID+89, 'Shadow Labyrinth - Group 052 - Path 6'),
+(@PATHID+84, 'Shadow Labyrinth - Group 052 - Path 1'),
+(@PATHID+85, 'Shadow Labyrinth - Group 052 - Path 2'),
+(@PATHID+86, 'Shadow Labyrinth - Group 052 - Path 3'),
+(@PATHID+87, 'Shadow Labyrinth - Group 052 - Path 4'),
+(@PATHID+88, 'Shadow Labyrinth - Group 052 - Path 5'),
+(@PATHID+89, 'Shadow Labyrinth - Group 052 - Path 6'),
   -- Runner 5 random waypoints
-(@SGGUID+90, 'Shadow Labyrinth - Group 053 - Path 1'),
-(@SGGUID+91, 'Shadow Labyrinth - Group 053 - Path 2'),
-(@SGGUID+92, 'Shadow Labyrinth - Group 053 - Path 3'),
-(@SGGUID+93, 'Shadow Labyrinth - Group 053 - Path 4'),
-(@SGGUID+94, 'Shadow Labyrinth - Group 053 - Path 5'),
-(@SGGUID+95, 'Shadow Labyrinth - Group 053 - Path 6');
+(@PATHID+90, 'Shadow Labyrinth - Group 053 - Path 1'),
+(@PATHID+91, 'Shadow Labyrinth - Group 053 - Path 2'),
+(@PATHID+92, 'Shadow Labyrinth - Group 053 - Path 3'),
+(@PATHID+93, 'Shadow Labyrinth - Group 053 - Path 4'),
+(@PATHID+94, 'Shadow Labyrinth - Group 053 - Path 5'),
+(@PATHID+95, 'Shadow Labyrinth - Group 053 - Path 6');
 
 INSERT INTO `waypoint_path` (`PathId`, `Point`, `PositionX`, `PositionY`, `PositionZ`, `Orientation`, `WaitTime`, `ScriptId`) VALUES
 -- Cabal Acolyte 4 different paths after Intro path
-(@SGGUID+1, 1, -39.472927, -2.8820992, -1.1310382, 3.9095, 18000, @RELAYID+2),
-(@SGGUID+1, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
-(@SGGUID+2, 1, -45.58315, 18.34784, -1.1280077, 2.4085, 18000, @RELAYID+2),
-(@SGGUID+2, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
-(@SGGUID+3, 1, -56.151814, 15.847561,-1.1280965, 1.5009, 18000, @RELAYID+2),
-(@SGGUID+3, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
-(@SGGUID+4, 1, -59.339016, 8.937592, -1.1331869, 100, 0, 0),
-(@SGGUID+4, 2, -60.68144, -18.41702, -1.1281054, 100, 0, 0),
-(@SGGUID+4, 3, -91.59668, -19.750717, -1.1281965, 100, 2000, 0),
-(@SGGUID+4, 4, -60.68144, -18.41702, -1.1281054, 100, 0, 0),
-(@SGGUID+4, 5, -59.339016, 8.937592, -1.1331869, 100, 0, 0),
-(@SGGUID+4, 6, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
-(@SGGUID+13, 1, -73.184364, -72.63547, -1.1283, 2.284255, 4000, 5),
-(@SGGUID+13, 2, -73.684364, -72.63547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 3, -77.434364, -70.38547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 4, -77.934364, -66.63547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 5, -74.184364, -65.63547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 6, -68.184364, -70.13547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 7, -68.184364, -73.88547, -0.87829995, 100, 0, 0),
-(@SGGUID+13, 8, -71.434364, -74.38547, -0.87829995, 100, 0, 0),
+(@PATHID+1, 1, -39.472927, -2.8820992, -1.1310382, 3.9095, 18000, @RELAYID+2),
+(@PATHID+1, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
+(@PATHID+2, 1, -45.58315, 18.34784, -1.1280077, 2.4085, 18000, @RELAYID+2),
+(@PATHID+2, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
+(@PATHID+3, 1, -56.151814, 15.847561,-1.1280965, 1.5009, 18000, @RELAYID+2),
+(@PATHID+3, 2, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
+(@PATHID+4, 1, -59.339016, 8.937592, -1.1331869, 100, 0, 0),
+(@PATHID+4, 2, -60.68144, -18.41702, -1.1281054, 100, 0, 0),
+(@PATHID+4, 3, -91.59668, -19.750717, -1.1281965, 100, 2000, 0),
+(@PATHID+4, 4, -60.68144, -18.41702, -1.1281054, 100, 0, 0),
+(@PATHID+4, 5, -59.339016, 8.937592, -1.1331869, 100, 0, 0),
+(@PATHID+4, 6, -38.099854, 7.8367243, -1.139434, 100, 1000, @RELAYID+1),
+(@PATHID+13, 1, -73.184364, -72.63547, -1.1283, 2.284255, 4000, 5),
+(@PATHID+13, 2, -73.684364, -72.63547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 3, -77.434364, -70.38547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 4, -77.934364, -66.63547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 5, -74.184364, -65.63547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 6, -68.184364, -70.13547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 7, -68.184364, -73.88547, -0.87829995, 100, 0, 0),
+(@PATHID+13, 8, -71.434364, -74.38547, -0.87829995, 100, 0, 0),
 -- Group 010 RP Waypoints
-(@SGGUID+14, 1, -54.60242,-78.51944,-1.1282262, 100, 1000, @RELAYID+7),
-(@SGGUID+15, 1, -54.600212,-77.50109,-1.127364, 100, 1000, @RELAYID+8),
-(@SGGUID+16, 1, -54.675922,-77.17647,-1.1273506, 100, 1000, @RELAYID+9), -- Generic Movement Idle
+(@PATHID+14, 1, -54.60242,-78.51944,-1.1282262, 100, 1000, @RELAYID+7),
+(@PATHID+15, 1, -54.600212,-77.50109,-1.127364, 100, 1000, @RELAYID+8),
+(@PATHID+16, 1, -54.675922,-77.17647,-1.1273506, 100, 1000, @RELAYID+9), -- Generic Movement Idle
 -- Patrol 01
-(@SGGUID+52, 1, -367.58914, -267.65616, 12.689051, 0.0349, 15000, @RELAYID+10),
-(@SGGUID+52, 2, -354.83398, -267.55493, 12.68742, 100, 15000, @RELAYID+10),
+(@PATHID+52, 1, -367.58914, -267.65616, 12.689051, 0.0349, 15000, @RELAYID+10),
+(@PATHID+52, 2, -354.83398, -267.55493, 12.68742, 100, 15000, @RELAYID+10),
 -- Patrol 02
-(@SGGUID+58, 1, -323.5248, -264.78464, 12.684626, 0.01745, 15000, @RELAYID+11),
-(@SGGUID+58, 2, -290.12753, -263.76453, 12.682338, 100, 15000, @RELAYID+11),
+(@PATHID+58, 1, -323.5248, -264.78464, 12.684626, 0.01745, 15000, @RELAYID+11),
+(@PATHID+58, 2, -290.12753, -263.76453, 12.682338, 100, 15000, @RELAYID+11),
 -- Patrol 03 - around the boss
-(@SGGUID+62, 1, -279.3916,-269.65582,12.681446, 100, 100, @RELAYID+12),
-(@SGGUID+62, 2, -271.79556,-275.23175,12.6813135, 100, 100, @RELAYID+12),
-(@SGGUID+62, 3, -264.27405,-279.25732,12.680406, 100, 100, @RELAYID+12),
-(@SGGUID+62, 4, -257.4364,-281.72037,12.679068, 100, 100, @RELAYID+12),
-(@SGGUID+62, 5, -246.49648,-282.56845,17.086329, 100, 100, @RELAYID+12),
-(@SGGUID+62, 6, -238.89442,-277.1962,17.086287, 100, 100, @RELAYID+12),
-(@SGGUID+62, 7, -232.98311,-270.28983,17.086288, 100, 100, @RELAYID+12),
-(@SGGUID+62, 8, -231.82408,-256.32004,17.086378, 100, 100, @RELAYID+12),
-(@SGGUID+62, 9, -240.6651,-248.60138,17.086283, 100, 100, @RELAYID+12),
-(@SGGUID+62, 10, -247.90907,-247.09088,17.086376, 100, 100, @RELAYID+12),
-(@SGGUID+62, 11, -258.20337,-246.84099,12.67995, 100, 100, @RELAYID+12),
-(@SGGUID+62, 12, -268.21298,-248.91357,12.064231, 100, 100, @RELAYID+12),
-(@SGGUID+62, 13, -275.60107,-252.21254,12.681708, 100, 100, @RELAYID+12),
-(@SGGUID+62, 14, -279.302,-258.68976,12.681697, 100, 100, @RELAYID+12),
+(@PATHID+62, 1, -279.3916,-269.65582,12.681446, 100, 100, @RELAYID+12),
+(@PATHID+62, 2, -271.79556,-275.23175,12.6813135, 100, 100, @RELAYID+12),
+(@PATHID+62, 3, -264.27405,-279.25732,12.680406, 100, 100, @RELAYID+12),
+(@PATHID+62, 4, -257.4364,-281.72037,12.679068, 100, 100, @RELAYID+12),
+(@PATHID+62, 5, -246.49648,-282.56845,17.086329, 100, 100, @RELAYID+12),
+(@PATHID+62, 6, -238.89442,-277.1962,17.086287, 100, 100, @RELAYID+12),
+(@PATHID+62, 7, -232.98311,-270.28983,17.086288, 100, 100, @RELAYID+12),
+(@PATHID+62, 8, -231.82408,-256.32004,17.086378, 100, 100, @RELAYID+12),
+(@PATHID+62, 9, -240.6651,-248.60138,17.086283, 100, 100, @RELAYID+12),
+(@PATHID+62, 10, -247.90907,-247.09088,17.086376, 100, 100, @RELAYID+12),
+(@PATHID+62, 11, -258.20337,-246.84099,12.67995, 100, 100, @RELAYID+12),
+(@PATHID+62, 12, -268.21298,-248.91357,12.064231, 100, 100, @RELAYID+12),
+(@PATHID+62, 13, -275.60107,-252.21254,12.681708, 100, 100, @RELAYID+12),
+(@PATHID+62, 14, -279.302,-258.68976,12.681697, 100, 100, @RELAYID+12),
 -- Murmur room
 -- Runner 1
-(@SGGUID+70, 1, -149.76266, -341.32974, 17.084673, 4.6603012, 100, @RELAYID+13),
-(@SGGUID+71, 1, -156.56253, -339.00937, 17.085264, 4.7039709, 100, @RELAYID+13),
-(@SGGUID+72, 1, -156.86292, -338.40677, 17.08532, 4.705892, 100, @RELAYID+13),
-(@SGGUID+73, 1, -162.85062, -344.2074, 17.083673, 4.7447409, 100, @RELAYID+13),
+(@PATHID+70, 1, -149.76266, -341.32974, 17.084673, 4.6603012, 100, @RELAYID+13),
+(@PATHID+71, 1, -156.56253, -339.00937, 17.085264, 4.7039709, 100, @RELAYID+13),
+(@PATHID+72, 1, -156.86292, -338.40677, 17.08532, 4.705892, 100, @RELAYID+13),
+(@PATHID+73, 1, -162.85062, -344.2074, 17.083673, 4.7447409, 100, @RELAYID+13),
 -- Runner 2
-(@SGGUID+74, 1, -149.78711, -366.49707, 17.082535, 4.65049, 100, @RELAYID+14),
-(@SGGUID+75, 1, -155.3374, -366.17404, 17.082674, 4.692888, 100, @RELAYID+14),
-(@SGGUID+76, 1, -157.32748, -365.99078, 17.082611, 4.7080655, 100, @RELAYID+14),
-(@SGGUID+77, 1, -162.91078, -365.29044, 17.082392, 4.750358, 100, @RELAYID+14),
+(@PATHID+74, 1, -149.78711, -366.49707, 17.082535, 4.65049, 100, @RELAYID+14),
+(@PATHID+75, 1, -155.3374, -366.17404, 17.082674, 4.692888, 100, @RELAYID+14),
+(@PATHID+76, 1, -157.32748, -365.99078, 17.082611, 4.7080655, 100, @RELAYID+14),
+(@PATHID+77, 1, -162.91078, -365.29044, 17.082392, 4.750358, 100, @RELAYID+14),
 -- Runner 3
-(@SGGUID+78, 1, -149.53552, -401.48837, 17.079496, 4.625377, 100, @RELAYID+15),
-(@SGGUID+79, 1, -153.48389, -402.04773, 17.07955, 4.66612, 100, @RELAYID+15),
-(@SGGUID+80, 1, -155.46968, -402.09506, 17.079538, 4.68692, 100, @RELAYID+15),
-(@SGGUID+81, 1, -159.01439, -402.48212, 17.079556, 4.724188, 100, @RELAYID+15),
-(@SGGUID+82, 1, -160.97226, -402.33005, 17.079668, 4.744769, 100, @RELAYID+15),
-(@SGGUID+83, 1, -164.68327, -401.2923, 17.079756, 4.782957, 100, @RELAYID+15),
+(@PATHID+78, 1, -149.53552, -401.48837, 17.079496, 4.625377, 100, @RELAYID+15),
+(@PATHID+79, 1, -153.48389, -402.04773, 17.07955, 4.66612, 100, @RELAYID+15),
+(@PATHID+80, 1, -155.46968, -402.09506, 17.079538, 4.68692, 100, @RELAYID+15),
+(@PATHID+81, 1, -159.01439, -402.48212, 17.079556, 4.724188, 100, @RELAYID+15),
+(@PATHID+82, 1, -160.97226, -402.33005, 17.079668, 4.744769, 100, @RELAYID+15),
+(@PATHID+83, 1, -164.68327, -401.2923, 17.079756, 4.782957, 100, @RELAYID+15),
 -- Runner 4
-(@SGGUID+84, 1, -151.01328, -429.674, 17.07774, 4.6110053, 100, @RELAYID+16),
-(@SGGUID+85, 1, -157.67725, -431.36533, 17.07778, 4.7090826, 100, @RELAYID+16),
-(@SGGUID+86, 1, -159.64238, -431.67798, 17.077719, 4.7389965, 100, @RELAYID+16),
-(@SGGUID+87, 1, -160.99547, -431.54495, 17.077776, 4.7594852, 100, @RELAYID+16),
-(@SGGUID+88, 1, -162.98616, -431.72394, 17.0778, 4.7898397, 100, @RELAYID+16),
-(@SGGUID+89, 1, -165.48152, -432.09207, 17.077868, 4.828167, 100, @RELAYID+16),
+(@PATHID+84, 1, -151.01328, -429.674, 17.07774, 4.6110053, 100, @RELAYID+16),
+(@PATHID+85, 1, -157.67725, -431.36533, 17.07778, 4.7090826, 100, @RELAYID+16),
+(@PATHID+86, 1, -159.64238, -431.67798, 17.077719, 4.7389965, 100, @RELAYID+16),
+(@PATHID+87, 1, -160.99547, -431.54495, 17.077776, 4.7594852, 100, @RELAYID+16),
+(@PATHID+88, 1, -162.98616, -431.72394, 17.0778, 4.7898397, 100, @RELAYID+16),
+(@PATHID+89, 1, -165.48152, -432.09207, 17.077868, 4.828167, 100, @RELAYID+16),
 -- Runner 5
-(@SGGUID+90, 1, -142.49638, -444.06284, 17.080399, 4.4309349, 100, @RELAYID+17),
-(@SGGUID+91, 1, -149.68015, -443.9279, 17.077744, 4.5597286, 100, @RELAYID+17),
-(@SGGUID+92, 1, -151.67984, -443.92792, 17.07782, 4.5965042, 100, @RELAYID+17),
-(@SGGUID+93, 1, -154.00215, -443.80365, 17.077858, 4.639773, 100, @RELAYID+17),
-(@SGGUID+94, 1, -155.9756, -444.01428, 17.077868, 4.676393, 100, @RELAYID+17),
-(@SGGUID+95, 1, -160.1806, -444.94754, 17.077879, 4.755994, 100, @RELAYID+17);
+(@PATHID+90, 1, -142.49638, -444.06284, 17.080399, 4.4309349, 100, @RELAYID+17),
+(@PATHID+91, 1, -149.68015, -443.9279, 17.077744, 4.5597286, 100, @RELAYID+17),
+(@PATHID+92, 1, -151.67984, -443.92792, 17.07782, 4.5965042, 100, @RELAYID+17),
+(@PATHID+93, 1, -154.00215, -443.80365, 17.077858, 4.639773, 100, @RELAYID+17),
+(@PATHID+94, 1, -155.9756, -444.01428, 17.077868, 4.676393, 100, @RELAYID+17),
+(@PATHID+95, 1, -160.1806, -444.94754, 17.077879, 4.755994, 100, @RELAYID+17);
 
-DELETE FROM worldstate_name WHERE Id BETWEEN @WORLDSTATEID+1 AND @WORLDSTATEID+20;
+DELETE FROM worldstate_name WHERE Id BETWEEN @WORLDSTATEID+1 AND @WORLDSTATEID+7;
 INSERT INTO `worldstate_name` (`Id`, `Name`) VALUES 
-(@WORLDSTATEID+1, 'Shadow Labyrinth - Group 001'),
-(@WORLDSTATEID+2, 'Shadow Labyrinth - Group 005'),
-(@WORLDSTATEID+3, 'Shadow Labyrinth - Group 012'),
-(@WORLDSTATEID+4, 'Shadow Labyrinth - Group 013'),
-(@WORLDSTATEID+5, 'Shadow Labyrinth - Group 023'),
-(@WORLDSTATEID+6, 'Shadow Labyrinth - Group 024'),
-(@WORLDSTATEID+7, 'Shadow Labyrinth - Group 025'),
-(@WORLDSTATEID+8, 'Shadow Labyrinth - Group 033'),
-(@WORLDSTATEID+9, 'Shadow Labyrinth - Group 034'),
-(@WORLDSTATEID+10, 'Shadow Labyrinth - Group 034'),
-(@WORLDSTATEID+11, 'Shadow Labyrinth - Group 040'),
-(@WORLDSTATEID+12, 'Shadow Labyrinth - Group 041'),
-(@WORLDSTATEID+13, 'Shadow Labyrinth - Group 042'),
 -- The Screaming Hall - Murmur Worldstates
 -- Gets active when door opens
-(@WORLDSTATEID+14, 'Shadow Labyrinth - Group 048'),
-(@WORLDSTATEID+15, 'Shadow Labyrinth - Group 049'),
-(@WORLDSTATEID+16, 'Shadow Labyrinth - Group 050'),
-(@WORLDSTATEID+17, 'Shadow Labyrinth - Group 051'),
-(@WORLDSTATEID+18, 'Shadow Labyrinth - Group 052'),
+(@WORLDSTATEID+1, 'Shadow Labyrinth - Group 048'),
+(@WORLDSTATEID+2, 'Shadow Labyrinth - Group 049'),
+(@WORLDSTATEID+3, 'Shadow Labyrinth - Group 050'),
+(@WORLDSTATEID+4, 'Shadow Labyrinth - Group 051'),
+(@WORLDSTATEID+5, 'Shadow Labyrinth - Group 052'),
 -- Cabal Assasins
-(@WORLDSTATEID+19, 'Shadow Labyrinth - Group 055 - Cabal Assasin'),
-(@WORLDSTATEID+20, 'Shadow Labyrinth - Group 056 - Cabal Assasin');
+(@WORLDSTATEID+6, 'Shadow Labyrinth - Group 055 - Cabal Assasin'),
+(@WORLDSTATEID+7, 'Shadow Labyrinth - Group 056 - Cabal Assasin');
 
-DELETE FROM `conditions` WHERE `condition_entry` BETWEEN @CONDITIONID+1 AND @CONDITIONID+35;
+DELETE FROM `conditions` WHERE `condition_entry` BETWEEN @CONDITIONID+1 AND @CONDITIONID+7;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `value3`, `value4`, `flags`, `comments`) VALUES 
-(@CONDITIONID+1, 42, @WORLDSTATEID+1, 1, 0, 0, 0, 'Shadow Labyrinth - Group 001 -  Type 1'),
-(@CONDITIONID+2, 42, @WORLDSTATEID+1, 1, 1, 0, 0, 'Shadow Labyrinth - Group 001 -  Type 2'),
-
-(@CONDITIONID+3, 42, @WORLDSTATEID+2, 1, 0, 0, 0, 'Shadow Labyrinth - Group 005 -  Type 1'),
-(@CONDITIONID+4, 42, @WORLDSTATEID+2, 1, 1, 0, 0, 'Shadow Labyrinth - Group 005 -  Type 2'),
-
-(@CONDITIONID+5, 42, @WORLDSTATEID+3, 1, 0, 0, 0, 'Shadow Labyrinth - Group 012 -  Type 1'),
-(@CONDITIONID+6, 42, @WORLDSTATEID+3, 1, 1, 0, 0, 'Shadow Labyrinth - Group 012 -  Type 2'),
-(@CONDITIONID+7, 42, @WORLDSTATEID+3, 1, 2, 0, 0, 'Shadow Labyrinth - Group 012 -  Type 3'),
-
-(@CONDITIONID+8, 42, @WORLDSTATEID+4, 1, 0, 0, 0, 'Shadow Labyrinth - Group 013 -  Type 1'),
-(@CONDITIONID+9, 42, @WORLDSTATEID+4, 1, 1, 0, 0, 'Shadow Labyrinth - Group 013 -  Type 2'),
-(@CONDITIONID+10, 42, @WORLDSTATEID+4, 1, 2, 0, 0, 'Shadow Labyrinth - Group 013 -  Type 3'),
-
-(@CONDITIONID+11, 42, @WORLDSTATEID+5, 1, 0, 0, 0, 'Shadow Labyrinth - Group 023 -  Type 1'),
-(@CONDITIONID+12, 42, @WORLDSTATEID+5, 1, 1, 0, 0, 'Shadow Labyrinth - Group 023 -  Type 2'),
-
-(@CONDITIONID+13, 42, @WORLDSTATEID+6, 1, 0, 0, 0, 'Shadow Labyrinth - Group 024 -  Type 1'),
-(@CONDITIONID+14, 42, @WORLDSTATEID+6, 1, 1, 0, 0, 'Shadow Labyrinth - Group 024 -  Type 2'),
-
-(@CONDITIONID+15, 42, @WORLDSTATEID+7, 1, 0, 0, 0, 'Shadow Labyrinth - Group 025 -  Type 1'),
-(@CONDITIONID+16, 42, @WORLDSTATEID+7, 1, 1, 0, 0, 'Shadow Labyrinth - Group 025 -  Type 2'),
-
-(@CONDITIONID+17, 42, @WORLDSTATEID+8, 1, 0, 0, 0, 'Shadow Labyrinth - Group 033 -  Type 1'),
-(@CONDITIONID+18, 42, @WORLDSTATEID+8, 1, 1, 0, 0, 'Shadow Labyrinth - Group 033 -  Type 2'),
-
-(@CONDITIONID+19, 42, @WORLDSTATEID+9, 1, 0, 0, 0, 'Shadow Labyrinth - Group 034 -  Type 1'),
-(@CONDITIONID+20, 42, @WORLDSTATEID+9, 1, 1, 0, 0, 'Shadow Labyrinth - Group 034 -  Type 2'),
-
-(@CONDITIONID+21, 42, @WORLDSTATEID+10, 1, 0, 0, 0, 'Shadow Labyrinth - Group 035 -  Type 1'),
-(@CONDITIONID+22, 42, @WORLDSTATEID+10, 1, 1, 0, 0, 'Shadow Labyrinth - Group 035 -  Type 2'),
-
-(@CONDITIONID+23, 42, @WORLDSTATEID+11, 1, 0, 0, 0, 'Shadow Labyrinth - Group 040 -  Type 1'),
-(@CONDITIONID+24, 42, @WORLDSTATEID+11, 1, 1, 0, 0, 'Shadow Labyrinth - Group 040 -  Type 2'),
-
-(@CONDITIONID+25, 42, @WORLDSTATEID+12, 1, 0, 0, 0, 'Shadow Labyrinth - Group 041 -  Type 1'),
-(@CONDITIONID+26, 42, @WORLDSTATEID+12, 1, 1, 0, 0, 'Shadow Labyrinth - Group 041 -  Type 2'),
-
-(@CONDITIONID+27, 42, @WORLDSTATEID+13, 1, 0, 0, 0, 'Shadow Labyrinth - Group 042 -  Type 1'),
-(@CONDITIONID+28, 42, @WORLDSTATEID+13, 1, 1, 0, 0, 'Shadow Labyrinth - Group 042 -  Type 2'),
 -- the Screaming Hall
 -- Despawned on default, spawns group 48 adter door opens
-(@CONDITIONID+29, 42, @WORLDSTATEID+14, 1, 1, 0, 0, 'Shadow Labyrinth - Group 048'),
-(@CONDITIONID+30, 42, @WORLDSTATEID+15, 1, 1, 0, 0, 'Shadow Labyrinth - Group 049'),
-(@CONDITIONID+31, 42, @WORLDSTATEID+16, 1, 1, 0, 0, 'Shadow Labyrinth - Group 050'),
-(@CONDITIONID+32, 42, @WORLDSTATEID+17, 1, 1, 0, 0, 'Shadow Labyrinth - Group 051'),
-(@CONDITIONID+33, 42, @WORLDSTATEID+18, 1, 1, 0, 0, 'Shadow Labyrinth - Group 052'),
+(@CONDITIONID+1, 42, @WORLDSTATEID+1, 1, 1, 0, 0, 'Shadow Labyrinth - Group 048'),
+(@CONDITIONID+2, 42, @WORLDSTATEID+2, 1, 1, 0, 0, 'Shadow Labyrinth - Group 049'),
+(@CONDITIONID+3, 42, @WORLDSTATEID+3, 1, 1, 0, 0, 'Shadow Labyrinth - Group 050'),
+(@CONDITIONID+4, 42, @WORLDSTATEID+4, 1, 1, 0, 0, 'Shadow Labyrinth - Group 051'),
+(@CONDITIONID+5, 42, @WORLDSTATEID+5, 1, 1, 0, 0, 'Shadow Labyrinth - Group 052'),
 -- Cabal Assasins
-(@CONDITIONID+34, 42, @WORLDSTATEID+19, 1, 1, 0, 0, 'Shadow Labyrinth - Group 055 - Cabal Assasin'),
-(@CONDITIONID+35, 42, @WORLDSTATEID+20, 1, 1, 0, 0, 'Shadow Labyrinth - Group 056 - Cabal Assasin');
+(@CONDITIONID+6, 42, @WORLDSTATEID+6, 1, 1, 0, 0, 'Shadow Labyrinth - Group 055 - Cabal Assasin'),
+(@CONDITIONID+7, 42, @WORLDSTATEID+7, 1, 1, 0, 0, 'Shadow Labyrinth - Group 056 - Cabal Assasin');
 
 -- StringIDs
 DELETE FROM string_id WHERE Id BETWEEN @STRINGID+1 AND @STRINGID+13;
@@ -1962,11 +1944,11 @@ DELETE FROM dbscripts_on_go_template_use WHERE id IN (183295);
 INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `priority`, `command`, `datalong`, `datalong2`, `datalong3`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 -- Screaming Hall Door
 (183295, 0, 0, 20, 2, 0, 0, @STRINGID+10, 200, 2560, 0, 0, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - StringID - Change MovementType to Waypoint Movement'),
-(183295, 0, 1, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+14, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'),
-(183295, 0, 2, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+15, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 1
-(183295, 0, 3, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+16, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 2
-(183295, 0, 4, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+17, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 3
-(183295, 0, 5, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+18, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'); -- runner 4+5
+(183295, 0, 1, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+1, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'),
+(183295, 0, 2, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+2, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 1
+(183295, 0, 3, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+3, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 2
+(183295, 0, 4, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+4, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'), -- runner 3
+(183295, 0, 5, 53, 0, 0, 0, 0, 0, 0, @WORLDSTATEID+5, 1, 0, 0, 0, 0, 0, 0,'Screaming Hall Door - Activate Worldstate'); -- runner 4+5
 
 -- Reworked DBScripts, will be merged into single Inserts when done with full rework
 DELETE FROM dbscript_random_templates WHERE id BETWEEN @RELAYID+1 AND @RELAYID+11;
@@ -2035,10 +2017,10 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 -- Shadow Labyrinth - Group 003 - Cabal Acolyte/Cabal Deathsworn 4 differnt paths after static Intro
 (@RELAYID+1,0,0,45,0,@RELAYID+1,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - choose random path'),
 -- Choose Path
-(@RELAYID+2,0,0,20,2,@SGGUID+1,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 1'),
-(@RELAYID+3,0,0,20,2,@SGGUID+2,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 2'),
-(@RELAYID+4,0,0,20,2,@SGGUID+3,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 3'),
-(@RELAYID+5,0,0,20,2,@SGGUID+4,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 4'),
+(@RELAYID+2,0,0,20,2,@PATHID+1,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 1'),
+(@RELAYID+3,0,0,20,2,@PATHID+2,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 2'),
+(@RELAYID+4,0,0,20,2,@PATHID+3,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 3'),
+(@RELAYID+5,0,0,20,2,@PATHID+4,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 003 - Cabal Deathsworn/Cabal Acolyte - PathID 4'),
 -- Random Talk Events - using dbscript to get correct delays
 -- Multiple Groups (with 3 npcs) use to have a small RP Event 
 -- Leader use emote talk - one answers with emote laugh one with emote no
@@ -2050,23 +2032,23 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 -- Group 010 Cabal Warlock + Familiar Imp
 -- Create Formation with SingleFile Shape
 (@RELAYID+7, 0, 0, 1, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Warlock - Emote OneShotPoint'),
-(@RELAYID+7, 0, 2, 51, 150, @SGGUID+15, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 'Shadow Labyrinth - Group 011 - Create Formation'),
+(@RELAYID+7, 0, 2, 51, 150, @SGGUID+13, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 'Shadow Labyrinth - Group 011 - Create Formation'),
 -- This will throw an db error but we currently have no other chance to just target the formation "leader"
 -- Formation Leader should move to first waypoint
--- (@RELAYID+7, 1, 1, 20, 2, @SGGUID+14, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 1'),
+-- (@RELAYID+7, 1, 1, 20, 2, @SGGUID+12, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 1'),
 -- 
 (@RELAYID+7, 5000, 0, 1, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Warlock - Emote OneShotPoint'),
-(@RELAYID+7, 5000, 1, 20, 2, @SGGUID+15, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 2'),
+(@RELAYID+7, 5000, 1, 20, 2, @PATHID+15, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 2'),
 -- Change Formation Shape to Circle around the Leader
 (@RELAYID+7, 10000, 0, 1, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Warlock - Emote OneShotPoint'),
-(@RELAYID+7, 10000, 1, 20, 2, @SGGUID+16, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 3'),
+(@RELAYID+7, 10000, 1, 20, 2, @PATHID+16, 2, @STRINGID+2, 10, 2055, 0, 0, 0, 0, 0, 0, 0, 0,'Shadow Labyrinth - Group 011 - PathID 3'),
 -- All Cabal Familiar should play dead
 (@RELAYID+7, 15000, 0, 1, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Warlock - Emote OneShotRoar'),
 (@RELAYID+7, 15000, 1, 28, 7, 0, 0, @STRINGID+2, 15, 2567, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - StandState Death'),
 -- Delete Formation and let all npcs reset
 (@RELAYID+7, 20000, 0, 1, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Warlock - Emote OneShotLaugh'),
 (@RELAYID+7, 20000, 1, 28, 0, 0, 0, @STRINGID+2, 15, 2560, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - StandState Stand'),
-(@RELAYID+7, 20000, 2, 51, 151, @SGGUID+15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - Delete Formation'),
+(@RELAYID+7, 20000, 2, 51, 151, @PATHID+15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - Delete Formation'),
 (@RELAYID+7, 20000, 3, 3, 0, 0, 0, @STRINGID+2, 15, 2560, 2, 0, 0, 0, 0, 0, 0, 0, 'Shadow Labyrinth - Group 011 - StandState Stand'),
 -- Blackheart Inciter random path
 (@RELAYID+8,0,0,20,2,1,0,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Blackheart Inciter - PathID 1'),
@@ -2112,36 +2094,36 @@ INSERT INTO `dbscripts_on_relay` (`id`, `delay`, `priority`, `command`, `datalon
 (@RELAYID+25, 100, 1, 15, 33335, 0, 0, 18708, 200, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Cabal Summoner/Spellbinder - Cast Shadow Bolt on Murmur'),
 -- Murmur room runners
 -- First runner has 4 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+26,0,0,20,2,@SGGUID+70,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 1'),
-(@RELAYID+27,0,0,20,2,@SGGUID+71,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 2'),
-(@RELAYID+28,0,0,20,2,@SGGUID+72,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 3'),
-(@RELAYID+29,0,0,20,2,@SGGUID+73,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 4'),
+(@RELAYID+26,0,0,20,2,@PATHID+70,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 1'),
+(@RELAYID+27,0,0,20,2,@PATHID+71,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 2'),
+(@RELAYID+28,0,0,20,2,@PATHID+72,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 3'),
+(@RELAYID+29,0,0,20,2,@PATHID+73,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 049 - PathID 4'),
 -- 2nd runner has 4 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+30,0,0,20,2,@SGGUID+74,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 1'),
-(@RELAYID+31,0,0,20,2,@SGGUID+75,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 2'),
-(@RELAYID+32,0,0,20,2,@SGGUID+76,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 3'),
-(@RELAYID+33,0,0,20,2,@SGGUID+77,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 4'),
+(@RELAYID+30,0,0,20,2,@PATHID+74,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 1'),
+(@RELAYID+31,0,0,20,2,@PATHID+75,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 2'),
+(@RELAYID+32,0,0,20,2,@PATHID+76,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 3'),
+(@RELAYID+33,0,0,20,2,@PATHID+77,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 050 - PathID 4'),
 -- 3nd runner has 6 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+34,0,0,20,2,@SGGUID+78,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 1'),
-(@RELAYID+35,0,0,20,2,@SGGUID+79,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 2'),
-(@RELAYID+36,0,0,20,2,@SGGUID+80,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 3'),
-(@RELAYID+37,0,0,20,2,@SGGUID+81,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 4'),
-(@RELAYID+38,0,0,20,2,@SGGUID+82,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 5'),
-(@RELAYID+39,0,0,20,2,@SGGUID+83,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 6'),
+(@RELAYID+34,0,0,20,2,@PATHID+78,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 1'),
+(@RELAYID+35,0,0,20,2,@PATHID+79,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 2'),
+(@RELAYID+36,0,0,20,2,@PATHID+80,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 3'),
+(@RELAYID+37,0,0,20,2,@PATHID+81,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 4'),
+(@RELAYID+38,0,0,20,2,@PATHID+82,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 5'),
+(@RELAYID+39,0,0,20,2,@PATHID+83,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 051 - PathID 6'),
 -- 4th runner has 6 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+40,0,0,20,2,@SGGUID+84,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 1'),
-(@RELAYID+41,0,0,20,2,@SGGUID+85,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 2'),
-(@RELAYID+42,0,0,20,2,@SGGUID+86,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 3'),
-(@RELAYID+43,0,0,20,2,@SGGUID+87,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 4'),
-(@RELAYID+44,0,0,20,2,@SGGUID+88,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 5'),
-(@RELAYID+45,0,0,20,2,@SGGUID+89,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 6'),
+(@RELAYID+40,0,0,20,2,@PATHID+84,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 1'),
+(@RELAYID+41,0,0,20,2,@PATHID+85,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 2'),
+(@RELAYID+42,0,0,20,2,@PATHID+86,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 3'),
+(@RELAYID+43,0,0,20,2,@PATHID+87,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 4'),
+(@RELAYID+44,0,0,20,2,@PATHID+88,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 5'),
+(@RELAYID+45,0,0,20,2,@PATHID+89,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 052 - PathID 6'),
 -- 5th runner has 6 different points where he can run to, using waypoint_path so we can use on creature_movement when npc reaches the point
-(@RELAYID+46,0,0,20,2,@SGGUID+90,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 1'),
-(@RELAYID+47,0,0,20,2,@SGGUID+91,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 2'),
-(@RELAYID+48,0,0,20,2,@SGGUID+92,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 3'),
-(@RELAYID+49,0,0,20,2,@SGGUID+93,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 4'),
-(@RELAYID+50,0,0,20,2,@SGGUID+94,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 5'),
-(@RELAYID+51,0,0,20,2,@SGGUID+95,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 6');
+(@RELAYID+46,0,0,20,2,@PATHID+90,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 1'),
+(@RELAYID+47,0,0,20,2,@PATHID+91,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 2'),
+(@RELAYID+48,0,0,20,2,@PATHID+92,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 3'),
+(@RELAYID+49,0,0,20,2,@PATHID+93,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 4'),
+(@RELAYID+50,0,0,20,2,@PATHID+94,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 5'),
+(@RELAYID+51,0,0,20,2,@PATHID+95,2,0,0,0,0,0,0,0,0,0,0,0,'Shadow Labyrinth - Group 053 - PathID 6');
 
 DELETE FROM dbscripts_on_creature_movement WHERE id BETWEEN @RELAYID+1 AND  @RELAYID+17;
 DELETE FROM dbscripts_on_creature_movement WHERE id IN (1866701, 1866702, 1866703, 1866704, 1866705, 1866706, 1873101, 1873102, 1863201, 1863401);
