@@ -11,10 +11,10 @@
 -- deduce proper core behaviour from them.
 -- 
 -- Possible but non-exhaustive reasons for these updates to be needed:
---	- CMaNGOS core does not properly handle the data these updates are fixing (yet)
---	- Official/sniff data are from a different expansion/patch and were possibly changed since Classic
---	- Official/sniff data from client are different from what they are server-side
---	- Data or their parsing were wrong
+-- CMaNGOS core does not properly handle the data these updates are fixing (yet)
+-- Official/sniff data are from a different expansion/patch and were possibly changed since Classic
+-- Official/sniff data from client are different from what they are server-side
+-- Data or their parsing were wrong
 
 
 -- ============================================================
@@ -206,6 +206,32 @@ UPDATE creature_template SET UnitFlags = UnitFlags|640 WHERE entry = 17578;
 
 -- mmap issues
 UPDATE creature_template SET ExtraFlags = ExtraFlags|16384 WHERE `entry` IN (19608,21554); -- Frayer Wildling (Botanica)
+
+-- -------------------------------
+
+-- Displayid
+UPDATE `creature_template` SET `DisplayIdProbability1` = 100, `DisplayIdProbability2` = 0 WHERE `entry` IN (
+18095, -- Doomfire
+18374, -- Focus Fire
+20308, -- Focus Fire (1)
+20978, -- Wrath-Scryer's Felfire
+21625, -- Wrath-Scryer's Felfire (1)
+25265, -- Demonic Vapor
+25267, -- Demonic Vapor (Trail)
+16995, -- Mouth of Kel'Thuzad
+17459, -- Chess Waiting Room (DND)
+18104, -- Doomfire Targeting
+19028, -- The Overlook Capture Credit Marker
+22356, -- [DND]Green Spot Grog Keg Credit
+22383, -- [DND]Bloodmaul Chatter Credit
+22434, -- [DND]Ogre Pike Planted Credit
+22435, -- [DND]Rexxar's Wyvern Freed Credit
+22798, -- [DND]Prophecy 1 Quest Credit
+22799, -- [DND]Prophecy 2 Quest Credit
+22800, -- [DND]Prophecy 3 Quest Credit
+22801, -- [DND]Prophecy 4 Quest Credit
+22925, -- Rain of Fire Bunny (Alliance)
+25703); -- Brutallus Death Cloud
 
 -- -------------------------------
 
