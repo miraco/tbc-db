@@ -10,7 +10,7 @@ INSERT INTO `creature_spell_list_entry` (`Id`, `Name`, `ChanceSupportAction`, `C
 
 DELETE FROM `creature_spell_list` WHERE `Id` IN (1555001, 1615101, 1615102, 1615201);
 INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `CombatCondition`, `TargetId`, `ScriptId`, `Availability`, `Probability`, `InitialMin`, `InitialMax`, `RepeatMin`, `RepeatMax`, `Comments`) VALUES
--- Attument the Huntsman
+-- Attumen the Huntsman
 (1555001, 1, 29833, 0, -1, 2, 0, 100, 0, 30000, 30000, 30000, 30000, 'Attument the Huntsman - Intangible Presence - self'),
 (1555001, 2, 29850, 0, -1, 1, 0, 100, 0, 6000, 9000, 22000, 30000, 'Attument the Huntsman - Upercut - current'),
 (1555001, 3, 29832, 0, -1, 1, 0, 100, 0, 10000, 16000, 22000, 30000, 'Attument the Huntsman - Shadow Cleave - current'),
