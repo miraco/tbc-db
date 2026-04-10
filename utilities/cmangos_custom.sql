@@ -233,6 +233,8 @@ UPDATE `creature_template` SET `DisplayIdProbability1` = 100, `DisplayIdProbabil
 22925, -- Rain of Fire Bunny (Alliance)
 25703); -- Brutallus Death Cloud
 
+UPDATE `creature_template` SET `DisplayId2` = 17188, `DisplayIdProbability1` = 0, `DisplayIdProbability2` = 100 WHERE `entry` = 22332; -- Brood of Neltharaku
+
 -- -------------------------------
 
 UPDATE `creature_template` SET `name` = 'Redeemed Spirit of Earth' WHERE `entry` = 21739; -- Redeemed Spriit of Earth
