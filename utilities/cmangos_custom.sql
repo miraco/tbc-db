@@ -114,9 +114,6 @@ UPDATE gameobject_template SET data2=0 WHERE entry=176211;
 -- Verigan's Fist: must despawn during scripted quest
 UPDATE gameobject_template SET `data3`=0, `data5`=1 WHERE entry=102413;
 
--- Temporary fix data6 for GO 178559 (Larva Spewer) in prevision of coming core update
-UPDATE gameobject_template SET data6=0 WHERE entry=178559;
-
 -- Inconspicuous Landmark 142189 - consumable, despawn on s.11462 expire
 UPDATE `gameobject_template` SET `data5` = 1 WHERE `entry` = 142189; -- 19660800 / 65536 = 300sec
 
@@ -144,6 +141,9 @@ UPDATE item_template SET class=0, subclass=3 WHERE entry=5514;
 -- -------------------------------
 -- Gameobject custom changes
 -- -------------------------------
+
+-- Temporary fix type as it is handled differently in tbc (Larva Spewer)
+UPDATE gameobject_template SET type=10,faction=0,data3 =300*65536 WHERE entry=178559;
 
 -- Hellfire Hot Spot Spreader
 UPDATE gameobject_template SET data8=1 WHERE entry=183929; -- set serverside so that it's not visible to players
