@@ -207,6 +207,10 @@ UPDATE creature_template SET UnitFlags = UnitFlags|640 WHERE entry = 17578;
 -- mmap issues
 UPDATE creature_template SET ExtraFlags = ExtraFlags|16384 WHERE `entry` IN (19608,21554); -- Frayer Wildling (Botanica)
 
+-- https://github.com/cmangos/issues/wiki/CreatureStaticFlags
+-- Blizzard (Shade of Aran) Entry: 17161 Counter: 5320734
+UPDATE creature_template set StaticFlags1=StaticFlags1|0x02000000 where entry = 17161; -- IGNORE_COMBAT
+
 -- -------------------------------
 
 -- Displayid
