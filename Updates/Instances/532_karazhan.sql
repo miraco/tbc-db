@@ -2879,7 +2879,7 @@ INSERT INTO `spawn_group_entry` (`Id`, `Entry`, `MinCount`, `MaxCount`, `Chance`
 (@SGGUID+159, 16468, 0, 0, 0), (@SGGUID+159, 16470, 1, 1, 0), -- Spectral Patron, Ghostly Philanthropist
 (@SGGUID+160, 16468, 0, 0, 0), (@SGGUID+160, 16470, 1, 1, 0), -- Spectral Patron, Ghostly Philanthropist
 (@SGGUID+161, 16468, 0, 0, 0), (@SGGUID+161, 16470, 1, 1, 0), -- Spectral Patron, Ghostly Philanthropist
-(@SGGUID+163, 16481, 0, 0, 0), (@SGGUID+163, 16482, 1, 1, 0), -- Ghostly Haunt, Trapped Soul
+(@SGGUID+163, 16481, 0, 0, 0), (@SGGUID+163, 16482, 0, 0, 0), -- Ghostly Haunt, Trapped Soul
 (@SGGUID+197, 16544, 0, 0, 0), (@SGGUID+197, 16545, 0, 0, 0); -- Ethereal Thief, Ethereal Spellfilcher
 
 -- INSERT INTO `spawn_group_linked_group` (`Id`, `LinkedId`) VALUES 
