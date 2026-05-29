@@ -1333,7 +1333,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+5, @CGUID+143, 1), -- Serpentshrine Sporebat (left)
 (@SGGUID+5, @CGUID+144, 2), -- Serpentshrine Sporebat (right)
 (@SGGUID+5, @CGUID+222, 3), -- Coilfang Hate-Screamer (left)
-(@SGGUID+5, @CGUID+221, 4); -- Coilfang Hate-Screamer (right)
+(@SGGUID+5, @CGUID+221, 4), -- Coilfang Hate-Screamer (right)
 
 (@SGGUID+6, @CGUID+43, 0), -- Vashj'ir Honor Guard
 (@SGGUID+6, @CGUID+203, 1), -- Coilfang Shatterer (left)
@@ -1344,9 +1344,7 @@ INSERT INTO `spawn_group_spawn` (`Id`, `Guid`, `SlotId`) VALUES
 (@SGGUID+6, @CGUID+161, 6), -- Greyheart Technician
 (@SGGUID+6, @CGUID+162, 7), -- Greyheart Technician
 
-(@SGGUID+7, @CGUID+160, 0), -- Greyheart Technician
-
-
+(@SGGUID+7, @CGUID+160, 0); -- Greyheart Technician
 
 
 -- INSERT INTO `spawn_group_formation` (`Id`, `FormationType`, `FormationSpread`, `FormationOptions`, `PathId`, `MovementType`, `Comment`) VALUES
