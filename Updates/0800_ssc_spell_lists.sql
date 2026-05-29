@@ -86,7 +86,7 @@ INSERT INTO `creature_spell_list` (`Id`, `Position`, `SpellId`, `Flags`, `Combat
 -- Cant reproduce Execute being cast on tank ever
 -- (2121801, 1, 38959, 0, -1, 1, 0, 100, 0, 5000, 15000, 5000, 15000, 'Vashj''ir Honor Guard - Execute - current'),
 -- Condition self - under 50%
-(2121801, 2, 38945, 0, 281, 1, 0, 100, 0, 6000, 12000, 22000, 36000, 'Vashj''ir Honor Guard - Frightening Shout - current'),
+(2121801, 2, 38945, 0, 281, 1, 0, 100, 0, 2000, 10000, 22000, 36000, 'Vashj''ir Honor Guard - Frightening Shout - current'),
 (2121801, 3, 38576, 0, -1, 0, 0, 100, 0, 12000, 22000, 16000, 25000, 'Vashj''ir Honor Guard - Knockback - none'),
 (2121801, 4, 38572, 0, -1, 1, 0, 100, 0, 5000, 16000, 9000, 18000, 'Vashj''ir Honor Guard - Mortal Cleave - current');
 
