@@ -28385,10 +28385,8 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- The Lurker Below (21217) - boss_lurker_below
 -- Vashj'ir Honor Guard 21218 - spell_list
 ('2121805','21218','2','0','100','1024','50','0','0','0','0','0','11','38947','0','0','1','19891','0','0','0','0','0','0','Vashj''ir Honor Guard - Cast Enrage at 50% HP'),
-('2121806','21218','29','0','100','2','1000','1000','0','0','0','0','35','1','0','0','0','0','0','0','0','0','0','0','Vashj''ir Honor Guard - Set Instance Data64 (SD2) on Generic Timer'),
 ('2121807','21218','1','0','75','1','10000','60000','60000','60000','0','0','54','0','0','10027','0','0','0','0','0','0','0','0','Vashj''ir Honor Guard - Random Say OOC'),
 -- Coilfang Priestess 21220 - creature_spell_list
-('2122001','21220','29','0','100','2','1000','1000','0','0','0','0','35','1','0','0','0','0','0','0','0','0','0','0','Coilfang Priestess - Set Instace Data64 (SD2) on Generic Timer'),
 -- Coilfang Beast-Tamer 21221 - spell_list
 -- Tidewalker Depth-Seer 21224
 ('2122401','21224','14','0','100','1025','10000','40','15000','17000','0','0','11','38657','12','0','0','0','0','0','0','0','0','0','Tidewalker Depth-Seer - Cast Rejuvenation on Friendly Missing HP'),
@@ -28455,7 +28453,6 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2125301','21253','11','0','100','0','0','0','0','0','0','0','11','25035','0','0','0','0','0','0','0','0','0','0','Tainted Water Elemental - Cast Elemental Spawn-in on Spawn'),
 -- Purified Water Elemental (21260) - NSR
 -- Greyheart Technician 21263 - spell_list
-('2126302','21263','29','0','100','2','1000','1000','0','0','0','0','35','1','0','0','0','0','0','0','0','0','0','0','Greyheart Technician - Set Instace Data64 (SD2) on Generic Timer'),
 ('2126303','21263','30','0','100','1','5','21218','0','0','0','0','5','26','0','0','51','0','0','0','0','0','0','0','Greyheart Technician - Emote and Set Waypoint Movement on Receive Custom AI Event A'),
 -- Coilfang Serpentguard 21298
 ('2129801','21298','4','0','100','0','0','0','0','0','0','0','11','38603','0','34','0','0','0','0','0','0','0','0','Coilfang Serpentguard - Cast Corrupt Devotion Aura on Aggro'),
@@ -28466,7 +28463,6 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2129902','21299','0','0','100','1025','8200','13700','25000','30000','0','0','11','38627','0','0','0','0','0','0','0','0','0','0','Coilfang Fathom-Witch - Cast Shadow Nova'),
 ('2129903','21299','0','0','100','1025','13200','18700','22900','32100','0','0','11','38626','9','0','0','0','0','0','0','0','0','0','Coilfang Fathom-Witch - Cast Domination'),
 -- Coilfang Shatterer 21301 - spell_list
-('2130102','21301','29','0','100','2','1000','1000','0','0','0','0','35','1','0','0','0','0','0','0','0','0','0','0','Coilfang Shatterer - Set Instance Data64 (SD2) on Generic Timer'),
 -- Coilfang Hate-Screamer 21339 - spell_list
 -- Coilfang Frenzy 21508
 ('2150801','21508','11','0','100','0','0','0','0','0','0','0','55','11','0','0','0','0','0','0','0','0','0','0','Coilfang Frenzy - Attack Spawner on Spawn'),
