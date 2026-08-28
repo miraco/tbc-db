@@ -1,0 +1,12 @@
+-- ==========================
+-- Steam Vault - Normal - Stats Reseach based on TBC Anni PTR
+-- Stats gathered with addon API and MindControle
+-- Also compared with Bestiary values
+-- If NPCs were Imune i used to let them hit me for atleast 500 times to get some good min/max/avg values
+-- All tests were done on a 31342 Armor Tank - 75% for all npc under level 70
+-- ==========================
+
+-- Coilfang Warrior
+-- Level 70 UnitClass 6792
+-- MiNDmg 1177.078 MaxDmg 1664.37 AP 304 Armor 4391 Speed 2.5
+-- Str 162 Agi 127 Sta 307 Int 33 SP 99
